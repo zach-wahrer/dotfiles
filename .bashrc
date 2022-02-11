@@ -241,3 +241,4 @@ fi
 ###-end-npm-completion-###
 . "$HOME/.cargo/env"
 alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
+source /home/zach/alacritty/extra/completions/alacritty.bash
