@@ -50,3 +50,12 @@ syntax enable
      \ 'style': 'darker',
 \}
 colorscheme onedark
+
+" NerdTree
+augroup nerdtree_open
+    autocmd!
+    autocmd VimEnter * NERDTree | wincmd p
+augroup END
+nnoremap <silent> <C-k><C-a> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=50
+let NERDTreeShowHidden=1
