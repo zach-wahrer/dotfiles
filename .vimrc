@@ -17,6 +17,7 @@ set matchpairs+=<:>		" Hightlight matching brackets
 set wildmode=longest,list	" Bash like tab completions
 set clipboard=unnamedplus	" Use system clipboard
 set cursorline			" Highlight current cursorline
+set updatetime=100 " Time it takes to write to swap / update git gutter
 
 " Split
 set splitright
@@ -59,3 +60,27 @@ augroup END
 nnoremap <silent> <C-k><C-a> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=50
 let NERDTreeShowHidden=1
+
+" Go
+au FileType go set noexpandtab
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_auto_sameids = 1
+let g:go_fmt_command = "goimports"
+au BufWritePost *.go !gofmt -w %
+
+" Ale
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
