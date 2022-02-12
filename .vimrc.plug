@@ -1,0 +1,17 @@
+call plug#begin('~/.vim/plugged')
+" Plugin Section
+Plug 'navarasu/onedark.nvim'
+ Plug 'SirVer/ultisnips'
+ Plug 'honza/vim-snippets'
+ Plug 'scrooloose/nerdtree'
+ Plug 'preservim/nerdcommenter'
+ Plug 'mhinz/vim-startify'
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'ryanoasis/vim-devicons'
+ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+ Plug 'dense-analysis/ale'
+ Plug 'vim-airline/vim-airline'
+ Plug 'airblade/vim-gitgutter'
+ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+ Plug 'junegunn/fzf.vim'
+call plug#end()
