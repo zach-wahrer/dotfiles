@@ -165,6 +165,7 @@ alias cda="cd ~/platform/accounting"
 alias sc="staticcheck ./..."
 alias c="revive ./...; staticcheck ./...; gokart scan; gosec ./..."
 alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
+alias go="richgo"
 
 # SET TITLE BAR TO CURRENT COMMAND #
 trap 'echo -ne "\033]2;${PWD}/$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//g")\007"' DEBUG

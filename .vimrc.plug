@@ -1,17 +1,43 @@
 call plug#begin('~/.vim/plugged')
 " Plugin Section
-Plug 'navarasu/onedark.nvim'
+ Plug 'navarasu/onedark.nvim'
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
- Plug 'preservim/nerdcommenter'
+ Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
+ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+ Plug 'PhilRunninger/nerdtree-visual-selection'
  Plug 'mhinz/vim-startify'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'ryanoasis/vim-devicons'
  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
  Plug 'dense-analysis/ale'
+ Plug 'preservim/nerdcommenter'
  Plug 'vim-airline/vim-airline'
- Plug 'airblade/vim-gitgutter'
+ " Plug 'airblade/vim-gitgutter'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
  Plug 'junegunn/fzf.vim'
+ Plug 'Pocco81/AutoSave.nvim'
+ Plug 'farmergreg/vim-lastplace'
+ Plug 'dstein64/nvim-scrollview', { 'branch': 'main' }
+ Plug 'kyazdani42/nvim-web-devicons'
+ Plug 'romgrk/barbar.nvim'
+ Plug 'jiangmiao/auto-pairs'
+ Plug 'machakann/vim-sandwich'
+" Plug 'beauwilliams/focus.nvim'
+" Plug 'rmagatti/auto-session'
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'tanvirtin/vgit.nvim'
+ Plug 'folke/todo-comments.nvim'
+ Plug 'folke/trouble.nvim'
+ Plug 'folke/lsp-colors.nvim'
+ Plug 'nvim-telescope/telescope.nvim'
+ Plug 'terryma/vim-multiple-cursors'
+ Plug 'frazrepo/vim-rainbow'
+ Plug 'buoto/gotests-vim'
+ Plug 'roxma/nvim-yarp'
+ Plug 'roxma/vim-hug-neovim-rpc'
+ Plug 'vim-test/vim-test'
+ Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
