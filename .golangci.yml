@@ -1,0 +1,12 @@
+output:
+  format: colored-line-number
+  sort-results: true
+linters:
+  enable:
+    - gosec
+    - goimports
+    - revive
+    - gofmt
+issues:
+  fix: true
+  
