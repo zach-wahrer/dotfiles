@@ -13,7 +13,7 @@ set ttyfast 			" Speed up scrolling
 set laststatus=2		" Show status bar
 set matchpairs+=<:>		" Hightlight matching brackets
 set wildmode=longest,list	" Bash like tab completions
-set clipboard=unnamedplus	" Use system clipboard
+set clipboard+=unnamedplus	" Use system clipboard
 set cursorline			" Highlight current cursorline
 set updatetime=100 " Time it takes to write to swap / update git gutter
 let mapleader="\<SPACE>" " Map the leader key to SPACE
