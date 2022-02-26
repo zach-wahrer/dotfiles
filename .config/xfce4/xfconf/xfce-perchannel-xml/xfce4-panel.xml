@@ -98,6 +98,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="evolution-alarm-notify"/>
         <value type="string" value="task manager"/>
       </property>
       <property name="size-max" type="uint" value="22"/>
@@ -125,7 +126,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance13038;chromium.instance5455"/>
+      <property name="mpris-players" type="string" value="chromium.instance13038;chromium.instance4709;chromium.instance5455"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>

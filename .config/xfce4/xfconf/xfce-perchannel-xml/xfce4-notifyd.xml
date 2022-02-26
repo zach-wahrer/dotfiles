@@ -3,7 +3,9 @@
 <channel name="xfce4-notifyd" version="1.0">
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
+      <value type="string" value="GoLand"/>
       <value type="string" value="google-chrome"/>
+      <value type="string" value="org.gnome.Evolution-alarm-notify"/>
       <value type="string" value="org.gnome.Software"/>
       <value type="string" value="Xfce volume control"/>
       <value type="string" value="Xfce4-notifyd settings"/>

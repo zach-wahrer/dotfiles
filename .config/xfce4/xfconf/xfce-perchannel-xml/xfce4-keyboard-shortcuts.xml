@@ -38,10 +38,10 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="exo-open --launch TerminalEmulator"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Primary&gt;1" type="string" value="/home/zach/headset_audio.sh"/>
-      <property name="&lt;Primary&gt;2" type="string" value="/home/zach/laptop_audio.sh"/>
       <property name="&lt;Primary&gt;Down" type="string" value="amixer -D pulse set Master 5%-"/>
       <property name="&lt;Primary&gt;Up" type="string" value="amixer -D pulse set Master 5%+"/>
+      <property name="&lt;Primary&gt;1" type="string" value="/home/zach/scripts/headset_audio.sh"/>
+      <property name="&lt;Primary&gt;2" type="string" value="/home/zach/scripts/laptop_audio.sh"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
