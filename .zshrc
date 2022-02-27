@@ -148,6 +148,7 @@ alias go="richgo"
 alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
 source /home/zach/alacritty/extra/completions/alacritty.bash
 
+alias svim="nvim -u ~/.SpaceVim/vimrc"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 complete -C /usr/local/bin/terraform terraform
 
