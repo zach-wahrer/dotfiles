@@ -22,9 +22,11 @@
     statusline_iseparator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
+    enable_filetree_gitstatus = true
     enable_statusline_mode = false
+    filetree_direction = "left"
 
-# Enable autocomplete layer
+### GENERAL ###
 [[layers]]
 name = 'autocomplete'
 auto_completion_return_key_behavior = "complete"
@@ -39,24 +41,53 @@ default_height = 30
 name = "colorscheme"
 
 [[layers]]
-name = "fzf"
+name = 'checkers'
+lint_on_the_fly = true 
+lint_on_save = true
 
 [[layers]]
+name = 'lsp'
+filetypes = [
+  'css',
+  'html',
+  'javascript',
+  'sh',
+  'typescript'
+  'go'
+]
+
+[[layers]]
+name = "lang#ui"
+enable_scrollbar = true
+
+[[layers]]
+name = "denite"
+
+[[layers]]
+name = 'debug'
+
+[[layers]]
+name = "incsearch"
+
+### GIT ###
+[[layers]]
 name = 'git'
+git-plugin = 'fugitive'
 
 [[layers]]
 name = 'VersionControl'
 
+### GO ###
 [[layers]]
 name = "lang#go"
 
+
+### JS/TS ###
 [[layers]]
 name = "lang#javascript"
 
 [[layers]]
 name = "lang#typescript"
 
-[[layers]]
-name = "lang#ui"
-enable_scrollbar = true
+
 
