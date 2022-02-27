@@ -4,7 +4,7 @@ Type=Application
 Name=Portainer
 Comment=
 Exec=/usr/bin/google-chrome-stable --profile-directory=Default --app='http://localhost:9100/#!/2/docker/containers'
-Icon=/home/zach/portainer.png
+Icon=/home/zach/.icons/portainer.png
 Path=
 Terminal=false
 StartupNotify=false
