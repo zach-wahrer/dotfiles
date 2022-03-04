@@ -6,8 +6,8 @@
     <property name="show-tray-icon" type="bool" value="false"/>
     <property name="brightness-switch-restore-on-exit" type="int" value="1"/>
     <property name="brightness-switch" type="int" value="0"/>
-    <property name="dpms-on-ac-sleep" type="uint" value="45"/>
-    <property name="blank-on-ac" type="int" value="30"/>
+    <property name="dpms-on-ac-sleep" type="uint" value="60"/>
+    <property name="blank-on-ac" type="int" value="60"/>
     <property name="dpms-on-ac-off" type="uint" value="60"/>
   </property>
 </channel>

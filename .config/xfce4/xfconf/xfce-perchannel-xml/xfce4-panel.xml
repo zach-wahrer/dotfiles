@@ -24,8 +24,8 @@
         <value type="int" value="24"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
-        <value type="int" value="6"/>
         <value type="int" value="10"/>
+        <value type="int" value="6"/>
         <value type="int" value="7"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
@@ -70,6 +70,7 @@
         <value type="int" value="35"/>
         <value type="int" value="38"/>
         <value type="int" value="37"/>
+        <value type="int" value="25"/>
         <value type="int" value="36"/>
         <value type="int" value="18"/>
         <value type="int" value="5"/>
@@ -98,6 +99,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="thunar"/>
         <value type="string" value="evolution-alarm-notify"/>
         <value type="string" value="task manager"/>
       </property>
@@ -126,7 +128,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance13038;chromium.instance4555;chromium.instance4709;chromium.instance5455"/>
+      <property name="mpris-players" type="string" value="chromium.instance13038;chromium.instance4555;chromium.instance4709;chromium.instance4793;chromium.instance5021;chromium.instance5455"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
@@ -149,7 +151,7 @@
     <property name="plugin-14" type="string" value="applicationsmenu">
       <property name="button-title" type="string" value=""/>
       <property name="show-button-title" type="bool" value="false"/>
-      <property name="button-icon" type="string" value="/home/zach/death.png"/>
+      <property name="button-icon" type="string" value="/home/zach/.icons/death.png"/>
     </property>
     <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
@@ -196,7 +198,7 @@
     </property>
     <property name="plugin-30" type="string" value="showdesktop"/>
     <property name="plugin-31" type="string" value="applicationsmenu">
-      <property name="button-icon" type="string" value="/home/zach/death.png"/>
+      <property name="button-icon" type="string" value="/home/zach/.icons/death.png"/>
       <property name="show-button-title" type="bool" value="false"/>
     </property>
     <property name="plugin-32" type="string" value="showdesktop"/>
@@ -251,6 +253,11 @@
     <property name="plugin-18" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-25" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16460683631.desktop"/>
+      </property>
     </property>
   </property>
 </channel>
