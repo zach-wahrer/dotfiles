@@ -108,9 +108,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# PATHS #
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/go/bin/golint:$HOME/.local/bin:$HOME:/go/src/platform/scripts/bin:/usr/local
+export DENO_INSTALL="/home/zach/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/go/bin/golint:$HOME/.local/bin:$HOME:/go/src/platform/scripts/bin
-
+# NVM Autocomplete #
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -133,9 +136,19 @@ alias gc='git checkout'
 alias gb='git branch'
 alias gclean='git branch --merged | grep - | xargs git branch -d'
 
+# TESTS #
+alias mt="make test"
+alias mti="make test-integration"
+alias mtf="cd web/frontend && npm run test:unit && cd ../../"
+alias mtfi="cd web/frontend && npm run test-ci-unit && cd ../../"
+
 # GLOBAL PROTECT #
 alias gpon="globalprotect connect -p vpn.foundant.com"
 alias gpoff="globalprotect disable"
+
+# TERRAFORM #
+alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
+alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 
 # GENERAL #
 alias cdp="cd ~/platform"
@@ -146,6 +159,7 @@ alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000
 alias go="richgo"
 . "$HOME/.cargo/env"
 alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
+
 source /home/zach/alacritty/extra/completions/alacritty.bash
 
 alias svim="nvim -u ~/.SpaceVim/vimrc"
