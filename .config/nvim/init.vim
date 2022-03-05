@@ -31,7 +31,6 @@ set tabstop=4			" Number of cols occupied by tab
 set expandtab			" Converts tabs to whitespace 
 set autoindent			" Indent new line the same as previous
 set shiftwidth=4		" Width for autoindents
-"set cc=80			" Set 80 column border
 filetype indent plugin on	" Auto-indenting depending on file type
 
 " JS/TS/VUE Spacing
@@ -54,6 +53,7 @@ let g:onedark_config = {
     \ 'style': 'warmer',
 \}
 colorscheme onedark
+hi Search guibg=Cyan
 
 " Status Bar
 lua << EOF
@@ -64,15 +64,8 @@ require('lualine').setup {
 }
 EOF
 
-" Load LSP / Navigator
+" Load LSP 
 lua << EOF
--- require'navigator'.setup({
--- keymaps = {{ key = "<C-LeftMouse>", func = "require('navigator.definition').definition()" }},
--- lsp = {
---     disable_format_cap = { "tsserver" },
---     disable_lsp = { "denols", "angularls" }
---     }
---})
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -227,10 +220,15 @@ lua require('go').setup()
 " Goimports on save
 lua vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 " keybinds
-autocmd BufEnter *.go nmap <leader>r :e!<cr>
 autocmd BufEnter *.go nmap <leader>c :GoCoverage<CR> 
 autocmd BufEnter *.go nmap <leader>f :GoFillStruct<CR>
 autocmd BufEnter *.go nmap <C-G> :GoTests<CR>
+
+" Terraform
+lua <<EOF
+  require'lspconfig'.terraformls.setup{} 
+EOF
+autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
 " NerdCommenter
 let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
@@ -269,7 +267,8 @@ EOF
 
 " vim-test
 let test#go#runnner = "richgo"
-let test#strategy="make_bang"
+let test#strategy="asyncrun_background"
+
 " Test keybinds
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>t :TestNearest<CR>

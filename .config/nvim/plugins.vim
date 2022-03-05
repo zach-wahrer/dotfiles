@@ -10,6 +10,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Treesitter
 Plug 'ray-x/go.nvim' " Go
 Plug 'buoto/gotests-vim' " Go Tests
 Plug 'vim-test/vim-test' " Vim-test
+Plug 'tpope/vim-dispatch' " Vim-test dep
+Plug 'skywind3000/asyncrun.vim' " Vim-test dep
 Plug 'ahmedkhalf/project.nvim' " Project management
 Plug 'nvim-lua/plenary.nvim' " Telescope, vgit req
 Plug 'tanvirtin/vgit.nvim' "Vgit
@@ -29,4 +31,5 @@ Plug 'hrsh7th/cmp-cmdline' " Completions
 Plug 'hrsh7th/nvim-cmp' " Completions
 Plug 'hrsh7th/cmp-vsnip' " Snips
 Plug 'hrsh7th/vim-vsnip' " Snips
+Plug 'mg979/vim-visual-multi' " Multi cursors
 call plug#end()
