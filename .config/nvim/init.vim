@@ -101,7 +101,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'gopls', 'vuels', 'terraformls', 'tsserver' }
+local servers = { 'bashls', 'dockerls','gopls', 'vuels', 'terraformls', 'tsserver', 'eslint' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -113,6 +113,11 @@ for _, lsp in pairs(servers) do
 end
 EOF
 set completeopt=menu,menuone,noselect
+
+" TS/Vue/JS
+autocmd BufWritePre *.ts EslintFixAll
+autocmd BufWritePre *.vue EslintFixAll
+autocmd BufWritePre *.js EslintFixAll
 
 " nvim-cmp.
 lua <<EOF
