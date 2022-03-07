@@ -7,7 +7,9 @@ Plug 'nvim-lualine/lualine.nvim'  " Status Bar
 Plug 'kyazdani42/nvim-web-devicons'  " Lualine, Barbar, vgit, nvim-tree
 Plug 'akinsho/bufferline.nvim' " Buffer management
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Treesitter
-Plug 'ray-x/go.nvim' " Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go
+Plug 'sebdah/vim-delve' " Delve
+Plug 'tpope/vim-dotenv' " Env management
 Plug 'buoto/gotests-vim' " Go Tests
 Plug 'vim-test/vim-test' " Vim-test
 Plug 'tpope/vim-dispatch' " Vim-test dep
@@ -32,4 +34,10 @@ Plug 'hrsh7th/nvim-cmp' " Completions
 Plug 'hrsh7th/cmp-vsnip' " Snips
 Plug 'hrsh7th/vim-vsnip' " Snips
 Plug 'mg979/vim-visual-multi' " Multi cursors
+Plug 'psliwka/vim-smoothie' " Smooth scrolling
+Plug 'folke/lsp-colors.nvim' " Add missing lsp colors
+Plug 'folke/trouble.nvim' " Pretty list for diagnostics
+Plug 'moll/vim-bbye' " Better buffer quit
+Plug 'abecodes/tabout.nvim' " Tab out
+Plug 'kevinhwang91/nvim-bqf' " Better quick fix
 call plug#end()

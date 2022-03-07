@@ -24,7 +24,6 @@ set updatetime=300 " Time it takes to write to swap / update git gutter
 let mapleader="\<SPACE>" " Map the leader key to SPACE
 set autowrite
 set autoread
-nnoremap <C-C> :q<cr> 
 
 " Default/GO Spacing
 set tabstop=4			" Number of cols occupied by tab
@@ -54,6 +53,9 @@ let g:onedark_config = {
 \}
 colorscheme onedark
 hi Search guibg=Cyan
+
+" Better buffer quit
+nnoremap <leader>qq :Bdelete<CR>
 
 " Status Bar
 lua << EOF
@@ -99,7 +101,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'gopls', 'vuels', 'tsserver' }
+local servers = { 'gopls', 'vuels', 'terraformls', 'tsserver' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -114,7 +116,7 @@ set completeopt=menu,menuone,noselect
 
 " nvim-cmp.
 lua <<EOF
-  -- 
+  -- Setup nvim-cmp.
   local cmp = require'cmp'
 
   cmp.setup({
@@ -128,7 +130,25 @@ lua <<EOF
       end,
     },
     mapping = {
-      ['<Tab>'] = cmp.mapping.select_next_item(),
+      -- ['<Tab>'] = cmp.mapping.select_next_item(),
+      ["<Tab>"] = function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        elseif vim.fn["vsnip#available"](1) ~= 0 then
+          vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-expand-or-jump)", true, true, true), "")
+        else
+          fallback()
+        end
+      end,     
+      ["<S-Tab>"] = function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        elseif vim.fn["vsnip#available"](1) ~= 0 then
+          vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-jump-prev)", true, true, true), "")
+        else
+          fallback()
+        end
+      end,      
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -176,7 +196,6 @@ lua <<EOF
   })
 EOF
 
-
 " TreeSitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
@@ -203,7 +222,7 @@ require'nvim-tree'.setup {
   open_on_tab = true,
   -- auto_close = true,
   -- hijack_unnamed_buffer_when_opening = true,
-  hijack_cursor = true,
+  -- hijack_cursor = true,
   diagnostics = {
       enable = true,
       show_on_dirs = true
@@ -216,18 +235,24 @@ EOF
 nnoremap <silent> <C-b> :NvimTreeToggle<CR>
 
 " GO
-lua require('go').setup()
-" Goimports on save
-lua vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+let g:go_addtags_transform = 'camelcase'
 " keybinds
-autocmd BufEnter *.go nmap <leader>c :GoCoverage<CR> 
-autocmd BufEnter *.go nmap <leader>f :GoFillStruct<CR>
-autocmd BufEnter *.go nmap <C-G> :GoTests<CR>
+autocmd BufEnter *.go nmap <leader>ggt :GoTests<CR>
+autocmd BufEnter *.go nmap <leader>gat :GoAddTags<CR>
+autocmd BufEnter *.go nmap <leader>gai :GoIfErr<CR>
+autocmd BufEnter *.go nmap <leader>gc :GoCoverageToggle<CR> 
+autocmd BufEnter *.go nmap <leader>gf :GoFillStruct<CR>
+autocmd BufEnter *.go nmap <leader>gt :GoTest<CR>
+autocmd BufEnter *.go nmap <leader>ga :GoAlternate<CR>
+
+" Delve
+let g:delve_new_command = "new"
+autocmd BufEnter *.go nmap <leader>db :DlvToggleBreakpoint<CR>
+autocmd BufEnter *.go nmap <leader>dt :DlvTest<CR>
+autocmd BufEnter *.go nmap <leader>dd :DlvDebug<CR>
+
 
 " Terraform
-lua <<EOF
-  require'lspconfig'.terraformls.setup{} 
-EOF
 autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
 " NerdCommenter
@@ -267,8 +292,7 @@ EOF
 
 " vim-test
 let test#go#runnner = "richgo"
-let test#strategy="asyncrun_background"
-
+let test#strategy="dispatch"
 " Test keybinds
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>t :TestNearest<CR>
@@ -322,6 +346,21 @@ nnoremap <silent>    <A-6> :BufferLineGoToBuffer 6<CR>
 nnoremap <silent>    <A-7> :BufferLineGoToBuffer 7<CR>
 nnoremap <silent>    <A-8> :BufferLineGoToBuffer 8<CR>
 nnoremap <silent>    <A-9> :BufferLineGoToBuffer<CR>
+
+" Trouble
+lua << EOF
+  require("trouble").setup {
+  }
+EOF
+nnoremap <leader>ot :TroubleToggle<CR>
+
+" Tab out
+lua require('tabout').setup{}
+
+" Better quickfix
+lua << EOF
+require('bqf').setup()
+EOF
 
 "AutoSave
 lua << EOF
