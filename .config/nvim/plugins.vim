@@ -19,13 +19,11 @@ Plug 'nvim-lua/plenary.nvim' " Telescope, vgit req
 Plug 'tanvirtin/vgit.nvim' "Vgit
 Plug 'nvim-telescope/telescope.nvim' " Finder
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Telescope req
-" Plug 'rmagatti/auto-session' " Session management
 Plug 'preservim/nerdcommenter' " Nerd Commenter
-Plug 'frazrepo/vim-rainbow' " Rainbow tags
 Plug 'jiangmiao/auto-pairs' " Auto pairs
 Plug 'dstein64/nvim-scrollview', { 'branch': 'main' } " Scroll bar
-Plug 'Pocco81/AutoSave.nvim' " AutoSave
-Plug 'kyazdani42/nvim-tree.lua' " File browswer
+Plug 'kyazdani42/nvim-tree.lua' " File browser
+Plug 'p00f/nvim-ts-rainbow' " Rainbow brackets
 Plug 'hrsh7th/cmp-nvim-lsp' " Completions
 Plug 'hrsh7th/cmp-buffer' " Completions
 Plug 'hrsh7th/cmp-path' " Completions
@@ -39,5 +37,9 @@ Plug 'folke/lsp-colors.nvim' " Add missing lsp colors
 Plug 'folke/trouble.nvim' " Pretty list for diagnostics
 Plug 'moll/vim-bbye' " Better buffer quit
 Plug 'abecodes/tabout.nvim' " Tab out
-Plug 'kevinhwang91/nvim-bqf' " Better quick fix
+Plug 'preservim/vimux' " Vimux for tests
+Plug 'jose-elias-alvarez/null-ls.nvim' " Prettier req
+Plug 'MunifTanjim/prettier.nvim' " Prettier formatting
+Plug 'lewis6991/spellsitter.nvim' " Spell check with treesitter
+Plug 'ckipp01/stylua-nvim' " Lua formatting
 call plug#end()

@@ -110,8 +110,8 @@ source $ZSH/oh-my-zsh.sh
 
 # PATHS #
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/go/bin/golint:$HOME/.local/bin:$HOME:/go/src/platform/scripts/bin:/usr/local
-export DENO_INSTALL="/home/zach/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="/home/zach/lua-language-server/bin:$PATH"
 
 # NVM Autocomplete #
 export NVM_DIR="$HOME/.nvm"
@@ -139,8 +139,8 @@ alias gclean='git branch --merged | grep - | xargs git branch -d'
 # TESTS #
 alias mt="make test"
 alias mti="make test-integration"
-alias mtf="cd web/frontend && npm run test:unit && cd ../../"
-alias mtfi="cd web/frontend && npm run test-ci-unit && cd ../../"
+alias mtf="cd web/frontend && npm run test:unit; cd ../../"
+alias mtfi="cd web/frontend && npm run test-ci-unit; cd ../../"
 
 # GLOBAL PROTECT #
 alias gpon="globalprotect connect -p vpn.foundant.com"
@@ -151,6 +151,7 @@ alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
 alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 
 # GENERAL #
+alias :q="exit"
 alias cdp="cd ~/platform"
 alias cda="cd ~/platform/accounting"
 alias sc="staticcheck ./..."
@@ -238,3 +239,5 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
