@@ -1,0 +1,6 @@
+vim.api.nvim_exec([[autocmd FileType ts set ts=4 sw=4 sts=0 autoindent]], false)
+vim.api.nvim_exec([[autocmd FileType js set ts=4 sw=4 sts=0 autoindent]], false)
+vim.api.nvim_exec([[autocmd FileType vue set ts=4 sw=4 sts=0 autoindent]], false)
+vim.api.nvim_exec([[autocmd BufWritePre *.ts EslintFixAll]], false)
+vim.api.nvim_exec([[autocmd BufWritePre *.js EslintFixAll]], false)
+vim.api.nvim_exec([[autocmd BufWritePre *.vue EslintFixAll]], false)
