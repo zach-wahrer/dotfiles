@@ -18,6 +18,7 @@ set termguicolors
 let g:onedark_config = {
     \ 'style': 'warmer',
 \}
+" colorscheme one-nvim
 colorscheme onedark
 hi Search guibg=Cyan
 hi SpellBad guibg=gray20 guifg=Orange
@@ -66,13 +67,16 @@ require('prettier_config')
 require('nvm_cmp_config')
 require('treesitter_config')
 require('telescope_config')
+require('trouble_config')
 require('project_config')
 require('v_git_config')
-require('tabout').setup()
-require('spellsitter').setup()
 require('nvim_tree_config')
 require('vim_test_config')
 require('bufferline_config')
+require('dashboard_config')
+require('spellsitter').setup()
+require('stabilize').setup()
+require('tabout').setup()
 EOF
 
 " NerdCommenter

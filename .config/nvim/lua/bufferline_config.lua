@@ -10,6 +10,10 @@ require("bufferline").setup({
 				text_align = "left",
 			},
 		},
+		close_command = "Bdelete! %d",
+		right_mouse_command = "vertical sbuffer %d",
+		left_mouse_command = "buffer %d",
+		middle_mouse_command = "Bdelete! %d",
 	},
 })
 vim.api.nvim_set_keymap("n", "<A-,>", "<cmd>BufferLineCyclePrev<CR>", { noremap = true })

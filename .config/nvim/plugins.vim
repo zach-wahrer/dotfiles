@@ -3,6 +3,8 @@ Plug 'neovim/nvim-lspconfig' " LSP
 Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' } " Navigator dep
 Plug 'ray-x/navigator.lua' " Navigator
 Plug 'navarasu/onedark.nvim' " Theme
+Plug 'Th3Whit3Wolf/one-nvim' " Theme
+Plug 'yonlu/omni.vim' " Theme
 Plug 'nvim-lualine/lualine.nvim'  " Status Bar
 Plug 'kyazdani42/nvim-web-devicons'  " Lualine, Barbar, vgit, nvim-tree
 Plug 'akinsho/bufferline.nvim' " Buffer management
@@ -42,4 +44,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim' " Prettier req
 Plug 'MunifTanjim/prettier.nvim' " Prettier formatting
 Plug 'lewis6991/spellsitter.nvim' " Spell check with treesitter
 Plug 'ckipp01/stylua-nvim' " Lua formatting
+Plug 'glepnir/dashboard-nvim' " Startup dashboard
+Plug 'luukvbaal/stabilize.nvim' " Window stabilize
 call plug#end()
+

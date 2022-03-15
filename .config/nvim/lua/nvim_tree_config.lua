@@ -7,7 +7,7 @@ require("nvim-tree").setup({
 	open_on_tab = true,
 	-- auto_close = true,
 	-- hijack_unnamed_buffer_when_opening = true,
-	-- hijack_cursor = true,
+	hijack_cursor = true,
 	diagnostics = {
 		enable = true,
 		show_on_dirs = true,
