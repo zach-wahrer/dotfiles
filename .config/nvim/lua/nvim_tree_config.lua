@@ -1,4 +1,4 @@
-vim.api.nvim_set_keymap("n", "<C-B>", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_highlight_opened_files = 3
 vim.g.nvim_tree_git_hl = 1
@@ -8,6 +8,9 @@ require("nvim-tree").setup({
 	-- auto_close = true,
 	-- hijack_unnamed_buffer_when_opening = true,
 	hijack_cursor = true,
+	update_focused_file = {
+		enable = true,
+	},
 	diagnostics = {
 		enable = true,
 		show_on_dirs = true,
@@ -15,5 +18,6 @@ require("nvim-tree").setup({
 	view = {
 		width = 50,
 		preserve_window_proportions = true,
+		relativenumber = true,
 	},
 })

@@ -17,12 +17,12 @@ Plug 'vim-test/vim-test' " Vim-test
 Plug 'tpope/vim-dispatch' " Vim-test dep
 Plug 'skywind3000/asyncrun.vim' " Vim-test dep
 Plug 'ahmedkhalf/project.nvim' " Project management
-Plug 'nvim-lua/plenary.nvim' " Telescope, vgit req
+Plug 'nvim-lua/plenary.nvim' " Telescope, vgit, todo-comments req
 Plug 'tanvirtin/vgit.nvim' "Vgit
 Plug 'nvim-telescope/telescope.nvim' " Finder
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Telescope req
 Plug 'preservim/nerdcommenter' " Nerd Commenter
-Plug 'jiangmiao/auto-pairs' " Auto pairs
+Plug 'windwp/nvim-autopairs' " Auto pairs
 Plug 'dstein64/nvim-scrollview', { 'branch': 'main' } " Scroll bar
 Plug 'kyazdani42/nvim-tree.lua' " File browser
 Plug 'p00f/nvim-ts-rainbow' " Rainbow brackets
@@ -46,5 +46,11 @@ Plug 'lewis6991/spellsitter.nvim' " Spell check with treesitter
 Plug 'ckipp01/stylua-nvim' " Lua formatting
 Plug 'glepnir/dashboard-nvim' " Startup dashboard
 Plug 'luukvbaal/stabilize.nvim' " Window stabilize
+Plug 'ray-x/lsp_signature.nvim' " Show func signature
+Plug 'folke/todo-comments.nvim' " Todo comment highlights
+Plug 'David-Kunz/jester' " Jest test dap debugger
+Plug 'mfussenegger/nvim-dap' " Debug adapter
+Plug 'leoluz/nvim-dap-go' " Adapt delve to dap
+Plug 'rcarriga/nvim-dap-ui' " UI for dap
 call plug#end()
 
