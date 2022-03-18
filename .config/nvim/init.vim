@@ -148,6 +148,7 @@ cmp.setup.cmdline(":", {
 	}),
 })
 --- End find fix
+require('diff_view_config')
 require('treesitter_config')
 require('telescope_config')
 require('trouble_config')
@@ -172,6 +173,3 @@ EOF
  let g:NERDCustomDelimiters = { 'ts': { 'left': '//','right': '' } }
  nmap <C-_> <Plug>NERDCommenterToggle
  vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
-
-
-

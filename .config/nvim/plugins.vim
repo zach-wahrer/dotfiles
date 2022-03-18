@@ -52,5 +52,9 @@ Plug 'David-Kunz/jester' " Jest test dap debugger
 Plug 'mfussenegger/nvim-dap' " Debug adapter
 Plug 'leoluz/nvim-dap-go' " Adapt delve to dap
 Plug 'rcarriga/nvim-dap-ui' " UI for dap
+Plug 'gpanders/editorconfig.nvim' " Use .editorconfig files
+Plug 'kosayoda/nvim-lightbulb' " Show lightbulb when code actions are available
+Plug 'weilbith/nvim-code-action-menu' " Code action menu
+Plug 'sindrets/diffview.nvim' " Git diff view
 call plug#end()
 

@@ -151,6 +151,7 @@ alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
 alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 
 # GENERAL #
+alias tnvim="tmux new-session 'nvim'\; set status off"
 alias :q="exit"
 alias cdp="cd ~/platform"
 alias cda="cd ~/platform/accounting"
