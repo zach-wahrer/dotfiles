@@ -6,5 +6,5 @@ Comment=
 Exec=/usr/bin/google-chrome-stable --profile-directory=Default --app='http://localhost:9080/?server=mysql:3306&username=root&db=beta_eventstore&select=Events'
 Icon=/home/zach/.icons/adminer.png
 Path=
-Terminal=true
+Terminal=false
 StartupNotify=false

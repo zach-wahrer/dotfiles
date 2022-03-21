@@ -41,6 +41,7 @@ vim.o.clipboard = "unnamedplus" -- Use system clipboard
 vim.o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 vim.wo.spell = true
 vim.bo.spelllang = "en_us"
+        vim.api.nvim_set_keymap("n", "<leader>s", "<C-w>w", { noremap = true })
 
 -- Search --
 vim.o.ignorecase = true -- Case insensitive searching
