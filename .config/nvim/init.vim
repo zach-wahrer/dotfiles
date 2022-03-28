@@ -7,10 +7,6 @@ if filereadable(expand("~/.config/nvim/plugins.vim"))
 endif
 
 let mapleader="\<SPACE>" 	
-nnoremap <leader>w :w<CR>
-nnoremap <X1Mouse> <C-O>
-nnoremap <X2Mouse> <C-I>
-nnoremap <leader>p "0p
 filetype plugin indent on	" Auto-indenting depending on file type
 
 " Colors

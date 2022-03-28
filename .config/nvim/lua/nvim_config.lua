@@ -18,11 +18,6 @@ vim.bo.syntax = "on" -- Syntax highlighting
 vim.o.title = true
 vim.wo.relativenumber = true -- Set relative line numbers
 vim.wo.number = true -- Set absolute line number
-vim.api.nvim_exec([[ autocmd WinEnter,FocusGained * :setlocal number relativenumber ]], false) -- Set relative line numbers on focus
-vim.api.nvim_exec([[ autocmd WinLeave,FocusLost   * :setlocal number norelativenumber ]], false) -- Remove relative line numbers when unfocused
-vim.api.nvim_exec([[ autocmd bufenter * let &titlestring = expand('%:p') ]], false) -- Full path in title
-vim.api.nvim_exec([[ autocmd BufEnter * call system("tmux rename-window " . expand('%:t')) ]], false) -- Pass title to tmux
-vim.api.nvim_exec([[ autocmd VimLeave * call system("tmux setw automatic-rename") ]], false) -- Reset title on exiting neovim
 vim.wo.conceallevel = 2 -- Conceal markdown
 vim.bo.matchpairs = "<:>,(:),{:},[:]" -- Hightlight matching brackets
 vim.o.wildmode = "longest,list" -- Bash like tab completions
@@ -30,6 +25,19 @@ vim.o.clipboard = "unnamedplus" -- Use system clipboard
 vim.o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 vim.wo.spell = true
 vim.bo.spelllang = "en_us"
-vim.api.nvim_set_keymap("n", "<leader>s", "<C-w>w", { noremap = true })
-vim.api.nvim_set_keymap("n", "<S-Enter>", "O<Esc>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<CR>", "o<Esc>", { noremap = true })
+
+
+-- General Keybinds --
+vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true }) -- Write
+vim.api.nvim_set_keymap("n", "<leader>p", "\"0p", { noremap = true }) -- Paste last yanked text
+vim.api.nvim_set_keymap("n", "<leader>s", "<C-w>w", { noremap = true }) -- Switch windows
+vim.api.nvim_set_keymap("n", "<S-Enter>", "O<Esc>", { noremap = true }) -- Add line above
+vim.api.nvim_set_keymap("n", "<CR>", "o<Esc>", { noremap = true }) -- Add line below
+
+-- Autocommands --
+vim.api.nvim_exec([[ autocmd WinEnter,FocusGained * :setlocal number relativenumber ]], false) -- Set relative line numbers on focus
+vim.api.nvim_exec([[ autocmd WinLeave,FocusLost   * :setlocal number norelativenumber ]], false) -- Remove relative line numbers when unfocused
+vim.api.nvim_exec([[ autocmd bufenter * let &titlestring = expand('%:p') ]], false) -- Full path in title
+vim.api.nvim_exec([[ autocmd BufEnter * call system("tmux rename-window " . expand('%:t')) ]], false) -- Pass title to tmux
+vim.api.nvim_exec([[ autocmd VimLeave * call system("tmux setw automatic-rename") ]], false) -- Reset title on exiting neovim
+
