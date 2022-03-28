@@ -13,6 +13,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go
 Plug 'sebdah/vim-delve' " Delve
 Plug 'tpope/vim-dotenv' " Env management
 Plug 'buoto/gotests-vim' " Go Tests
+" Plug 'hexdigest/gounit-vim' " Go Tests / Allows templates to be created
 Plug 'vim-test/vim-test' " Vim-test
 Plug 'tpope/vim-dispatch' " Vim-test dep
 Plug 'skywind3000/asyncrun.vim' " Vim-test dep
@@ -58,5 +59,7 @@ Plug 'kosayoda/nvim-lightbulb' " Show lightbulb when code actions are available
 Plug 'weilbith/nvim-code-action-menu' " Code action menu
 Plug 'sindrets/diffview.nvim' " Git diff view
 Plug 'appelgriebsch/surround.nvim' " Surround with chars
+Plug 'vim-denops/denops.vim' " Req for denops-docker
+Plug 'skanehira/denops-docker.vim' " Docker
 call plug#end()
 

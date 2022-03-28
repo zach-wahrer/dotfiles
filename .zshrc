@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 
 # PATHS #
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/go/bin/golint:$HOME/.local/bin:$HOME:/go/src/platform/scripts/bin:/usr/local
+export DENO_INSTALL="/home/zach/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="/home/zach/lua-language-server/bin:$PATH"
 

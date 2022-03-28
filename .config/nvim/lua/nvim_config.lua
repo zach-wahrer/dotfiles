@@ -26,7 +26,6 @@ vim.o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 vim.wo.spell = true
 vim.bo.spelllang = "en_us"
 
-
 -- General Keybinds --
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true }) -- Write
 vim.api.nvim_set_keymap("n", "<leader>p", "\"0p", { noremap = true }) -- Paste last yanked text
