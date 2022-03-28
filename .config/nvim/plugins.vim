@@ -19,9 +19,10 @@ Plug 'skywind3000/asyncrun.vim' " Vim-test dep
 Plug 'ahmedkhalf/project.nvim' " Project management
 Plug 'nvim-lua/plenary.nvim' " Telescope, vgit, todo-comments req
 Plug 'tanvirtin/vgit.nvim' "Vgit
+Plug 'kdheepak/lazygit.nvim' " Lazy Git
 Plug 'nvim-telescope/telescope.nvim' " Finder
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Telescope req
-Plug 'preservim/nerdcommenter' " Nerd Commenter
+Plug 'b3nj5m1n/kommentary' " Comment
 Plug 'windwp/nvim-autopairs' " Auto pairs
 Plug 'dstein64/nvim-scrollview', { 'branch': 'main' } " Scroll bar
 Plug 'kyazdani42/nvim-tree.lua' " File browser
@@ -56,5 +57,6 @@ Plug 'gpanders/editorconfig.nvim' " Use .editorconfig files
 Plug 'kosayoda/nvim-lightbulb' " Show lightbulb when code actions are available
 Plug 'weilbith/nvim-code-action-menu' " Code action menu
 Plug 'sindrets/diffview.nvim' " Git diff view
+Plug 'appelgriebsch/surround.nvim' " Surround with chars
 call plug#end()
 

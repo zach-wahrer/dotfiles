@@ -4,3 +4,5 @@ require("vgit").setup({
 		["n <leader>dfh"] = "buffer_history_preview",
 	}
 })
+vim.o.incsearch = false
+vim.wo.signcolumn = 'yes'
