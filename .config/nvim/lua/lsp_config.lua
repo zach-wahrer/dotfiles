@@ -47,6 +47,3 @@ for _, lsp in pairs(servers) do
 		},
 	})
 end
-
--- Show lightbulb when there are code actions
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]

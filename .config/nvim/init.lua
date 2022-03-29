@@ -1,27 +1,12 @@
+vim.cmd([[
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
+]])
 
-" Plugins
-if filereadable(expand("~/.config/nvim/plugins.vim"))
-    source ~/.config/nvim/plugins.vim
-endif
-
-let mapleader="\<SPACE>" 	
-filetype plugin indent on	" Auto-indenting depending on file type
-
-" Colors
-set termguicolors
-let g:onedark_config = {
-    \ 'style': 'warmer',
-\}
-" colorscheme one-nvim
-colorscheme onedark
-hi Search guibg=Cyan
-hi SpellBad guibg=gray20 guifg=Orange
-
-lua << EOF
 -- Nvim --
+require('plugins_config')
 require('nvim_config')
+require('color_config')
 
 -- Language Configs --
 require('go/go_config')
@@ -47,7 +32,7 @@ require('vim_test_config')
 require('vimux_config')
 require('bufferline_config')
 require('dashboard_config')
-require('nvm_cmp_config') 
+require('nvm_cmp_config')
 require('kommentary_config')
 
 -- Plugins --
@@ -60,4 +45,3 @@ require('todo-comments').setup()
 require('dap-go').setup()
 require('dapui').setup()
 require('surround').setup({})
-EOF

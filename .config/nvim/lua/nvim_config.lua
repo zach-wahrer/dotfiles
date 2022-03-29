@@ -1,3 +1,7 @@
+vim.cmd([[
+let mapleader="\<SPACE>" 	
+filetype plugin indent on	" Auto-indenting depending on file type
+]])
 -- Search --
 vim.o.ignorecase = true -- Case insensitive searching
 
@@ -25,6 +29,7 @@ vim.o.clipboard = "unnamedplus" -- Use system clipboard
 vim.o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 vim.wo.spell = true
 vim.bo.spelllang = "en_us"
+vim.o.incsearch = true -- Show search results while still typing
 
 -- General Keybinds --
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true }) -- Write

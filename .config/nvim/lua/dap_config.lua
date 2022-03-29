@@ -1,6 +1,11 @@
 vim.api.nvim_set_keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>dc", "<cmd>lua require('dap').continue()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>dse", "<cmd>Dotenv deploy/local | Dotenv ../../.secret.env<CR>", { noremap = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>dse",
+	"<cmd>Dotenv deploy/local | Dotenv ../../.secret.env<CR>",
+	{ noremap = true }
+)
 vim.api.nvim_set_keymap("n", "<leader>ds", "<cmd>lua require('dap').step_over()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>di", "<cmd>lua require('dap').step_into()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>do", "<cmd>lua require('dap').step_out()<CR>", { noremap = true })

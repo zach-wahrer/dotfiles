@@ -1,3 +1,4 @@
+vim.cmd([[
 call plug#begin()
 Plug 'neovim/nvim-lspconfig' " LSP
 Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' } " Navigator dep
@@ -61,4 +62,4 @@ Plug 'appelgriebsch/surround.nvim' " Surround with chars
 Plug 'vim-denops/denops.vim' " Req for denops-docker
 Plug 'skanehira/denops-docker.vim' " Docker
 call plug#end()
-
+]])
