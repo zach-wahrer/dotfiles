@@ -26,7 +26,6 @@ Plug 'kyazdani42/nvim-web-devicons'  " Lualine, Barbar, vgit, nvim-tree
 Plug 'nvim-lua/plenary.nvim' " Telescope, vgit, todo-comments req
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Telescope req
 Plug 'jose-elias-alvarez/null-ls.nvim' " Prettier req
-Plug 'vim-denops/denops.vim' " Req for denops-docker
 Plug 'kamykn/popup-menu.nvim' " Req for spelunker
 Plug 'tpope/vim-repeat' " Req for lightspeed
 
@@ -64,6 +63,7 @@ Plug 'tversteeg/registers.nvim', { 'branch': 'main' } " Visualize registers
 Plug 'mbbill/undotree' " Visualize undo tree
 Plug 'arp242/undofile_warn.vim' " Warn if undoing past current 
 Plug 'ggandor/lightspeed.nvim' " Faster movement
+Plug 'tpope/vim-sleuth' " Auto adjust formatting
 
 """""" COMPLETIONS """"""
 Plug 'hrsh7th/cmp-nvim-lsp' " Completions
@@ -98,8 +98,9 @@ Plug 'skywind3000/asyncrun.vim' " Vim-test dep
 Plug 'tpope/vim-dotenv' 
 
 """""" GIT """"""
-Plug 'tanvirtin/vgit.nvim' "Vgit
+Plug 'tanvirtin/vgit.nvim' " Vgit
 Plug 'sindrets/diffview.nvim' " Git diff view
+Plug 'rhysd/git-messenger.vim' " View diffs
 Plug 'kdheepak/lazygit.nvim' " Lazy Git
 
 call plug#end()
