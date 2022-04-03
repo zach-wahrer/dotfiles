@@ -34,6 +34,9 @@ require('bufferline_config')
 require('dashboard_config')
 require('nvm_cmp_config')
 require('kommentary_config')
+require('undotree_config')
+require('spelunker_config')
+require('surround_config')
 
 -- Plugins --
 require('nvim-autopairs').setup{}
@@ -44,4 +47,3 @@ require 'lsp_signature'.setup()
 require('todo-comments').setup()
 require('dap-go').setup()
 require('dapui').setup()
-require('surround').setup({})

@@ -11,7 +11,12 @@ vim.api.nvim_set_keymap("n", "<leader>di", "<cmd>lua require('dap').step_into()<
 vim.api.nvim_set_keymap("n", "<leader>do", "<cmd>lua require('dap').step_out()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>dra", "<cmd>lua require('dap').clear_breakpoints()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>dj", "<cmd>lua require('jester').debug()<CR>", { noremap = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>dj",
+	"<cmd>lua require('jester').debug({dap = { console = ''}})<CR>",
+	{ noremap = true }
+)
 
 local dap = require("dap")
 -- dap.adapters.chrome = {

@@ -167,6 +167,10 @@ alias svim="nvim -u ~/.SpaceVim/vimrc"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 complete -C /usr/local/bin/terraform terraform
 
+# kubectl completion #
+source <(kubectl completion zsh)
+
+
 ###-begin-npm-completion-###
 #
 # npm command completion script

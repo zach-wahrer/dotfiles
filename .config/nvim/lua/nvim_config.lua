@@ -27,9 +27,10 @@ vim.bo.matchpairs = "<:>,(:),{:},[:]" -- Hightlight matching brackets
 vim.o.wildmode = "longest,list" -- Bash like tab completions
 vim.o.clipboard = "unnamedplus" -- Use system clipboard
 vim.o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
-vim.wo.spell = true
-vim.bo.spelllang = "en_us"
+vim.wo.spell = false -- Done with spelunker
+-- vim.bo.spelllang = "en_us"
 vim.o.incsearch = true -- Show search results while still typing
+vim.bo.undofile = true -- Save undo history in file
 
 -- General Keybinds --
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true }) -- Write
@@ -37,6 +38,10 @@ vim.api.nvim_set_keymap("n", "<leader>p", "\"0p", { noremap = true }) -- Paste l
 vim.api.nvim_set_keymap("n", "<leader>s", "<C-w>w", { noremap = true }) -- Switch windows
 vim.api.nvim_set_keymap("n", "<S-Enter>", "O<Esc>", { noremap = true }) -- Add line above
 vim.api.nvim_set_keymap("n", "<CR>", "o<Esc>", { noremap = true }) -- Add line below
+vim.api.nvim_set_keymap("n", "<leader>a", "ggVG<CR>", { noremap = true }) -- Select all
+vim.api.nvim_set_keymap("n", "<leader>id", ":put=strftime('%Y-%m-%d')<CR>", { noremap = true }) -- Select all
+vim.api.nvim_set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", { noremap = true }) -- Change to vertical splits
+vim.api.nvim_set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", { noremap = true }) -- Change to horizontal splits
 
 -- Autocommands --
 vim.api.nvim_exec([[ autocmd WinEnter,FocusGained * :setlocal number relativenumber ]], false) -- Set relative line numbers on focus

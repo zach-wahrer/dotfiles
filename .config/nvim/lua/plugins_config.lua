@@ -1,4 +1,14 @@
 vim.cmd([[
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release --locked
+    else
+      !cargo build --release --locked --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
 call plug#begin()
 
 """""" THEMES """"""
@@ -17,6 +27,8 @@ Plug 'nvim-lua/plenary.nvim' " Telescope, vgit, todo-comments req
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Telescope req
 Plug 'jose-elias-alvarez/null-ls.nvim' " Prettier req
 Plug 'vim-denops/denops.vim' " Req for denops-docker
+Plug 'kamykn/popup-menu.nvim' " Req for spelunker
+Plug 'tpope/vim-repeat' " Req for lightspeed
 
 """""" LSP """"""
 Plug 'neovim/nvim-lspconfig' 
@@ -40,13 +52,18 @@ Plug 'folke/trouble.nvim' " Pretty list for diagnostics
 Plug 'moll/vim-bbye' " Better buffer quit
 Plug 'abecodes/tabout.nvim' " Tab out
 Plug 'preservim/vimux' " Vimux for tests
-Plug 'lewis6991/spellsitter.nvim' " Spell check with treesitter
+Plug 'lewis6991/spellsitter.nvim' " Spell check within treesitter
+Plug 'kamykn/spelunker.vim' " Spellcheck
 Plug 'glepnir/dashboard-nvim' " Startup dashboard
 Plug 'luukvbaal/stabilize.nvim' " Window stabilize
 Plug 'folke/todo-comments.nvim' " Todo comment highlights
 Plug 'gpanders/editorconfig.nvim' " Use .editorconfig files
 Plug 'weilbith/nvim-code-action-menu' " Code action menu
 Plug 'appelgriebsch/surround.nvim' " Surround with chars
+Plug 'tversteeg/registers.nvim', { 'branch': 'main' } " Visualize registers
+Plug 'mbbill/undotree' " Visualize undo tree
+Plug 'arp242/undofile_warn.vim' " Warn if undoing past current 
+Plug 'ggandor/lightspeed.nvim' " Faster movement
 
 """""" COMPLETIONS """"""
 Plug 'hrsh7th/cmp-nvim-lsp' " Completions
@@ -62,6 +79,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go
 Plug 'sebdah/vim-delve' " Delve
 Plug 'MunifTanjim/prettier.nvim' " Prettier formatting
 Plug 'ckipp01/stylua-nvim' " Lua formatting
+Plug 'euclio/vim-markdown-composer' " Markdown preview
 
 """""" DEBUG """"""
 Plug 'mfussenegger/nvim-dap' " Debug adapter
@@ -83,9 +101,6 @@ Plug 'tpope/vim-dotenv'
 Plug 'tanvirtin/vgit.nvim' "Vgit
 Plug 'sindrets/diffview.nvim' " Git diff view
 Plug 'kdheepak/lazygit.nvim' " Lazy Git
-
-"""""" DOCKER """"""
-Plug 'skanehira/denops-docker.vim' " Docker
 
 call plug#end()
 ]])
