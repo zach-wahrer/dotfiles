@@ -9,6 +9,12 @@ function! BuildComposer(info)
   endif
 endfunction
 
+function! UpdateRemotePlugins(...)
+  " Needed to refresh runtime files
+  let &rtp=&rtp
+  UpdateRemotePlugins
+endfunction
+
 call plug#begin()
 
 """""" THEMES """"""
@@ -50,7 +56,7 @@ Plug 'psliwka/vim-smoothie' " Smooth scrolling
 Plug 'folke/trouble.nvim' " Pretty list for diagnostics
 Plug 'moll/vim-bbye' " Better buffer quit
 Plug 'abecodes/tabout.nvim' " Tab out
-Plug 'preservim/vimux' " Vimux for tests
+" Plug 'preservim/vimux' " Vimux for tests
 Plug 'lewis6991/spellsitter.nvim' " Spell check within treesitter
 Plug 'kamykn/spelunker.vim' " Spellcheck
 Plug 'glepnir/dashboard-nvim' " Startup dashboard
@@ -64,6 +70,10 @@ Plug 'mbbill/undotree' " Visualize undo tree
 Plug 'arp242/undofile_warn.vim' " Warn if undoing past current 
 Plug 'ggandor/lightspeed.nvim' " Faster movement
 Plug 'tpope/vim-sleuth' " Auto adjust formatting
+
+"""""" KITTY """"""
+Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'} " Navigation for kitty
+Plug 'fladson/vim-kitty' " Syntax highlight for kitty config
 
 """""" COMPLETIONS """"""
 Plug 'hrsh7th/cmp-nvim-lsp' " Completions

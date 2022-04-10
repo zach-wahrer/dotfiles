@@ -37,7 +37,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "bashls", "dockerls", "gopls", "vuels", "terraformls", "tsserver", "eslint", "sumneko_lua" }
+local servers = { "bashls", "dockerls", "gopls", "vuels", "terraformls", "tsserver", "eslint" }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
 		on_attach = on_attach,
@@ -47,3 +47,17 @@ for _, lsp in pairs(servers) do
 		},
 	})
 end
+
+require("lspconfig").sumneko_lua.setup({
+	settings = {
+		on_attach = on_attach,
+		flags = {
+			debounce_text_changes = 150,
+		},
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
+})

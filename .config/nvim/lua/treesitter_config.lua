@@ -1,6 +1,6 @@
 --- TreeSitter & Rainbow Tags ---
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "go", "gomod", "bash", "javascript", "json", "lua", "python", "typescript", "vue", "dockerfile", "html", "yaml"},
+	ensure_installed = { "go", "gomod", "bash", "javascript", "json", "lua", "python", "typescript", "vue", "dockerfile", "html", "yaml", "hcl", "markdown"},
 	sync_install = false,
 	highlight = {
 		enable = true,

@@ -78,7 +78,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git aws zsh-autosuggestions)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
@@ -163,13 +163,16 @@ alias go="richgo"
 . "$HOME/.cargo/env"
 alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
 
-alias svim="nvim -u ~/.SpaceVim/vimrc"
+# AWS #
+alias awslocal="aws --endpoint-url=http://localhost:4566"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# COMPLETIONS #
 complete -C /usr/local/bin/terraform terraform
 
 # kubectl completion #
 source <(kubectl completion zsh)
-
 
 ###-begin-npm-completion-###
 #
