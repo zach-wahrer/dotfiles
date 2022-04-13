@@ -45,6 +45,7 @@ vim.api.nvim_set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", { noremap = true }) -- Ch
 vim.api.nvim_set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", { noremap = true }) -- Change to horizontal splits
 vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true }) -- Down on wrapped lines visually
 vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true }) -- Up on wrapped lines visually
+vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", { noremap = true }) -- Remove search highlightingRemove search highlighting
 
 -- Autocommands --
 vim.api.nvim_exec([[ autocmd WinEnter,FocusGained * :setlocal number relativenumber ]], false) -- Set relative line numbers on focus

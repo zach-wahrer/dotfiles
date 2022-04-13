@@ -67,6 +67,7 @@ dap.configurations.typescript = {
 		sourceMaps = true,
 		protocol = "inspector",
 		console = "integratedTerminal",
+		skipFiles = { "<node_internals>/**/*.js" },
 	},
 	{
 		-- For this to work you need to make sure the node process is started with the `--inspect` flag.

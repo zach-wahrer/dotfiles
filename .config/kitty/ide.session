@@ -1,0 +1,11 @@
+new_tab config
+layout vertical
+cd ~
+enabled_layouts vertical, horizontal, stack
+launch nvim
+new_tab platform
+layout vertical
+enabled_layouts vertical, horizontal, stack
+cd ~/platform
+launch nvim
+new_tab term

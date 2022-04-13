@@ -78,9 +78,22 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws zsh-autosuggestions)
+plugins=(git aws zsh-autosuggestions zsh-autocomplete)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
+
+## AUTO PAIRS ##
+if [[ ! -d ~/.zsh-autopair ]]; then
+  git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
+fi
+
+source ~/.zsh-autopair/autopair.zsh
+autopair-init
+
+## DIFF SO FANCY ##
+if [[ ! -d ~/.diff-so-fancy ]]; then
+  git clone https://github.com/so-fancy/diff-so-fancy ~/.diff-so-fancy
+fi
 
 # User configuration
 
@@ -108,8 +121,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# KEEP AUTOCOMPLETE LOGS CLEAN #
+.autocomplete.recent_paths.trim() {:}
+
+# MAKE AUTCOMPLETE NOT SHOW WHEN PROMPT IS EMPTY #
+zstyle ':autocomplete:*' min-input 1
+
 # PATHS #
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/go/bin/golint:$HOME/.local/bin:$HOME:/go/src/platform/scripts/bin:/usr/local
+export PATH="/home/zach/.diff-so-fancy:$PATH"
 export DENO_INSTALL="/home/zach/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="/home/zach/lua-language-server/bin:$PATH"
@@ -152,7 +172,6 @@ alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
 alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 
 # GENERAL #
-alias tnvim="tmux new-session 'nvim'\; set status off"
 alias :q="exit"
 alias cdp="cd ~/platform"
 alias cda="cd ~/platform/accounting"
