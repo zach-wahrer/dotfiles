@@ -51,6 +51,6 @@ vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", { noremap = true }) -- Remove 
 vim.api.nvim_exec([[ autocmd WinEnter,FocusGained * :setlocal number relativenumber ]], false) -- Set relative line numbers on focus
 vim.api.nvim_exec([[ autocmd WinLeave,FocusLost   * :setlocal number norelativenumber ]], false) -- Remove relative line numbers when unfocused
 vim.api.nvim_exec([[ autocmd bufenter * let &titlestring = expand('%:p') ]], false) -- Full path in title
-vim.api.nvim_exec([[ autocmd BufEnter * call system("tmux rename-window " . expand('%:t')) ]], false) -- Pass title to tmux
-vim.api.nvim_exec([[ autocmd VimLeave * call system("tmux setw automatic-rename") ]], false) -- Reset title on exiting neovim
+-- vim.api.nvim_exec([[ autocmd BufEnter * call system("tmux rename-window " . expand('%:t')) ]], false) -- Pass title to tmux
+-- vim.api.nvim_exec([[ autocmd VimLeave * call system("tmux setw automatic-rename") ]], false) -- Reset title on exiting neovim
 
