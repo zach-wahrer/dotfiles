@@ -78,7 +78,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws zsh-autosuggestions zsh-autocomplete docker-zsh-completion zsh-better-npm-completion terraform)
+plugins=(git aws zsh-vi-mode zsh-autosuggestions zsh-autocomplete docker-zsh-completion zsh-better-npm-completion terraform zsh-syntax-highlighting)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
@@ -129,10 +129,9 @@ zstyle ':autocomplete:*' min-input 1
 
 # PATHS #
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/go/bin/golint:$HOME/.local/bin:$HOME:/go/src/platform/scripts/bin:/usr/local"
-export PATH="/home/zach/.diff-so-fancy:$PATH"
-export DENO_INSTALL="/home/zach/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-export PATH="/home/zach/lua-language-server/bin:$PATH"
+export PATH="$HOME/.diff-so-fancy:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
+export PATH="$HOME/lua-language-server/bin:$PATH"
 
 # NVM Autocomplete #
 export NVM_DIR="$HOME/.nvm"
@@ -173,11 +172,12 @@ alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
 alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 
 # GENERAL #
+alias ml="make local"
 alias :q="exit"
 alias cdp="cd ~/platform"
 alias cda="cd ~/platform/accounting"
 alias sc="staticcheck ./..."
-alias c="golangci-lint run; goreportcard-cli -v"
+alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
 alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
 alias go="richgo"
 . "$HOME/.cargo/env"

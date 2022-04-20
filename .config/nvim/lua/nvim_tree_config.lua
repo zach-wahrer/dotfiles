@@ -1,5 +1,4 @@
 vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_highlight_opened_files = 3
 vim.g.nvim_tree_git_hl = 1
 require("nvim-tree").setup({
@@ -20,4 +19,12 @@ require("nvim-tree").setup({
 		preserve_window_proportions = true,
 		relativenumber = true,
 	},
+	git = {
+		ignore = false
+	},
+	renderer = {
+		indent_markers = {
+			enable = true
+		}
+	}
 })

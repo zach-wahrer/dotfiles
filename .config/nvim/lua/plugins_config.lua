@@ -107,6 +107,10 @@ Plug 'skywind3000/asyncrun.vim' " Vim-test dep
 """""" ENV MANAGEMENT """"""
 Plug 'tpope/vim-dotenv' 
 
+"""""" DATABASE """"""
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+
 """""" GIT """"""
 Plug 'tanvirtin/vgit.nvim' " Vgit
 Plug 'sindrets/diffview.nvim' " Git diff view

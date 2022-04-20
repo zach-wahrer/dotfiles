@@ -37,7 +37,7 @@ vim.wo.signcolumn = 'yes:2'
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true }) -- Write
 vim.api.nvim_set_keymap("n", "<leader>p", "\"0p", { noremap = true }) -- Paste last yanked text
 -- vim.api.nvim_set_keymap("n", "<leader>s", "<C-w>w", { noremap = true }) -- Switch windows
-vim.api.nvim_set_keymap("n", "<S-Enter>", "O<Esc>", { noremap = true }) -- Add line above
+vim.api.nvim_set_keymap("n", "<A-Enter>", "O<Esc>", { noremap = true }) -- Add line above
 vim.api.nvim_set_keymap("n", "<CR>", "o<Esc>", { noremap = true }) -- Add line below
 vim.api.nvim_set_keymap("n", "<leader>a", "ggVG<CR>", { noremap = true }) -- Select all
 vim.api.nvim_set_keymap("n", "<leader>id", ":put=strftime('%Y-%m-%d')<CR>", { noremap = true }) -- Select all
@@ -45,7 +45,7 @@ vim.api.nvim_set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", { noremap = true }) -- Ch
 vim.api.nvim_set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", { noremap = true }) -- Change to horizontal splits
 vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true }) -- Down on wrapped lines visually
 vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true }) -- Up on wrapped lines visually
-vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", { noremap = true }) -- Remove search highlightingRemove search highlighting
+vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", { noremap = true, silent = true }) -- Remove search highlightingRemove search highlighting
 
 -- Autocommands --
 vim.api.nvim_exec([[ autocmd WinEnter,FocusGained * :setlocal number relativenumber ]], false) -- Set relative line numbers on focus

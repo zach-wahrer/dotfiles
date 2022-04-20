@@ -1,12 +1,22 @@
-# Lauch with kitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty
-new_tab config
-layout vertical
-cd ~
-enabled_layouts vertical, horizontal, stack
-launch nvim
-new_tab platform
+# Lauch with kitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty 
+## Config ##
+new_tab Config
 layout vertical
 enabled_layouts vertical, horizontal, stack
-cd ~/platform
+cd /home/zach
 launch nvim
-new_tab term
+## Platform ##
+new_tab Platform
+layout vertical
+enabled_layouts vertical, horizontal, stack
+cd /home/zach/platform
+# Can't launch nvim due to weird lsp issue (saying they aren't found, but still working). Something due to path?
+launch
+## Term ##
+new_tab Term
+enabled_layouts vertical, horizontal, stack
+launch
+## Dry ##
+new_tab Dry
+launch dry
+enabled_layouts stack
