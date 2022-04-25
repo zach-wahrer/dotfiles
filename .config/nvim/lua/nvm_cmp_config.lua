@@ -1,6 +1,6 @@
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 local cmp = require("cmp")
-cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 cmp.setup({
 	preselect = cmp.PreselectMode.None, -- Don't preselect an item
 	snippet = {
@@ -64,6 +64,7 @@ cmp.setup.filetype("gitcommit", {
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
 		{ name = "buffer" },
 	},
@@ -71,6 +72,7 @@ cmp.setup.cmdline("/", {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
 		{ name = "path" },
 	}, {

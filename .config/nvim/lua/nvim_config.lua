@@ -2,6 +2,7 @@ vim.cmd([[
 let mapleader="\<SPACE>" 	
 filetype plugin indent on	" Auto-indenting depending on file type
 ]])
+
 -- Search --
 vim.o.ignorecase = true -- Case insensitive searching
 
