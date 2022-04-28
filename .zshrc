@@ -5,6 +5,54 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+## CHECK THAT PLUGINS FILES EXIST ##
+## Auto Complete ##
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autocomplete ]]; then
+  git clone https://github.com/marlonrichert/zsh-autocomplete ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
+fi
+source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+.autocomplete.recent_paths.trim() {:} # Keep autocomplete logs clean
+zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
+
+## Zsh Vi Mode ##
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-vi-mode ]]; then
+  git clone https://github.com/jeffreytse/zsh-vi-mode ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
+fi
+
+## Zsh Autosuggestions ##
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+fi
+
+## Docker Zsh Completions ##
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/docker-zsh-completion ]]; then
+  git clone https://github.com/greymd/docker-zsh-completion ~/.oh-my-zsh/custom/plugins/docker-zsh-completion
+fi
+
+## Zsh Better NPM Completion ##
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion ]]; then
+  git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
+fi
+
+## Zsh Syntax Highlighting ##
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+fi
+
+## Auto Pairs  ##
+if [[ ! -d ~/.zsh-autopair ]]; then
+  git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
+fi
+source ~/.zsh-autopair/autopair.zsh
+autopair-init
+
+## Diff So Fancy ##
+if [[ ! -d ~/.diff-so-fancy ]]; then
+  git clone https://github.com/so-fancy/diff-so-fancy ~/.diff-so-fancy
+fi
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -78,22 +126,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws zsh-vi-mode zsh-autosuggestions zsh-autocomplete docker-zsh-completion zsh-better-npm-completion terraform zsh-syntax-highlighting)
+plugins=(git aws terraform zsh-vi-mode zsh-autosuggestions docker-zsh-completion zsh-better-npm-completion  zsh-syntax-highlighting)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
-
-## AUTO PAIRS ##
-if [[ ! -d ~/.zsh-autopair ]]; then
-  git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
-fi
-
-source ~/.zsh-autopair/autopair.zsh
-autopair-init
-
-## DIFF SO FANCY ##
-if [[ ! -d ~/.diff-so-fancy ]]; then
-  git clone https://github.com/so-fancy/diff-so-fancy ~/.diff-so-fancy
-fi
 
 # User configuration
 
@@ -121,22 +156,11 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# KEEP AUTOCOMPLETE LOGS CLEAN #
-.autocomplete.recent_paths.trim() {:}
-
-# MAKE AUTCOMPLETE NOT SHOW WHEN PROMPT IS EMPTY #
-zstyle ':autocomplete:*' min-input 1
-
 # PATHS #
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/go/bin/golint:$HOME/.local/bin:$HOME:/go/src/platform/scripts/bin:/usr/local"
 export PATH="$HOME/.diff-so-fancy:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/lua-language-server/bin:$PATH"
-
-# NVM Autocomplete #
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # DOCKER #
 alias dnuke='docker stop $(docker ps -aq) && docker rm $(docker ps -aq); drmi; dprune'
@@ -156,6 +180,7 @@ alias gc='git checkout'
 alias gct='git checkout trunk'
 alias gb='git branch'
 alias gclean='git branch --merged | grep - | xargs git branch -d'
+alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
 
 # TESTS #
 alias mt="make test"
@@ -181,20 +206,22 @@ alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
 alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
 alias go="richgo"
 . "$HOME/.cargo/env"
-alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
+
+# GO #
+alias gmt="go mod tidy"
+
+# LUA #
+alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
 
 # AWS #
 alias awslocal="aws --endpoint-url=http://localhost:4566"
 
+# FZF #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # COMPLETIONS #
-complete -C /usr/local/bin/terraform terraform
-
-# kubectl completion #
 source <(kubectl completion zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake

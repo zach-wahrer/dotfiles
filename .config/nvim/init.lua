@@ -3,6 +3,9 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 ]])
 
+-- Optimization --
+require('impatient_config')
+
 -- Nvim --
 require('plugins_config')
 require('nvim_config')
@@ -12,12 +15,12 @@ require('color_config')
 require('go/go_config')
 require('terraform/terraform_config')
 require('js/js_config')
+require('lua/lua_config')
 
 -- Plugin Configs --
 require('dap_config')
 require('betterbuffer_config')
 require('lualine_config')
-require('lua_config')
 require('lsp_config')
 require('prettier_config')
 require('diff_view_config')
@@ -47,3 +50,4 @@ require 'lsp_signature'.setup()
 require('todo-comments').setup()
 require('dap-go').setup()
 require('dapui').setup()
+
