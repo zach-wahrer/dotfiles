@@ -161,6 +161,7 @@ export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/go/bin/golint:$HOME/.loc
 export PATH="$HOME/.diff-so-fancy:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/lua-language-server/bin:$PATH"
+export PATH="$HOME/scripts:$PATH"
 
 # DOCKER #
 alias dnuke='docker stop $(docker ps -aq) && docker rm $(docker ps -aq); drmi; dprune'
@@ -197,6 +198,7 @@ alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
 alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 
 # GENERAL #
+#alias pe="ksitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
 alias ml="make local"
 alias :q="exit"
 alias cdp="cd ~/platform"
