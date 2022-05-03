@@ -18,20 +18,14 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- Load Debian menu entries
-local debian = require("debian.menu")
+-- Load menu entries
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- Custom widget imports
-local ok, err, code = os.rename(
-	"~/.config/awesome/awesome-wm-widgets",
-	"~/.config/awesome/awesome-wm-widgets"
-)
+local ok, err, code = os.rename("~/.config/awesome/awesome-wm-widgets", "~/.config/awesome/awesome-wm-widgets")
 if not ok then
 	if code ~= 13 or not ok then
-		os.execute(
-			"git clone https://github.com/streetturtle/awesome-wm-widgets ~/.config/awesome/awesome-wm-widgets"
-		)
+		os.execute("git clone https://github.com/streetturtle/awesome-wm-widgets ~/.config/awesome/awesome-wm-widgets")
 	end
 end
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
@@ -133,20 +127,10 @@ myawesomemenu = {
 local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
 local menu_terminal = { "open terminal", terminal }
 
-if has_fdo then
-	mymainmenu = freedesktop.menu.build({
-		before = { menu_awesome },
-		after = { menu_terminal },
-	})
-else
-	mymainmenu = awful.menu({
-		items = {
-			menu_awesome,
-			{ "Debian", debian.menu.Debian_menu.Debian },
-			menu_terminal,
-		},
-	})
-end
+mymainmenu = freedesktop.menu.build({
+	before = { menu_awesome },
+	after = { menu_terminal },
+})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
 
@@ -655,5 +639,4 @@ end)
 -- }}}
 
 -- Autostart
-awful.spawn.with_shell("~/.screenlayout/layout.sh")
-awful.util.spawn("nm-applet &")
+awful.spawn.with_shell("/home/zach/.config/awesome/autostart.sh")

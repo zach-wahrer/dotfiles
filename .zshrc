@@ -10,10 +10,7 @@ fi
 if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autocomplete ]]; then
   git clone https://github.com/marlonrichert/zsh-autocomplete ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
 fi
-source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-.autocomplete.recent_paths.trim() {:} # Keep autocomplete logs clean
-zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
+# source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 ## Zsh Vi Mode ##
 if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-vi-mode ]]; then
@@ -126,11 +123,17 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws terraform zsh-vi-mode zsh-autosuggestions docker-zsh-completion zsh-better-npm-completion  zsh-syntax-highlighting)
+plugins=(git aws terraform zsh-vi-mode zsh-autosuggestions docker-zsh-completion zsh-better-npm-completion  zsh-syntax-highlighting zsh-autocomplete)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
+zstyle ':autocomplete:*' min-input 1
+zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#61afef,bold,underline"
+# .autocomplete.recent_paths.trim() {:} # Keep autocomplete logs clean
+
 # User configuration
+#
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -208,6 +211,9 @@ alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
 alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
 alias go="richgo"
 . "$HOME/.cargo/env"
+
+# Defaults #
+xset r rate 250 30
 
 # GO #
 alias gmt="go mod tidy"

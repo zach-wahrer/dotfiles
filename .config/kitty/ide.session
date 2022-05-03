@@ -5,18 +5,18 @@ layout vertical
 enabled_layouts vertical, horizontal, stack
 cd /home/zach
 # Can't launch nvim due to weird lsp issue (saying they aren't found, but still working). Something due to path?
-launch
+launch zsh
 ## Platform ##
 new_tab Platform
 layout vertical
 enabled_layouts vertical, horizontal, stack
 cd /home/zach/platform
 # Can't launch nvim due to weird lsp issue (saying they aren't found, but still working). Something due to path?
-launch
+launch zsh
 ## Term ##
 new_tab Term
 enabled_layouts vertical, horizontal, stack
-launch
+launch zsh
 ## Dry ##
 new_tab Dry
 launch dry
@@ -25,4 +25,4 @@ enabled_layouts stack
 new_tab Accounting 
 enabled_layouts vertical, horizontal, stack
 cd /home/zach/platform/accounting
-launch
+launch zsh
