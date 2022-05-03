@@ -24,13 +24,13 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- Custom widget imports
 local ok, err, code = os.rename(
-	"~/zach/.config/awesome/awesome-wm-widgets",
-	"~/zach/.config/awesome/awesome-wm-widgets"
+	"~/.config/awesome/awesome-wm-widgets",
+	"~/.config/awesome/awesome-wm-widgets"
 )
 if not ok then
 	if code ~= 13 or not ok then
 		os.execute(
-			"git clone https://github.com/streetturtle/awesome-wm-widgets ~/zach/.config/awesome/awesome-wm-widgets"
+			"git clone https://github.com/streetturtle/awesome-wm-widgets ~/.config/awesome/awesome-wm-widgets"
 		)
 	end
 end
