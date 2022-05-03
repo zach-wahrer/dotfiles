@@ -638,5 +638,5 @@ client.connect_signal("unfocus", function(c)
 end)
 -- }}}
 
--- Autostart
-awful.spawn.with_shell("/home/zach/.config/awesome/autostart.sh")
+-- Autorun
+awful.spawn.with_shell("/home/zach/.config/awesome/autorun.sh")

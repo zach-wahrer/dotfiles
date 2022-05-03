@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/bash
 
 function run {
   if ! pgrep -f $1 ;
@@ -11,5 +11,5 @@ function run {
 run /home/zach/.screenlayout/layout.sh
 run compton
 run nm-applet
-run lxsettings-daemon
-run xfce4-power-manager-settings --restore
+# run lxsettings-daemon
+# run xfce4-power-manager-settings --restore
