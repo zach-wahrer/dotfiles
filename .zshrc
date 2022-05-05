@@ -212,9 +212,6 @@ alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000
 alias go="richgo"
 . "$HOME/.cargo/env"
 
-# Defaults #
-xset r rate 250 30
-
 # GO #
 alias gmt="go mod tidy"
 
