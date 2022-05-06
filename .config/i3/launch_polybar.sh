@@ -1,20 +1,29 @@
-#!/usr/bin/env sh
-
-# Terminate already running bar instances
-killall -q polybar
-
-# Wait until the processes have been shut down
-while pgrep -x polybar >/dev/null; do sleep 1; done
-
-# Launch polybar
-# polybar &
-
-
+#!/bin/bash
 # https://github.com/polybar/polybar/issues/763
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload main &
+(
+  flock 200
+
+  killall -q polybar
+
+  while pgrep -u $UID -x polybar > /dev/null; do sleep 0.5; done
+
+  outputs=$(xrandr --query | grep " connected" | cut -d" " -f1)
+  tray_output=DP-2-1
+
+  for m in $outputs; do
+    if [[ $m == "DP-2-1" ]]; then
+        tray_output=$m
+    fi
   done
-else
-  polybar --reload main &
-fi
+
+  for m in $outputs; do
+    export MONITOR=$m
+    export TRAY_POSITION=none
+    if [[ $m == $tray_output ]]; then
+      TRAY_POSITION=right
+    fi
+
+    polybar --reload main </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- &
+    disown
+  done
+) 200>/var/tmp/polybar-launch.lock

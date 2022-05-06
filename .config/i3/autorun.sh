@@ -9,7 +9,6 @@ function run {
 
 
 run /home/zach/.screenlayout/layout.sh
-run compton
-run nm-applet
+run compton --backend glx --vsync opengl -b
 # run lxsettings-daemon
 # run xfce4-power-manager-settings --restore
