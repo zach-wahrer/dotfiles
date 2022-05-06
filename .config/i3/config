@@ -204,5 +204,5 @@ workspace $ws3 output $monitor_bottom_left
 
 # Autorun
 exec_always --no-startup-id /home/zach/.config/i3/launch_polybar.sh &
-exec_always --no-startup-id xset r rate 200 30
+exec_always --no-startup-id xset r rate 200 40
 exec /home/zach/.config/i3/autorun.sh
