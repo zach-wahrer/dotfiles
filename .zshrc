@@ -12,7 +12,7 @@ if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autocomplete ]]; then
 fi
 # source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
-## Zsh Vi Mode ##
+## Zsh Vi Mode ## 
 if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-vi-mode ]]; then
   git clone https://github.com/jeffreytse/zsh-vi-mode ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
 fi
@@ -123,13 +123,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws terraform zsh-vi-mode zsh-autosuggestions docker-zsh-completion zsh-better-npm-completion  zsh-syntax-highlighting zsh-autocomplete)
+plugins=(git aws terraform zsh-vi-mode zsh-autosuggestions docker-zsh-completion zsh-better-npm-completion zsh-syntax-highlighting zsh-autocomplete)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 zstyle ':autocomplete:*' min-input 1
 zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#61afef,bold,underline"
+bindkey -M menuselect -s '^[' '^G^_' # Esc exits browsing history
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#61afef,bold,underline"
 # .autocomplete.recent_paths.trim() {:} # Keep autocomplete logs clean
 
 # User configuration
@@ -230,3 +231,6 @@ source <(kubectl completion zsh)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Remove "Do you want to see X possibility"
+zstyle ':completion:*' list-prompt   ''
+zstyle ':completion:*' select-prompt ''
