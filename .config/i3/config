@@ -24,7 +24,7 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -184,6 +184,7 @@ bindsym $mod+r mode "resize"
 bindsym Ctrl+e exec sh /home/zach/scripts/pe.sh
 bindsym Ctrl+1 exec sh /home/zach/scripts/headset_audio.sh
 bindsym Ctrl+2 exec sh /home/zach/scripts/laptop_audio.sh
+bindsym $mod+Ctrl+Shift+l exec --no-startup-id i3lock-fancy
 
 # Colors
 # class                 border  backgr. text    indicator child_border
@@ -205,8 +206,9 @@ workspace $ws3 output $monitor_bottom_left
 # Autorun
 exec_always --no-startup-id $HOME/.config/i3/launch_polybar.sh &
 exec_always --no-startup-id xset r rate 200 40
-exec $HOME/scripts/set_kbrepeat_upon_usb_device_change.py &
-exec $HOME/.screenlayout/layout.sh
-exec compton --backend glx --vsync opengl -b
+exec --no-startup-id $HOME/scripts/set_kbrepeat_upon_usb_device_change.py &
+exec --no-startup-id $HOME/.screenlayout/layout.sh &
+exec compton --backend glx --vsync opengl -b &
+exec --no-startup-id feh --no-fehbg --bg-fill $HOME/Wallpaper/sagittarius_a___4k_wallpaper__by_hardii_denl93l.png
 # exec lxsettings-daemon
 # exec xfce4-power-manager-settings --restore
