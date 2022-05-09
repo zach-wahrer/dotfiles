@@ -51,7 +51,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -185,6 +185,7 @@ bindsym Ctrl+e exec sh /home/zach/scripts/pe.sh
 bindsym Ctrl+1 exec sh /home/zach/scripts/headset_audio.sh
 bindsym Ctrl+2 exec sh /home/zach/scripts/laptop_audio.sh
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id i3lock-fancy
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 # Colors
 # class                 border  backgr. text    indicator child_border
