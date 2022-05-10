@@ -3,7 +3,7 @@ vim.api.nvim_set_keymap("n", "<leader>dc", "<cmd>lua require('dap').continue()<C
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>dse",
-	"<cmd>Dotenv deploy/local | Dotenv ../../.secret.env<CR>",
+	"<cmd>Dotenv deploy/local | Dotenv deploy/local/.compiled.env | Dotenv ../../.secret.env <CR>",
 	{ noremap = true }
 )
 vim.api.nvim_set_keymap("n", "<leader>ds", "<cmd>lua require('dap').step_over()<CR>", { noremap = true })
