@@ -207,6 +207,8 @@ workspace $ws3 output $monitor_bottom_left
 # Autorun
 exec_always --no-startup-id $HOME/.config/i3/launch_polybar.sh &
 exec_always --no-startup-id xset r rate 200 40
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
 exec --no-startup-id $HOME/scripts/set_kbrepeat_upon_usb_device_change.py &
 exec --no-startup-id $HOME/.screenlayout/layout.sh
 exec --no-startup-id compton --backend glx --vsync opengl -b
