@@ -7,7 +7,7 @@ let &packpath=&runtimepath
 require("impatient_config")
 
 -- Nvim --
-require("plugins_config")
+require("plugins")
 require("nvim_config")
 require("color_config")
 
