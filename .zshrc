@@ -7,9 +7,9 @@ fi
 
 ## CHECK THAT PLUGINS FILES EXIST ##
 ## Auto Complete ##
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autocomplete ]]; then
-  git clone https://github.com/marlonrichert/zsh-autocomplete ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
-fi
+# if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autocomplete ]]; then
+#   git clone https://github.com/marlonrichert/zsh-autocomplete ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
+# fi
 # source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 ## Zsh Vi Mode ## 
@@ -123,12 +123,22 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws terraform zsh-vi-mode zsh-autosuggestions docker-zsh-completion zsh-better-npm-completion zsh-syntax-highlighting zsh-autocomplete)
+plugins=(
+  git 
+  aws 
+  terraform 
+  zsh-vi-mode 
+  zsh-autosuggestions 
+  docker-zsh-completion 
+  zsh-better-npm-completion 
+  zsh-syntax-highlighting 
+  # zsh-autocomplete
+)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
-zstyle ':autocomplete:*' min-input 1
-zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
+# zstyle ':autocomplete:*' min-input 1
+# zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
 bindkey -M menuselect -s '^[' '^G^_' # Esc exits browsing history
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#61afef,bold,underline"
 # .autocomplete.recent_paths.trim() {:} # Keep autocomplete logs clean

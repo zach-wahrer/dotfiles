@@ -34,6 +34,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Telescope re
 Plug 'jose-elias-alvarez/null-ls.nvim' " Prettier req
 Plug 'kamykn/popup-menu.nvim' " Req for spelunker
 Plug 'tpope/vim-repeat' " Req for lightspeed
+Plug 'kevinhwang91/nvim-hlslens' " Req for scrollbar
 
 """""" LSP """"""
 Plug 'neovim/nvim-lspconfig' 
@@ -48,15 +49,15 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Treesitter
 Plug 'nvim-telescope/telescope.nvim' " Finder
 Plug 'b3nj5m1n/kommentary' " Comment
 Plug 'windwp/nvim-autopairs' " Auto pairs
-Plug 'dstein64/nvim-scrollview', { 'branch': 'main' } " Scroll bar
+Plug 'petertriho/nvim-scrollbar' " Scroll bar
 Plug 'kyazdani42/nvim-tree.lua' " File browser
 Plug 'p00f/nvim-ts-rainbow' " Rainbow brackets
 Plug 'mg979/vim-visual-multi' " Multi cursors
-Plug 'psliwka/vim-smoothie' " Smooth scrolling
+" Plug 'psliwka/vim-smoothie' " Smooth scrolling
+Plug 'karb94/neoscroll.nvim' " Smooth scrolling
 Plug 'folke/trouble.nvim' " Pretty list for diagnostics
 Plug 'moll/vim-bbye' " Better buffer quit
 Plug 'abecodes/tabout.nvim' " Tab out
-" Plug 'preservim/vimux' " Vimux for tests
 Plug 'lewis6991/spellsitter.nvim' " Spell check within treesitter
 Plug 'kamykn/spelunker.vim' " Spellcheck
 Plug 'glepnir/dashboard-nvim' " Startup dashboard
@@ -70,6 +71,7 @@ Plug 'mbbill/undotree' " Visualize undo tree
 Plug 'arp242/undofile_warn.vim' " Warn if undoing past current 
 Plug 'ggandor/lightspeed.nvim' " Faster movement
 Plug 'tpope/vim-sleuth' " Auto adjust formatting
+Plug 'vladdoster/remember.nvim' " Remember last pace in file
 
 """""" KITTY """"""
 Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'} " Navigation for kitty
