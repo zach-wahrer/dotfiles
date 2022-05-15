@@ -1,2 +1,18 @@
-vim.api.nvim_exec([[autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()]], false)
-vim.api.nvim_exec([[autocmd BufWritePre *.tfvars lua vim.lsp.buf.formatting_sync()]], false)
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+local reset_group = augroup("reset_group_tf", { clear = true })
+
+autocmd("BufWritePre", {
+	pattern = "*.tf",
+	group = reset_group,
+	callback = function()
+		vim.lsp.buf.formatting_sync()
+	end,
+})
+autocmd("BufWritePre", {
+	pattern = "*.tfvars",
+	group = reset_group,
+	callback = function()
+		vim.lsp.buf.formatting_sync()
+	end,
+})

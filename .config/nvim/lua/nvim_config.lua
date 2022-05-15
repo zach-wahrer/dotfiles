@@ -32,13 +32,12 @@ vim.wo.spell = false -- Done with spelunker
 -- vim.bo.spelllang = "en_us"
 vim.o.incsearch = true -- Show search results while still typing
 vim.bo.undofile = true -- Save undo history in file
-vim.wo.signcolumn = 'yes:2'
+vim.wo.signcolumn = "yes:2"
 vim.o.laststatus = 3 -- Only show one status bar
 
 -- General Keybinds --
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true }) -- Write
-vim.api.nvim_set_keymap("n", "<leader>p", "\"0p", { noremap = true }) -- Paste last yanked text
--- vim.api.nvim_set_keymap("n", "<leader>s", "<C-w>w", { noremap = true }) -- Switch windows
+vim.api.nvim_set_keymap("n", "<leader>p", '"0p', { noremap = true }) -- Paste last yanked text
 vim.api.nvim_set_keymap("n", "<A-Enter>", "O<Esc>", { noremap = true }) -- Add line above
 vim.api.nvim_set_keymap("n", "<CR>", "o<Esc>", { noremap = true }) -- Add line below
 vim.api.nvim_set_keymap("n", "<leader>a", "ggVG<CR>", { noremap = true }) -- Select all
@@ -50,9 +49,35 @@ vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true }) -- Up on wrapped lin
 vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", { noremap = true, silent = true }) -- Remove search highlightingRemove search highlighting
 
 -- Autocommands --
-vim.api.nvim_exec([[ autocmd WinEnter,FocusGained * :setlocal number relativenumber ]], false) -- Set relative line numbers on focus
-vim.api.nvim_exec([[ autocmd WinLeave,FocusLost   * :setlocal number norelativenumber ]], false) -- Remove relative line numbers when unfocused
-vim.api.nvim_exec([[ autocmd bufenter * let &titlestring = expand('%:p') ]], false) -- Full path in title
--- vim.api.nvim_exec([[ autocmd BufEnter * call system("tmux rename-window " . expand('%:t')) ]], false) -- Pass title to tmux
--- vim.api.nvim_exec([[ autocmd VimLeave * call system("tmux setw automatic-rename") ]], false) -- Reset title on exiting neovim
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+local reset_group = augroup("reset_group_nvim", { clear = true })
 
+autocmd("TextYankPost", { -- Highlight yanked text
+	pattern = "*",
+	group = reset_group,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+autocmd("Bufenter", { -- Full path in title
+	pattern = "*",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ let &titlestring = expand('%:p') ]])
+	end,
+})
+autocmd("WinEnter,FocusGained", { -- Set relative line numbers on focus
+	pattern = "*",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ :setlocal number relativenumber ]])
+	end,
+})
+autocmd("WinLeave,FocusLost", { -- Remove relative line numbers when unfocused
+	pattern = "*",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ :setlocal number norelativenumber ]])
+	end,
+})

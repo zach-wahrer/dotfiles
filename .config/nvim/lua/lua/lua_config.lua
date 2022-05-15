@@ -1,3 +1,11 @@
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<leader>fl", [[<cmd>lua require("stylua-nvim").format_file()<CR>]], opts)
---- Doesn't work: vim.api.nvim_exec([[autocmd BufWritePre *.lua lua require("stylua-nvim").format_file()<CR>]], false)
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+local reset_group = augroup("reset_group_lua", { clear = true })
+
+autocmd("BufWritePre", {
+	pattern = "*.lua",
+	group = reset_group,
+	callback = function()
+		require("stylua-nvim").format_file()
+	end,
+})
