@@ -187,6 +187,9 @@ bindsym Ctrl+2 exec sh /home/zach/scripts/laptop_audio.sh
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id i3lock-fancy
 bindsym $mod+d exec --no-startup-id rofi -show run
 
+# Only show border edges if more than one window present in workspace
+hide_edge_borders smart
+
 # Colors
 # class                 border  backgr. text    indicator child_border
 client.focused          #aa03af #aa03af #000000 #aa03af   #aa03af
