@@ -1,5 +1,18 @@
-return require("packer").startup(function(use)
-	-- Packer
+local fn = vim.fn
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+	Packer_bootstrap = fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+end
+
+require("packer").startup(function(use)
+	-- PACKER
 	use("wbthomason/packer.nvim")
 
 	-- OPTIMIZATION
@@ -101,4 +114,21 @@ return require("packer").startup(function(use)
 	use({ "tanvirtin/vgit.nvim", requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/plenary.nvim" } }) -- Vgit
 	use("sindrets/diffview.nvim") -- Git diff view
 	use("rhysd/git-messenger.vim") -- View diffs
+
+	-- PACKER BOOTSTRAP
+	if Packer_bootstrap then
+		require("packer").sync()
+	end
 end)
+
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+local reset_group = augroup("reset_group_packer", { clear = true })
+
+autocmd("BufWritePost", { -- Recompile packer on save
+	pattern = "plugins.lua",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ source <afile> | PackerCompile ]])
+	end,
+})
