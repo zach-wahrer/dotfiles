@@ -40,6 +40,8 @@ require("undotree_config")
 require("spelunker_config")
 require("surround_config")
 require("scrollbar_config")
+require("kitty_config")
+require("i3_config")
 
 -- Plugins --
 require("nvim-autopairs").setup({})
