@@ -35,7 +35,7 @@ require("packer").startup(function(use)
 
 	-- INTERFACE
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }) -- Status Bar
-	use("akinsho/bufferline.nvim") -- Buffer management
+	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" }) -- Buffer management
 	use("ahmedkhalf/project.nvim") -- Project management
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Treesitter
 	use({
