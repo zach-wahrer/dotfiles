@@ -24,6 +24,30 @@ dotfiles:
   d_rofi:
     src: config/rofi
     dst: ~/.config/rofi
+  d_scripts:
+    src: scripts
+    dst: ~/scripts
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+  f_git-prompt.sh:
+    src: git-prompt.sh
+    dst: ~/.git-prompt.sh
+  f_gitconfig:
+    src: dotfiles/.gitconfig
+    dst: ~/dotfiles/.gitconfig
+  f_tmux.conf:
+    src: dotfiles/.tmux.conf
+    dst: ~/dotfiles/.tmux.conf
+  f_zshrc:
+    src: dotfiles/.zshrc
+    dst: ~/dotfiles/.zshrc
+  f_golangci.yml:
+    src: dotfiles/.golangci.yml
+    dst: ~/dotfiles/.golangci.yml
+  d_icons:
+    src: dotfiles/.icons
+    dst: ~/dotfiles/.icons
 profiles:
   red-wolf:
     dotfiles:
@@ -34,3 +58,11 @@ profiles:
     - d_nvim
     - d_polybar
     - d_rofi
+    - d_scripts
+    - f_bashrc
+    - f_git-prompt.sh
+    - f_gitconfig
+    - f_tmux.conf
+    - f_zshrc
+    - f_golangci.yml
+    - d_icons
