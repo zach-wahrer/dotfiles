@@ -1,0 +1,36 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+  d_awesome:
+    src: config/awesome
+    dst: ~/.config/awesome
+  d_i3:
+    src: config/i3
+    dst: ~/.config/i3
+  d_kitty:
+    src: config/kitty
+    dst: ~/.config/kitty
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+  d_rofi:
+    src: config/rofi
+    dst: ~/.config/rofi
+profiles:
+  red-wolf:
+    dotfiles:
+    - d_alacritty
+    - d_awesome
+    - d_i3
+    - d_kitty
+    - d_nvim
+    - d_polybar
+    - d_rofi
