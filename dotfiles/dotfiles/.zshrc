@@ -235,6 +235,9 @@ alias awslocal="aws --endpoint-url=http://localhost:4566"
 # FZF #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# DOTDROP #
+alias dotdrop='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
+
 # COMPLETIONS #
 source <(kubectl completion zsh)
 
