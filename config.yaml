@@ -66,3 +66,6 @@ profiles:
     - f_zshrc
     - f_golangci.yml
     - d_icons
+    variables:
+      adapter: "ADP1"
+      battery: "BAT1"
