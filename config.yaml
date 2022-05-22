@@ -35,19 +35,19 @@ dotfiles:
     dst: ~/.git-prompt.sh
   f_gitconfig:
     src: dotfiles/.gitconfig
-    dst: ~/dotfiles/.gitconfig
+    dst: ~/.gitconfig
   f_tmux.conf:
     src: dotfiles/.tmux.conf
-    dst: ~/dotfiles/.tmux.conf
+    dst: ~/.tmux.conf
   f_zshrc:
     src: dotfiles/.zshrc
-    dst: ~/dotfiles/.zshrc
+    dst: ~/.zshrc
   f_golangci.yml:
     src: dotfiles/.golangci.yml
-    dst: ~/dotfiles/.golangci.yml
+    dst: ~/.golangci.yml
   d_icons:
     src: dotfiles/.icons
-    dst: ~/dotfiles/.icons
+    dst: ~/.icons
 profiles:
   red-wolf:
     dotfiles:
