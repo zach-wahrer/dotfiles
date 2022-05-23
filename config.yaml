@@ -49,10 +49,23 @@ dotfiles:
     src: dotfiles/.icons
     dst: ~/.icons
 profiles:
+  foundant-wolf:
+    dotfiles:
+    - d_i3
+    - d_kitty
+    - d_nvim
+    - d_polybar
+    - d_rofi
+    - d_scripts
+    - f_gitconfig
+    - f_zshrc
+    - f_golangci.yml
+    - d_icons
+    variables:
+      adapter: "AC"
+      battery: "BAT0"
   red-wolf:
     dotfiles:
-    - d_alacritty
-    - d_awesome
     - d_i3
     - d_kitty
     - d_nvim
@@ -60,9 +73,7 @@ profiles:
     - d_rofi
     - d_scripts
     - f_bashrc
-    - f_git-prompt.sh
     - f_gitconfig
-    - f_tmux.conf
     - f_zshrc
     - f_golangci.yml
     - d_icons
