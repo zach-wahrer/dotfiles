@@ -1,6 +1,4 @@
 vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
-vim.g.nvim_tree_highlight_opened_files = 3
-vim.g.nvim_tree_git_hl = 1
 require("nvim-tree").setup({
 	open_on_setup = true,
 	open_on_tab = true,
@@ -20,11 +18,13 @@ require("nvim-tree").setup({
 		relativenumber = true,
 	},
 	git = {
-		ignore = false
+		ignore = false,
 	},
 	renderer = {
 		indent_markers = {
-			enable = true
-		}
-	}
+			enable = true,
+		},
+		highlight_opened_files = "all",
+		highlight_git = true,
+	},
 })

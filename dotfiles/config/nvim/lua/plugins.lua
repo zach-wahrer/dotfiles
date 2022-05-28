@@ -20,18 +20,19 @@ require("packer").startup(function(use)
 
 	-- THEMES
 	use("navarasu/onedark.nvim")
-	use("Th3Whit3Wolf/one-nvim")
-	use("marko-cerovac/material.nvim")
-	use("yonlu/omni.vim")
-	use("sainnhe/edge")
-	use("PHSix/nvim-hybrid")
-	use("olimorris/onedarkpro.nvim")
-	use("rmehri01/onenord.nvim")
+	-- use("Th3Whit3Wolf/one-nvim")
+	-- use("marko-cerovac/material.nvim")
+	-- use("yonlu/omni.vim")
+	-- use("sainnhe/edge")
+	-- use("PHSix/nvim-hybrid")
+	-- use("olimorris/onedarkpro.nvim")
+	-- use("rmehri01/onenord.nvim")
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("folke/lsp-colors.nvim")
 	use("ray-x/lsp_signature.nvim") -- Show func signature
+	use("arkav/lualine-lsp-progress") -- Show lsp progress in lualine
 
 	-- INTERFACE
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }) -- Status Bar
@@ -48,7 +49,7 @@ require("packer").startup(function(use)
 	use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } }) -- File browser
 	use("p00f/nvim-ts-rainbow") -- Rainbow brackets
 	use("mg979/vim-visual-multi") -- Multi cursors
-	use("karb94/neoscroll.nvim") -- Smooth scrolling
+	use("declancm/cinnamon.nvim") -- Smooth scrolling
 	use("folke/trouble.nvim") -- Pretty list for diagnostics
 	use("moll/vim-bbye") -- Better buffer quit
 	use("abecodes/tabout.nvim") -- Tab out
@@ -66,6 +67,8 @@ require("packer").startup(function(use)
 	use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
 	use("tpope/vim-sleuth") -- Auto adjust formatting
 	use("vladdoster/remember.nvim") -- Remember last pace in file
+	use("svban/YankAssassin.vim") -- Keep cursor in same spot after yank
+	use("rmagatti/alternate-toggler") -- Toggle true/false
 
 	-- KITTY
 	use({

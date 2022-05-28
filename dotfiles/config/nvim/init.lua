@@ -42,6 +42,8 @@ require("surround_config")
 require("scrollbar_config")
 require("kitty_config")
 require("i3_config")
+require("cinnamon_config")
+require("toggle_config")
 
 -- Plugins --
 require("nvim-autopairs").setup({})
@@ -53,4 +55,3 @@ require("todo-comments").setup()
 require("dap-go").setup()
 require("dapui").setup()
 require("remember").setup({})
-require("neoscroll").setup({})

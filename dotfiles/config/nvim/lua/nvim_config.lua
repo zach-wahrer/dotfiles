@@ -34,6 +34,7 @@ vim.o.incsearch = true -- Show search results while still typing
 vim.bo.undofile = true -- Save undo history in file
 vim.wo.signcolumn = "yes:2"
 vim.o.laststatus = 3 -- Only show one status bar
+vim.api.nvim_set_keymap("n", "<C-C>", "<C-A>", { noremap = true }) -- Remap increment
 
 -- General Keybinds --
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true }) -- Write
@@ -41,7 +42,7 @@ vim.api.nvim_set_keymap("n", "<leader>p", '"0p', { noremap = true }) -- Paste la
 vim.api.nvim_set_keymap("n", "<A-Enter>", "O<Esc>", { noremap = true }) -- Add line above
 vim.api.nvim_set_keymap("n", "<CR>", "o<Esc>", { noremap = true }) -- Add line below
 vim.api.nvim_set_keymap("n", "<leader>a", "ggVG<CR>", { noremap = true }) -- Select all
-vim.api.nvim_set_keymap("n", "<leader>id", ":put=strftime('%Y-%m-%d')<CR>", { noremap = true }) -- Select all
+vim.api.nvim_set_keymap("n", "<leader>id", ":put=strftime('%Y-%m-%d')<CR>", { noremap = true }) -- Insert current date
 vim.api.nvim_set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", { noremap = true }) -- Change to vertical splits
 vim.api.nvim_set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", { noremap = true }) -- Change to horizontal splits
 vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true }) -- Down on wrapped lines visually

@@ -195,7 +195,7 @@ alias gc='git checkout'
 alias gct='git checkout trunk'
 alias gb='git branch'
 alias gclean='git branch --merged | grep - | xargs git branch -d'
-alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
+# alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
 
 # TESTS #
 alias mt="make test"
