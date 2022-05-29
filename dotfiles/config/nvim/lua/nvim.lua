@@ -34,7 +34,6 @@ vim.o.incsearch = true -- Show search results while still typing
 vim.bo.undofile = true -- Save undo history in file
 vim.wo.signcolumn = "yes:2"
 vim.o.laststatus = 3 -- Only show one status bar
-vim.api.nvim_set_keymap("n", "<C-C>", "<C-A>", { noremap = true }) -- Remap increment
 
 -- General Keybinds --
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true }) -- Write

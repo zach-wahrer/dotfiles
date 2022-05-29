@@ -195,26 +195,38 @@ require("packer").startup(function(use)
 	use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
 	use("tpope/vim-sleuth") -- Auto adjust formatting
 	use({
-		"vladdoster/remember.nvim",
-		config = function()
-			require("remember").setup({})
-		end,
+		"ethanholz/nvim-lastplace",
+		config = "require('nvim-lastplace').setup({})",
 	}) -- Remember last pace in file
 	use({ "svban/YankAssassin.vim", opt = true, event = "BufReadPre" }) -- Keep cursor in same spot after yank
 	use({
-		"rmagatti/alternate-toggler",
+		"monaqa/dial.nvim",
 		opt = true,
 		event = "BufReadPre",
 		config = function()
-			require("interface.toggle")
+			require("interface.dial")
 		end,
-	}) -- Toggle true/false
+	}) -- Increment/decrement
 	use({
 		"mvllow/modes.nvim",
 		config = function()
 			require("modes").setup()
 		end,
 	}) -- Modes show in different colors
+	use({
+		"danymat/neogen",
+		opt = true,
+		event = "BufReadPre",
+		config = function()
+			require("interface.neogen")
+		end,
+		requires = "nvim-treesitter/nvim-treesitter",
+		-- Uncomment next line if you want to follow only stable versions
+		-- tag = "*"
+	}) -- Documentation generation
+	use({
+		"stevearc/dressing.nvim",
+	})
 
 	-- KITTY
 	use({
@@ -302,15 +314,24 @@ require("packer").startup(function(use)
 	use({ "tpope/vim-dotenv", opt = true, event = "BufReadPre" })
 
 	-- GIT
+	-- use({
+	-- 	"tanvirtin/vgit.nvim",
+	-- 	requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/plenary.nvim" },
+	-- 	opt = true,
+	-- 	event = "BufReadPre",
+	-- 	config = function()
+	-- 		require("git.v_git")
+	-- 	end,
+	-- }) -- Vgit
 	use({
-		"tanvirtin/vgit.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/plenary.nvim" },
+		"f-person/git-blame.nvim",
 		opt = true,
 		event = "BufReadPre",
-		config = function()
-			require("git.v_git")
+		run = function()
+			vim.g.gitblame_ignored_filetypes = { "NvimTree_1" }
+			vim.g.gitblame_highlight_group = "Normal"
 		end,
-	}) -- Vgit
+	}) -- Git diff view
 	use({
 		"sindrets/diffview.nvim",
 		opt = true,
