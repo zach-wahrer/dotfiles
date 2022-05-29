@@ -1,6 +1,21 @@
 --- TreeSitter & Rainbow Tags ---
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "go", "gomod", "bash", "javascript", "json", "lua", "python", "typescript", "vue", "dockerfile", "html", "yaml", "hcl", "markdown"},
+	ensure_installed = {
+		"go",
+		"gomod",
+		"bash",
+		"javascript",
+		"json",
+		"lua",
+		"python",
+		"typescript",
+		"vue",
+		"dockerfile",
+		"html",
+		"yaml",
+		"hcl",
+		"markdown",
+	},
 	sync_install = false,
 	highlight = {
 		enable = true,
@@ -10,6 +25,7 @@ require("nvim-treesitter.configs").setup({
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
+	indent = { enable = true, disable = { "python" } },
 	rainbow = {
 		enable = true,
 		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
@@ -18,4 +34,17 @@ require("nvim-treesitter.configs").setup({
 		-- colors = {}, -- table of hex strings
 		-- termcolors = {} -- table of colour name strings
 	},
+})
+
+-- Autocommands --
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+local reset_group = augroup("reset_group_treesitter", { clear = true })
+
+autocmd("BufRead", { -- To Fix bug where highlighting isn't working on first load
+	pattern = "*",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ e % ]])
+	end,
 })
