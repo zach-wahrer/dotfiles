@@ -196,7 +196,9 @@ require("packer").startup(function(use)
 	use("tpope/vim-sleuth") -- Auto adjust formatting
 	use({
 		"ethanholz/nvim-lastplace",
-		config = "require('nvim-lastplace').setup({})",
+		config = function()
+			require("nvim-lastplace").setup({})
+		end,
 	}) -- Remember last pace in file
 	use({ "svban/YankAssassin.vim", opt = true, event = "BufReadPre" }) -- Keep cursor in same spot after yank
 	use({
@@ -255,13 +257,20 @@ require("packer").startup(function(use)
 	-- LANGUAGES
 	use({ "fatih/vim-go", run = ":GoUpdateBinaries", opt = true, ft = { "go" } }) -- Go
 	use({ "sebdah/vim-delve", opt = true, ft = { "go" } }) -- Delve
-	use("MunifTanjim/prettier.nvim") -- Prettier formatting
+	use({
+		"MunifTanjim/prettier.nvim",
+		opt = true,
+		event = "BufReadPre",
+		config = function()
+			require("lang.prettier")
+		end,
+	}) -- prettier formatting
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		opt = true,
 		event = "BufReadPre",
 		config = function()
-			require("lang/prettier")
+			require("lsp.null-ls")
 		end,
 	}) -- For prettier
 	use({ "ckipp01/stylua-nvim", opt = true, ft = { "lua" } }) -- Lua formatting
@@ -314,24 +323,6 @@ require("packer").startup(function(use)
 	use({ "tpope/vim-dotenv", opt = true, event = "BufReadPre" })
 
 	-- GIT
-	-- use({
-	-- 	"tanvirtin/vgit.nvim",
-	-- 	requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/plenary.nvim" },
-	-- 	opt = true,
-	-- 	event = "BufReadPre",
-	-- 	config = function()
-	-- 		require("git.v_git")
-	-- 	end,
-	-- }) -- Vgit
-	use({
-		"f-person/git-blame.nvim",
-		opt = true,
-		event = "BufReadPre",
-		run = function()
-			vim.g.gitblame_ignored_filetypes = { "NvimTree_1" }
-			vim.g.gitblame_highlight_group = "Normal"
-		end,
-	}) -- Git diff view
 	use({
 		"sindrets/diffview.nvim",
 		opt = true,
@@ -340,7 +331,24 @@ require("packer").startup(function(use)
 			require("git.diff_view")
 		end,
 	}) -- Git diff view
+	use({
+		"lewis6991/gitsigns.nvim",
+		opt = true,
+		event = "BufReadPre",
+		tag = "release",
+		config = function()
+			require("git.gitsigns")
+		end,
+	}) -- Git modified line display
 	use({ "rhysd/git-messenger.vim", opt = true, event = "BufReadPre" }) -- View diffs
+	use({
+		"tpope/vim-fugitive",
+		opt = true,
+		event = "BufReadPre",
+		config = function()
+			require("git.fugitive")
+		end,
+	}) -- Git functions
 	use({
 		"kdheepak/lazygit.nvim",
 		opt = true,
@@ -348,7 +356,7 @@ require("packer").startup(function(use)
 		config = function()
 			require("git.lazy_git")
 		end,
-	})
+	}) -- Lazygit integration
 
 	-- PACKER BOOTSTRAP
 	if Packer_bootstrap then
