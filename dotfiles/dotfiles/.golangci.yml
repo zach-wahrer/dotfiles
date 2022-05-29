@@ -7,9 +7,6 @@ linters:
     - goimports
     - revive
     - gofmt
-  disable:
-    - unused
-    - typecheck
 issues:
   fix: true
   
