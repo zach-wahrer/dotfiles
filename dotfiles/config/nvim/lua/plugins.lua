@@ -69,6 +69,7 @@ require("packer").startup(function(use)
 	use("vladdoster/remember.nvim") -- Remember last pace in file
 	use("svban/YankAssassin.vim") -- Keep cursor in same spot after yank
 	use("rmagatti/alternate-toggler") -- Toggle true/false
+	use("mvllow/modes.nvim") -- Modes show in different colors
 
 	-- KITTY
 	use({
