@@ -35,16 +35,3 @@ require("nvim-treesitter.configs").setup({
 		-- termcolors = {} -- table of colour name strings
 	},
 })
-
--- Autocommands --
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
-local reset_group = augroup("reset_group_treesitter", { clear = true })
-
-autocmd("BufRead", { -- To Fix bug where highlighting isn't working on first load
-	pattern = "*",
-	group = reset_group,
-	callback = function()
-		vim.cmd([[ e % ]])
-	end,
-})

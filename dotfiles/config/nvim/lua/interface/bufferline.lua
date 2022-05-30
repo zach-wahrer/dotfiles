@@ -16,10 +16,10 @@ require("bufferline").setup({
 		middle_mouse_command = "Bdelete! %d",
 	},
 })
-vim.api.nvim_set_keymap("n", "<A-,>", "<cmd>BufferLineCyclePrev<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-.>", "<cmd>BufferLineCycleNext<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-<>", "<cmd>BufferLineMovePrev<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<A->>", "<cmd>BufferLineMoveNext<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-h>", "<cmd>BufferLineCyclePrev<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-l>", "<cmd>BufferLineCycleNext<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-,>", "<cmd>BufferLineMovePrev<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-.>", "<cmd>BufferLineMoveNext<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<A-1>", "<cmd>BufferLineGoToBuffer 1<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<A-2>", "<cmd>BufferLineGoToBuffer 2<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<A-3>", "<cmd>BufferLineGoToBuffer 3<CR>", { noremap = true })

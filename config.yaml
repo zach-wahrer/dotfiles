@@ -48,6 +48,9 @@ dotfiles:
   d_icons:
     src: dotfiles/.icons
     dst: ~/.icons
+  d_ranger:
+    src: config/ranger
+    dst: ~/.config/ranger
 profiles:
   foundant-wolf:
     dotfiles:
@@ -61,9 +64,10 @@ profiles:
     - f_zshrc
     - f_golangci.yml
     - d_icons
+    - d_ranger
     variables:
-      adapter: "AC"
-      battery: "BAT0"
+      adapter: AC
+      battery: BAT0
   red-wolf:
     dotfiles:
     - d_i3
@@ -78,5 +82,5 @@ profiles:
     - f_golangci.yml
     - d_icons
     variables:
-      adapter: "ADP1"
-      battery: "BAT1"
+      adapter: ADP1
+      battery: BAT1

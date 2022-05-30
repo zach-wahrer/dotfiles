@@ -48,7 +48,7 @@ require("packer").startup(function(use)
 	}) -- Show func signature
 	use({ "arkav/lualine-lsp-progress", opt = true, event = "BufReadPre" }) -- Show lsp progress in lualine
 
-	-- INTERFACE
+	-- -- INTERFACE
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
@@ -228,7 +228,7 @@ require("packer").startup(function(use)
 	}) -- Documentation generation
 	use({
 		"stevearc/dressing.nvim",
-	})
+	}) -- Pretty default interfaces
 
 	-- KITTY
 	use({
