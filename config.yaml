@@ -81,6 +81,7 @@ profiles:
     - f_zshrc
     - f_golangci.yml
     - d_icons
+    - d_ranger
     variables:
       adapter: ADP1
       battery: BAT1
