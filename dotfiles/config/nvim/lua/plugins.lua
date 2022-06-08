@@ -273,6 +273,14 @@ require("packer").startup(function(use)
 			require("lsp.null-ls")
 		end,
 	}) -- For prettier
+	use({
+		"windwp/nvim-ts-autotag",
+		opt = true,
+		event = "BufReadPre",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	}) -- Auto close html,tsx,vue,svelte,php,rescript tags
 	use({ "ckipp01/stylua-nvim", opt = true, ft = { "lua" } }) -- Lua formatting
 	use({ "euclio/vim-markdown-composer", opt = true, ft = { "md" } }) -- Markdown preview
 
