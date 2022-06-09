@@ -19,7 +19,6 @@ vim.bo.shiftwidth = 4 -- Width for autoindents
 vim.o.autowrite = true
 vim.wo.cursorline = true -- Highlight current cursor line
 vim.o.updatetime = 100 -- Time it takes to write to swap / update git gutter
-vim.bo.syntax = "on" -- Syntax highlighting
 vim.o.title = true
 vim.wo.relativenumber = true -- Set relative line numbers
 vim.wo.number = true -- Set absolute line number
