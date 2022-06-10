@@ -36,6 +36,7 @@ bo.autoindent = true -- Indent new line the same as previous
 bo.shiftwidth = 4 -- Width for autoindents
 bo.matchpairs = "<:>,(:),{:},[:]" -- Hightlight matching brackets
 bo.undofile = true -- Save undo history in file
+bo.syntax = "on"
 
 -- Window --
 wo.cursorline = true -- Highlight current cursor line

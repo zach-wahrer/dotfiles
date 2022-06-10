@@ -1,4 +1,4 @@
-# Lauch with kitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty 
+# Lauch with kitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty
 ## Config ##
 new_tab Config
 layout vertical
@@ -6,6 +6,7 @@ enabled_layouts vertical, horizontal, stack
 cd /home/zach
 # Can't launch nvim due to weird lsp issue (saying they aren't found, but still working). Something due to path?
 launch zsh
+{%@@ if profile == "foundant-wolf" @@%}
 ## Platform ##
 new_tab Platform
 layout vertical
@@ -13,16 +14,19 @@ enabled_layouts vertical, horizontal, stack
 cd /home/zach/platform
 # Can't launch nvim due to weird lsp issue (saying they aren't found, but still working). Something due to path?
 launch zsh
+{%@@ endif @@%}
 ## Term ##
 new_tab Term
 enabled_layouts vertical, horizontal, stack
 launch zsh
-## Dry ##
-new_tab Dry
-launch dry
-enabled_layouts stack
+{%@@ if profile == "foundant-wolf" @@%}
 ## Accounting ##
-new_tab Accounting 
+new_tab Accounting
 enabled_layouts vertical, horizontal, stack
 cd /home/zach/platform/accounting
+launch zsh
+{%@@ endif @@%}
+## Notes ##
+new_tab Notes
+cd /home/zach/Desktop/Brainhole
 launch zsh
