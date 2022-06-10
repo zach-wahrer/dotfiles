@@ -48,7 +48,7 @@ require("packer").startup({
 		-- use("yonlu/omni.vim")
 		-- use("sainnhe/edge")
 		-- use("PHSix/nvim-hybrid")
-		-- use("olimorris/onedarkpro.nvim")
+		use("olimorris/onedarkpro.nvim")
 		-- use("rmehri01/onenord.nvim")
 
 		-- LSP
@@ -57,7 +57,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("lsp.lsp")
+				require("plugins.lsp")
 			end,
 		})
 		use({ "folke/lsp-colors.nvim", opt = true, event = "BufReadPre" })
@@ -76,7 +76,7 @@ require("packer").startup({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons" },
 			config = function()
-				require("interface.lualine")
+				require("plugins.lualine")
 			end,
 		}) -- Status Bar
 		use({
@@ -84,27 +84,29 @@ require("packer").startup({
 			tag = "v2.*",
 			requires = "kyazdani42/nvim-web-devicons",
 			config = function()
-				require("interface.bufferline")
+				require("plugins.bufferline")
 			end,
 		}) -- Buffer management
 		use({
 			"ahmedkhalf/project.nvim",
 			config = function()
-				require("interface.project")
+				require("project_nvim").setup()
+				require("telescope").load_extension("projects")
 			end,
+			requires = { "nvim-telescope/telescope.nvim" },
 		}) -- Project management
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 			config = function()
-				require("lang.treesitter")
+				require("plugins.treesitter")
 			end,
 		}) -- Treesitter
 		use({
 			"nvim-telescope/telescope.nvim",
 			requires = { "nvim-lua/plenary.nvim", { "nvim-telescope/telescope-fzf-native.nvim", run = "make" } },
 			config = function()
-				require("interface.telescope")
+				require("plugins.telescope")
 			end,
 		}) -- Finder
 		use({
@@ -112,7 +114,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("interface.kommentary")
+				require("plugins.kommentary")
 			end,
 		}) -- Comment
 		use({
@@ -127,21 +129,21 @@ require("packer").startup({
 			"petertriho/nvim-scrollbar",
 			requires = { "kevinhwang91/nvim-hlslens" },
 			config = function()
-				require("interface.scrollbar")
+				require("plugins.scrollbar")
 			end,
 		}) -- Scroll bar
 		use({
 			"kyazdani42/nvim-tree.lua",
 			requires = { "kyazdani42/nvim-web-devicons" },
 			config = function()
-				require("interface.nvim_tree")
+				require("plugins.nvim_tree")
 			end,
 		}) -- File browser
 		use({ "p00f/nvim-ts-rainbow", opt = true, event = "BufReadPre", requires = "nvim-treesitter/nvim-treesitter" }) -- Rainbow brackets
 		use({
 			"declancm/cinnamon.nvim",
 			config = function()
-				require("interface.cinnamon")
+				require("plugins.cinnamon")
 			end,
 		}) -- Smooth scrolling
 		use({
@@ -149,7 +151,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("interface.trouble")
+				require("plugins.trouble")
 			end,
 		}) -- Pretty list for diagnostics
 		use({ "moll/vim-bbye" }) -- Better buffer quit
@@ -177,13 +179,13 @@ require("packer").startup({
 			event = "BufReadPre",
 			requires = { "kamykn/popup-menu.nvim" },
 			config = function()
-				require("interface.spelunker")
+				require("plugins.spelunker")
 			end,
 		}) -- Spellcheck
 		use({
 			"glepnir/dashboard-nvim",
 			config = function()
-				require("interface.dashboard")
+				require("plugins.dashboard")
 			end,
 		}) -- Startup dashboard
 		use({
@@ -208,7 +210,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("interface.undotree")
+				require("plugins.undotree")
 			end,
 		}) -- Visualize undo tree
 		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
@@ -226,7 +228,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("interface.dial")
+				require("plugins.dial")
 			end,
 		}) -- Increment/decrement
 		use({
@@ -240,7 +242,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("interface.neogen")
+				require("neogen").setup({})
 			end,
 			requires = "nvim-treesitter/nvim-treesitter",
 			-- Uncomment next line if you want to follow only stable versions
@@ -252,6 +254,10 @@ require("packer").startup({
 		use({
 			"ThePrimeagen/harpoon",
 			requires = { "nvim-lua/plenary.nvim" },
+			config = function()
+				require("plugins.harpoon")
+				require("telescope").load_extension("harpoon")
+			end,
 		}) -- Marks
 
 		-- KITTY
@@ -268,7 +274,7 @@ require("packer").startup({
 		use({
 			"hrsh7th/nvim-cmp",
 			config = function()
-				require("interface.nvm_cmp")
+				require("plugins.nvm_cmp")
 			end,
 		}) -- Completions
 		use({ "hrsh7th/cmp-nvim-lsp" }) -- Completions
@@ -279,14 +285,22 @@ require("packer").startup({
 		use({ "hrsh7th/vim-vsnip" }) -- Snips
 
 		-- LANGUAGES
-		use({ "fatih/vim-go", run = ":GoUpdateBinaries", opt = true, ft = { "go" } }) -- Go
+		use({
+			"fatih/vim-go",
+			run = ":GoUpdateBinaries",
+			opt = true,
+			ft = { "go" },
+			config = function()
+				require("plugins.vim_go")
+			end,
+		}) -- Go
 		use({ "sebdah/vim-delve", opt = true, ft = { "go" } }) -- Delve
 		use({
 			"MunifTanjim/prettier.nvim",
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("lang.prettier")
+				require("plugins.prettier")
 			end,
 		}) -- prettier formatting
 		use({
@@ -294,7 +308,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("lsp.null-ls")
+				require("plugins.null-ls")
 			end,
 		}) -- For prettier
 		use({
@@ -314,7 +328,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("debug.dap")
+				require("plugins.dap")
 			end,
 		}) -- Debug adapter
 		use({
@@ -347,7 +361,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("testing.vim_test")
+				require("plugins.vim_test")
 			end,
 		}) -- Vim-test
 
@@ -366,7 +380,7 @@ require("packer").startup({
 			event = "BufReadPre",
 			tag = "release",
 			config = function()
-				require("git.gitsigns")
+				require("plugins.gitsigns")
 			end,
 		}) -- Git modified line display
 		use({ "rhysd/git-messenger.vim", opt = true, event = "BufReadPre" }) -- View diffs
@@ -379,9 +393,6 @@ require("packer").startup({
 			"kdheepak/lazygit.nvim",
 			opt = true,
 			event = "BufReadPre",
-			config = function()
-				require("git.lazy_git")
-			end,
 		}) -- Lazygit integration
 
 		-- PACKER BOOTSTRAP

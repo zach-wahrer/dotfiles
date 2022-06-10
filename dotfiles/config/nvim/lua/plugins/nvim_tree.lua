@@ -1,4 +1,3 @@
-vim.api.nvim_set_keymap("n", "\\", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
 require("nvim-tree").setup({
 	open_on_setup = true,
 	open_on_tab = true,

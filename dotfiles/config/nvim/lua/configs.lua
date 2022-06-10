@@ -4,10 +4,15 @@ local bo = vim.bo -- Buffer
 local wo = vim.wo -- Window
 
 -- Color --
-require("onedark").setup({
-	style = "darker",
+-- require("onedark").setup({
+-- 	style = "darker",
+-- })
+-- require("onedark").load()
+require("onedarkpro").setup({
+	theme = "onedark",
 })
-require("onedark").load()
+require("onedarkpro").load()
+
 o.termguicolors = true
 cmd("hi Search guibg=#aa03af")
 cmd("hi SpellBad guibg=gray20 guifg=Orange")
@@ -87,13 +92,83 @@ autocmd("BufEnter", { -- Don't auto comment new lines
 		vim.cmd([[ set fo-=c fo-=r fo-=o ]])
 	end,
 })
-
--- Languages --
-require("lang.go")
-require("lang.terraform")
-require("lang.js")
-require("lang.lua")
-
--- External Configs --
-require("external.kitty")
-require("external.i3")
+autocmd("bufwritepost", { -- Reload i3 on config change
+	pattern = "*/i3/config",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ silent !i3-msg reload ]])
+	end,
+})
+autocmd("bufwritepost", { -- Reload kitty on config file change
+	pattern = "kitty.conf",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ silent !kill -SIGUSR1 $(pgrep kitty) ]])
+	end,
+})
+-- JS --
+autocmd("FileType", {
+	pattern = "ts",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
+	end,
+})
+autocmd("FileType", {
+	pattern = "js",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
+	end,
+})
+autocmd("FileType", {
+	pattern = "vue",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
+	end,
+})
+autocmd("BufWritePre", {
+	pattern = "*.ts",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ EslintFixAll ]])
+	end,
+})
+autocmd("BufWritePre", {
+	pattern = "*.js",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ EslintFixAll ]])
+	end,
+})
+autocmd("BufWritePre", {
+	pattern = "*.vue",
+	group = reset_group,
+	callback = function()
+		vim.cmd([[ EslintFixAll ]])
+	end,
+})
+-- Lua --
+autocmd("BufWritePre", {
+	pattern = "*.lua",
+	group = reset_group,
+	callback = function()
+		require("stylua-nvim").format_file()
+	end,
+})
+-- Terraform --
+autocmd("BufWritePre", {
+	pattern = "*.tf",
+	group = reset_group,
+	callback = function()
+		vim.lsp.buf.formatting_sync()
+	end,
+})
+autocmd("BufWritePre", {
+	pattern = "*.tfvars",
+	group = reset_group,
+	callback = function()
+		vim.lsp.buf.formatting_sync()
+	end,
+})
