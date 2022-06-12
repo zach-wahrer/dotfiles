@@ -51,6 +51,9 @@ dotfiles:
   d_ranger:
     src: config/ranger
     dst: ~/.config/ranger
+  f_xmodmap:
+    src: xmodmap
+    dst: ~/.xmodmap
 profiles:
   foundant-wolf:
     dotfiles:
@@ -65,6 +68,7 @@ profiles:
     - f_golangci.yml
     - d_icons
     - d_ranger
+    - f_xmodmap
     variables:
       adapter: AC
       battery: BAT0
@@ -82,6 +86,7 @@ profiles:
     - f_golangci.yml
     - d_icons
     - d_ranger
+    - f_xmodmap
     variables:
       adapter: ADP1
       battery: BAT1
