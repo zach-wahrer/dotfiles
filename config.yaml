@@ -52,8 +52,12 @@ dotfiles:
     src: config/ranger
     dst: ~/.config/ranger
   f_xmodmap:
-    src: xmodmap
-    dst: ~/.xmodmap
+    src: Xmodmap
+    dst: ~/.Xmodmap
+  f_dashboard.cat:
+    src: config/nvim/dashboard.cat
+    dst: ~/.config/nvim/dashboard.cat
+    chmod: '644'
 profiles:
   foundant-wolf:
     dotfiles:
@@ -69,6 +73,7 @@ profiles:
     - d_icons
     - d_ranger
     - f_xmodmap
+    - f_dashboard.cat
     variables:
       adapter: AC
       battery: BAT0

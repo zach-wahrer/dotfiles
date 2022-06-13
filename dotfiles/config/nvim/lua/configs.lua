@@ -65,20 +65,20 @@ autocmd("Bufenter", { -- Full path in title
 		vim.cmd([[ let &titlestring = expand('%:p') ]])
 	end,
 })
-autocmd("WinEnter,FocusGained", { -- Set relative line numbers on focus
-	pattern = "*",
-	group = reset_group,
-	callback = function()
-		vim.cmd([[ :setlocal number relativenumber ]])
-	end,
-})
-autocmd("WinLeave,FocusLost", { -- Remove relative line numbers when unfocused
-	pattern = "*",
-	group = reset_group,
-	callback = function()
-		vim.cmd([[ :setlocal number norelativenumber ]])
-	end,
-})
+-- autocmd("WinEnter,FocusGained", { -- Set relative line numbers on focus
+-- 	pattern = "*",
+-- 	group = reset_group,
+-- 	callback = function()
+-- 		vim.cmd([[ :setlocal number relativenumber ]])
+-- 	end,
+-- })
+-- autocmd("WinLeave,FocusLost", { -- Remove relative line numbers when unfocused
+-- 	pattern = "*",
+-- 	group = reset_group,
+-- 	callback = function()
+-- 		vim.cmd([[ :setlocal number norelativenumber ]])
+-- 	end,
+-- })
 autocmd("BufWritePre", { -- Remove whitespace on save
 	pattern = "*",
 	group = reset_group,
