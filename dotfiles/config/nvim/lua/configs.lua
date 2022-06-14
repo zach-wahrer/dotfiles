@@ -4,14 +4,14 @@ local bo = vim.bo -- Buffer
 local wo = vim.wo -- Window
 
 -- Color --
--- require("onedark").setup({
--- 	style = "darker",
--- })
--- require("onedark").load()
-require("onedarkpro").setup({
-	theme = "onedark",
+require("onedark").setup({
+	style = "darker",
 })
-require("onedarkpro").load()
+require("onedark").load()
+-- require("onedarkpro").setup({
+-- 	theme = "onedark",
+-- })
+-- require("onedarkpro").load()
 
 o.termguicolors = true
 cmd("hi Search guibg=#aa03af")

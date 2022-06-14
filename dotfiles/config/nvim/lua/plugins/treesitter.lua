@@ -36,15 +36,15 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
-local reset_group = augroup("reset_group_treesitter", { clear = true })
+-- local augroup = vim.api.nvim_create_augroup
+-- local autocmd = vim.api.nvim_create_autocmd
+-- local reset_group = augroup("reset_group_treesitter", { clear = true })
 
--- Needed due to bug in treesitter highlighting not showing on first file load after nvim starts. This just reloads the file.
-autocmd("BufRead", {
-	pattern = "*",
-	group = reset_group,
-	callback = function()
-		vim.cmd([[:e]])
-	end,
-})
+-- -- Needed due to bug in treesitter highlighting not showing on first file load after nvim starts. This just reloads the file.
+-- autocmd("BufRead", {
+-- 	pattern = "*",
+-- 	group = reset_group,
+-- 	callback = function()
+-- 		vim.cmd([[:e]])
+-- 	end,
+-- })

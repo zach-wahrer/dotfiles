@@ -1,6 +1,7 @@
 require("lualine").setup({
 	options = {
-		theme = "onedarkpro",
+		-- theme = "onedarkpro",
+		theme = "onedark",
 	},
 	sections = {
 		lualine_c = {

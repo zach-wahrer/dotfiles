@@ -1,9 +1,47 @@
+local db = require("dashboard")
+
 vim.g.dashboard_default_executive = "telescope"
-vim.g.dashboard_preview_command = "cat"
-vim.g.dashboard_preview_pipeline = "lolcat --seed 1"
-vim.g.dashboard_preview_file_height = 19
-vim.g.dashboard_preview_file_width = 100
-vim.g.dashboard_preview_file = "/home/zach/.config/nvim/dashboard.cat"
+db.preview_command = "cat | lolcat --seed 1"
+db.preview_file_path = "~/.config/nvim/dashboard.cat"
+db.preview_file_height = 19
+db.preview_file_width = 100
+db.custom_center = {
+	{
+		icon = "🗐   ",
+		desc = "Recently Opened Files",
+		action = "Telescope oldfiles",
+	},
+	{
+		icon = "🗀   ",
+		desc = "File Browser         ",
+		action = "NvimTreeToggle",
+	},
+	{
+		icon = "🗋   ",
+		desc = "Find File            ",
+		action = "Telescope find_files find_command=rg,--hidden,--files",
+	},
+	{
+		icon = "🗎   ",
+		desc = "Find Word            ",
+		action = "Telescope live_grep",
+	},
+	{
+		icon = "⏲   ",
+		desc = "Search History       ",
+		action = "Telescope search_history",
+	},
+	{
+		icon = "🖮   ",
+		desc = "Keymap               ",
+		action = "Telescope keymaps",
+	},
+	{
+		icon = "🖌    ",
+		desc = "Change Colorscheme   ",
+		action = "Telescope colorscheme",
+	},
+}
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd

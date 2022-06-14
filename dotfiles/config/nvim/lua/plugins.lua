@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 require("packer").startup({
 	config = {
 		-- Move to lua dir so impatient.nvim can cache it
-		compile_path = vim.fn.stdpath("config") .. "/plugin/packer_compiled.lua",
+		-- compile_path = vim.fn.stdpath("config") .. "/plugin/packer_compiled.lua",
 
 		display = {
 			open_fn = function()
@@ -48,14 +48,12 @@ require("packer").startup({
 		-- use("yonlu/omni.vim")
 		-- use("sainnhe/edge")
 		-- use("PHSix/nvim-hybrid")
-		use("olimorris/onedarkpro.nvim")
+		-- use("olimorris/onedarkpro.nvim")
 		-- use("rmehri01/onenord.nvim")
 
 		-- LSP
 		use({
 			"neovim/nvim-lspconfig",
-			opt = true,
-			event = "BufReadPre",
 			config = function()
 				require("plugins.lsp")
 			end,
@@ -71,10 +69,17 @@ require("packer").startup({
 		}) -- Show func signature
 		use({ "arkav/lualine-lsp-progress", opt = true, event = "BufReadPre" }) -- Show lsp progress in lualine
 
-		-- -- INTERFACE
+		-- INTERFACE
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			run = ":TSUpdate",
+			config = function()
+				require("plugins.treesitter")
+			end,
+		}) -- Treesitter
 		use({
 			"nvim-lualine/lualine.nvim",
-			requires = { "kyazdani42/nvim-web-devicons" },
+			requires = { "kyazdani42/nvim-web-devicons", "windwp/nvim-autopairs" },
 			config = function()
 				require("plugins.lualine")
 			end,
@@ -96,13 +101,6 @@ require("packer").startup({
 			requires = { "nvim-telescope/telescope.nvim" },
 		}) -- Project management
 		use({
-			"nvim-treesitter/nvim-treesitter",
-			run = ":TSUpdate",
-			config = function()
-				require("plugins.treesitter")
-			end,
-		}) -- Treesitter
-		use({
 			"nvim-telescope/telescope.nvim",
 			requires = { "nvim-lua/plenary.nvim", { "nvim-telescope/telescope-fzf-native.nvim", run = "make" } },
 			config = function()
@@ -119,11 +117,6 @@ require("packer").startup({
 		}) -- Comment
 		use({
 			"windwp/nvim-autopairs",
-			opt = true,
-			event = "BufReadPre",
-			config = function()
-				require("nvim-autopairs").setup({})
-			end,
 		}) -- Auto pairs
 		use({
 			"petertriho/nvim-scrollbar",
@@ -146,14 +139,14 @@ require("packer").startup({
 				require("plugins.cinnamon")
 			end,
 		}) -- Smooth scrolling
-		use({
-			"folke/trouble.nvim",
-			opt = true,
-			event = "BufReadPre",
-			config = function()
-				require("plugins.trouble")
-			end,
-		}) -- Pretty list for diagnostics
+		-- use({
+		-- 	"folke/trouble.nvim",
+		-- 	opt = true,
+		-- 	event = "BufReadPre",
+		-- 	config = function()
+		-- 		require("plugins.trouble")
+		-- 	end,
+		-- }) -- Pretty list for diagnostics
 		use({ "moll/vim-bbye" }) -- Better buffer quit
 		use({
 			"abecodes/tabout.nvim",
