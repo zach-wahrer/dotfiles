@@ -47,6 +47,11 @@ if ! [ -x "$(command -v zoxide)" ]; then
   curl -sS https://webinstall.dev/zoxide | bash
 fi
 
+## ccat (better cat) ##
+if ! [ -x "$(command -v ccat)" ]; then
+  go get -u github.com/owenthereal/ccat
+fi
+
 ## Auto Pairs  ##
 if [[ ! -d ~/.zsh-autopair ]]; then
   git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
@@ -224,7 +229,8 @@ alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
 alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 
 # GENERAL #
-#alias pe="kitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
+#alias pe="ksitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
+alias cat="ccat"
 alias ml="make local"
 alias :q="exit"
 alias zp="cd ~/platform"
