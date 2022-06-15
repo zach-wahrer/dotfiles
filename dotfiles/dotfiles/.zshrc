@@ -12,7 +12,7 @@ fi
 # fi
 # source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
-## Zsh Vi Mode ## 
+## Zsh Vi Mode ##
 if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-vi-mode ]]; then
   git clone https://github.com/jeffreytse/zsh-vi-mode ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
 fi
@@ -35,6 +35,11 @@ fi
 ## Zsh Syntax Highlighting ##
 if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+fi
+
+## K (better ls) ##
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/k ]]; then
+  git clone https://github.com/supercrabtree/k ~/.oh-my-zsh/custom/plugins/k
 fi
 
 ## Auto Pairs  ##
@@ -124,18 +129,20 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
-  aws 
-  terraform 
-  zsh-vi-mode 
-  zsh-autosuggestions 
-  docker-zsh-completion 
-  zsh-better-npm-completion 
-  zsh-syntax-highlighting 
+  git
+  aws
+  terraform
+  zsh-vi-mode
+  zsh-autosuggestions
+  docker-zsh-completion
+  zsh-better-npm-completion
+  zsh-syntax-highlighting
+  k
   # zsh-autocomplete
 )
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
+eval "$(zoxide init zsh)"
 
 # zstyle ':autocomplete:*' min-input 1
 # zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
@@ -215,8 +222,8 @@ alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 #alias pe="ksitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
 alias ml="make local"
 alias :q="exit"
-alias cdp="cd ~/platform"
-alias cda="cd ~/platform/accounting"
+alias zp="cd ~/platform"
+alias za="cd ~/platform/accounting"
 alias sc="staticcheck ./..."
 alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
 alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
@@ -247,3 +254,7 @@ source <(kubectl completion zsh)
 # Remove "Do you want to see X possibility"
 zstyle ':completion:*' list-prompt   ''
 zstyle ':completion:*' select-prompt ''
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
