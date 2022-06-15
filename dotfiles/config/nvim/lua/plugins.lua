@@ -76,10 +76,11 @@ require("packer").startup({
 			config = function()
 				require("plugins.treesitter")
 			end,
+			requires = { "p00f/nvim-ts-rainbow", "windwp/nvim-autopairs" }, -- Rainbow brackets
 		}) -- Treesitter
 		use({
 			"nvim-lualine/lualine.nvim",
-			requires = { "kyazdani42/nvim-web-devicons", "windwp/nvim-autopairs" },
+			requires = { "kyazdani42/nvim-web-devicons" },
 			config = function()
 				require("plugins.lualine")
 			end,
@@ -116,9 +117,6 @@ require("packer").startup({
 			end,
 		}) -- Comment
 		use({
-			"windwp/nvim-autopairs",
-		}) -- Auto pairs
-		use({
 			"petertriho/nvim-scrollbar",
 			requires = { "kevinhwang91/nvim-hlslens" },
 			config = function()
@@ -132,21 +130,12 @@ require("packer").startup({
 				require("plugins.nvim_tree")
 			end,
 		}) -- File browser
-		use({ "p00f/nvim-ts-rainbow", opt = true, event = "BufReadPre", requires = "nvim-treesitter/nvim-treesitter" }) -- Rainbow brackets
 		use({
 			"declancm/cinnamon.nvim",
 			config = function()
 				require("plugins.cinnamon")
 			end,
 		}) -- Smooth scrolling
-		-- use({
-		-- 	"folke/trouble.nvim",
-		-- 	opt = true,
-		-- 	event = "BufReadPre",
-		-- 	config = function()
-		-- 		require("plugins.trouble")
-		-- 	end,
-		-- }) -- Pretty list for diagnostics
 		use({ "moll/vim-bbye" }) -- Better buffer quit
 		use({
 			"abecodes/tabout.nvim",
@@ -195,8 +184,8 @@ require("packer").startup({
 			end,
 		}) -- Todo comment highlights
 		use("gpanders/editorconfig.nvim") -- Use .editorconfig files
-		use({ "weilbith/nvim-code-action-menu", opt = true, event = "BufReadPre" }) -- Code action menu
-		use({ "machakann/vim-sandwich", opt = true, event = "BufReadPre" }) -- Surround with chars
+		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
+		use({ "machakann/vim-sandwich" }) -- Surround with chars / Can't lazyload, breaks Treesitter
 		use({ "tversteeg/registers.nvim", opt = true, event = "BufReadPre" }) -- Visualize registers
 		use({
 			"mbbill/undotree",
@@ -379,14 +368,10 @@ require("packer").startup({
 		use({ "rhysd/git-messenger.vim", opt = true, event = "BufReadPre" }) -- View diffs
 		use({
 			"tpope/vim-fugitive",
-			opt = true,
-			event = "BufReadPre",
-		}) -- Git functions
+		}) -- Git functions / Can't lazyload, breaks Treesitter
 		use({
 			"kdheepak/lazygit.nvim",
-			opt = true,
-			event = "BufReadPre",
-		}) -- Lazygit integration
+		}) -- Lazygit integration/ Can't lazyload, breaks Treesitter
 
 		-- PACKER BOOTSTRAP
 		if Packer_bootstrap then
