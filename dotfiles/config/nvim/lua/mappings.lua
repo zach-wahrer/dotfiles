@@ -95,12 +95,6 @@ set_keymap("n", "\\", "<cmd>:NvimTreeToggle<CR>", opts)
 -- Project --
 set_keymap("n", "<leader>s", "<cmd>:Telescope projects<CR>", opts)
 
--- Trouble --
-set_keymap("n", "<leader>xx", "<cmd>TroubleToggle<CR>", opts)
-set_keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<CR>", opts)
-set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<CR>", opts)
-set_keymap("n", "<leader>gr", "<cmd>Trouble lsp_references<CR>", opts)
-
 -- Undo Tree --
 set_keymap("n", "<leader>u", ":UndotreeToggle<CR>", opts) -- Write
 
