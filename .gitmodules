@@ -4,3 +4,6 @@
 [submodule "dotfiles/config/awesome/awesome-wm-widgets"]
 	path = dotfiles/config/awesome/awesome-wm-widgets
 	url = git@github.com:streetturtle/awesome-wm-widgets.git
+[submodule "dotfiles/config/kitty/kitty-themes"]
+	path = dotfiles/config/kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git
