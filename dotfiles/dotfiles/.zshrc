@@ -42,6 +42,11 @@ if [[ ! -d ~/.oh-my-zsh/custom/plugins/k ]]; then
   git clone https://github.com/supercrabtree/k ~/.oh-my-zsh/custom/plugins/k
 fi
 
+## zoxide (better cd) ##
+if ! [ -x "$(command -v zoxide)" ]; then
+  curl -sS https://webinstall.dev/zoxide | bash
+fi
+
 ## Auto Pairs  ##
 if [[ ! -d ~/.zsh-autopair ]]; then
   git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
@@ -138,11 +143,11 @@ plugins=(
   zsh-better-npm-completion
   zsh-syntax-highlighting
   k
+  zoxide
   # zsh-autocomplete
 )
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
-eval "$(zoxide init zsh)"
 
 # zstyle ':autocomplete:*' min-input 1
 # zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
@@ -219,7 +224,7 @@ alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
 alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 
 # GENERAL #
-#alias pe="ksitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
+#alias pe="kitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
 alias ml="make local"
 alias :q="exit"
 alias zp="cd ~/platform"
