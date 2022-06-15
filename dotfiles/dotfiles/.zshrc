@@ -49,7 +49,7 @@ fi
 
 ## ccat (better cat) ##
 if ! [ -x "$(command -v ccat)" ]; then
-  go get -u github.com/owenthereal/ccat
+  go install github.com/owenthereal/ccat@latest
 fi
 
 ## Auto Pairs  ##
