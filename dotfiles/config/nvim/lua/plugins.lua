@@ -76,8 +76,14 @@ require("packer").startup({
 			config = function()
 				require("plugins.treesitter")
 			end,
-			requires = { "p00f/nvim-ts-rainbow", "windwp/nvim-autopairs" }, -- Rainbow brackets
+			requires = { "p00f/nvim-ts-rainbow" }, -- Rainbow brackets
 		}) -- Treesitter
+		use({
+			"windwp/nvim-autopairs",
+			config = function()
+				require("nvim-autopairs").setup({})
+			end,
+		}) -- Auto pairs for brackets
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons" },

@@ -48,9 +48,9 @@ if ! [ -x "$(command -v zoxide)" ]; then
 fi
 
 ## ccat (better cat) ##
-if ! [ -x "$(command -v ccat)" ]; then
-  go install github.com/owenthereal/ccat@latest
-fi
+# if ! [ -x "$(command -v ccat)" ]; then
+#   go install github.com/owenthereal/ccat@latest
+# fi
 
 ## Auto Pairs  ##
 if [[ ! -d ~/.zsh-autopair ]]; then
