@@ -24,7 +24,8 @@ vim.g["go_metalinter_autosave_enabled"] = {
 }
 vim.g["go_metalinter_command"] = "golangci-lint"
 vim.g["go_metalinter_autosave"] = 1
-vim.g["go_fmt_command"] = "goimports"
+vim.g["go_jump_to_error"] = 0
+vim.g["go_fmt_command"] = "gopls"
 vim.g["go_fmt_autosave"] = 1
 vim.g["go_mod_fmt_autosave"] = 1
 vim.g["go_imports_autosave"] = 1
