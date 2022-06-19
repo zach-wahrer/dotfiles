@@ -247,6 +247,13 @@ require("packer").startup({
 				require("telescope").load_extension("harpoon")
 			end,
 		}) -- Marks
+		use({
+			"kevinhwang91/nvim-ufo",
+			config = function()
+				require("plugins.ufo")
+			end,
+			requires = "kevinhwang91/promise-async",
+		}) -- Folding
 
 		-- KITTY
 		use({
