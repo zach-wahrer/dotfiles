@@ -11,7 +11,7 @@ launch zsh
 new_tab Platform
 layout vertical
 enabled_layouts vertical, horizontal, stack
-cd /home/zach/go/src/worktrees
+cd /home/zach/go/src/platform
 # Can't launch nvim due to weird lsp issue (saying they aren't found, but still working). Something due to path?
 launch zsh
 {%@@ endif @@%}
@@ -23,7 +23,7 @@ launch zsh
 ## Accounting ##
 new_tab Accounting
 enabled_layouts vertical, horizontal, stack
-cd /home/zach/go/src/worktrees/trunk/accounting
+cd /home/zach/go/src/platform/accounting
 launch zsh
 {%@@ endif @@%}
 ## Notes ##
