@@ -25,5 +25,9 @@ require("nvim-tree").setup({
 		},
 		highlight_opened_files = "all",
 		highlight_git = true,
+		special_files = {},
+	},
+	filesystem_watchers = {
+		enable = true,
 	},
 })

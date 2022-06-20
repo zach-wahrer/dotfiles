@@ -212,6 +212,10 @@ alias gc='git checkout'
 alias gct='git checkout trunk'
 alias gb='git branch'
 alias gclean='git branch --merged | grep - | xargs git branch -d'
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
+alias gwl='git worktree list'
+alias gwp='git worktree prune -v'
 # alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
 
 # TESTS #
@@ -233,8 +237,9 @@ alias tfasd='terraform apply -var="aws_profile=service-deploy"'
 alias cat="ccat"
 alias ml="make local"
 alias :q="exit"
-alias zp="cd ~/platform"
-alias za="cd ~/platform/accounting"
+alias zw="cd ~/go/src/worktrees"
+alias zp="cd ~/go/src/worktrees/trunk"
+alias za="cd ~/go/src/worktrees/trunk/accounting"
 alias sc="staticcheck ./..."
 alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
 alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
