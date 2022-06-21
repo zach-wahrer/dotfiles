@@ -191,7 +191,7 @@ require("packer").startup({
 		}) -- Todo comment highlights
 		use("gpanders/editorconfig.nvim") -- Use .editorconfig files
 		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
-		use({ "machakann/vim-sandwich" }) -- Surround with chars / Can't lazyload, breaks Treesitter
+		-- use({ "machakann/vim-sandwich" }) -- Surround with chars / Can't lazyload, breaks Treesitter
 		use({ "tversteeg/registers.nvim", opt = true, event = "BufReadPre" }) -- Visualize registers
 		use({
 			"mbbill/undotree",

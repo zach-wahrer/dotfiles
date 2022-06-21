@@ -32,8 +32,8 @@ set_keymap("n", "<leader>dra", "<cmd>lua require('dap').clear_breakpoints()<CR>"
 set_keymap("n", "<leader>dj", "<cmd>lua require('jester').debug({dap = { console = ''}})<CR>", opts)
 
 -- Betterbuffer --
-set_keymap("n", "<leader>q", "<cmd>:Bdelete<CR>", opts)
-set_keymap("n", "<leader>1", "<cmd>:Bdelete!<CR>", opts)
+set_keymap("n", "<leader>q", "<cmd>Bdelete<CR>", opts)
+set_keymap("n", "<leader>1", "<cmd>Bdelete!<CR>", opts)
 
 -- Bufferline --
 set_keymap("n", "<A-h>", "<cmd>BufferLineCyclePrev<CR>", opts)
@@ -52,13 +52,13 @@ set_keymap("n", "<A-9>", "<cmd>BufferLineGoToBuffer 9<CR>", opts)
 set_keymap("n", "<A-->", "<cmd>BufferLinePickClose<CR>", opts)
 
 -- Dashboard --
-set_keymap("n", "<leader>v", "<cmd>:Dashboard<CR>", opts)
+set_keymap("n", "<leader>v", "<cmd>Dashboard<CR>", opts)
 -- set_keymap("n", "<leader>ss", "<cmd>SessionSave<CR>", opts)
 -- set_keymap("n", "<leader>sl", "<cmd>SessionLoad<CR>", opts)
 
 -- Dial --
-set_keymap("n", "<C-C>", "<cmd>lua require('dial.map').inc_normal()<CR>", opts)
-set_keymap("n", "<C-X>", "<cmd>lua require('dial.map').dec_normal()<CR>", opts)
+set_keymap("n", "<C-c>", require("dial.map").inc_normal(), opts)
+set_keymap("n", "<C-x>", require("dial.map").dec_normal(), opts)
 
 -- Diffview --
 set_keymap("n", "<leader>gv", "<cmd>DiffviewFileHistory<CR>", opts)
@@ -69,8 +69,8 @@ set_keymap("n", "<leader>gvc", "<cmd>DiffviewClose<CR>", opts)
 set_keymap("n", "<leader>gb", "<cmd>Git blame<CR>", opts)
 
 -- Harpoon --
-set_keymap("n", "<leader>m", ":lua require('harpoon.mark').add_file()<CR>", opts)
-set_keymap("n", "<leader>h", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+set_keymap("n", "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<CR>", opts)
+set_keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 
 -- Kommentary --
 set_keymap("x", "<C-_>", "<Plug>kommentary_visual_default", opts)
@@ -78,7 +78,7 @@ set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", opts)
 --set_keymap("n", "<C-_>", "<Plug>kommentary_motion_default", opts)
 
 -- Lazygit --
-set_keymap("n", "<leader>lg", "<cmd>:LazyGit<CR>", opts)
+set_keymap("n", "<leader>lg", "<cmd>LazyGit<CR>", opts)
 
 -- LSP -- Per client mappings are in lsp config file
 set_keymap("n", "<leader>lsp", "<cmd>LspStop<CR><cmd>call wait(1000, 1==0)<CR><cmd>LspStart<CR>", opts)
@@ -91,13 +91,13 @@ set_keymap("n", "<leader>ll", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 set_keymap("n", "<leader>ia", ":lua require('neogen').generate()<CR>", opts)
 
 -- Nvim Tree --
-set_keymap("n", "\\", "<cmd>:NvimTreeToggle<CR>", opts)
+set_keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
 
 -- Project --
-set_keymap("n", "<leader>s", "<cmd>:Telescope projects<CR>", opts)
+set_keymap("n", "<leader>s", "<cmd>Telescope projects<CR>", opts)
 
 -- Undo Tree --
-set_keymap("n", "<leader>u", ":UndotreeToggle<CR>", opts) -- Write
+set_keymap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts) -- Write
 
 -- Vim Go --
 set_keymap("n", "<leader>ggt", "<cmd>GoTests<CR>", opts)
@@ -109,6 +109,6 @@ set_keymap("n", "<leader>gt", "<cmd>GoTest<CR>", opts)
 set_keymap("n", "<leader>ga", "<cmd>GoAlternate<CR>", opts)
 
 -- Vim Test --
-set_keymap("n", "<leader>tf", "<cmd>:TestFile<CR>", opts)
-set_keymap("n", "<leader>t", "<cmd>:TestNearest<CR>", opts)
-set_keymap("n", "<leader>tt", "<cmd>:TestLast<CR>", opts)
+set_keymap("n", "<leader>tf", "<cmd>TestFile<CR>", opts)
+set_keymap("n", "<leader>t", "<cmd>TestNearest<CR>", opts)
+set_keymap("n", "<leader>tt", "<cmd>TestLast<CR>", opts)
