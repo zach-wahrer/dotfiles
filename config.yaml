@@ -58,6 +58,21 @@ dotfiles:
     src: config/nvim/dashboard.cat
     dst: ~/.config/nvim/dashboard.cat
     chmod: '644'
+  f_zsh_zshrc:
+    src: config/zsh/.zshrc
+    dst: ~/.config/zsh/.zshrc
+  f_aliases:
+    src: config/zsh/aliases
+    dst: ~/.config/zsh/aliases
+  f_paths:
+    src: config/zsh/paths
+    dst: ~/.config/zsh/paths
+  f_plugins:
+    src: config/zsh/plugins
+    dst: ~/.config/zsh/plugins
+  f_theme:
+    src: config/zsh/theme
+    dst: ~/.config/zsh/theme
 profiles:
   foundant-wolf:
     dotfiles:
@@ -74,6 +89,11 @@ profiles:
     - d_ranger
     - f_xmodmap
     - f_dashboard.cat
+    - f_zsh_zshrc
+    - f_aliases
+    - f_paths
+    - f_plugins
+    - f_theme
     variables:
       adapter: AC
       battery: BAT0
@@ -92,6 +112,11 @@ profiles:
     - d_icons
     - d_ranger
     - f_xmodmap
+    - f_zsh_zshrc
+    - f_aliases
+    - f_paths
+    - f_plugins
+    - f_theme
     variables:
       adapter: ADP1
       battery: BAT1

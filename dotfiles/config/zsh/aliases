@@ -1,0 +1,72 @@
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# DOCKER #
+alias dnuke='docker stop $(docker ps -aq) && docker rm $(docker ps -aq); drmi; dprune'
+alias dstop='docker stop $(docker ps -q --filter "since=portainer")'
+alias drmi='docker rmi $(docker images -a -q)'
+alias dprune='yes | docker system prune; yes | docker volume prune'
+
+# GIT #
+alias gs='git status'
+alias gru='git remote update'
+alias grebase='git rebase -i origin/trunk'
+alias gp='git push origin HEAD'
+alias gcommit='git commit'
+alias gpull='git pull'
+alias gcount='git diff --stat ^HEAD'
+alias gc='git checkout'
+alias gct='git checkout trunk'
+alias gb='git branch'
+alias gclean='git branch --merged | grep - | xargs git branch -d'
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
+alias gwl='git worktree list'
+alias gwp='git worktree prune -v'
+# alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
+
+# TESTS #
+alias mt="make test"
+alias mti="make test-integration"
+alias mtf="cd web/frontend && npm run test:unit; cd ../../"
+alias mtfi="cd web/frontend && npm run test-ci-unit; cd ../../"
+
+# GLOBAL PROTECT #
+alias gpon="globalprotect connect -p vpn.foundant.com"
+alias gpoff="globalprotect disable"
+
+# TERRAFORM #
+alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
+alias tfasd='terraform apply -var="aws_profile=service-deploy"'
+
+# GENERAL #
+#alias pe="ksitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
+alias cat="ccat"
+alias ml="make local"
+alias :q="exit"
+alias zp="cd ~/go/src/platform"
+alias za="cd ~/go/src/platform/accounting"
+alias sc="staticcheck ./..."
+alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
+alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
+alias go="richgo"
+. "$HOME/.cargo/env"
+
+# GO #
+alias gmt="go mod tidy"
+
+# LUA #
+alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
+
+# AWS #
+alias awslocal="aws --endpoint-url=http://localhost:4566"
+
+# DOTDROP #
+alias dotdrop='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
