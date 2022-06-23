@@ -1,6 +1,5 @@
 local db = require("dashboard")
 
-vim.g.dashboard_default_executive = "telescope"
 db.preview_command = "cat | lolcat --seed 1"
 db.preview_file_path = "~/.config/nvim/dashboard.cat"
 db.preview_file_height = 19
@@ -13,21 +12,21 @@ db.custom_center = {
 	},
 	{
 		icon = "🗋   ",
+		desc = "New File             ",
+		action = "DashboardNewFile",
+	},
+	{
+		icon = "🗎   ",
 		desc = "Find File            ",
 		action = "Telescope find_files",
 	},
-	-- {
-	-- 	icon = "🗎   ",
-	-- 	desc = "Find Word            ",
-	-- 	action = "Telescope live_grep",
-	-- },
 	{
 		icon = "🖮   ",
 		desc = "Keymap               ",
 		action = "Telescope keymaps",
 	},
 	{
-		icon = "🖌    ",
+		icon = "🖌   ",
 		desc = "Change Colorscheme   ",
 		action = "Telescope colorscheme",
 	},
