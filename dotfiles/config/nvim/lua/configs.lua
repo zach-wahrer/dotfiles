@@ -159,17 +159,17 @@ autocmd("BufWritePre", {
 	end,
 })
 -- Terraform --
-autocmd("BufWritePre", {
+autocmd("BufWritePost", {
 	pattern = "*.tf",
 	group = reset_group,
 	callback = function()
-		vim.lsp.buf.formatting_sync()
+		vim.cmd([[ silent !terraform fmt %:p:h ]])
 	end,
 })
-autocmd("BufWritePre", {
+autocmd("BufWritePost", {
 	pattern = "*.tfvars",
 	group = reset_group,
 	callback = function()
-		vim.lsp.buf.formatting_sync()
+		vim.cmd([[ silent !terraform fmt %:p:h ]])
 	end,
 })
