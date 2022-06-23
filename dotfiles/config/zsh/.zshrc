@@ -1,7 +1,5 @@
 source ~/.config/zsh/plugins
 source ~/.config/zsh/theme
-source ~/.config/zsh/paths
-source ~/.config/zsh/aliases
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -83,6 +81,8 @@ bindkey -M menuselect -s '^[' '^G^_' # Esc exits browsing history
 # .autocomplete.recent_paths.trim() {:} # Keep autocomplete logs clean
 
 # User configuration
+source ~/.config/zsh/paths
+source ~/.config/zsh/aliases
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
