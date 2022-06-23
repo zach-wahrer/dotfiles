@@ -61,13 +61,16 @@ require("packer").startup({
 		use({ "folke/lsp-colors.nvim", opt = true, event = "BufReadPre" })
 		use({
 			"ray-x/lsp_signature.nvim",
-			opt = true,
-			event = "BufReadPre",
 			config = function()
 				require("lsp_signature").setup()
 			end,
 		}) -- Show func signature
-		use({ "arkav/lualine-lsp-progress", opt = true, event = "BufReadPre" }) -- Show lsp progress in lualine
+		use({
+			"j-hui/fidget.nvim",
+			config = function()
+				require("fidget").setup({})
+			end,
+		}) -- Show lsp progress/status
 
 		-- INTERFACE
 		use({
@@ -186,7 +189,7 @@ require("packer").startup({
 			"folke/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
 			config = function()
-				require("todo-comments").setup()
+				require("plugins.todo-comments")
 			end,
 		}) -- Todo comment highlights
 		use("gpanders/editorconfig.nvim") -- Use .editorconfig files

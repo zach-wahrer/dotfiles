@@ -12,25 +12,15 @@ db.custom_center = {
 		action = "Telescope oldfiles",
 	},
 	{
-		icon = "🗀   ",
-		desc = "File Browser         ",
-		action = "NvimTreeToggle",
-	},
-	{
 		icon = "🗋   ",
 		desc = "Find File            ",
-		action = "Telescope find_files find_command=rg,--hidden,--files",
+		action = "Telescope find_files",
 	},
-	{
-		icon = "🗎   ",
-		desc = "Find Word            ",
-		action = "Telescope live_grep",
-	},
-	{
-		icon = "⏲   ",
-		desc = "Search History       ",
-		action = "Telescope search_history",
-	},
+	-- {
+	-- 	icon = "🗎   ",
+	-- 	desc = "Find Word            ",
+	-- 	action = "Telescope live_grep",
+	-- },
 	{
 		icon = "🖮   ",
 		desc = "Keymap               ",
