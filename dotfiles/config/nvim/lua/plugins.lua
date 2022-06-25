@@ -58,7 +58,6 @@ require("packer").startup({
 				require("plugins.lsp")
 			end,
 		})
-		use({ "folke/lsp-colors.nvim", opt = true, event = "BufReadPre" })
 		use({
 			"ray-x/lsp_signature.nvim",
 			config = function()
@@ -103,6 +102,13 @@ require("packer").startup({
 			end,
 		}) -- Buffer management
 		use({
+			"nvim-telescope/telescope.nvim",
+			requires = { "nvim-lua/plenary.nvim", { "nvim-telescope/telescope-fzf-native.nvim", run = "make" } },
+			config = function()
+				require("plugins.telescope")
+			end,
+		}) -- Finder
+		use({
 			"ahmedkhalf/project.nvim",
 			config = function()
 				require("project_nvim").setup()
@@ -110,13 +116,6 @@ require("packer").startup({
 			end,
 			requires = { "nvim-telescope/telescope.nvim" },
 		}) -- Project management
-		use({
-			"nvim-telescope/telescope.nvim",
-			requires = { "nvim-lua/plenary.nvim", { "nvim-telescope/telescope-fzf-native.nvim", run = "make" } },
-			config = function()
-				require("plugins.telescope")
-			end,
-		}) -- Finder
 		use({
 			"b3nj5m1n/kommentary",
 			opt = true,
@@ -196,14 +195,6 @@ require("packer").startup({
 		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
 		-- use({ "machakann/vim-sandwich" }) -- Surround with chars / Can't lazyload, breaks Treesitter
 		use({ "tversteeg/registers.nvim", opt = true, event = "BufReadPre" }) -- Visualize registers
-		use({
-			"mbbill/undotree",
-			opt = true,
-			event = "BufReadPre",
-			config = function()
-				require("plugins.undotree")
-			end,
-		}) -- Visualize undo tree
 		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
 		use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
 		use("tpope/vim-sleuth") -- Auto adjust formatting
@@ -236,8 +227,6 @@ require("packer").startup({
 				require("neogen").setup({})
 			end,
 			requires = "nvim-treesitter/nvim-treesitter",
-			-- Uncomment next line if you want to follow only stable versions
-			-- tag = "*"
 		}) -- Documentation generation
 		use({
 			"stevearc/dressing.nvim",
@@ -311,7 +300,6 @@ require("packer").startup({
 			end,
 		}) -- Auto close html,tsx,vue,svelte,php,rescript tags
 		use({ "ckipp01/stylua-nvim", opt = true, ft = { "lua" } }) -- Lua formatting
-		use({ "euclio/vim-markdown-composer", opt = true, ft = { "md" } }) -- Markdown preview
 
 		-- DEBUG
 		use({
