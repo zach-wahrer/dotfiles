@@ -70,6 +70,7 @@ require("packer").startup({
 				require("fidget").setup({})
 			end,
 		}) -- Show lsp progress/status
+		use({ "cseickel/diagnostic-window.nvim", requires = { "MunifTanjim/nui.nvim" } })
 
 		-- INTERFACE
 		use({
@@ -239,6 +240,12 @@ require("packer").startup({
 				require("telescope").load_extension("harpoon")
 			end,
 		}) -- Marks
+		use({
+			"tiagovla/scope.nvim",
+			config = function()
+				require("scope").setup()
+			end,
+		}) -- Scope buffers to tabs
 
 		-- KITTY
 		use({
