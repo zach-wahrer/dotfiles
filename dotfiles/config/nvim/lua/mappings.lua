@@ -113,3 +113,6 @@ set_keymap("n", "<leader>ga", "<cmd>GoAlternate<CR>", opts)
 set_keymap("n", "<leader>tf", "<cmd>TestFile<CR>", opts)
 set_keymap("n", "<leader>t", "<cmd>TestNearest<CR>", opts)
 set_keymap("n", "<leader>tt", "<cmd>TestLast<CR>", opts)
+
+-- Markdown --
+set_keymap("n", "<leader>pm", "<cmd>MarkdownPreview<CR>", opts)

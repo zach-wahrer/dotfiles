@@ -307,6 +307,14 @@ require("packer").startup({
 			end,
 		}) -- Auto close html,tsx,vue,svelte,php,rescript tags
 		use({ "ckipp01/stylua-nvim", opt = true, ft = { "lua" } }) -- Lua formatting
+		use({
+			"iamcco/markdown-preview.nvim",
+			run = "cd app && npm install",
+			setup = function()
+				vim.g.mkdp_filetypes = { "markdown" }
+			end,
+			ft = { "markdown" },
+		}) -- Markdown
 
 		-- DEBUG
 		use({
