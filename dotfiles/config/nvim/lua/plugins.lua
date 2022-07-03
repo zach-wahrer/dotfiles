@@ -215,6 +215,14 @@ require("packer").startup({
 			end,
 		}) -- Increment/decrement
 		use({
+			"kylechui/nvim-surround",
+			opt = true,
+			event = "BufReadPre",
+			config = function()
+				require("nvim-surround").setup({})
+			end,
+		}) -- Surround
+		use({
 			"mvllow/modes.nvim",
 			config = function()
 				require("modes").setup()
