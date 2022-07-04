@@ -1,6 +1,9 @@
 local null_ls = require("null-ls")
 
 null_ls.setup({
+	sources = {
+		null_ls.builtins.diagnostics.vale,
+	},
 	on_attach = function(client, bufnr)
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")

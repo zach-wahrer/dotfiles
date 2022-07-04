@@ -302,6 +302,7 @@ require("packer").startup({
 			"jose-elias-alvarez/null-ls.nvim",
 			opt = true,
 			event = "BufReadPre",
+			run = "",
 			config = function()
 				require("plugins.null-ls")
 			end,

@@ -73,6 +73,9 @@ dotfiles:
   f_theme:
     src: config/zsh/theme
     dst: ~/.config/zsh/theme
+  f_vale.ini:
+    src: vale.ini
+    dst: ~/.vale.ini
 profiles:
   foundant-wolf:
     dotfiles:
@@ -94,6 +97,7 @@ profiles:
     - f_paths
     - f_plugins
     - f_theme
+    - f_vale.ini
     variables:
       adapter: AC
       battery: BAT0
@@ -117,6 +121,7 @@ profiles:
     - f_paths
     - f_plugins
     - f_theme
+    - f_vale.ini
     variables:
       adapter: ADP1
       battery: BAT1
