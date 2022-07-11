@@ -276,8 +276,21 @@ require("packer").startup({
 		use({ "hrsh7th/cmp-buffer" }) -- Completions
 		use({ "hrsh7th/cmp-path" }) -- Completions
 		use({ "hrsh7th/cmp-cmdline" }) -- Completions
-		use({ "hrsh7th/cmp-vsnip" }) -- Snips
-		use({ "hrsh7th/vim-vsnip" }) -- Snips
+		-- use({ "hrsh7th/cmp-vsnip" }) -- Snips
+		-- use({ "hrsh7th/vim-vsnip" }) -- Snips
+		use({
+			"L3MON4D3/LuaSnip",
+			config = function()
+				require("plugins.luasnip")
+			end,
+		}) -- Snips
+		use({ "saadparwaiz1/cmp_luasnip" }) -- Snips
+		use({
+			"rafamadriz/friendly-snippets",
+			config = function()
+				require("plugins.friendly_snippets")
+			end,
+		}) -- Snippets
 
 		-- LANGUAGES
 		use({
