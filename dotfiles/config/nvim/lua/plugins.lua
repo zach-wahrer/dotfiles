@@ -229,6 +229,13 @@ require("packer").startup({
 			end,
 		}) -- Modes show in different colors
 		use({
+			"zbirenbaum/neodim",
+			-- event = "LspAttach",
+			config = function()
+				require("plugins.neodim")
+			end,
+		}) -- Dim unused vars/functions/etc
+		use({
 			"danymat/neogen",
 			opt = true,
 			event = "BufReadPre",

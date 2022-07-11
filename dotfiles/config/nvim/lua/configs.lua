@@ -2,6 +2,7 @@ local cmd = vim.cmd -- Commands
 local o = vim.o -- Global
 local bo = vim.bo -- Buffer
 local wo = vim.wo -- Window
+local api = vim.api -- Api
 
 -- Color --
 require("onedark").setup({
@@ -14,8 +15,10 @@ require("onedark").load()
 -- require("onedarkpro").load()
 
 o.termguicolors = true
-cmd("hi Search guibg=#aa03af")
-cmd("hi SpellBad guibg=gray20 guifg=Orange")
+
+api.nvim_set_hl(0, "Search", { bg = "#aa03af", fg = "Orange", underline = 1 })
+api.nvim_set_hl(0, "SpelunkerSpellBad", { undercurl = 1 })
+api.nvim_set_hl(0, "SpelunkerComplexOrCompoundWord", { underdot = 1 })
 
 -- Globals --
 o.ignorecase = true -- Case insensitive searching
@@ -62,49 +65,49 @@ autocmd("Bufenter", { -- Full path in title
 	pattern = "*",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ let &titlestring = expand('%:p') ]])
+		cmd([[ let &titlestring = expand('%:p') ]])
 	end,
 })
 -- autocmd("WinEnter,FocusGained", { -- Set relative line numbers on focus
 -- 	pattern = "*",
 -- 	group = reset_group,
 -- 	callback = function()
--- 		vim.cmd([[ :setlocal number relativenumber ]])
+-- 		cmd([[ :setlocal number relativenumber ]])
 -- 	end,
 -- })
 -- autocmd("WinLeave,FocusLost", { -- Remove relative line numbers when unfocused
 -- 	pattern = "*",
 -- 	group = reset_group,
 -- 	callback = function()
--- 		vim.cmd([[ :setlocal number norelativenumber ]])
+-- 		cmd([[ :setlocal number norelativenumber ]])
 -- 	end,
 -- })
 autocmd("BufWritePre", { -- Remove whitespace on save
 	pattern = "*",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ :%s/\s\+$//e ]])
+		cmd([[ :%s/\s\+$//e ]])
 	end,
 })
 autocmd("BufEnter", { -- Don't auto comment new lines
 	pattern = "*",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ set fo-=c fo-=r fo-=o ]])
+		cmd([[ set fo-=c fo-=r fo-=o ]])
 	end,
 })
 autocmd("bufwritepost", { -- Reload i3 on config change
 	pattern = "*/i3/config",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ silent !i3-msg reload ]])
+		cmd([[ silent !i3-msg reload ]])
 	end,
 })
 autocmd("bufwritepost", { -- Reload kitty on config file change
 	pattern = "kitty.conf",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ silent !kill -SIGUSR1 $(pgrep kitty) ]])
+		cmd([[ silent !kill -SIGUSR1 $(pgrep kitty) ]])
 	end,
 })
 -- JS --
@@ -112,42 +115,42 @@ autocmd("FileType", {
 	pattern = "ts",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
+		cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
 	end,
 })
 autocmd("FileType", {
 	pattern = "js",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
+		cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
 	end,
 })
 autocmd("FileType", {
 	pattern = "vue",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
+		cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
 	end,
 })
 autocmd("BufWritePre", {
 	pattern = "*.ts",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ EslintFixAll ]])
+		cmd([[ EslintFixAll ]])
 	end,
 })
 autocmd("BufWritePre", {
 	pattern = "*.js",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ EslintFixAll ]])
+		cmd([[ EslintFixAll ]])
 	end,
 })
 autocmd("BufWritePre", {
 	pattern = "*.vue",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ EslintFixAll ]])
+		cmd([[ EslintFixAll ]])
 	end,
 })
 -- Lua --
@@ -163,13 +166,13 @@ autocmd("BufWritePost", {
 	pattern = "*.tf",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ silent !terraform fmt %:p:h ]])
+		cmd([[ silent !terraform fmt %:p:h ]])
 	end,
 })
 autocmd("BufWritePost", {
 	pattern = "*.tfvars",
 	group = reset_group,
 	callback = function()
-		vim.cmd([[ silent !terraform fmt %:p:h ]])
+		cmd([[ silent !terraform fmt %:p:h ]])
 	end,
 })
