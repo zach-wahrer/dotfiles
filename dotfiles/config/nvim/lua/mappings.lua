@@ -83,7 +83,7 @@ set_keymap("n", "<leader>lg", "<cmd>LazyGit<CR>", opts)
 -- LSP -- Per client mappings are in lsp config file
 set_keymap("n", "<leader>lsp", "<cmd>LspStop<CR><cmd>call wait(1000, 1==0)<CR><cmd>LspStart<CR>", opts)
 set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-set_keymap("n", "<leader>dd", "<cmd>DiagWindowShow<CR>", opts)
+set_keymap("n", "<leader>dw", "<cmd>DiagWindowShow<CR>", opts)
 set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 set_keymap("n", "<leader>ll", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)

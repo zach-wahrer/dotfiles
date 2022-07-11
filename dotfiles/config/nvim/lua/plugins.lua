@@ -25,7 +25,6 @@ require("packer").startup({
 	config = {
 		-- Move to lua dir so impatient.nvim can cache it
 		-- compile_path = vim.fn.stdpath("config") .. "/plugin/packer_compiled.lua",
-
 		display = {
 			open_fn = function()
 				return require("packer.util").float({ border = "single" })
@@ -172,19 +171,13 @@ require("packer").startup({
 			config = function()
 				require("plugins.spelunker")
 			end,
-		}) -- Spellcheck
+		}) -- Syntax aware spellcheck
 		use({
 			"glepnir/dashboard-nvim",
 			config = function()
 				require("plugins.dashboard")
 			end,
 		}) -- Startup dashboard
-		use({
-			"luukvbaal/stabilize.nvim",
-			config = function()
-				require("stabilize").setup()
-			end,
-		}) -- Window stabilize
 		use({
 			"folke/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
@@ -194,7 +187,6 @@ require("packer").startup({
 		}) -- Todo comment highlights
 		use("gpanders/editorconfig.nvim") -- Use .editorconfig files
 		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
-		-- use({ "machakann/vim-sandwich" }) -- Surround with chars / Can't lazyload, breaks Treesitter
 		use({ "tversteeg/registers.nvim", opt = true, event = "BufReadPre" }) -- Visualize registers
 		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
 		use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
@@ -230,7 +222,8 @@ require("packer").startup({
 		}) -- Modes show in different colors
 		use({
 			"zbirenbaum/neodim",
-			-- event = "LspAttach",
+			opt = true,
+			event = "BufReadPre",
 			config = function()
 				require("plugins.neodim")
 			end,
@@ -291,7 +284,7 @@ require("packer").startup({
 			"fatih/vim-go",
 			run = ":GoUpdateBinaries",
 			opt = true,
-			ft = { "go" },
+			ft = { "go", "mod" },
 			config = function()
 				require("plugins.vim_go")
 			end,
@@ -309,7 +302,6 @@ require("packer").startup({
 			"jose-elias-alvarez/null-ls.nvim",
 			opt = true,
 			event = "BufReadPre",
-			run = "",
 			config = function()
 				require("plugins.null-ls")
 			end,
@@ -329,7 +321,7 @@ require("packer").startup({
 			setup = function()
 				vim.g.mkdp_filetypes = { "markdown" }
 			end,
-			ft = { "markdown" },
+			ft = { "markdown", "md" },
 		}) -- Markdown
 
 		-- DEBUG
