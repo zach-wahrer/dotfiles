@@ -3,7 +3,6 @@ local set_keymap = vim.api.nvim_set_keymap
 
 -- General Keybinds --
 set_keymap("n", "<leader>w", ":w<CR>", opts) -- Write
-set_keymap("n", "<leader>p", '"0p', opts) -- Paste last yanked text
 set_keymap("n", "<A-Enter>", "O<Esc>", opts) -- Add line above
 set_keymap("n", "<CR>", "o<Esc>", opts) -- Add line below
 set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
