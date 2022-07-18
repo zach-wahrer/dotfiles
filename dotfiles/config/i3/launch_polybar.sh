@@ -14,21 +14,23 @@
   disown
 
   {%@@ else @@%}
-  # for m in $outputs; do
-  #   if [[ $m == "DP-2-1" ]]; then
-  #       tray_output=$m
-  #   fi
-  # done
-  tray_output=DP-2-1
-  for m in $outputs; do
-    export MONITOR=$m
-    export TRAY_POSITION=none
-    if [[ $m == $tray_output ]]; then
-      TRAY_POSITION=right
-    fi
+  if $outputs == "eDP-1"; then
+    export MONITOR=eDP-1
+    export TRAY_POSITION=right
     polybar --reload main </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- &
     disown
-  done
+  else
+    tray_output=DP-2-1
+    for m in $outputs; do
+      export MONITOR=$m
+      export TRAY_POSITION=none
+      if [[ $m == $tray_output ]]; then
+        TRAY_POSITION=right
+      fi
+      polybar --reload main </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- &
+      disown
+      done
+  fi
   {%@@ endif @@%}
 
 ) 200>/var/tmp/polybar-launch.lock
