@@ -28,5 +28,5 @@ launch zsh
 {%@@ endif @@%}
 ## Notes ##
 new_tab Notes
-cd /home/zach/Desktop/Brainhole
+cd /home/zach/Brainhole
 launch zsh
