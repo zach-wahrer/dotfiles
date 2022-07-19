@@ -367,6 +367,14 @@ require("packer").startup({
 				require("dapui").setup()
 			end,
 		}) -- UI for dap
+		use({
+			"theHamsta/nvim-dap-virtual-text",
+			opt = true,
+			ft = { "go", "js", "ts" },
+			config = function()
+				require("nvim-dap-virtual-text").setup()
+			end,
+		}) -- DAP virtual text
 
 		-- TESTING
 		use({ "buoto/gotests-vim", opt = true, ft = { "go" } }) -- Generate Go tests
