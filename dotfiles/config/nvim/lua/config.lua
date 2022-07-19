@@ -182,6 +182,13 @@ augroups.file_type = {
 			cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
 		end,
 	},
+	rainbow = {
+		event = { "FileType" },
+		pattern = "*",
+		callback = function()
+			api.nvim_set_hl(0, "rainbowcol1", { bold = true, fg = "#ff7b72" })
+		end,
+	},
 }
 
 for group, commands in pairs(augroups) do
