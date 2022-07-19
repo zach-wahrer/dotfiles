@@ -357,12 +357,12 @@ require("packer").startup({
 		use({
 			"David-Kunz/jester",
 			opt = true,
-			ft = { "js", "ts" },
+			event = "BufReadPre",
 		}) -- Jest test dap debugger
 		use({
 			"rcarriga/nvim-dap-ui",
 			opt = true,
-			ft = { "go", "js", "ts" },
+			event = "BufReadPre",
 			config = function()
 				require("dapui").setup()
 			end,
@@ -370,7 +370,7 @@ require("packer").startup({
 		use({
 			"theHamsta/nvim-dap-virtual-text",
 			opt = true,
-			ft = { "go", "js", "ts" },
+			event = "BufReadPre",
 			config = function()
 				require("nvim-dap-virtual-text").setup()
 			end,
