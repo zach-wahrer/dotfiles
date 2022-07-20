@@ -2,4 +2,4 @@ bind <C-l> tabnext
 bind <C-h> tabprev
 bind l forward
 bind h back
-
+set newtab about:blank
