@@ -45,6 +45,8 @@ alias gpoff="globalprotect disable"
 # TERRAFORM #
 alias tfpsd='terraform plan -var="aws_profile=service-deploy"'
 alias tfasd='terraform apply -var="aws_profile=service-deploy"'
+alias tfpka='terraform plan -var="aws_profile=k8s-admin"'
+alias tfaka='terraform apply -var="aws_profile=k8s-admin"'
 alias mdap='make deploy-api-plan tfarg="-var='aws_profile=service-deploy'"'
 alias mdaa='make deploy-api-apply'
 
