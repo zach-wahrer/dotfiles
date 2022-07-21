@@ -30,7 +30,6 @@ alias gwa='git worktree add'
 alias gwr='git worktree remove'
 alias gwl='git worktree list'
 alias gwp='git worktree prune -v'
-# alias config='/usr/bin/git --git-dir=/home/zach/.cfg/ --work-tree=/home/zach'
 
 # TESTS #
 alias mt="make test"
@@ -68,6 +67,9 @@ alias gmt="go mod tidy"
 
 # LUA #
 alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
+
+# K8S #
+alias kc="kubectl"
 
 # AWS #
 alias awslocal="aws --endpoint-url=http://localhost:4566"
