@@ -83,6 +83,7 @@ bindkey -M menuselect -s '^[' '^G^_' # Esc exits browsing history
 # User configuration
 source ~/.config/zsh/paths
 source ~/.config/zsh/aliases
+source ~/.config/zsh/functions
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

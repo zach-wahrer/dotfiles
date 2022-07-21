@@ -1,0 +1,5 @@
+# AWS #
+function awsdecodeerr {
+	readonly encodedmessage=${1:?"Encoded message must be specified."}
+ 	aws sts decode-authorization-message --encoded-message $encodedmessage --query DecodedMessage --output text | jq '.'
+}
