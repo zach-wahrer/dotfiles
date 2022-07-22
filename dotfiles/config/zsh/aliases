@@ -70,6 +70,7 @@ alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
 
 # K8S #
 alias kc="kubectl"
+alias mkc="minikube kubectl --"
 
 # AWS #
 alias awslocal="aws --endpoint-url=http://localhost:4566"
