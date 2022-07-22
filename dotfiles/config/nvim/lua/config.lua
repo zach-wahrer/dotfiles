@@ -19,6 +19,14 @@ o.termguicolors = true
 api.nvim_set_hl(0, "Search", { bg = "#aa03af", fg = "Orange", underline = 1 })
 api.nvim_set_hl(0, "SpelunkerSpellBad", { undercurl = 1 })
 api.nvim_set_hl(0, "SpelunkerComplexOrCompoundWord", { underdot = 1 })
+api.nvim_set_hl(0, "LspDiagnosticsVirtualTextError", { fg = "Red" })
+api.nvim_set_hl(0, "LspDiagnosticsVirtualTextWarning", { fg = "Yellow" })
+api.nvim_set_hl(0, "LspDiagnosticsVirtualTextInformation", { fg = "White" })
+api.nvim_set_hl(0, "LspDiagnosticsVirtualTextHint", { fg = "White" })
+api.nvim_set_hl(0, "LspDiagnosticsUnderlineError", { underline = 1 })
+api.nvim_set_hl(0, "LspDiagnosticsUnderlineWarning", { underline = 1 })
+api.nvim_set_hl(0, "LspDiagnosticsUnderlineInformation", { underline = 1 })
+api.nvim_set_hl(0, "LspDiagnosticsUnderlineHint", { underline = 1 })
 
 -- Globals --
 o.ignorecase = true -- Case insensitive searching
@@ -64,6 +72,15 @@ augroups.buf_enter = {
 		pattern = "*",
 		callback = function()
 			cmd([[ set fo-=c fo-=r fo-=o ]])
+		end,
+	},
+}
+augroups.cursor_hold = {
+	show_diags_on_cursor_hold = {
+		event = { "CursorHold" },
+		pattern = "*",
+		callback = function()
+			vim.lsp.diagnostic.show_line_diagnostics()
 		end,
 	},
 }

@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local noremap = { noremap = true }
 local set_keymap = vim.api.nvim_set_keymap
 
 -- General Keybinds --
@@ -13,6 +14,7 @@ set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
 set_keymap("n", "<ESC>", ":noh<CR>", opts) -- Remove search highlightingRemove search highlighting
 set_keymap("n", "<leader>c", ":lclose<CR>:cclose<CR>", opts) -- Close quickfix and location list
+set_keymap("n", "<leader>df", ":vert diffsplit ", noremap) -- Close quickfix and location list
 
 -- Dap --
 set_keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
@@ -81,7 +83,9 @@ set_keymap("n", "<leader>lg", "<cmd>LazyGit<CR>", opts)
 
 -- LSP -- Per client mappings are in lsp config file
 set_keymap("n", "<leader>lsp", "<cmd>LspStop<CR><cmd>call wait(1000, 1==0)<CR><cmd>LspStart<CR>", opts)
-set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+-- set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+set_keymap("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+set_keymap("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 set_keymap("n", "<leader>dw", "<cmd>DiagWindowShow<CR>", opts)
 set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
