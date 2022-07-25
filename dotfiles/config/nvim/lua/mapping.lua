@@ -14,7 +14,9 @@ set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
 set_keymap("n", "<ESC>", ":noh<CR>", opts) -- Remove search highlightingRemove search highlighting
 set_keymap("n", "<leader>c", ":lclose<CR>:cclose<CR>", opts) -- Close quickfix and location list
-set_keymap("n", "<leader>df", ":vert diffsplit ", noremap) -- Close quickfix and location list
+set_keymap("n", "<leader>df", ":vert diffsplit ", noremap) -- Diff an unopened file with the one currently open.
+set_keymap("n", "<leader>dv", ":windo diffthis<CR>", noremap) -- Diff two windows
+set_keymap("n", "<leader>dr", ":windo diffoff<CR>", noremap) -- Remove diff between windows
 
 -- Dap --
 set_keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
