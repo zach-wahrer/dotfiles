@@ -80,7 +80,7 @@ augroups.cursor_hold = {
 		event = { "CursorHold" },
 		pattern = "*",
 		callback = function()
-			vim.lsp.diagnostic.show_line_diagnostics()
+			vim.diagnostic.open_float()
 		end,
 	},
 }
