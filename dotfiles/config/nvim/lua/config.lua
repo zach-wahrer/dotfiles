@@ -75,15 +75,15 @@ augroups.buf_enter = {
 		end,
 	},
 }
-augroups.cursor_hold = {
-	show_diags_on_cursor_hold = {
-		event = { "CursorHold" },
-		pattern = "*",
-		callback = function()
-			vim.diagnostic.open_float()
-		end,
-	},
-}
+-- augroups.cursor_hold = {
+-- 	show_diags_on_cursor_hold = {
+-- 		event = { "CursorHold" },
+-- 		pattern = "*",
+-- 		callback = function()
+-- 			vim.diagnostic.open_float()
+-- 		end,
+-- 	},
+-- }
 augroups.buf_write_pre = {
 	remove_whitespace_on_save = {
 		event = { "BufWritePre" },
