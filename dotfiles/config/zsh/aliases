@@ -69,8 +69,10 @@ alias gmt="go mod tidy"
 alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
 
 # K8S #
-alias kc="kubectl"
-alias mkc="minikube kubectl --"
+alias kc="kubectl config use-context arn:aws:eks:us-west-2:658645415653:cluster/hello-world-cluster; kubectl"
+alias mkc="kubectl config use-context minikube; kubectl"
+compdef _kubectl kc
+
 
 # AWS #
 alias awslocal="aws --endpoint-url=http://localhost:4566"
