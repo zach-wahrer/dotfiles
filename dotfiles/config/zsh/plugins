@@ -47,11 +47,6 @@ if ! [ -x "$(command -v zoxide)" ]; then
   curl -sS https://webinstall.dev/zoxide | bash
 fi
 
-## ccat (better cat) ##
-# if ! [ -x "$(command -v ccat)" ]; then
-#   go install github.com/owenthereal/ccat@latest
-# fi
-
 ## Auto Pairs  ##
 if [[ ! -d ~/.zsh-autopair ]]; then
   git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
