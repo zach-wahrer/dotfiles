@@ -101,7 +101,7 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # FZF #
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # COMPLETIONS #
 source <(kubectl completion zsh)
