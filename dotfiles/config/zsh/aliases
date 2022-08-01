@@ -13,6 +13,7 @@ alias dnuke='docker stop $(docker ps -aq) && docker rm $(docker ps -aq); drmi; d
 alias dstop='docker stop $(docker ps -q --filter "since=portainer")'
 alias drmi='docker rmi $(docker images -a -q)'
 alias dprune='yes | docker system prune; yes | docker volume prune'
+alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
 
 # GIT #
 alias gs='git status'
@@ -52,19 +53,20 @@ alias mdaa='make deploy-api-apply'
 
 # GENERAL #
 #alias pe="ksitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
-alias cat="ccat"
-alias ml="make local"
 alias :q="exit"
+. "$HOME/.cargo/env"
+alias zk="z $1 && k"
+alias edir="edir --trash"
+
+# Foundant Platform #
+alias ml="make local"
 alias zp="cd ~/go/src/platform"
 alias za="cd ~/go/src/platform/accounting"
-alias sc="staticcheck ./..."
-alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
-alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
-alias go="richgo"
-. "$HOME/.cargo/env"
 
 # GO #
+alias go="richgo"
 alias gmt="go mod tidy"
+alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
 
 # LUA #
 alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
@@ -73,7 +75,6 @@ alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
 alias kc="kubectl config use-context arn:aws:eks:us-west-2:658645415653:cluster/hello-world-cluster; kubectl"
 alias mkc="kubectl config use-context minikube; kubectl"
 compdef _kubectl kc
-
 
 # AWS #
 alias awslocal="aws --endpoint-url=http://localhost:4566"

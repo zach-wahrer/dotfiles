@@ -58,3 +58,17 @@ autopair-init
 if [[ ! -d ~/.diff-so-fancy ]]; then
   git clone https://github.com/so-fancy/diff-so-fancy ~/.diff-so-fancy
 fi
+
+## Mcfly (better ctrl-r)
+if [[ ! -f "/usr/local/bin/mcfly" ]]; then
+   curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly
+fi
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_FUZZY=true
+bindkey '^T' mcfly-history-widget
+eval "$(mcfly init zsh)"
+
+## OTHER THINGS TO INSTALL ##
+# bat - https://github.com/sharkdp/bat
+# edir - https://github.com/bulletmark/edir
+
