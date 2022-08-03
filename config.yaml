@@ -86,6 +86,9 @@ dotfiles:
     src: config/zsh/functions
     dst: ~/.config/zsh/functions
     chmod: '644'
+  f_scroll.py:
+    src: config/kitty/scroll.py
+    dst: ~/.config/kitty/scroll.py
 profiles:
   foundant-wolf:
     dotfiles:
@@ -111,6 +114,7 @@ profiles:
     - f_vale.ini
     - d_tridactyl
     - d_screenlayout
+    - f_scroll.py
     variables:
       adapter: AC
       battery: BAT0
@@ -138,6 +142,7 @@ profiles:
     - f_vale.ini
     - d_tridactyl
     - d_screenlayout
+    - f_scroll.py
     variables:
       adapter: ADP1
       battery: BAT1
