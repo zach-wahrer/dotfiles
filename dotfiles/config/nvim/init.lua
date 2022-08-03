@@ -1,4 +1,5 @@
-vim.g.mapleader = " "
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 require("plugins.impatient")
 require("plugins.filetype")
