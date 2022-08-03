@@ -12,6 +12,8 @@ set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
 set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
+set_keymap("v", "j", "gj", opts) -- Down on wrapped lines visually
+set_keymap("v", "k", "gk", opts) -- Up on wrapped lines visually
 set_keymap("n", "<ESC>", "<cmd>noh<CR>", opts) -- Remove search highlightingRemove search highlighting
 set_keymap("n", "<leader>c", "<cmd>lclose<CR><cmd>cclose<CR>", opts) -- Close quickfix and location list
 set_keymap("n", "<leader>df", "<cmd>vert diffsplit ", noremap) -- Diff an unopened file with the one currently open.
