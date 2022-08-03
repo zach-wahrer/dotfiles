@@ -3,20 +3,20 @@ local noremap = { noremap = true }
 local set_keymap = vim.api.nvim_set_keymap
 
 -- General Keybinds --
-set_keymap("n", "<leader>w", ":w<CR>", opts) -- Write
+set_keymap("n", "<leader>w", "<cmd>w<CR>", opts) -- Write
 set_keymap("n", "<A-Enter>", "O<Esc>", opts) -- Add line above
 set_keymap("n", "<CR>", "o<Esc>", opts) -- Add line below
 set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
-set_keymap("n", "<leader>id", ":put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
+set_keymap("n", "<leader>id", "<cmd>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
 set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
 set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
-set_keymap("n", "<ESC>", ":noh<CR>", opts) -- Remove search highlightingRemove search highlighting
-set_keymap("n", "<leader>c", ":lclose<CR>:cclose<CR>", opts) -- Close quickfix and location list
-set_keymap("n", "<leader>df", ":vert diffsplit ", noremap) -- Diff an unopened file with the one currently open.
-set_keymap("n", "<leader>dv", ":windo diffthis<CR>", noremap) -- Diff two windows
-set_keymap("n", "<leader>dr", ":windo diffoff<CR>", noremap) -- Remove diff between windows
+set_keymap("n", "<ESC>", "<cmd>noh<CR>", opts) -- Remove search highlightingRemove search highlighting
+set_keymap("n", "<leader>c", "<cmd>lclose<CR><cmd>cclose<CR>", opts) -- Close quickfix and location list
+set_keymap("n", "<leader>df", "<cmd>vert diffsplit ", noremap) -- Diff an unopened file with the one currently open.
+set_keymap("n", "<leader>dv", "<cmd>windo diffthis<CR>", noremap) -- Diff two windows
+set_keymap("n", "<leader>dr", "<cmd>windo diffoff<CR>", noremap) -- Remove diff between windows
 
 -- Dap --
 set_keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
@@ -36,6 +36,7 @@ set_keymap("n", "<leader>dj", "<cmd>lua require('jester').debug({dap = { console
 
 -- Betterbuffer --
 set_keymap("n", "<leader>q", "<cmd>Bdelete<CR>", opts)
+set_keymap("n", "<leader>wq", "<cmd>w<CR><cmd>Bdelete<CR>", opts)
 set_keymap("n", "<leader>1", "<cmd>Bdelete!<CR>", opts)
 
 -- Bufferline --
@@ -94,7 +95,7 @@ set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 set_keymap("n", "<leader>ll", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Neogen --
-set_keymap("n", "<leader>ia", ":lua require('neogen').generate()<CR>", opts)
+set_keymap("n", "<leader>ia", "<cmd>lua require('neogen').generate()<CR>", opts)
 
 -- Nvim Tree --
 set_keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
