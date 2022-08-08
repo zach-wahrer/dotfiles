@@ -6,7 +6,7 @@ layout vertical
 enabled_layouts vertical, horizontal, stack
 launch --cwd=$HOME/.config --env NVIM=true zsh
 launch --title "Config Terminal" --cwd=$HOME/dotfiles zsh
-resize_window shorter 30
+resize_window shorter 25
 
 {%@@ if profile == "foundant-wolf" @@%}
 ## Platform ##
@@ -15,7 +15,7 @@ layout vertical
 enabled_layouts vertical, horizontal, stack
 launch --cwd=$HOME/go/src/platform --env NVIM=true zsh
 launch --title "vim-test-output" --cwd=$HOME/go/src/platform zsh
-resize_window shorter 30
+resize_window shorter 25
 {%@@ endif @@%}
 
 
