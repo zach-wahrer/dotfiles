@@ -25,8 +25,14 @@ set_keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
 set_keymap("n", "<leader>dc", "<cmd>lua require('dap').continue()<CR>", opts)
 set_keymap(
 	"n",
+	"<leader>dses",
+	"<cmd>Dotenv deploy/local/.source.env | Dotenv deploy/local/.compiled.env | Dotenv ../../.secret.env <CR>",
+	opts
+)
+set_keymap(
+	"n",
 	"<leader>dse",
-	"<cmd>Dotenv deploy/local | Dotenv deploy/local/.compiled.env | Dotenv ../../.secret.env <CR>",
+	"<cmd>Dotenv deploy/local/.env | Dotenv deploy/local/.compiled.env | Dotenv ../../.secret.env <CR>",
 	opts
 )
 set_keymap("n", "<leader>ds", "<cmd>lua require('dap').step_over()<CR>", opts)
