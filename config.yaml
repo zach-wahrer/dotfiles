@@ -1,4 +1,3 @@
----
 config:
   backup: true
   create: true
@@ -94,62 +93,73 @@ dotfiles:
     src: config/nvim/lua/scripts/kitty_opener.sh
     dst: ~/.config/nvim/lua/scripts/kitty_opener.sh
     chmod: '744'
+  f_accounting-startup.sh:
+    src: scripts/accounting-startup.sh
+    dst: ~/scripts/accounting-startup.sh
+    chmod: '744'
+  f_nvim-startup.sh:
+    src: scripts/nvim-startup.sh
+    dst: ~/scripts/nvim-startup.sh
+    chmod: '744'
 profiles:
   foundant-wolf:
     dotfiles:
-      - d_i3
-      - d_kitty
-      - d_nvim
-      - d_polybar
-      - d_rofi
-      - d_scripts
-      - f_gitconfig
-      - f_zshrc
-      - f_golangci.yml
-      - d_icons
-      - d_ranger
-      - f_xmodmap
-      - f_dashboard.cat
-      - f_zsh_zshrc
-      - f_aliases
-      - f_functions
-      - f_paths
-      - f_plugins
-      - f_theme
-      - f_vale.ini
-      - d_tridactyl
-      - d_screenlayout
-      - f_scroll.py
-      - f_kitty_opener.sh
+    - d_i3
+    - d_kitty
+    - d_nvim
+    - d_polybar
+    - d_rofi
+    - d_scripts
+    - f_gitconfig
+    - f_zshrc
+    - f_golangci.yml
+    - d_icons
+    - d_ranger
+    - f_xmodmap
+    - f_dashboard.cat
+    - f_zsh_zshrc
+    - f_aliases
+    - f_functions
+    - f_paths
+    - f_plugins
+    - f_theme
+    - f_vale.ini
+    - d_tridactyl
+    - d_screenlayout
+    - f_scroll.py
+    - f_kitty_opener.sh
+    - f_accounting-startup.sh
+    - f_nvim-startup.sh
     variables:
       adapter: AC
       battery: BAT0
   red-wolf:
     dotfiles:
-      - d_i3
-      - d_kitty
-      - d_nvim
-      - d_polybar
-      - d_rofi
-      - d_scripts
-      - f_bashrc
-      - f_gitconfig
-      - f_zshrc
-      - f_golangci.yml
-      - d_icons
-      - d_ranger
-      - f_xmodmap
-      - f_zsh_zshrc
-      - f_aliases
-      - f_functions
-      - f_paths
-      - f_plugins
-      - f_theme
-      - f_vale.ini
-      - d_tridactyl
-      - d_screenlayout
-      - f_scroll.py
-      - f_kitty_opener.sh
+    - d_i3
+    - d_kitty
+    - d_nvim
+    - d_polybar
+    - d_rofi
+    - d_scripts
+    - f_bashrc
+    - f_gitconfig
+    - f_zshrc
+    - f_golangci.yml
+    - d_icons
+    - d_ranger
+    - f_xmodmap
+    - f_zsh_zshrc
+    - f_aliases
+    - f_functions
+    - f_paths
+    - f_plugins
+    - f_theme
+    - f_vale.ini
+    - d_tridactyl
+    - d_screenlayout
+    - f_scroll.py
+    - f_kitty_opener.sh
+    - f_nvim-startup.sh
     variables:
       adapter: ADP1
       battery: BAT1

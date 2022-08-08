@@ -105,6 +105,9 @@ set_keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
 -- Project --
 set_keymap("n", "<leader>s", "<cmd>Telescope projects<CR>", opts)
 
+-- Telescope --
+set_keymap("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", opts)
+
 -- Undo Tree --
 set_keymap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts) -- Write
 
