@@ -241,14 +241,6 @@ require("packer").startup({
 			"stevearc/dressing.nvim",
 		}) -- Pretty default interfaces
 		use({
-			"ThePrimeagen/harpoon",
-			requires = { "nvim-lua/plenary.nvim" },
-			config = function()
-				require("plugins.harpoon")
-				require("telescope").load_extension("harpoon")
-			end,
-		}) -- Marks
-		use({
 			"tiagovla/scope.nvim",
 			config = function()
 				require("scope").setup()
