@@ -12,13 +12,24 @@ set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
 set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
-set_keymap("v", "j", "gj", opts) -- Down on wrapped lines visually
-set_keymap("v", "k", "gk", opts) -- Up on wrapped lines visually
+set_keymap("v", "j", "gj", opts) -- Down on wrapped lines visually while selecting
+set_keymap("v", "k", "gk", opts) -- Up on wrapped lines visually while selecting
 set_keymap("n", "<ESC>", "<cmd>noh<CR>", opts) -- Remove search highlightingRemove search highlighting
 set_keymap("n", "<leader>c", "<cmd>lclose<CR><cmd>cclose<CR>", opts) -- Close quickfix and location list
 set_keymap("n", "<leader>df", "<cmd>vert diffsplit ", noremap) -- Diff an unopened file with the one currently open.
 set_keymap("n", "<leader>dv", "<cmd>windo diffthis<CR>", noremap) -- Diff two windows
 set_keymap("n", "<leader>dr", "<cmd>windo diffoff<CR>", noremap) -- Remove diff between windows
+set_keymap("v", ">", ">gv", opts) -- Indent while keeping selection
+set_keymap("v", "<", "<gv", opts) -- Remove indent while keeping selection
+set_keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts) -- Resize horizontal split
+set_keymap("n", "<M-Down>", "<cmd>resize -2<CR>", opts) -- Resize horizontal split
+set_keymap("n", "<M-Left>", "<cmd>vertical resize -2<CR>", opts) -- Resize vertical split
+set_keymap("n", "<M-Right>", "<cmd>vertical resize +2<CR>", opts) -- Resize vertical split
+set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- Move selected text down
+set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- Move selected text up
+set_keymap("n", "<leader>n", "<cmd>enew<CR>", opts) -- New scratch buffer
+set_keymap("n", "<leader>k", "<cmd>Telescope keymaps<CR>", opts) -- Search keymaps
+set_keymap("n", "<leader>v", "<cmd>Telescope session-lens search_session<CR>", opts) -- Search keymaps
 
 -- Dap --
 set_keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
@@ -64,7 +75,7 @@ set_keymap("n", "<A-9>", "<cmd>BufferLineGoToBuffer 9<CR>", opts)
 set_keymap("n", "<A-->", "<cmd>BufferLinePickClose<CR>", opts)
 
 -- Dashboard --
-set_keymap("n", "<leader>v", "<cmd>Dashboard<CR>", opts)
+-- set_keymap("n", "<leader>v", "<cmd>Dashboard<CR>", opts)
 -- set_keymap("n", "<leader>ss", "<cmd>SessionSave<CR>", opts)
 -- set_keymap("n", "<leader>sl", "<cmd>SessionLoad<CR>", opts)
 

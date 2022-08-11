@@ -34,4 +34,43 @@ require("nvim-treesitter.configs").setup({
 		-- colors = {}, -- table of hex strings
 		-- termcolors = {} -- table of colour name strings
 	},
+	textobjects = {
+		select = {
+			enable = true,
+
+			-- Automatically jump forward to textobj, similar to targets.vim
+			lookahead = true,
+
+			keymaps = {
+				-- You can use the capture groups defined in textobjects.scm
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+			},
+			-- You can choose the select mode (default is charwise 'v')
+			-- selection_modes = {
+			-- 	["@parameter.outer"] = "v", -- charwise
+			-- 	["@function.outer"] = "V", -- linewise
+			-- 	["@class.outer"] = "<c-v>", -- blockwise
+			-- },
+			-- If you set this to `true` (default is `false`) then any textobject is
+			-- extended to include preceding xor succeeding whitespace. Succeeding
+			-- whitespace has priority in order to act similarly to eg the built-in
+			-- `ap`.
+			include_surrounding_whitespace = true,
+		},
+		move = {
+			enable = true,
+			set_jumps = true, -- whether to set jumps in the jumplist
+			goto_next_start = {
+				["<leader>nf"] = "@function.outer",
+				["<leader>nc"] = "@class.outer",
+			},
+			goto_previous_start = {
+				["<leader>pf"] = "@function.outer",
+				["<leader>pc"] = "@class.outer",
+			},
+		},
+	},
 })

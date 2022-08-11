@@ -78,7 +78,7 @@ require("packer").startup({
 			config = function()
 				require("plugins.treesitter")
 			end,
-			requires = { "p00f/nvim-ts-rainbow" }, -- Rainbow brackets
+			requires = { "p00f/nvim-ts-rainbow", "nvim-treesitter/nvim-treesitter-textobjects" }, -- Rainbow brackets, Text objects
 		}) -- Treesitter
 		use({
 			"windwp/nvim-autopairs",
@@ -172,12 +172,12 @@ require("packer").startup({
 				require("plugins.spelunker")
 			end,
 		}) -- Syntax aware spellcheck
-		use({
-			"glepnir/dashboard-nvim",
-			config = function()
-				require("plugins.dashboard")
-			end,
-		}) -- Startup dashboard
+		-- use({
+		-- 	"glepnir/dashboard-nvim",
+		-- 	config = function()
+		-- 		require("plugins.dashboard")
+		-- 	end,
+		-- }) -- Startup dashboard
 		use({
 			"folke/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
@@ -246,6 +246,20 @@ require("packer").startup({
 				require("scope").setup()
 			end,
 		}) -- Scope buffers to tabs
+		use({
+			"rmagatti/auto-session",
+			config = function()
+				require("auto-session").setup({})
+			end,
+		})
+		use({
+			"rmagatti/session-lens",
+			requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
+			config = function()
+				require("session-lens").setup({--[[your custom config--]]
+				})
+			end,
+		})
 
 		-- KITTY
 		use({

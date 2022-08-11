@@ -39,6 +39,7 @@ o.clipboard = "unnamedplus" -- Use system clipboard
 o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 o.incsearch = true -- Show search results while still typing
 o.laststatus = 3 -- Only show one status bar
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal" -- Session options
 
 -- Buffer --
 bo.tabstop = 4 -- Number of cols occupied by tab
