@@ -117,6 +117,10 @@ require("packer").startup({
 			requires = { "nvim-telescope/telescope.nvim" },
 		}) -- Project management
 		use({
+			"windwp/nvim-spectre",
+			requires = { "nvim-lua/plenary.nvim" },
+		}) -- Find/Replace
+		use({
 			"b3nj5m1n/kommentary",
 			opt = true,
 			event = "BufReadPre",

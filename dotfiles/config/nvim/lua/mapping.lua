@@ -10,6 +10,8 @@ set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
 set_keymap("n", "<leader>id", "<cmd>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
 set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
 set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
+set_keymap("n", "<C-\\>", "<C-W><C-V>", opts) -- Vertical split
+set_keymap("n", "<C-->", "<C-W><C-S>", opts) -- Horizontal split
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
 set_keymap("v", "j", "gj", opts) -- Down on wrapped lines visually while selecting
@@ -117,6 +119,11 @@ set_keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
 
 -- Project --
 set_keymap("n", "<leader>s", "<cmd>Telescope projects<CR>", opts)
+
+-- Spectre --
+set_keymap("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", opts)
+set_keymap("n", "<leader>Sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", opts)
+set_keymap("v", "<leader>Sw", "<esc>:lua require('spectre').open_visual()<CR>", opts)
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", opts)

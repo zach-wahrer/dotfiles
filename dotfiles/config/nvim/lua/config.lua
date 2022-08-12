@@ -27,6 +27,8 @@ api.nvim_set_hl(0, "LspDiagnosticsUnderlineError", { underline = 1 })
 api.nvim_set_hl(0, "LspDiagnosticsUnderlineWarning", { underline = 1 })
 api.nvim_set_hl(0, "LspDiagnosticsUnderlineInformation", { underline = 1 })
 api.nvim_set_hl(0, "LspDiagnosticsUnderlineHint", { underline = 1 })
+api.nvim_set_hl(0, "WinSeparator", { fg = "#191919" })
+api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = "#191919" })
 
 -- Globals --
 o.ignorecase = true -- Case insensitive searching
