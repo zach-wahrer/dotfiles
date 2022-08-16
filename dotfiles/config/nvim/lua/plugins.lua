@@ -250,20 +250,20 @@ require("packer").startup({
 				require("scope").setup()
 			end,
 		}) -- Scope buffers to tabs
-		use({
-			"rmagatti/auto-session",
-			config = function()
-				require("auto-session").setup({})
-			end,
-		})
-		use({
-			"rmagatti/session-lens",
-			requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
-			config = function()
-				require("session-lens").setup({--[[your custom config--]]
-				})
-			end,
-		})
+		-- use({
+		-- 	"rmagatti/auto-session",
+		-- 	config = function()
+		-- 		require("auto-session").setup({})
+		-- 	end,
+		-- })
+		-- use({
+		-- 	"rmagatti/session-lens",
+		-- 	requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
+		-- 	config = function()
+		-- 		require("session-lens").setup({--[[your custom config--]]
+		-- 		})
+		-- 	end,
+		-- })
 
 		-- KITTY
 		use({

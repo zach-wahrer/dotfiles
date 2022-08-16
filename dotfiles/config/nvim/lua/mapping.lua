@@ -31,7 +31,7 @@ set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- Move selected text down
 set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- Move selected text up
 set_keymap("n", "<leader>n", "<cmd>enew<CR>", opts) -- New scratch buffer
 set_keymap("n", "<leader>k", "<cmd>Telescope keymaps<CR>", opts) -- Search keymaps
-set_keymap("n", "<leader>v", "<cmd>Telescope session-lens search_session<CR>", opts) -- Search keymaps
+-- set_keymap("n", "<leader>v", "<cmd>Telescope session-lens search_session<CR>", opts) -- Search keymaps
 
 -- Dap --
 set_keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)

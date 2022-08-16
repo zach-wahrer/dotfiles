@@ -4,7 +4,7 @@
 new_tab Config
 layout vertical
 enabled_layouts vertical, horizontal, stack
-launch --cwd=$HOME/.config --env NVIM=true GOTESTS_TEMPLATE=testify zsh
+launch --cwd=$HOME/.config --env NVIM=true --env GOTESTS_TEMPLATE=testify zsh
 launch --title "Config Terminal" --cwd=$HOME/dotfiles zsh
 resize_window shorter 25
 
@@ -13,7 +13,7 @@ resize_window shorter 25
 new_tab Platform
 layout vertical
 enabled_layouts vertical, horizontal, stack
-launch --cwd=$HOME/go/src/platform --env NVIM=true GOTESTS_TEMPLATE=testify zsh
+launch --cwd=$HOME/go/src/platform --env NVIM=true --env GOTESTS_TEMPLATE=testify zsh
 launch --title "vim-test-output" --cwd=$HOME/go/src/platform zsh
 resize_window shorter 25
 {%@@ endif @@%}
