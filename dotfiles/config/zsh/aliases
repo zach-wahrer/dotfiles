@@ -36,8 +36,8 @@ alias gwp='git worktree prune -v'
 # TESTS #
 alias mt="make test"
 alias mti="make test-integration"
-alias mtf="cd web/frontend && npm run test:unit; cd ../../"
-alias mtfi="cd web/frontend && npm run test-ci-unit; cd ../../"
+alias mtf="z ~/go/src/platform/accounting/web/frontend && npm run test:unit; z -"
+alias mtfi="z ~/go/src/platform/accounting/web/frontend && npm run test-ci-unit; z -"
 
 # GLOBAL PROTECT #
 alias gpon="globalprotect connect -p vpn.foundant.com"

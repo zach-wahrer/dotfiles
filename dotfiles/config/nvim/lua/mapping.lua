@@ -4,8 +4,8 @@ local set_keymap = vim.api.nvim_set_keymap
 
 -- General Keybinds --
 set_keymap("n", "<leader>w", "<cmd>w<CR>", opts) -- Write
-set_keymap("n", "<A-Enter>", "O<Esc>", opts) -- Add line above
-set_keymap("n", "<CR>", "o<Esc>", opts) -- Add line below
+set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
+set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
 set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
 set_keymap("n", "<leader>id", "<cmd>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
 set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
@@ -32,6 +32,7 @@ set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- Move selected text up
 set_keymap("n", "<leader>n", "<cmd>enew<CR>", opts) -- New scratch buffer
 set_keymap("n", "<leader>k", "<cmd>Telescope keymaps<CR>", opts) -- Search keymaps
 -- set_keymap("n", "<leader>v", "<cmd>Telescope session-lens search_session<CR>", opts) -- Search keymaps
+set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts)
 
 -- Dap --
 set_keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
@@ -123,7 +124,7 @@ set_keymap("n", "<leader>s", "<cmd>Telescope projects<CR>", opts)
 -- Spectre --
 set_keymap("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", opts)
 set_keymap("n", "<leader>Sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", opts)
-set_keymap("v", "<leader>Sw", "<esc>:lua require('spectre').open_visual()<CR>", opts)
+set_keymap("v", "<leader>Sw", "<ESC>:lua require('spectre').open_visual()<CR>", opts)
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", opts)
