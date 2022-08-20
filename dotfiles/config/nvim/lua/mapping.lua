@@ -94,6 +94,14 @@ set_keymap("n", "<leader>gvc", "<cmd>DiffviewClose<CR>", opts)
 -- Fugitive --
 set_keymap("n", "<leader>gb", "<cmd>Git blame<CR>", opts)
 
+-- Gitsigns --
+set_keymap("n", "<leader>hs", "<cmd>Gitsigns stage_hunk<CR>", opts)
+set_keymap("n", "<leader>hu", "<cmd>Gitsigns undo_stage_hunk<CR>", opts)
+set_keymap("n", "<leader>hr", "<cmd>Gitsigns reset_hunk<CR>", opts)
+set_keymap("n", "<leader>hS", "<cmd>Gitsigns stage_buffer<CR>", opts)
+set_keymap("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<CR>", opts)
+set_keymap("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<CR>", opts)
+
 -- Kommentary --
 set_keymap("x", "<C-/>", "<Plug>kommentary_visual_default", opts)
 set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", opts)

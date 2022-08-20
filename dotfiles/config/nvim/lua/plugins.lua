@@ -183,7 +183,7 @@ require("packer").startup({
 		-- 	end,
 		-- }) -- Startup dashboard
 		use({
-			"folke/todo-comments.nvim",
+			"B4mbus/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
 			config = function()
 				require("plugins.todo-comments")
