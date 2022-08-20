@@ -32,6 +32,7 @@ api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = "#191919" })
 
 -- Globals --
 o.ignorecase = true -- Case insensitive searching
+o.smartcase = true -- Override ignorecase if search pattern is mixed case
 o.mouse = "a" -- Enable mouse in all modes
 o.autowrite = true
 o.title = true
@@ -41,7 +42,8 @@ o.clipboard = "unnamedplus" -- Use system clipboard
 o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 o.incsearch = true -- Show search results while still typing
 o.laststatus = 3 -- Only show one status bar
-o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal" -- Session options
+-- o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terpipap"p-p pession options
+o.timeoutlen = 500 -- Length of time to wait until accepting the keypress sequence
 
 -- Buffer --
 bo.tabstop = 4 -- Number of cols occupied by tab
@@ -78,15 +80,29 @@ augroups.buf_enter = {
 		end,
 	},
 }
--- augroups.cursor_hold = {
--- 	show_diags_on_cursor_hold = {
--- 		event = { "CursorHold" },
--- 		pattern = "*",
--- 		callback = function()
--- 			vim.diagnostic.open_float()
--- 		end,
--- 	},
--- }
+augroups.cursor_hold = {
+	highlight_doc_on_cursor_hold = {
+		event = { "CursorHold" },
+		pattern = "*",
+		callback = function()
+			vim.lsp.buf.document_highlight()
+		end,
+	},
+	remove_highlight_on_cursor_moved = {
+		event = { "CursorMoved" },
+		pattern = "*",
+		callback = function()
+			vim.lsp.buf.clear_references()
+		end,
+	},
+	-- show_diags_on_cursor_hold = {
+	-- 	event = { "CursorHold" },
+	-- 	pattern = "*",
+	-- 	callback = function()
+	-- 		vim.diagnostic.open_float()
+	-- 	end,
+	-- },
+}
 augroups.buf_write_pre = {
 	remove_whitespace_on_save = {
 		event = { "BufWritePre" },

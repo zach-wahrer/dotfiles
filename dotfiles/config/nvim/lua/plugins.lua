@@ -374,8 +374,9 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("dapui").setup()
+				require("plugins.dap_ui")
 			end,
+			requires = { "mfussenegger/nvim-dap" },
 		}) -- UI for dap
 		use({
 			"theHamsta/nvim-dap-virtual-text",
@@ -384,6 +385,7 @@ require("packer").startup({
 			config = function()
 				require("nvim-dap-virtual-text").setup()
 			end,
+			requires = { "mfussenegger/nvim-dap" },
 		}) -- DAP virtual text
 
 		-- TESTING
