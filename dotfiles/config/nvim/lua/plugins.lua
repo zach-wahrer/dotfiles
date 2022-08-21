@@ -112,10 +112,9 @@ require("packer").startup({
 			"ahmedkhalf/project.nvim",
 			config = function()
 				require("project_nvim").setup()
-				require("telescope").load_extension("projects")
 			end,
 			requires = { "nvim-telescope/telescope.nvim" },
-		}) -- Project management
+		}) -- Project management, needed for vim-test to work properly
 		use({
 			"windwp/nvim-spectre",
 			requires = { "nvim-lua/plenary.nvim" },

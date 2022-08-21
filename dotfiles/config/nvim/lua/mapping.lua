@@ -30,8 +30,6 @@ set_keymap("n", "<M-Right>", "<cmd>vertical resize +2<CR>", opts) -- Resize vert
 set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- Move selected text down
 set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- Move selected text up
 set_keymap("n", "<leader>n", "<cmd>enew<CR>", opts) -- New scratch buffer
-set_keymap("n", "<leader>k", "<cmd>Telescope keymaps<CR>", opts) -- Search keymaps
--- set_keymap("n", "<leader>v", "<cmd>Telescope session-lens search_session<CR>", opts) -- Search keymaps
 set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts)
 
 -- Dap --
@@ -66,21 +64,6 @@ set_keymap("n", "<A-h>", "<cmd>BufferLineCyclePrev<CR>", opts)
 set_keymap("n", "<A-l>", "<cmd>BufferLineCycleNext<CR>", opts)
 set_keymap("n", "<A-,>", "<cmd>BufferLineMovePrev<CR>", opts)
 set_keymap("n", "<A-.>", "<cmd>BufferLineMoveNext<CR>", opts)
-set_keymap("n", "<A-1>", "<cmd>BufferLineGoToBuffer 1<CR>", opts)
-set_keymap("n", "<A-2>", "<cmd>BufferLineGoToBuffer 2<CR>", opts)
-set_keymap("n", "<A-3>", "<cmd>BufferLineGoToBuffer 3<CR>", opts)
-set_keymap("n", "<A-4>", "<cmd>BufferLineGoToBuffer 4<CR>", opts)
-set_keymap("n", "<A-5>", "<cmd>BufferLineGoToBuffer 5<CR>", opts)
-set_keymap("n", "<A-6>", "<cmd>BufferLineGoToBuffer 6<CR>", opts)
-set_keymap("n", "<A-7>", "<cmd>BufferLineGoToBuffer 7<CR>", opts)
-set_keymap("n", "<A-8>", "<cmd>BufferLineGoToBuffer 8<CR>", opts)
-set_keymap("n", "<A-9>", "<cmd>BufferLineGoToBuffer 9<CR>", opts)
-set_keymap("n", "<A-->", "<cmd>BufferLinePickClose<CR>", opts)
-
--- Dashboard --
--- set_keymap("n", "<leader>v", "<cmd>Dashboard<CR>", opts)
--- set_keymap("n", "<leader>ss", "<cmd>SessionSave<CR>", opts)
--- set_keymap("n", "<leader>sl", "<cmd>SessionLoad<CR>", opts)
 
 -- Dial --
 set_keymap("n", "<C-c>", require("dial.map").inc_normal(), opts)
@@ -111,13 +94,11 @@ set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", opts)
 set_keymap("n", "<leader>lg", "<cmd>LazyGit<CR>", opts)
 
 -- LSP -- Per client mappings are in lsp config file
-set_keymap("n", "<leader>lsp", "<cmd>LspStop<CR><cmd>call wait(1000, 1==0)<CR><cmd>LspStart<CR>", opts)
+set_keymap("n", "<leader>lsp", "<cmd>LspStop<CR><cmd>call wait(1500, 1==0)<CR><cmd>LspStart<CR>", opts)
 set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+set_keymap("n", "<leader>dw", "<cmd>DiagWindowShow<CR>", opts)
 set_keymap("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 set_keymap("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-set_keymap("n", "<leader>dw", "<cmd>DiagWindowShow<CR>", opts)
-set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 set_keymap("n", "<leader>ll", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Neogen --
@@ -126,9 +107,6 @@ set_keymap("n", "<leader>ia", "<cmd>lua require('neogen').generate()<CR>", opts)
 -- Nvim Tree --
 set_keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", opts)
 
--- Project --
-set_keymap("n", "<leader>s", "<cmd>Telescope projects<CR>", opts)
-
 -- Spectre --
 set_keymap("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", opts)
 set_keymap("n", "<leader>Sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", opts)
@@ -136,9 +114,11 @@ set_keymap("v", "<leader>Sw", "<ESC>:lua require('spectre').open_visual()<CR>", 
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", opts)
-
--- Undo Tree --
-set_keymap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts) -- Write
+set_keymap("n", "<leader>s", "<cmd>Telescope live_grep<CR>", opts)
+set_keymap("n", "<leader>f", "<cmd>Telescope find_files<CR>", opts)
+set_keymap("n", "<leader>h", "<cmd>Telescope help_tags<CR>", opts)
+set_keymap("n", "<leader>ss", "<cmd>Telescope grep_string<CR>", opts)
+set_keymap("n", "<leader>k", "<cmd>Telescope keymaps<CR>", opts) -- Search keymaps
 
 -- Vim Go --
 set_keymap("n", "<leader>ggt", "<cmd>GoTests<CR>", opts)
