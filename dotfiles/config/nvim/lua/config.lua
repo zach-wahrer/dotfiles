@@ -85,7 +85,11 @@ augroups.cursor_hold = {
 		event = { "CursorHold" },
 		pattern = "*",
 		callback = function()
-			vim.lsp.buf.document_highlight()
+			vim.lsp.for_each_buffer_client(0, function(client)
+				if client.resolved_capabilities.document_highlight then
+					vim.lsp.buf.document_highlight()
+				end
+			end)
 		end,
 	},
 	remove_highlight_on_cursor_moved = {
