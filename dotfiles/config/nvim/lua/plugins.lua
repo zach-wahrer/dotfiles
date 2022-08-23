@@ -185,7 +185,7 @@ require("packer").startup({
 			"B4mbus/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
 			config = function()
-				require("plugins.todo-comments")
+				require("plugins.todo_comments")
 			end,
 		}) -- Todo comment highlights
 		use("gpanders/editorconfig.nvim") -- Use .editorconfig files
@@ -249,20 +249,6 @@ require("packer").startup({
 				require("scope").setup()
 			end,
 		}) -- Scope buffers to tabs
-		-- use({
-		-- 	"rmagatti/auto-session",
-		-- 	config = function()
-		-- 		require("auto-session").setup({})
-		-- 	end,
-		-- })
-		-- use({
-		-- 	"rmagatti/session-lens",
-		-- 	requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
-		-- 	config = function()
-		-- 		require("session-lens").setup({--[[your custom config--]]
-		-- 		})
-		-- 	end,
-		-- })
 
 		-- KITTY
 		use({
@@ -325,7 +311,7 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("plugins.null-ls")
+				require("plugins.null_ls")
 			end,
 		}) -- For prettier
 		use({

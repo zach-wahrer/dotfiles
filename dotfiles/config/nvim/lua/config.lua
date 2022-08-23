@@ -42,7 +42,6 @@ o.clipboard = "unnamedplus" -- Use system clipboard
 o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 o.incsearch = true -- Show search results while still typing
 o.laststatus = 3 -- Only show one status bar
--- o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terpipap"p-p pession options
 o.timeoutlen = 500 -- Length of time to wait until accepting the keypress sequence
 
 -- Buffer --
@@ -61,6 +60,9 @@ wo.number = true -- Set absolute line number
 wo.conceallevel = 2 -- Conceal markdown
 wo.spell = false -- Done with spelunker
 wo.signcolumn = "yes:2"
+
+-- Diagnostic --
+vim.diagnostic.config({ float = { border = "rounded" } })
 
 -- Autocommands --
 local augroups = {}
