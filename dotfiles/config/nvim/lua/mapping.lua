@@ -2,11 +2,27 @@ local opts = { noremap = true, silent = true }
 local noremap = { noremap = true }
 local set_keymap = vim.api.nvim_set_keymap
 
+function openAllQuickFix()
+	local qf = vim.fn.getqflist()
+	if #qf == 0 then
+		return
+	end
+
+	for index, value in ipairs(qf) do
+		-- TODO: Make this work!
+		local bufname = vim.fn.bufname(value.bufnr)
+		vim.cmd([[echo bufname]])
+	end
+end
 -- General Keybinds --
 set_keymap("n", "<leader>n", "<cmd>enew<CR>", opts) -- New scratch buffer
 set_keymap("n", "<leader>w", "<cmd>w<CR>", opts) -- Write
 set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
+
 set_keymap("n", "<leader>c", "<cmd>lclose<CR><cmd>cclose<CR>", opts) -- Close quickfix and location list
+set_keymap("n", "<leader>cn", "<cmd>cn<CR>", opts) -- Goto next quickfix item
+set_keymap("n", "<leader>cp", "<cmd>cp<CR>", opts) -- Goto previous quickfix item
+set_keymap("n", "<leader>co", "<cmd>lua openAllQuickFix()<CR>", opts) -- Open all quick fix list into buffers
 
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
