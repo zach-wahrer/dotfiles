@@ -182,9 +182,9 @@ bindsym $mod+r mode "resize"
 # }
 
 # Custom keybinds
-bindsym Ctrl+e exec sh /home/zach/scripts/pe.sh
-bindsym Ctrl+1 exec sh /home/zach/scripts/headset_audio.sh
-bindsym Ctrl+2 exec sh /home/zach/scripts/laptop_audio.sh
+bindsym Ctrl+Shift+e exec sh $HOME/scripts/pe.sh
+bindsym Ctrl+1 exec sh $HOME/scripts/headset_audio.sh
+bindsym Ctrl+2 exec sh $HOME/scripts/laptop_audio.sh
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id i3lock-fancy
 bindsym $mod+d exec --no-startup-id rofi -show run
 
@@ -211,7 +211,9 @@ workspace $ws3 output $monitor_bottom_left
 # Autorun
 exec_always --no-startup-id $HOME/.config/i3/launch_polybar.sh &
 exec_always --no-startup-id xset r rate 200 40
-exec_always --no-startup-id xmodmap $HOME/.Xmodmap
+exec_always --no-startup-id setxkbmap -option caps:super
+# exec_always --no-startup-id xmodmap $HOME/.Xmodmap
+
 {%@@ if profile == "red-wolf" @@%}
 exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset -dpms

@@ -1,6 +1,8 @@
 local opts = { noremap = true, silent = true }
 local noremap = { noremap = true }
 local set_keymap = vim.api.nvim_set_keymap
+-- local set_vim_keymap = vim.keymap.set
+-- vim.keymap.set({"n","x"}, "p", "<CMD><CR>")
 
 -- General Keybinds --
 set_keymap("n", "<leader>n", "<CMD>enew<CR>", opts) -- New scratch buffer
@@ -116,7 +118,10 @@ set_keymap("n", "<leader>s", "<CMD>Telescope live_grep<CR>", opts)
 set_keymap("n", "<leader>f", "<CMD>Telescope find_files<CR>", opts)
 set_keymap("n", "<leader>h", "<CMD>Telescope help_tags<CR>", opts)
 set_keymap("n", "<leader>ss", "<CMD>Telescope grep_string<CR>", opts)
-set_keymap("n", "<leader>k", "<CMD>Telescope keymaps<CR>", opts) -- Search keymaps
+set_keymap("n", "<leader>k", "<CMD>Telescope keymaps<CR>", opts)
+set_keymap("n", "<leader>ls", "<CMD>Telescope luasnip<CR>", opts)
+set_keymap("n", "<leader>p", "<CMD>Telescope packer<CR>", opts)
+set_keymap("n", "<leader>e", "<CMD>Telescope env<CR>", opts)
 
 -- Vim Go --
 set_keymap("n", "<leader>ggt", "<CMD>GoTests<CR>", opts)

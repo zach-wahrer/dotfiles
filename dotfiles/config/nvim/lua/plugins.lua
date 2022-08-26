@@ -110,6 +110,18 @@ require("packer").startup({
 			end,
 		}) -- Finder
 		use({
+			"benfowler/telescope-luasnip.nvim",
+			requires = { "nvim-telescope/telescope.nvim" },
+		})
+		use({
+			"nvim-telescope/telescope-packer.nvim",
+			requires = { "nvim-telescope/telescope.nvim" },
+		})
+		use({
+			"LinArcX/telescope-env.nvim",
+			requires = { "nvim-telescope/telescope.nvim" },
+		})
+		use({
 			"ahmedkhalf/project.nvim",
 			config = function()
 				require("project_nvim").setup()
