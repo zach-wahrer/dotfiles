@@ -103,6 +103,7 @@ require("packer").startup({
 		}) -- Buffer management
 		use({
 			"nvim-telescope/telescope.nvim",
+			tag = "0.1.0",
 			requires = { "nvim-lua/plenary.nvim", { "nvim-telescope/telescope-fzf-native.nvim", run = "make" } },
 			config = function()
 				require("plugins.telescope")

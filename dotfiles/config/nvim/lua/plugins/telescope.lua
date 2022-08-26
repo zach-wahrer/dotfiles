@@ -1,3 +1,5 @@
+local multi_open_mappings = require("plugins.telescope_multi_open")
+
 require("telescope").setup({
 	extensions = {
 		fzf = {
@@ -8,6 +10,20 @@ require("telescope").setup({
 			-- the default case_mode is "smart_case"
 		},
 	},
+	pickers = {
+		oldfiles = {
+			mappings = multi_open_mappings,
+		},
+		live_grep = {
+			mappings = multi_open_mappings,
+		},
+		find_files = {
+			follow = true,
+			mappings = multi_open_mappings,
+		},
+		grep_string = {
+			mappings = multi_open_mappings,
+		},
+	},
 })
 require("telescope").load_extension("fzf")
--- require("telescope").load_extension("session-lens")
