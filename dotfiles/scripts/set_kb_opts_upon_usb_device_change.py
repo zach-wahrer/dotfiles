@@ -17,7 +17,7 @@ def main():
     monitor.start()
 
     for device in iter(monitor.poll, None):
-        call('./set_kbrepeat.sh')
+        call('./set_kb_opts.sh')
 
 
 if __name__ == '__main__':

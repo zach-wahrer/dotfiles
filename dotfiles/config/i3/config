@@ -218,7 +218,7 @@ exec_always --no-startup-id setxkbmap -option caps:super
 exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset -dpms
 {%@@ endif @@%}
-exec --no-startup-id $HOME/scripts/set_kbrepeat_upon_usb_device_change.py &
+exec --no-startup-id $HOME/scripts/set_kb_opts_upon_usb_device_change.py &
 exec --no-startup-id $HOME/.config/screenlayout/layout.sh
 exec --no-startup-id syncthing
 exec --no-startup-id compton --backend glx --vsync opengl -b
