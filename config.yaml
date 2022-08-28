@@ -101,6 +101,9 @@ dotfiles:
     src: scripts/nvim-startup.sh
     dst: ~/scripts/nvim-startup.sh
     chmod: '744'
+  d_picom:
+    src: config/picom
+    dst: ~/.config/picom
 profiles:
   foundant-wolf:
     dotfiles:
@@ -130,6 +133,7 @@ profiles:
     - f_kitty_opener.sh
     - f_accounting-startup.sh
     - f_nvim-startup.sh
+    - d_picom
     variables:
       adapter: AC
       battery: BAT0
@@ -160,6 +164,7 @@ profiles:
     - f_scroll.py
     - f_kitty_opener.sh
     - f_nvim-startup.sh
+    - d_picom
     variables:
       adapter: ADP1
       battery: BAT1
