@@ -43,6 +43,7 @@ o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 o.incsearch = true -- Show search results while still typing
 o.laststatus = 3 -- Only show one status bar
 o.timeoutlen = 500 -- Length of time to wait until accepting the keypress sequence
+o.fillchars = "vert:▏"
 
 -- Buffer --
 bo.tabstop = 4 -- Number of cols occupied by tab

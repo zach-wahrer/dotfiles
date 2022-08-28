@@ -188,12 +188,6 @@ require("packer").startup({
 				require("plugins.spelunker")
 			end,
 		}) -- Syntax aware spellcheck
-		-- use({
-		-- 	"glepnir/dashboard-nvim",
-		-- 	config = function()
-		-- 		require("plugins.dashboard")
-		-- 	end,
-		-- }) -- Startup dashboard
 		use({
 			"B4mbus/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
@@ -361,6 +355,7 @@ require("packer").startup({
 			config = function()
 				require("dap-go").setup()
 			end,
+			requires = { "mfussenegger/nvim-dap" },
 		}) -- Adapt delve to dap
 		use({
 			"David-Kunz/jester",
