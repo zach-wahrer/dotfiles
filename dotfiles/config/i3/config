@@ -221,7 +221,7 @@ exec --no-startup-id $HOME/scripts/set_kb_opts_upon_usb_device_change.py &
 exec --no-startup-id /usr/bin/blueman-applet &
 exec --no-startup-id $HOME/.config/screenlayout/layout.sh
 exec --no-startup-id syncthing
-exec --no-startup-id picom &
+exec --no-startup-id picom -b
 exec --no-startup-id feh --no-fehbg --bg-fill $HOME/Wallpaper/sagittarius_a___4k_wallpaper__by_hardii_denl93l.png
 {%@@ if profile == "foundant-wolf" @@%}
 exec --no-startup-id globalprotect launch-ui &
