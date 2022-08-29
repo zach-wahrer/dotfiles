@@ -16,6 +16,16 @@ function M.openAllQuickFix()
 	end
 end
 
+function M.replaceAllQuickFix()
+	local qf = vim.fn.getqflist()
+	if #qf == 0 then
+		return
+	end
+	local word = vim.fn.input("Word to replace: ")
+	local replacement = vim.fn.input("Replacement word: ")
+	vim.cmd([[cdo s/]] .. word .. [[/]] .. replacement .. [[/g]])
+end
+
 function M.debugSetEnvironment()
 	local envFiles = {
 		"deploy/local/.env",
