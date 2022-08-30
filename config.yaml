@@ -76,6 +76,9 @@ dotfiles:
   f_p10k:
     src: config/zsh/p10k
     dst: ~/.config/zsh/p10k
+  f_keybinds:
+    src: config/zsh/keybinds
+    dst: ~/.config/zsh/keybinds
   f_vale.ini:
     src: vale.ini
     dst: ~/.vale.ini
@@ -133,6 +136,7 @@ profiles:
     - f_plugins
     - f_theme
     - f_p10k
+    - f_keybinds
     - f_vale.ini
     - d_tridactyl
     - d_screenlayout
@@ -167,6 +171,7 @@ profiles:
     - f_plugins
     - f_theme
     - f_p10k
+    - f_keybinds
     - f_vale.ini
     - d_tridactyl
     - d_screenlayout

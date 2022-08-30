@@ -1,0 +1,4 @@
+bindkey '^[[A' fzf-history-widget
+bindkey '^[OA' fzf-history-widget
+# Use emacs keybinds, since they're modeless and closer to bash defaults
+bindkey -e
