@@ -33,6 +33,8 @@ alias gwa='git worktree add'
 alias gwr='git worktree remove'
 alias gwl='git worktree list'
 alias gwp='git worktree prune -v'
+alias gk='gitk --all --branches &!'
+alias gke='gitk --all $(git log -g --pretty=%h) &!'
 
 # TESTS #
 alias mt="make test"
