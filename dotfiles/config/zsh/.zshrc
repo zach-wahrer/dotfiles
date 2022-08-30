@@ -72,7 +72,11 @@ source <(minikube completion zsh)
 {%@@ endif @@%}
 
 # KEYBINDS #
+{%@@ if profile == "foundant-wolf" @@%}
 bindkey '^[[A' fzf-history-widget
+{%@@ elif profile == "red-wolf" @@%}
+bindkey '^[OA' fzf-history-widget
+{%@@ endif @@%}
 
 # Remove "Do you want to see X possibility"
 zstyle ':completion:*' list-prompt   ''
