@@ -1,8 +1,17 @@
-source ~/.config/zsh/plugins
-source ~/.config/zsh/theme
+# Path to zsh files.
+export ZSH="$HOME/.zsh"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Path to zsh plugins.
+export ZSH_PLUGINS="$HOME/.zsh/plugins"
+
+# Path to zsh config files.
+export ZSH_CONFIG="$HOME/.config/zsh"
+
+autoload -Uz compinit
+compinit
+
+# Needs to be near top of file.
+source $ZSH_CONFIG/p10k
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -10,14 +19,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
- zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -50,45 +51,12 @@ export ZSH="$HOME/.oh-my-zsh"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  aws
-  terraform
-  zsh-vi-mode
-  zsh-autosuggestions
-  docker-zsh-completion
-  zsh-better-npm-completion
-  zsh-syntax-highlighting
-  k
-  zoxide
-  # zsh-autocomplete
-)
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-source $ZSH/oh-my-zsh.sh
-
-# zstyle ':autocomplete:*' min-input 1
-# zstyle ':autocomplete:*' widget-style menu-select # Tab through autocomplete entries
-bindkey -M menuselect -s '^[' '^G^_' # Esc exits browsing history
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#61afef,bold,underline"
-# .autocomplete.recent_paths.trim() {:} # Keep autocomplete logs clean
-
 # User configuration
-source ~/.config/zsh/paths
-source ~/.config/zsh/aliases
-source ~/.config/zsh/functions
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+source $ZSH_CONFIG/plugins
+source $ZSH_CONFIG/theme
+source $ZSH_CONFIG/paths
+source $ZSH_CONFIG/aliases
+source $ZSH_CONFIG/functions
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -97,22 +65,15 @@ else
   export EDITOR='nvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# FZF #
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # COMPLETIONS #
+{%@@ if profile == "foundant-wolf" @@%}
 source <(kubectl completion zsh)
 source <(minikube completion zsh)
+{%@@ endif @@%}
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# KEYBINDS #
+bindkey '^[[A' fzf-history-widget
 
 # Remove "Do you want to see X possibility"
 zstyle ':completion:*' list-prompt   ''
 zstyle ':completion:*' select-prompt ''
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

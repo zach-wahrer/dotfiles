@@ -1,72 +1,67 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# FZF #
+if [[ ! -d $ZSH_PLUGINS/fzf ]]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git $ZSH_PLUGINS/fzf
+  $ZSH_PLUGINS/fzf/install
 fi
+source ~/.fzf.zsh
 
-## CHECK THAT PLUGINS FILES EXIST ##
-## Auto Complete ##
-# if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autocomplete ]]; then
-#   git clone https://github.com/marlonrichert/zsh-autocomplete ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
-# fi
-# source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+## Zsh Completions ##
+if [[ ! -d $ZSH_PLUGINS/zsh-completions ]]; then
+  git clone https://github.com/zsh-users/zsh-completions.git $ZSH_PLUGINS/zsh-completions
+fi
+fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
 
 ## Zsh Vi Mode ##
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-vi-mode ]]; then
-  git clone https://github.com/jeffreytse/zsh-vi-mode ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
+if [[ ! -d $ZSH_PLUGINS/zsh-vi-mode ]]; then
+  git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_PLUGINS/zsh-vi-mode
 fi
+source $ZSH_PLUGINS/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 ## Zsh Autosuggestions ##
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+if [[ ! -d $ZSH_PLUGINS/zsh-autosuggestions ]]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
 fi
-
-## Docker Zsh Completions ##
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/docker-zsh-completion ]]; then
-  git clone https://github.com/greymd/docker-zsh-completion ~/.oh-my-zsh/custom/plugins/docker-zsh-completion
-fi
+source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#61afef,bold,underline"
 
 ## Zsh Better NPM Completion ##
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion ]]; then
-  git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
+if [[ ! -d $ZSH_PLUGINS/zsh-better-npm-completion ]]; then
+  git clone https://github.com/lukechilds/zsh-better-npm-completion $ZSH_PLUGINS/zsh-better-npm-completion
 fi
+source $ZSH_PLUGINS/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh
 
 ## Zsh Syntax Highlighting ##
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+if [[ ! -d $ZSH_PLUGINS/zsh-syntax-highlighting ]]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_PLUGINS/zsh-syntax-highlighting
 fi
+source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+## Auto Pairs  ##
+if [[ ! -d $ZSH_PLUGINS/zsh-autopair ]]; then
+  git clone https://github.com/hlissner/zsh-autopair $ZSH_PLUGINS/zsh-autopair
+fi
+source $ZSH_PLUGINS/zsh-autopair/autopair.zsh
+autopair-init
 
 ## K (better ls) ##
-if [[ ! -d ~/.oh-my-zsh/custom/plugins/k ]]; then
-  git clone https://github.com/supercrabtree/k ~/.oh-my-zsh/custom/plugins/k
+if [[ ! -d $ZSH_PLUGINS/k ]]; then
+  git clone https://github.com/supercrabtree/k $ZSH_PLUGINS/k
 fi
+source $ZSH_PLUGINS/k/k.sh
 
 ## zoxide (better cd) ##
 if ! [ -x "$(command -v zoxide)" ]; then
   curl -sS https://webinstall.dev/zoxide | bash
 fi
-
-## Auto Pairs  ##
-if [[ ! -d ~/.zsh-autopair ]]; then
-  git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
-fi
-source ~/.zsh-autopair/autopair.zsh
-autopair-init
+eval "$(zoxide init zsh)"
 
 ## Diff So Fancy ##
-if [[ ! -d ~/.diff-so-fancy ]]; then
-  git clone https://github.com/so-fancy/diff-so-fancy ~/.diff-so-fancy
+if [[ ! -d $ZSH_PLUGINS/diff-so-fancy ]]; then
+  git clone https://github.com/so-fancy/diff-so-fancy $ZSH_PLUGINS/diff-so-fancy
 fi
-
-## Mcfly (better ctrl-r)
-if [[ ! -f "/usr/local/bin/mcfly" ]]; then
-   curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly
-fi
-export MCFLY_KEY_SCHEME=vim
-export MCFLY_FUZZY=true
-bindkey '^T' mcfly-history-widget
-eval "$(mcfly init zsh)"
+export PATH="$ZSH_PLUGINS/diff-so-fancy:$PATH"
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+git config --global interactive.diffFilter "diff-so-fancy --patch"
 
 ## OTHER THINGS TO INSTALL ##
 # bat - https://github.com/sharkdp/bat

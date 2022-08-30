@@ -10,3 +10,56 @@ function ha {
 	readonly pathendpoint=${2:?"Path must be specified."}
 	http $method :3000/$pathendpoint Correlation-Id:1 App-Id:httpie Client-Site-Id:00000000-0000-0000-0000-000000000001 Platform-Environment:beta --auth-type bearer --auth eyJraWQiOiJqcjFDQldHNm1YQWV1TGR2ekZNQXlXMVRcL1NsQnlRTlRoelhXN2hBVDJJWT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoibm11elp0OVZyVkt6ME9DSFE4UlJ1QSIsInN1YiI6ImExZGE4M2UzLTBjODctNGZlMy05NWI1LTlmZmNkYWY2ZDM0ZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJyb2xlcyI6IltcImZ0LWFkbWluXCJdIiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLXdlc3QtMi5hbWF6b25hd3MuY29tXC91cy13ZXN0LTJfeGN3N1JHYUxVIiwiZW52cyI6IntcImJldGFcIjp7XCIwMzVlMWViYi05MGI0LTQzZTMtYjU2MC04MDY5YjM2ZGMyYjJcIjpbXCJ2aWV3XCJdLFwiMmUzYjNiOTUtMjhmMS00YzBhLThmNmItN2Q5NTliMGVjMTE5XCI6W1widmlld1wiXSxcIjNjNzdhYzExLTAzNGQtNDZkNy1iMjY5LWVhMjFkYTYzNmRjMlwiOltcInZpZXdcIl0sXCI5N2E2YTlkNi00MDJjLTQzZTItOTg5NC1mZTc3MWM2NWRiNmNcIjpbXCJhZG1pblwiXSxcImIxMzI1ZDM5LWU5N2ItNGE5NC1iMjBlLWRmMjllNmQxMzFiNFwiOltcInZpZXdcIl19fSIsImNvZ25pdG86dXNlcm5hbWUiOiJ6YWNoLndhaHJlciIsIm9yaWdpbl9qdGkiOiIxNmFiNGRlMS0wY2I3LTRmMGMtYTdhNC0xZTBhYTJhZWJlYmMiLCJhdWQiOiI3b2ExNmpxN2Y0amR1cWVza3Y4NnU2aW8xZCIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQzMTQyMDc3LCJleHAiOjE2NDMxNDU2NzcsImlhdCI6MTY0MzE0MjA3NywianRpIjoiZDUwMzJmZmItZTJlYS00MTNhLWI3OGEtYWEwNTU1ZDA5N2FmIiwiZW1haWwiOiJ6YWNoLndhaHJlckBmb3VuZGFudC5jb20ifQ.bBEps61iMhm6h1oDMgWimXZWPhkMC3BRtOW_asgJoHcGP9c0IDtRVHQdwu0NwTXPDIDiNMfeeCkDCPUt1UTB9cx3n5O-AOIPiradijlTAjdRNTursn5nI6Lv-z_sHP7r34hl1PKzgxXfBsPMDQWy8r0_-hOxcYYeSe4iCrUoZ6LpltZPJ_CIfBVb30mYdvGKs4BPQZXqS-N746tbmdqdvDbwrW1fijMgEGE4oyhQY8l2XeE_Q_ws4bVs50TsoV5_6jcZ4VZS96cu3Rs-61gNX680K-CnTEDowzLoEvOSHM4AL628lAmqjJf2F8tFUZtF4OKcGE4RD5JOewHBcbZPMA
 }
+
+# FZF #
+function frm() {
+  if [[ "$#" -eq 0 ]]; then
+    local files
+    files=$(find . -maxdepth 1 -type f | fzf --multi)
+    echo $files | xargs -I '{}' rm {} #we use xargs to capture filenames with spaces in them properly
+  else
+    command rm "$@"
+  fi
+}
+
+function fman() {
+	MAN="/usr/bin/man"
+	if [ -n "$1" ]; then
+		$MAN "$@"
+		return $?
+	else
+		$MAN -k . | fzf --reverse --preview="echo {1,2} | sed 's/ (/./' | sed -E 's/\)\s*$//' | xargs $MAN" | awk '{print $1 "." $2}' | tr -d '()' | xargs -r $MAN
+		return $?
+	fi
+}
+
+function falias() {
+    CMD=$(
+        (
+            (alias)
+            (functions | grep "()" | cut -d ' ' -f1 | grep -v "^_" )
+        ) | fzf | cut -d '=' -f1
+    );
+
+    eval $CMD
+}
+
+function ffile() {
+  local file=$(fzf --multi --reverse) #get file from fzf
+  if [[ $file ]]; then
+    for prog in $(echo $file); #open all the selected files
+    do; $EDITOR $prog; done;
+  else
+    echo "cancelled fzf"
+  fi
+}
+
+function fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}

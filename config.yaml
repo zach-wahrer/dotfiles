@@ -73,6 +73,9 @@ dotfiles:
   f_theme:
     src: config/zsh/theme
     dst: ~/.config/zsh/theme
+  f_p10k:
+    src: config/zsh/p10k
+    dst: ~/.config/zsh/p10k
   f_vale.ini:
     src: vale.ini
     dst: ~/.vale.ini
@@ -104,6 +107,9 @@ dotfiles:
   d_picom:
     src: config/picom
     dst: ~/.config/picom
+  f_p10k.zsh:
+    src: config/zsh/.p10k.zsh
+    dst: ~/.config/zsh/.p10k.zsh
 profiles:
   foundant-wolf:
     dotfiles:
@@ -126,6 +132,7 @@ profiles:
     - f_paths
     - f_plugins
     - f_theme
+    - f_p10k
     - f_vale.ini
     - d_tridactyl
     - d_screenlayout
@@ -134,6 +141,7 @@ profiles:
     - f_accounting-startup.sh
     - f_nvim-startup.sh
     - d_picom
+    - f_p10k.zsh
     variables:
       adapter: AC
       battery: BAT0
@@ -158,6 +166,7 @@ profiles:
     - f_paths
     - f_plugins
     - f_theme
+    - f_p10k
     - f_vale.ini
     - d_tridactyl
     - d_screenlayout
@@ -165,6 +174,7 @@ profiles:
     - f_kitty_opener.sh
     - f_nvim-startup.sh
     - d_picom
+    - f_p10k.zsh
     variables:
       adapter: ADP1
       battery: BAT1
