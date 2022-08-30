@@ -32,6 +32,7 @@ source <(minikube completion zsh)
 
 # KEYBINDS #
 bindkey '^[[A' fzf-history-widget
+bindkey '^[OA' fzf-history-widget
 
 # COMMAND HISTORY #
 touch $ZSH/.zsh_history
