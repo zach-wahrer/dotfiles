@@ -4,28 +4,16 @@ local set_keymap = vim.api.nvim_set_keymap
 -- local set_vim_keymap = vim.keymap.set
 -- vim.keymap.set({"n","x"}, "p", "<CMD><CR>")
 
--- NEOVIM KEYBINDS --
--- Diff --
-set_keymap("n", "<leader>df", "<CMD>vert diffsplit ", noremap) -- Diff an unopened file with the one currently open.
-set_keymap("n", "<leader>dv", "<CMD>windo diffthis<CR>", noremap) -- Diff two windows
-set_keymap("n", "<leader>dr", "<CMD>windo diffoff<CR>", noremap) -- Remove diff between windows
-
--- General --
+-- General Keybinds --
 set_keymap("n", "<leader>n", "<CMD>enew<CR>", opts) -- New scratch buffer
 set_keymap("n", "<leader>w", "<CMD>w<CR>", opts) -- Write
-set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts)
-set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
-set_keymap("n", "<ESC>", "<CMD>noh<CR>", opts) -- Remove search highlighting
+set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
 
--- QuickFix --
 set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts) -- Close quickfix and location list
 set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
 set_keymap("n", "<leader>cp", "<CMD>cp<CR>", opts) -- Goto previous quickfix item
 set_keymap("n", "<leader>co", "<CMD>lua require('functions').openAllQuickFix()<CR>", opts) -- Open all quick fix list into buffers
-set_keymap("n", "<leader>cr", "<CMD>lua require('functions').replaceAllQuickFix()<CR>", opts)
-set_keymap("n", "<leader>cc", "<CMD>lua vim.fn.setqflist({})<CR>", opts)
 
--- Scroll --
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
 set_keymap("v", "j", "gj", opts) -- Down on wrapped lines visually while selecting
@@ -33,7 +21,12 @@ set_keymap("v", "k", "gk", opts) -- Up on wrapped lines visually while selecting
 set_keymap("v", ">", ">gv", opts) -- Indent while keeping selection
 set_keymap("v", "<", "<gv", opts) -- Remove indent while keeping selection
 
--- Splits --
+set_keymap("v", "<A-j>", "<CMD>m '>+1<CR>gv=gv", opts) -- Move selected text down
+set_keymap("v", "<A-k>", "<CMD>m '<-2<CR>gv=gv", opts) -- Move selected text up
+set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
+set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
+set_keymap("n", "<ESC>", "<CMD>noh<CR>", opts) -- Remove search highlighting
+
 set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
 set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
 set_keymap("n", "<C-\\>", "<C-W><C-V>", opts) -- Vertical split
@@ -43,14 +36,24 @@ set_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", opts) -- Resize horizontal spl
 set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts) -- Resize vertical split
 set_keymap("n", "<M-Right>", "<CMD>vertical resize +2<CR>", opts) -- Resize vertical split
 
--- Text --
-set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
-set_keymap("v", "<A-j>", "<CMD>m '>+1<CR>gv=gv", opts) -- Move selected text down
-set_keymap("v", "<A-k>", "<CMD>m '<-2<CR>gv=gv", opts) -- Move selected text up
-set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
-set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
+set_keymap("n", "<leader>df", "<CMD>vert diffsplit ", noremap) -- Diff an unopened file with the one currently open.
+set_keymap("n", "<leader>dv", "<CMD>windo diffthis<CR>", noremap) -- Diff two windows
+set_keymap("n", "<leader>dr", "<CMD>windo diffoff<CR>", noremap) -- Remove diff between windows
+set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
+set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts)
 
--- PLUGIN KEYBINDS --
+-- Dap --
+set_keymap("n", "<leader>dt", "<CMD>lua require('dapui').toggle()<CR>", opts)
+set_keymap("n", "<leader>dc", "<CMD>lua require('dap').continue()<CR>", opts)
+set_keymap("n", "<leader>dse", "<CMD>lua require('functions').debugSetEnvironment()<CR>", opts)
+
+set_keymap("n", "<leader>ds", "<CMD>lua require('dap').step_over()<CR>", opts)
+set_keymap("n", "<leader>di", "<CMD>lua require('dap').step_into()<CR>", opts)
+set_keymap("n", "<leader>do", "<CMD>lua require('dap').step_out()<CR>", opts)
+set_keymap("n", "<leader>db", "<CMD>lua require('dap').toggle_breakpoint()<CR>", opts)
+set_keymap("n", "<leader>dra", "<CMD>lua require('dap').clear_breakpoints()<CR>", opts)
+set_keymap("n", "<leader>dj", "<CMD>lua require('jester').debug({dap = { console = ''}})<CR>", opts)
+
 -- Betterbuffer --
 set_keymap("n", "<leader>q", "<CMD>Bdelete<CR>", opts)
 set_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>Bdelete<CR>", opts)
@@ -61,17 +64,6 @@ set_keymap("n", "<A-h>", "<CMD>BufferLineCyclePrev<CR>", opts)
 set_keymap("n", "<A-l>", "<CMD>BufferLineCycleNext<CR>", opts)
 set_keymap("n", "<A-,>", "<CMD>BufferLineMovePrev<CR>", opts)
 set_keymap("n", "<A-.>", "<CMD>BufferLineMoveNext<CR>", opts)
-
--- Dap --
-set_keymap("n", "<leader>dt", "<CMD>lua require('dapui').toggle()<CR>", opts)
-set_keymap("n", "<leader>dc", "<CMD>lua require('dap').continue()<CR>", opts)
-set_keymap("n", "<leader>dse", "<CMD>lua require('functions').debugSetEnvironment()<CR>", opts)
-set_keymap("n", "<leader>ds", "<CMD>lua require('dap').step_over()<CR>", opts)
-set_keymap("n", "<leader>di", "<CMD>lua require('dap').step_into()<CR>", opts)
-set_keymap("n", "<leader>do", "<CMD>lua require('dap').step_out()<CR>", opts)
-set_keymap("n", "<leader>db", "<CMD>lua require('dap').toggle_breakpoint()<CR>", opts)
-set_keymap("n", "<leader>dra", "<CMD>lua require('dap').clear_breakpoints()<CR>", opts)
-set_keymap("n", "<leader>dj", "<CMD>lua require('jester').debug({dap = { console = ''}})<CR>", opts)
 
 -- Dial --
 set_keymap("n", "<C-c>", require("dial.map").inc_normal(), opts)
@@ -109,9 +101,6 @@ set_keymap("n", "<leader>dn", "<CMD>lua vim.diagnostic.goto_next()<CR>", opts)
 set_keymap("n", "<leader>dp", "<CMD>lua vim.diagnostic.goto_prev()<CR>", opts)
 set_keymap("n", "<leader>ll", "<CMD>lua vim.diagnostic.setloclist()<CR>", opts)
 
--- Markdown --
-set_keymap("n", "<leader>pm", "<CMD>MarkdownPreview<CR>", opts)
-
 -- Neogen --
 set_keymap("n", "<leader>ia", "<CMD>lua require('neogen').generate()<CR>", opts)
 
@@ -147,3 +136,6 @@ set_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", opts)
 set_keymap("n", "<leader>tf", "<CMD>TestFile<CR>", opts)
 set_keymap("n", "<leader>t", "<CMD>TestNearest<CR>", opts)
 set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
+
+-- Markdown --
+set_keymap("n", "<leader>pm", "<CMD>MarkdownPreview<CR>", opts)
