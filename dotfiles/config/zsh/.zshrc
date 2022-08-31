@@ -50,4 +50,8 @@ else
   export EDITOR='nvim'
 fi
 
-
+## Zsh Syntax Highlighting - Needs to be at end of .zshrc ##
+if [[ ! -d $ZSH_PLUGINS/zsh-syntax-highlighting ]]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_PLUGINS/zsh-syntax-highlighting
+fi
+source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
