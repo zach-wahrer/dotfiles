@@ -199,7 +199,14 @@ require("packer").startup({
 		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
 		use({ "tversteeg/registers.nvim", opt = true, event = "BufReadPre" }) -- Visualize registers
 		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
-		use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
+		-- use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
+		use({
+			"ggandor/leap.nvim",
+			requires = { "tpope/vim-repeat" },
+			config = function()
+				require("leap").set_default_keymaps()
+			end,
+		}) -- Faster movement
 		use("tpope/vim-sleuth") -- Auto adjust formatting
 		use({
 			"ethanholz/nvim-lastplace",
@@ -256,6 +263,9 @@ require("packer").startup({
 				require("scope").setup()
 			end,
 		}) -- Scope buffers to tabs
+		use({
+			"kevinhwang91/nvim-bqf",
+		}) -- Better quick fix
 
 		-- KITTY
 		use({
