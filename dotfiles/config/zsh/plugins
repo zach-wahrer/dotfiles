@@ -12,10 +12,10 @@ fi
 fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
 
 ## Zsh Vi Mode ##
-if [[ ! -d $ZSH_PLUGINS/zsh-vi-mode ]]; then
-  git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_PLUGINS/zsh-vi-mode
-fi
-source $ZSH_PLUGINS/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# if [[ ! -d $ZSH_PLUGINS/zsh-vi-mode ]]; then
+#   git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_PLUGINS/zsh-vi-mode
+# fi
+# source $ZSH_PLUGINS/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 ## Zsh Autosuggestions ##
 if [[ ! -d $ZSH_PLUGINS/zsh-autosuggestions ]]; then
