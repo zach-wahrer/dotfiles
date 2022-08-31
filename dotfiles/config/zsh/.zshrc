@@ -17,18 +17,25 @@ setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
+setopt HIST_REDUCE_BLANKS
 
 # COMPLETION #
-autoload -Uz compinit && compinit -C
-# Arrow key menu for completions
-zstyle ':completion:*' menu select
-# Case-insensitive (all),partial-word and then substring completion
+zmodload zsh/complist
+autoload -Uz compinit
+compinit -d ~/.cache/zcompdump
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' completer _expand _complete
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-prompt   '' # Remove "Do you want to see X possibility"
 zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibility"
 
 # CONFIGS #
-source $ZSH_CONFIG/plugins
 source $ZSH_CONFIG/theme
 source $ZSH_CONFIG/keybinds
 source $ZSH_CONFIG/paths
@@ -50,6 +57,8 @@ else
   export EDITOR='nvim'
 fi
 
+## PLUGINS ##
+source $ZSH_CONFIG/plugins
 ## Zsh Syntax Highlighting - Needs to be at end of .zshrc ##
 if [[ ! -d $ZSH_PLUGINS/zsh-syntax-highlighting ]]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_PLUGINS/zsh-syntax-highlighting

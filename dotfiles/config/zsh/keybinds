@@ -1,4 +1,5 @@
 bindkey -v # vi mode
+bindkey -M menuselect '^[' undo
 bindkey '^[[A' fzf-history-widget
 bindkey '^[OA' fzf-history-widget
 bindkey '^R' fzf-history-widget
