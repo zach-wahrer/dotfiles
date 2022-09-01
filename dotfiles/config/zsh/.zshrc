@@ -3,7 +3,7 @@ export ZSH="$HOME/.zsh"
 export ZSH_PLUGINS="$HOME/.zsh/plugins"
 export ZSH_CONFIG="$HOME/.config/zsh"
 
-# INSTANT PROMPT #
+# INSTANT PROMPT / THEME #
 source $ZSH_CONFIG/p10k
 
 # COMMAND HISTORY #
@@ -36,7 +36,6 @@ zstyle ':completion:*' list-prompt   '' # Remove "Do you want to see X possibili
 zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibility"
 
 # CONFIGS #
-source $ZSH_CONFIG/theme
 source $ZSH_CONFIG/keybinds
 source $ZSH_CONFIG/paths
 source $ZSH_CONFIG/aliases
