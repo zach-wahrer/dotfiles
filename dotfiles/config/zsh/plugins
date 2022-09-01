@@ -11,12 +11,6 @@ if [[ ! -d $ZSH_PLUGINS/zsh-completions ]]; then
 fi
 fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
 
-## Zsh Vi Mode ##
-# if [[ ! -d $ZSH_PLUGINS/zsh-vi-mode ]]; then
-#   git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_PLUGINS/zsh-vi-mode
-# fi
-# source $ZSH_PLUGINS/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
 ## Zsh Autosuggestions ##
 if [[ ! -d $ZSH_PLUGINS/zsh-autosuggestions ]]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
@@ -37,23 +31,25 @@ fi
 source $ZSH_PLUGINS/zsh-autopair/autopair.zsh
 autopair-init
 
+{%@@ if profile == "foundant-wolf" @@%}
 ## Terraform ##
 if [[ ! -d $ZSH_PLUGINS/zsh-terraform ]]; then
   git clone https://github.com/macunha1/zsh-terraform $ZSH_PLUGINS/zsh-terraform
 fi
 source $ZSH_PLUGINS/zsh-terraform/terraform.zsh
 
-## Docker ##
-if [[ ! -d $ZSH_PLUGINS/docker-zsh-completion ]]; then
-  git clone https://github.com/greymd/docker-zsh-completion.git $ZSH_PLUGINS/docker-zsh-completion
-fi
-source $ZSH_PLUGINS/docker-zsh-completion/docker-zsh-completion.plugin.zsh
-
 ## AWS ##
 if [[ ! -d $ZSH_PLUGINS/aws-plugin-zsh ]]; then
   git clone https://github.com/eastokes/aws-plugin-zsh.git $ZSH_PLUGINS/aws-plugin-zsh
 fi
 source $ZSH_PLUGINS/aws-plugin-zsh/aws.plugin.zsh
+{%@@ endif @@%}
+
+## Docker ##
+if [[ ! -d $ZSH_PLUGINS/docker-zsh-completion ]]; then
+  git clone https://github.com/greymd/docker-zsh-completion.git $ZSH_PLUGINS/docker-zsh-completion
+fi
+source $ZSH_PLUGINS/docker-zsh-completion/docker-zsh-completion.plugin.zsh
 
 ## K (better ls) ##
 if [[ ! -d $ZSH_PLUGINS/k ]]; then
