@@ -14,6 +14,11 @@ set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
 set_keymap("n", "<leader>cp", "<CMD>cp<CR>", opts) -- Goto previous quickfix item
 set_keymap("n", "<leader>co", "<CMD>lua require('functions').openAllQuickFix()<CR>", opts) -- Open all quick fix list into buffers
 
+set_keymap("n", "<leader>ei", "<CMD>e ~/dotfiles/dotfiles/config/i3/config<CR>", opts)
+set_keymap("n", "<leader>ek", "<CMD>e ~/dotfiles/dotfiles/config/kitty/kitty.conf<CR>", opts)
+set_keymap("n", "<leader>ez", "<CMD>e ~/dotfiles/dotfiles/config/zsh/.zshrc<CR>", opts)
+set_keymap("n", "<leader>en", "<CMD>e ~/.config/nvim/lua/config.lua<CR>", opts)
+
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
 set_keymap("v", "j", "gj", opts) -- Down on wrapped lines visually while selecting
