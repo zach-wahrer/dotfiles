@@ -7,6 +7,8 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# GENERAL #
+alias ls='ls --color=auto'
 
 # DOCKER #
 alias dnuke='docker stop $(docker ps -aq) && docker rm $(docker ps -aq); drmi; dprune'
