@@ -1,4 +1,4 @@
-# Lauch with kitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty
+# Launch with kitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty
 
 ## Config ##
 new_tab Config
