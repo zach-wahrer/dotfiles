@@ -110,6 +110,9 @@ dotfiles:
   f_p10k.zsh:
     src: config/zsh/.p10k.zsh
     dst: ~/.config/zsh/.p10k.zsh
+  d_styles:
+    src: styles
+    dst: ~/styles
 profiles:
   foundant-wolf:
     dotfiles:
@@ -142,6 +145,7 @@ profiles:
     - f_nvim-startup.sh
     - d_picom
     - f_p10k.zsh
+    - d_styles
     variables:
       adapter: AC
       battery: BAT0
@@ -175,6 +179,7 @@ profiles:
     - f_nvim-startup.sh
     - d_picom
     - f_p10k.zsh
+    - d_styles
     variables:
       adapter: ADP1
       battery: BAT1
