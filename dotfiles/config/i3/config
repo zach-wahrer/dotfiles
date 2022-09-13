@@ -228,20 +228,19 @@ workspace $ws2 output $monitor_right
 workspace $ws3 output $monitor_bottom_left
 
 # Autorun
+exec_always --no-startup-id picom --config  ~/.config/picom/picom.conf
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/Wallpaper/wallpaper.png
 exec_always --no-startup-id $HOME/.config/i3/launch_polybar.sh &
 exec_always --no-startup-id xset r rate 200 40
 exec_always --no-startup-id setxkbmap -option caps:super
-exec_always --no-startup-id picom --config  ~/.config/picom.conf
-
-{%@@ if profile == "red-wolf" @@%}
-exec_always --no-startup-id xset s off
-exec_always --no-startup-id xset -dpms
-{%@@ endif @@%}
 exec --no-startup-id $HOME/scripts/set_kb_opts_upon_usb_device_change.py &
 exec --no-startup-id /usr/bin/blueman-applet &
 exec --no-startup-id $HOME/.config/screenlayout/layout.sh
 exec --no-startup-id syncthing
-exec --no-startup-id feh --no-fehbg --bg-fill $HOME/Wallpaper/wallpaper.png
+{%@@ if profile == "red-wolf" @@%}
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
+{%@@ endif @@%}
 {%@@ if profile == "foundant-wolf" @@%}
 exec --no-startup-id globalprotect launch-ui &
 exec --no-startup-id zoom &
