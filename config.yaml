@@ -3,6 +3,42 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
+  # File Imports
+  f_gitconfig:
+    src: dotfiles/.gitconfig
+    dst: ~/.gitconfig
+  f_zshrc:
+    src: dotfiles/.zshrc
+    dst: ~/.zshrc
+  f_golangci.yml:
+    src: dotfiles/.golangci.yml
+    dst: ~/.golangci.yml
+  f_xmodmap:
+    src: Xmodmap
+    dst: ~/.Xmodmap
+  f_vale.ini:
+    src: vale.ini
+    dst: ~/.vale.ini
+  f_functions:
+    src: config/zsh/functions
+    dst: ~/.config/zsh/functions
+    chmod: '644'
+  f_scroll.py:
+    src: config/kitty/scroll.py
+    dst: ~/.config/kitty/scroll.py
+  f_kitty_opener.sh:
+    src: config/nvim/lua/scripts/kitty_opener.sh
+    dst: ~/.config/nvim/lua/scripts/kitty_opener.sh
+    chmod: '744'
+  f_accounting-startup.sh:
+    src: scripts/accounting-startup.sh
+    dst: ~/scripts/accounting-startup.sh
+    chmod: '744'
+  f_nvim-startup.sh:
+    src: scripts/nvim-startup.sh
+    dst: ~/scripts/nvim-startup.sh
+    chmod: '744'
+  # Directory Imports
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
@@ -27,158 +63,72 @@ dotfiles:
   d_scripts:
     src: scripts
     dst: ~/scripts
-  f_bashrc:
-    src: bashrc
-    dst: ~/.bashrc
-  f_git-prompt.sh:
-    src: git-prompt.sh
-    dst: ~/.git-prompt.sh
-  f_gitconfig:
-    src: dotfiles/.gitconfig
-    dst: ~/.gitconfig
-  f_tmux.conf:
-    src: dotfiles/.tmux.conf
-    dst: ~/.tmux.conf
-  f_zshrc:
-    src: dotfiles/.zshrc
-    dst: ~/.zshrc
-  f_golangci.yml:
-    src: dotfiles/.golangci.yml
-    dst: ~/.golangci.yml
-  d_icons:
-    src: dotfiles/.icons
-    dst: ~/.icons
   d_ranger:
     src: config/ranger
     dst: ~/.config/ranger
-  f_xmodmap:
-    src: Xmodmap
-    dst: ~/.Xmodmap
-  f_dashboard.cat:
-    src: config/nvim/dashboard.cat
-    dst: ~/.config/nvim/dashboard.cat
-    chmod: '644'
-  f_zsh_zshrc:
-    src: config/zsh/.zshrc
-    dst: ~/.config/zsh/.zshrc
-  f_aliases:
-    src: config/zsh/aliases
-    dst: ~/.config/zsh/aliases
-  f_paths:
-    src: config/zsh/paths
-    dst: ~/.config/zsh/paths
-  f_plugins:
-    src: config/zsh/plugins
-    dst: ~/.config/zsh/plugins
-  f_p10k:
-    src: config/zsh/p10k
-    dst: ~/.config/zsh/p10k
-  f_keybinds:
-    src: config/zsh/keybinds
-    dst: ~/.config/zsh/keybinds
-  f_vale.ini:
-    src: vale.ini
-    dst: ~/.vale.ini
+  d_zsh:
+    src: config/zsh
+    dst: ~/.config/zsh/
   d_tridactyl:
     src: config/tridactyl
     dst: ~/.config/tridactyl
   d_screenlayout:
     src: config/screenlayout
     dst: ~/.config/screenlayout
-  f_functions:
-    src: config/zsh/functions
-    dst: ~/.config/zsh/functions
-    chmod: '644'
-  f_scroll.py:
-    src: config/kitty/scroll.py
-    dst: ~/.config/kitty/scroll.py
-  f_kitty_opener.sh:
-    src: config/nvim/lua/scripts/kitty_opener.sh
-    dst: ~/.config/nvim/lua/scripts/kitty_opener.sh
-    chmod: '744'
-  f_accounting-startup.sh:
-    src: scripts/accounting-startup.sh
-    dst: ~/scripts/accounting-startup.sh
-    chmod: '744'
-  f_nvim-startup.sh:
-    src: scripts/nvim-startup.sh
-    dst: ~/scripts/nvim-startup.sh
-    chmod: '744'
   d_picom:
     src: config/picom
     dst: ~/.config/picom
-  f_p10k.zsh:
-    src: config/zsh/.p10k.zsh
-    dst: ~/.config/zsh/.p10k.zsh
   d_styles:
     src: styles
     dst: ~/styles
 profiles:
   foundant-wolf:
     dotfiles:
+    - f_gitconfig
+    - f_zshrc
+    - f_golangci.yml
+    - f_xmodmap
+    - f_functions
+    - f_vale.ini
+    - f_scroll.py
+    - f_kitty_opener.sh
+    - f_accounting-startup.sh
+    - f_nvim-startup.sh
     - d_i3
     - d_kitty
     - d_nvim
     - d_polybar
     - d_rofi
     - d_scripts
-    - f_gitconfig
-    - f_zshrc
-    - f_golangci.yml
-    - d_icons
     - d_ranger
-    - f_xmodmap
-    - f_dashboard.cat
-    - f_zsh_zshrc
-    - f_aliases
-    - f_functions
-    - f_paths
-    - f_plugins
-    - f_p10k
-    - f_keybinds
-    - f_vale.ini
     - d_tridactyl
     - d_screenlayout
-    - f_scroll.py
-    - f_kitty_opener.sh
-    - f_accounting-startup.sh
-    - f_nvim-startup.sh
     - d_picom
-    - f_p10k.zsh
     - d_styles
     variables:
       adapter: AC
       battery: BAT0
   red-wolf:
     dotfiles:
+    - f_gitconfig
+    - f_zshrc
+    - f_golangci.yml
+    - f_xmodmap
+    - f_functions
+    - f_vale.ini
+    - f_scroll.py
+    - f_kitty_opener.sh
+    - f_nvim-startup.sh
     - d_i3
     - d_kitty
     - d_nvim
     - d_polybar
     - d_rofi
     - d_scripts
-    - f_bashrc
-    - f_gitconfig
-    - f_zshrc
-    - f_golangci.yml
-    - d_icons
     - d_ranger
-    - f_xmodmap
-    - f_zsh_zshrc
-    - f_aliases
-    - f_functions
-    - f_paths
-    - f_plugins
-    - f_p10k
-    - f_keybinds
-    - f_vale.ini
     - d_tridactyl
     - d_screenlayout
-    - f_scroll.py
-    - f_kitty_opener.sh
-    - f_nvim-startup.sh
     - d_picom
-    - f_p10k.zsh
     - d_styles
     variables:
       adapter: ADP1
