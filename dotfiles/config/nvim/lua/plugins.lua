@@ -348,6 +348,11 @@ require("packer").startup({
 			end,
 			ft = { "markdown", "md" },
 		}) -- Markdown
+		use({
+			"mechatroner/rainbow_csv",
+			opt = true,
+			ft = { "csv" },
+		}) -- CSV
 
 		-- DEBUG
 		use({
