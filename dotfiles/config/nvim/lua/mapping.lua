@@ -8,6 +8,7 @@ local set_keymap = vim.api.nvim_set_keymap
 set_keymap("n", "<leader>n", "<CMD>enew<CR>", opts) -- New scratch buffer
 set_keymap("n", "<leader>w", "<CMD>w<CR>", opts) -- Write
 set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
+set_keymap("n", "<leader>sc", "<CMD>lua require('functions').toScratch()<CR>", opts) --Send output of command to scratch buffer
 
 set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts) -- Close quickfix and location list
 set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item

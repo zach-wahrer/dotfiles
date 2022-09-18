@@ -266,6 +266,7 @@ require("packer").startup({
 		use({
 			"kevinhwang91/nvim-bqf",
 		}) -- Better quick fix
+		use({ "monkoose/matchparen.nvim", require("matchparen").setup() }) -- Improved parentheses matching
 
 		-- KITTY
 		use({
