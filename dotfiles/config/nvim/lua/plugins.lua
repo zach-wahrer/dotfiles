@@ -329,15 +329,21 @@ require("packer").startup({
 			config = function()
 				require("plugins.prettier")
 			end,
+			requires = {
+				"jose-elias-alvarez/null-ls.nvim",
+				config = function()
+					require("plugins.null_ls")
+				end,
+			},
 		}) -- prettier formatting
 		use({
-			"jose-elias-alvarez/null-ls.nvim",
+			"mfussenegger/nvim-lint",
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("plugins.null_ls")
+				require("plugins.nvim_lint")
 			end,
-		}) -- For prettier
+		})
 		use({
 			"windwp/nvim-ts-autotag",
 			opt = true,

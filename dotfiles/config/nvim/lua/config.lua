@@ -179,22 +179,22 @@ augroups.buf_write_post = {
 			cmd([[ silent !terraform fmt %:p:h ]])
 		end,
 	},
-	format_yml = {
-		event = { "BufWritePost" },
-		pattern = "*.yml",
-		callback = function()
-			os.execute("~/.config/nvim/lua/scripts/kitty_opener.sh")
-			cmd([[silent !kitty @ --to "$KITTY_LISTEN_ON" send-text --match title:"nvim-output" "yamllint %:p\x0d" ]])
-		end,
-	},
-	format_yaml = {
-		event = { "BufWritePost" },
-		pattern = "*.yaml",
-		callback = function()
-			os.execute("~/.config/nvim/lua/scripts/kitty_opener.sh")
-			cmd([[silent !kitty @ --to "$KITTY_LISTEN_ON" send-text --match title:"nvim-output" "yamllint %:p\x0d" ]])
-		end,
-	},
+	-- format_yml = {
+	-- 	event = { "BufWritePost" },
+	-- 	pattern = "*.yml",
+	-- 	callback = function()
+	-- 		os.execute("~/.config/nvim/lua/scripts/kitty_opener.sh")
+	-- 		cmd([[silent !kitty @ --to "$KITTY_LISTEN_ON" send-text --match title:"nvim-output" "yamllint %:p\x0d" ]])
+	-- 	end,
+	-- },
+	-- format_yaml = {
+	-- 	event = { "BufWritePost" },
+	-- 	pattern = "*.yaml",
+	-- 	callback = function()
+	-- 		os.execute("~/.config/nvim/lua/scripts/kitty_opener.sh")
+	-- 		cmd([[silent !kitty @ --to "$KITTY_LISTEN_ON" send-text --match title:"nvim-output" "yamllint %:p\x0d" ]])
+	-- 	end,
+	-- },
 }
 
 augroups.misc = {
