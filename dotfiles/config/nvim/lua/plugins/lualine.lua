@@ -8,4 +8,5 @@ require("lualine").setup({
 			"lsp_progress",
 		},
 	},
+	extensions = { "nvim-dap-ui", "nvim-tree" },
 })
