@@ -41,15 +41,11 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "bashls", "dockerls", "gopls", "vuels", "terraformls", "tsserver", "eslint", "pyright", "yamlls" }
+local servers = { "bashls", "dockerls", "vuels", "terraformls", "tsserver", "eslint", "pyright", "yamlls" }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
-		flags = {
-			-- This will be the default in neovim 0.7+
-			debounce_text_changes = 150,
-		},
 	})
 end
 
@@ -64,12 +60,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 })
 
 require("lspconfig").sumneko_lua.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
-		on_attach = on_attach,
-		capabilities = capabilities,
-		flags = {
-			debounce_text_changes = 150,
-		},
 		Lua = {
 			diagnostics = {
 				globals = { "vim" },
@@ -78,17 +71,15 @@ require("lspconfig").sumneko_lua.setup({
 	},
 })
 
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").gopls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
-		on_attach = on_attach,
-		capabilities = capabilities,
-		flags = {
-			debounce_text_changes = 150,
+		gopls = {
+			buildFlags = { "-tags=integration" },
 		},
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-		},
+	},
+	init_options = {
+		buildFlags = { "-tags=integration" },
 	},
 })

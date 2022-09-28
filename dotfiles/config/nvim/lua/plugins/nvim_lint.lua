@@ -1,5 +1,5 @@
 require("lint").linters_by_ft = {
-	markdown = { "vale", "markdownlint" },
+	markdown = { "vale" },
 	yaml = { "yamllint" },
 	json = { "eslint" },
 	zsh = { "shellcheck" },
@@ -10,7 +10,7 @@ require("lint").linters_by_ft = {
 	typescript = { "eslint" },
 	vue = { "eslint" },
 	python = { "flake8", "pylint" },
-	lua = { "luacheck" },
+	-- lua = { "luacheck" },
 }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	callback = function()
