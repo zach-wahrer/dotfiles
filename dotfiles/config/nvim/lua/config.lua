@@ -18,7 +18,7 @@ o.termguicolors = true
 
 api.nvim_set_hl(0, "Search", { bg = "#aa03af", fg = "Orange", underline = 1 })
 api.nvim_set_hl(0, "SpelunkerSpellBad", { undercurl = 1 })
-api.nvim_set_hl(0, "SpelunkerComplexOrCompoundWord", { underdot = 1 })
+api.nvim_set_hl(0, "SpelunkerComplexOrCompoundWord", { underdotted = 1 })
 api.nvim_set_hl(0, "LspDiagnosticsVirtualTextError", { fg = "Red" })
 api.nvim_set_hl(0, "LspDiagnosticsVirtualTextWarning", { fg = "Yellow" })
 api.nvim_set_hl(0, "LspDiagnosticsVirtualTextInformation", { fg = "White" })
@@ -48,6 +48,7 @@ o.incsearch = true -- Show search results while still typing
 o.laststatus = 3 -- Only show one status bar
 o.timeoutlen = 500 -- Length of time to wait until accepting the keypress sequence
 o.fillchars = "vert:▏"
+o.cmdheight = 0
 
 -- Buffer --
 bo.tabstop = 4 -- Number of cols occupied by tab
@@ -93,7 +94,7 @@ augroups.cursor_hold = {
 		pattern = "*",
 		callback = function()
 			vim.lsp.for_each_buffer_client(0, function(client)
-				if client.resolved_capabilities.document_highlight then
+				if client.server_capabilities.document_highlight then
 					vim.lsp.buf.document_highlight()
 				end
 			end)
