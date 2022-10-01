@@ -444,7 +444,7 @@ require("packer").startup({
 			"lewis6991/gitsigns.nvim",
 			opt = true,
 			event = "BufReadPre",
-			tag = "release",
+			tag = "main",
 			config = function()
 				require("plugins.gitsigns")
 			end,
