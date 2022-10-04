@@ -16,6 +16,16 @@ require("onedark").load()
 
 o.termguicolors = true
 
+-- OneDark Colors
+-- Black #282C34
+-- Red #E06C75
+-- Green #98C379
+-- Yellow #E5C07B
+-- Blue #61AFEF
+-- Violet #C678DD
+-- Teal #56B6C2
+-- Silver #ABB2BF
+
 api.nvim_set_hl(0, "Search", { bg = "#aa03af", fg = "Orange", underline = 1 })
 api.nvim_set_hl(0, "SpelunkerSpellBad", { undercurl = 1 })
 api.nvim_set_hl(0, "SpelunkerComplexOrCompoundWord", { underdotted = 1 })
