@@ -1,4 +1,8 @@
 local dap = require("dap")
+vim.fn.sign_define(
+	"DapBreakpoint",
+	{ text = "B", texthl = "LspDiagnosticsVirtualTextWarning", linehl = "", numhl = "" }
+)
 -- dap.adapters.chrome = {
 -- type = "executable",
 -- command = "node",
