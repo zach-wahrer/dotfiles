@@ -46,7 +46,10 @@ set_keymap("n", "<leader>df", "<CMD>vert diffsplit ", noremap) -- Diff an unopen
 set_keymap("n", "<leader>dv", "<CMD>windo diffthis<CR>", noremap) -- Diff two windows
 set_keymap("n", "<leader>dr", "<CMD>windo diffoff<CR>", noremap) -- Remove diff between windows
 set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
-set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts)
+set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts) -- Base64 decode string
+
+set_keymap("n", "*", "<CMD>lua require('functions').searchWordUnderCursorForward()<CR>", opts) -- Improved forward search
+set_keymap("n", "#", "<CMD>lua require('functions').searchWordUnderCursorBackward()<CR>", opts) -- Improved backward search
 
 -- Dap --
 set_keymap("n", "<leader>dt", "<CMD>lua require('dapui').toggle()<CR>", opts)

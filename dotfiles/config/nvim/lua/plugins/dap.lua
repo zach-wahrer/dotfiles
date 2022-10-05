@@ -1,8 +1,15 @@
 local dap = require("dap")
-vim.fn.sign_define(
-	"DapBreakpoint",
-	{ text = "B", texthl = "LspDiagnosticsVirtualTextWarning", linehl = "", numhl = "" }
-)
+
+vim.api.nvim_set_hl(0, "DapBreakpointRed", { bg = "", fg = "#E06C75" })
+vim.api.nvim_set_hl(0, "DapBreakpointGreen", { bg = "", fg = "#98C379" })
+vim.api.nvim_set_hl(0, "DapBreakpointYellow", { bg = "", fg = "#E5C07B" })
+
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointRed", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DapBreakpointYellow", linehl = "", numhl = "" })
+vim.fn.sign_define("DapLogPoint", { text = "ﲀ", texthl = "DapBreakpointYellow", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "DapBreakpointGreen", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRed", linehl = "", numhl = "" })
+
 -- dap.adapters.chrome = {
 -- type = "executable",
 -- command = "node",

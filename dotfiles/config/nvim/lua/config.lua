@@ -47,7 +47,6 @@ vim.cmd(
 -- Globals --
 o.ignorecase = true -- Case insensitive searching
 o.smartcase = true -- Override ignorecase if search pattern is mixed case
-o.mouse = "a" -- Enable mouse in all modes
 o.autowrite = true
 o.title = true
 o.updatetime = 100 -- Time it takes to write to swap / update git gutter
@@ -57,7 +56,7 @@ o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 o.incsearch = true -- Show search results while still typing
 o.laststatus = 3 -- Only show one status bar
 o.timeoutlen = 500 -- Length of time to wait until accepting the keypress sequence
-o.fillchars = "vert:▏"
+o.fillchars = "vert:▏,vertleft:▏,vertright:▏,verthoriz:+,horiz:-,horizup:-,horizdown:-"
 o.cmdheight = 0
 
 -- Buffer --

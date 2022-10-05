@@ -58,4 +58,14 @@ function M.toScratch()
 	end)
 end
 
+function M.searchWordUnderCursorForward()
+	vim.fn.execute("normal! *N)")
+	require("hlslens").start()
+end
+
+function M.searchWordUnderCursorBackward()
+	vim.fn.execute("normal! #N)")
+	require("hlslens").start()
+end
+
 return M
