@@ -48,9 +48,12 @@ source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # DEFAULTS #
 export BROWSER='firefox'
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
 fi
+

@@ -73,4 +73,4 @@ git config --global interactive.diffFilter "diff-so-fancy --patch"
 
 ## OTHER THINGS TO INSTALL ##
 # bat - https://github.com/sharkdp/bat
-# edir - https://github.com/bulletmark/edir
+# bpytop - https://github.com/aristocratos/bpytop
