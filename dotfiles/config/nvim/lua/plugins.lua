@@ -236,10 +236,17 @@ require("packer").startup({
 				require("nvim-surround").setup({})
 			end,
 		}) -- Surround
+		-- use({
+		-- 	"mvllow/modes.nvim",
+		-- 	config = function()
+		-- 		require("modes").setup()
+		-- 	end,
+		-- }) -- Modes show in different colors
 		use({
-			"mvllow/modes.nvim",
+			"melkster/modicator.nvim",
+			after = "onedark.nvim",
 			config = function()
-				require("modes").setup()
+				require("plugins.modicator")
 			end,
 		}) -- Modes show in different colors
 		use({
@@ -255,7 +262,9 @@ require("packer").startup({
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("neogen").setup({})
+				require("neogen").setup({
+					snippet_engine = "luasnip",
+				})
 			end,
 			requires = "nvim-treesitter/nvim-treesitter",
 		}) -- Documentation generation

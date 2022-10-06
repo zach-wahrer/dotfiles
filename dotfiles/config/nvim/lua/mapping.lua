@@ -42,9 +42,8 @@ set_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", opts) -- Resize horizontal spl
 set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts) -- Resize vertical split
 set_keymap("n", "<M-Right>", "<CMD>vertical resize +2<CR>", opts) -- Resize vertical split
 
-set_keymap("n", "<leader>df", "<CMD>vert diffsplit ", noremap) -- Diff an unopened file with the one currently open.
-set_keymap("n", "<leader>dv", "<CMD>windo diffthis<CR>", noremap) -- Diff two windows
-set_keymap("n", "<leader>dr", "<CMD>windo diffoff<CR>", noremap) -- Remove diff between windows
+set_keymap("n", "<leader>df", "<CMD>lua require('functions').diffOpenFileToggle()<CR>", noremap) -- Diff an unopened file with the one currently open.
+set_keymap("n", "<leader>dv", "<CMD>lua require('functions').diffToggle()<CR>", noremap) -- Toggle diff
 set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
 set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts) -- Base64 decode string
 

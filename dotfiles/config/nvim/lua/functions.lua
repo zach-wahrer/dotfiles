@@ -58,6 +58,27 @@ function M.toScratch()
 	end)
 end
 
+function M.diffOpenFileToggle()
+	if vim.wo.diff then
+		vim.cmd([[windo diffoff]])
+	else
+		vim.ui.input({ prompt = "enter file to diff", completion = "file" }, function(input)
+			if input == nil then
+				return
+			end
+			vim.cmd([[vert diffsplit ]] .. input)
+		end)
+	end
+end
+
+function M.diffToggle()
+	if vim.wo.diff then
+		vim.cmd([[windo diffoff]])
+	else
+		vim.cmd([[windo diffthis]])
+	end
+end
+
 function M.searchWordUnderCursorForward()
 	vim.fn.execute("normal! *N)")
 	require("hlslens").start()
