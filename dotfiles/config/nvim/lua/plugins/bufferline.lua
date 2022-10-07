@@ -21,10 +21,10 @@ require("bufferline").setup({
 	},
 	highlights = {
 		tab_selected = {
-			fg = "#E06C75",
+			fg = Colors.green,
 		},
 		buffer_selected = {
-			fg = "#E06C75",
+			fg = Colors.green,
 			bold = true,
 			italic = true,
 		},

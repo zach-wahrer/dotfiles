@@ -1,8 +1,8 @@
 local dap = require("dap")
 
-vim.api.nvim_set_hl(0, "DapBreakpointRed", { bg = "", fg = "#E06C75" })
-vim.api.nvim_set_hl(0, "DapBreakpointGreen", { bg = "", fg = "#98C379" })
-vim.api.nvim_set_hl(0, "DapBreakpointYellow", { bg = "", fg = "#E5C07B" })
+vim.api.nvim_set_hl(0, "DapBreakpointRed", { bg = "", fg = Colors.red })
+vim.api.nvim_set_hl(0, "DapBreakpointGreen", { bg = "", fg = Colors.green })
+vim.api.nvim_set_hl(0, "DapBreakpointYellow", { bg = "", fg = Colors.yellow })
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointRed", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DapBreakpointYellow", linehl = "", numhl = "" })
