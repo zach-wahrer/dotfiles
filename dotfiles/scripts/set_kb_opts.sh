@@ -1,3 +1,3 @@
 #!/usr/bin/bash
-xset r rate 200 40
+xset r rate 250 40
 setxkbmap -option caps:super
