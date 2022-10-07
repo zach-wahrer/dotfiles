@@ -60,22 +60,22 @@ end
 
 function M.diffOpenFileToggle()
 	if vim.wo.diff then
-		vim.cmd([[windo diffoff]])
+		vim.cmd("windo diffoff")
 	else
 		vim.ui.input({ prompt = "enter file to diff", completion = "file" }, function(input)
 			if input == nil then
 				return
 			end
-			vim.cmd([[vert diffsplit ]] .. input)
+			vim.cmd("vert diffsplit " .. input)
 		end)
 	end
 end
 
 function M.diffToggle()
 	if vim.wo.diff then
-		vim.cmd([[windo diffoff]])
+		vim.cmd("windo diffoff")
 	else
-		vim.cmd([[windo diffthis]])
+		vim.cmd("windo diffthis")
 	end
 end
 
@@ -87,6 +87,17 @@ end
 function M.searchWordUnderCursorBackward()
 	vim.fn.execute("normal! #N)")
 	require("hlslens").start()
+end
+
+function M.sourceAllConfigFiles()
+	local cfgFilePath = vim.fn.stdpath("config") .. "/lua/**/*.lua"
+	local cfgFiles = vim.split(vim.fn.glob(cfgFilePath), "\n")
+
+	for _, file in ipairs(cfgFiles) do
+		vim.fn.execute("source " .. file)
+	end
+
+	vim.notify("All config files sourced successfully.")
 end
 
 return M
