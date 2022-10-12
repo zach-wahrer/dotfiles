@@ -107,4 +107,23 @@ function M.sourceAllConfigFiles()
 	vim.notify("All config files sourced successfully.")
 end
 
+function M.openLink()
+	local command = ""
+	local url = string.match(vim.fn.getline("."), "[a-z]*://[^ >,;]*")
+	if url then
+		command = "!xdg-open " .. url
+		vim.fn.execute(command)
+		return
+	end
+
+	url = string.match(vim.fn.getline("."), '[^"][a-z]*/[a-z.]*[^"]')
+	if url then
+		command = "!xdg-open " .. "http://www.github.com/" .. url
+		vim.fn.execute(command)
+		return
+	end
+
+	vim.notify("Valid URL not found.")
+end
+
 return M

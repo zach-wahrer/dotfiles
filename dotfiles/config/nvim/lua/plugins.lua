@@ -187,7 +187,7 @@ require("packer").startup({
 			"ggandor/leap.nvim",
 			requires = { "tpope/vim-repeat" },
 			config = function()
-				require("leap").set_default_keymaps()
+				require("leap").set_default_keymaps(true)
 			end,
 		}) -- Faster movement
 		use("tpope/vim-sleuth") -- Auto adjust formatting
