@@ -32,7 +32,7 @@ set_keymap("v", "<A-j>", "<CMD>m '>+1<CR>gv=gv", opts) -- Move selected text dow
 set_keymap("v", "<A-k>", "<CMD>m '<-2<CR>gv=gv", opts) -- Move selected text up
 set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
 set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
-set_keymap("n", "<ESC>", "<CMD>noh<CR>", opts) -- Remove search highlighting
+set_keymap("n", "<ESC>", "<CMD>lua require('functions').removeSearch()<CR>", opts) -- Remove search highlighting
 
 set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
 set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
@@ -64,8 +64,8 @@ set_keymap("n", "<leader>dra", "<CMD>lua require('dap').clear_breakpoints()<CR>"
 set_keymap("n", "<leader>dj", "<CMD>lua require('jester').debug({dap = { console = ''}})<CR>", opts)
 
 -- Betterbuffer --
-set_keymap("n", "<leader>q", "<CMD>Bdelete<CR>", opts)
-set_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>Bdelete<CR>", opts)
+set_keymap("n", "<leader>q", "<CMD>lua MiniBufremove.delete()<CR>", opts)
+set_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>lua MiniBufremove.delete()<CR>", opts)
 set_keymap("n", "<leader>1", "<CMD>Bdelete!<CR>", opts)
 
 -- Bufferline --
@@ -94,11 +94,6 @@ set_keymap("n", "<leader>hS", "<CMD>Gitsigns stage_buffer<CR>", opts)
 set_keymap("n", "<leader>hR", "<CMD>Gitsigns reset_buffer<CR>", opts)
 set_keymap("n", "<leader>hp", "<CMD>Gitsigns preview_hunk<CR>", opts)
 
--- Kommentary --
-set_keymap("x", "<C-/>", "<Plug>kommentary_visual_default", opts)
-set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", opts)
---set_keymap("n", "<C-_>", "<Plug>kommentary_motion_default", opts)
-
 -- Lazygit --
 set_keymap("n", "<leader>lg", "<CMD>LazyGit<CR>", opts)
 
@@ -110,8 +105,12 @@ set_keymap("n", "<leader>dn", "<CMD>lua vim.diagnostic.goto_next()<CR>", opts)
 set_keymap("n", "<leader>dp", "<CMD>lua vim.diagnostic.goto_prev()<CR>", opts)
 set_keymap("n", "<leader>ll", "<CMD>lua vim.diagnostic.setloclist()<CR>", opts)
 
+-- Mini.map --
+set_keymap("n", "<Backspace>", "<CMD>lua MiniMap.toggle()<CR>", opts)
+
 -- Neogen --
-set_keymap("n", "<leader>ia", "<CMD>lua require('neogen').generate()<CR>", opts)
+set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'func'})<CR>", opts)
+set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'type'})<CR>", opts)
 
 -- Nvim Tree --
 set_keymap("n", "\\", "<CMD>NvimTreeToggle<CR>", opts)

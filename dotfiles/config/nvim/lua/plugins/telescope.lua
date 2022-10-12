@@ -1,6 +1,7 @@
 local multi_open_mappings = require("plugins.telescope_multi_open")
+local telescope = require("telescope")
 
-require("telescope").setup({
+telescope.setup({
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
@@ -27,8 +28,8 @@ require("telescope").setup({
 	},
 })
 
-require("telescope").load_extension("fzf")
-require("telescope").load_extension("luasnip")
-require("telescope").load_extension("packer")
-require("telescope").load_extension("env")
-require("telescope").load_extension("zoxide")
+telescope.load_extension("fzf")
+telescope.load_extension("luasnip")
+telescope.load_extension("packer")
+telescope.load_extension("env")
+telescope.load_extension("zoxide")

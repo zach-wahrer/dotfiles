@@ -82,12 +82,6 @@ require("packer").startup({
 			requires = { "p00f/nvim-ts-rainbow", "nvim-treesitter/nvim-treesitter-textobjects" }, -- Rainbow brackets, Text objects
 		}) -- Treesitter
 		use({
-			"windwp/nvim-autopairs",
-			config = function()
-				require("nvim-autopairs").setup({})
-			end,
-		}) -- Auto pairs for brackets
-		use({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons" },
 			config = function()
@@ -138,21 +132,6 @@ require("packer").startup({
 			requires = { "nvim-lua/plenary.nvim" },
 		}) -- Find/Replace
 		use({
-			"b3nj5m1n/kommentary",
-			opt = true,
-			event = "BufReadPre",
-			config = function()
-				require("plugins.kommentary")
-			end,
-		}) -- Comment
-		use({
-			"petertriho/nvim-scrollbar",
-			requires = { "kevinhwang91/nvim-hlslens" },
-			config = function()
-				require("plugins.scrollbar")
-			end,
-		}) -- Scroll bar
-		use({
 			"kyazdani42/nvim-tree.lua",
 			requires = { "kyazdani42/nvim-web-devicons" },
 			config = function()
@@ -162,10 +141,9 @@ require("packer").startup({
 		use({
 			"declancm/cinnamon.nvim",
 			config = function()
-				require("plugins.cinnamon")
+				require("cinnamon").setup()
 			end,
 		}) -- Smooth scrolling
-		use({ "moll/vim-bbye" }) -- Better buffer quit
 		use({
 			"abecodes/tabout.nvim",
 			opt = true,
@@ -228,14 +206,6 @@ require("packer").startup({
 				require("plugins.dial")
 			end,
 		}) -- Increment/decrement
-		use({
-			"kylechui/nvim-surround",
-			opt = true,
-			event = "BufReadPre",
-			config = function()
-				require("nvim-surround").setup({})
-			end,
-		}) -- Surround
 		-- use({
 		-- 	"mvllow/modes.nvim",
 		-- 	config = function()
@@ -286,6 +256,17 @@ require("packer").startup({
 				require("matchparen").setup()
 			end,
 		}) -- Improved parentheses matching
+		use({
+			"echasnovski/mini.nvim",
+			config = function()
+				require("plugins.mini_map")
+				require("plugins.mini_comment")
+				require("mini.pairs").setup()
+				require("mini.bufremove").setup()
+				require("mini.surround").setup()
+				require("mini.indentscope").setup({ symbol = "▏" })
+			end,
+		})
 
 		-- KITTY
 		use({
@@ -313,7 +294,7 @@ require("packer").startup({
 		use({
 			"L3MON4D3/LuaSnip",
 			config = function()
-				require("plugins.luasnip")
+				require("luasnip.loaders.from_vscode").lazy_load()
 			end,
 		}) -- Snips
 		use({ "saadparwaiz1/cmp_luasnip" }) -- Snips
