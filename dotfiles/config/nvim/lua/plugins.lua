@@ -261,10 +261,10 @@ require("packer").startup({
 			config = function()
 				require("plugins.mini_map")
 				require("plugins.mini_comment")
+				require("plugins.mini_indentscope")
 				require("mini.pairs").setup()
 				require("mini.bufremove").setup()
 				require("mini.surround").setup()
-				require("mini.indentscope").setup({ symbol = "▏" })
 			end,
 		})
 		use({ "kevinhwang91/nvim-hlslens" }) -- Improved search highlighting

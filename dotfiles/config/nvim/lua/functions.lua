@@ -116,7 +116,7 @@ function M.openLink()
 		return
 	end
 
-	url = string.match(vim.fn.getline("."), '[^"][a-z]*/[a-z.]*[^"]')
+	url = string.match(vim.fn.getline("."), '[^"][0-9a-z.]*/[a-z.-0-9]*[^"]')
 	if url then
 		command = "!xdg-open " .. "http://www.github.com/" .. url
 		vim.fn.execute(command)
