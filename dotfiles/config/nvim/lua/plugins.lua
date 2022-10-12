@@ -267,6 +267,7 @@ require("packer").startup({
 				require("mini.indentscope").setup({ symbol = "▏" })
 			end,
 		})
+		use({ "kevinhwang91/nvim-hlslens" }) -- Improved search highlighting
 
 		-- KITTY
 		use({
