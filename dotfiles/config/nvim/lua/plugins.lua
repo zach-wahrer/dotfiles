@@ -180,7 +180,14 @@ require("packer").startup({
 		}) -- Todo comment highlights
 		use("gpanders/editorconfig.nvim") -- Use .editorconfig files
 		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
-		use({ "tversteeg/registers.nvim", opt = true, event = "BufReadPre" }) -- Visualize registers
+		use({
+			"tversteeg/registers.nvim",
+			opt = true,
+			event = "BufReadPre",
+			config = function()
+				require("registers").setup()
+			end,
+		}) -- Visualize registers
 		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
 		-- use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
 		use({
