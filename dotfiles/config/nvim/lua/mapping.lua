@@ -64,9 +64,9 @@ set_keymap("n", "<leader>db", "<CMD>lua require('dap').toggle_breakpoint()<CR>",
 set_keymap("n", "<leader>dra", "<CMD>lua require('dap').clear_breakpoints()<CR>", opts)
 set_keymap("n", "<leader>dj", "<CMD>lua require('jester').debug({dap = { console = ''}})<CR>", opts)
 
--- Betterbuffer --
-set_keymap("n", "<leader>q", "<CMD>lua MiniBufremove.delete()<CR>", opts)
-set_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>lua MiniBufremove.delete()<CR>", opts)
+-- MiniBufremove --
+set_keymap("n", "<leader>q", "<CMD>Bdelete<CR>", opts)
+set_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>Bdelete<CR>", opts)
 set_keymap("n", "<leader>1", "<CMD>Bdelete!<CR>", opts)
 
 -- Bufferline --

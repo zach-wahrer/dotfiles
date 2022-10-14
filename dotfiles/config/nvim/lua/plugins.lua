@@ -270,11 +270,12 @@ require("packer").startup({
 				require("plugins.mini_comment")
 				require("plugins.mini_indentscope")
 				require("mini.pairs").setup()
-				require("mini.bufremove").setup()
+				-- require("mini.bufremove").setup()
 				require("mini.surround").setup()
 			end,
 		})
 		use({ "kevinhwang91/nvim-hlslens" }) -- Improved search highlighting
+		use({ "moll/vim-bbye" }) -- Better buffer delete
 
 		-- KITTY
 		use({
