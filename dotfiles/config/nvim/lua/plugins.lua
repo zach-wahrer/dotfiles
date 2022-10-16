@@ -79,8 +79,17 @@ require("packer").startup({
 			config = function()
 				require("plugins.treesitter")
 			end,
-			requires = { "p00f/nvim-ts-rainbow", "nvim-treesitter/nvim-treesitter-textobjects" }, -- Rainbow brackets, Text objects
+			requires = {
+				"p00f/nvim-ts-rainbow",
+			}, -- Rainbow brackets
 		}) -- Treesitter
+		use({
+			"RRethy/nvim-treesitter-textsubjects",
+			config = function()
+				require("plugins.treesitter_textsubjects")
+			end,
+			requires = { "nvim-treesitter/nvim-treesitter" },
+		}) -- Text objects
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons" },
