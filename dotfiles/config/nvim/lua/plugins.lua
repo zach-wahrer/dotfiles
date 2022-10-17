@@ -42,6 +42,7 @@ require("packer").startup({
 
 		-- THEMES
 		use("navarasu/onedark.nvim")
+		-- use("tiagovla/tokyodark.nvim")
 		-- use("rebelot/kanagawa.nvim")
 		-- use("Th3Whit3Wolf/one-nvim")
 		-- use("marko-cerovac/material.nvim")
