@@ -466,6 +466,18 @@ require("packer").startup({
 			"kdheepak/lazygit.nvim",
 		}) -- Lazygit integration/ Can't lazyload, breaks Treesitter
 
+		use({
+			"tamton-aquib/duck.nvim",
+			config = function()
+				vim.keymap.set("n", "<leader>cc", function()
+					require("duck").hatch("🐈")
+				end, {})
+				vim.keymap.set("n", "<leader>cr", function()
+					require("duck").cook()
+				end, {})
+			end,
+		}) -- Other
+
 		-- PACKER BOOTSTRAP
 		if Packer_bootstrap then
 			require("packer").sync()
