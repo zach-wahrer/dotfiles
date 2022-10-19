@@ -124,14 +124,16 @@ set_keymap("v", "<leader>Sw", "<ESC>:lua require('spectre').open_visual()<CR>", 
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)
 set_keymap("n", "<leader>s", "<CMD>Telescope live_grep<CR>", opts)
-set_keymap("n", "<leader>f", "<CMD>Telescope find_files<CR>", opts)
+set_keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 set_keymap("n", "<leader>h", "<CMD>Telescope help_tags<CR>", opts)
 set_keymap("n", "<leader>ss", "<CMD>Telescope grep_string<CR>", opts)
 set_keymap("n", "<leader>k", "<CMD>Telescope keymaps<CR>", opts)
 set_keymap("n", "<leader>ls", "<CMD>Telescope luasnip<CR>", opts)
 set_keymap("n", "<leader>p", "<CMD>Telescope packer<CR>", opts)
 set_keymap("n", "<leader>e", "<CMD>Telescope env<CR>", opts)
-set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
+set_keymap("n", "<leader>sf", "<CMD>GrepInDirectory<CR>", opts)
+set_keymap("n", "<leader>fd", "<CMD>FileInDirectory<CR>", opts)
+-- set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
 
 -- Vim Go --
 set_keymap("n", "<leader>ggt", "<CMD>GoTests<CR>", opts)

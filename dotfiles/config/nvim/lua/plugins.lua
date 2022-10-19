@@ -127,9 +127,16 @@ require("packer").startup({
 			requires = { "nvim-telescope/telescope.nvim" },
 		})
 		use({
-			"jvgrootveld/telescope-zoxide",
-			requires = { "nvim-telescope/telescope.nvim", "nvim-lua/popup.nvim" },
-		}) -- Use zoxide within telescope
+			"princejoogie/dir-telescope.nvim",
+			requires = { "nvim-telescope/telescope.nvim" },
+			config = function()
+				require("dir-telescope").setup({ hidden = true, respect_gitignore = true })
+			end,
+		})
+		-- use({
+		-- 	"jvgrootveld/telescope-zoxide",
+		-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/popup.nvim" },
+		-- }) -- Use zoxide within telescope
 		use({
 			"ahmedkhalf/project.nvim",
 			config = function()
