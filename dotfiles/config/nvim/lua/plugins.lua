@@ -296,7 +296,7 @@ require("packer").startup({
 		use({
 			"NvChad/nvim-colorizer.lua",
 			config = function()
-				require("colorizer").setup()
+				require("plugins.colorizer")
 			end,
 		})
 
