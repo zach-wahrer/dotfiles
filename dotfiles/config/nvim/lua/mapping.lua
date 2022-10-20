@@ -133,7 +133,7 @@ set_keymap("n", "<leader>p", "<CMD>Telescope packer<CR>", opts)
 set_keymap("n", "<leader>e", "<CMD>Telescope env<CR>", opts)
 set_keymap("n", "<leader>sf", "<CMD>GrepInDirectory<CR>", opts)
 set_keymap("n", "<leader>fd", "<CMD>FileInDirectory<CR>", opts)
--- set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
+set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
 
 -- Vim Go --
 set_keymap("n", "<leader>ggt", "<CMD>GoTests<CR>", opts)

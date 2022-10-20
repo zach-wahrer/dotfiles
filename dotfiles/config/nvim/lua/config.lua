@@ -6,7 +6,7 @@ local api = vim.api -- Api
 
 -- Color --
 require("onedark").setup({
-	style = "darker",
+	style = "deep",
 })
 require("onedark").load()
 -- require("onedarkpro").setup({
