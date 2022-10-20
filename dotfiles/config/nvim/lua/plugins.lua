@@ -293,6 +293,12 @@ require("packer").startup({
 		})
 		use({ "kevinhwang91/nvim-hlslens" }) -- Improved search highlighting
 		use({ "moll/vim-bbye" }) -- Better buffer delete
+		use({
+			"NvChad/nvim-colorizer.lua",
+			config = function()
+				require("colorizer").setup()
+			end,
+		})
 
 		-- KITTY
 		use({
