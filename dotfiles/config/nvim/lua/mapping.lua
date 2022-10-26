@@ -17,10 +17,19 @@ set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
 set_keymap("n", "<leader>cp", "<CMD>cp<CR>", opts) -- Goto previous quickfix item
 set_keymap("n", "<leader>co", "<CMD>lua require('functions').openAllQuickFix()<CR>", opts) -- Open all quick fix list into buffers
 
-set_keymap("n", "<leader>ei", "<CMD>e ~/dotfiles/dotfiles/config/i3/config<CR>", opts)
-set_keymap("n", "<leader>ek", "<CMD>e ~/dotfiles/dotfiles/config/kitty/kitty.conf<CR>", opts)
-set_keymap("n", "<leader>ez", "<CMD>e ~/dotfiles/dotfiles/config/zsh/.zshrc<CR>", opts)
-set_keymap("n", "<leader>en", "<CMD>e ~/.config/nvim/lua/config.lua<CR>", opts)
+set_keymap("n", "<leader>ei", "<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/i3')<CR>", opts)
+set_keymap("n", "<leader>ek", "<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/kitty')<CR>", opts)
+set_keymap("n", "<leader>ez", "<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/zsh')<CR>", opts)
+set_keymap("n", "<leader>en", "<CMD>lua require('functions').findFiles('~/.config/nvim')<CR>", opts)
+set_keymap(
+	"n",
+	"<leader>epb",
+	"<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/polybar')<CR>",
+	opts
+)
+
+set_keymap("n", "<leader>ea", "<CMD>lua require('functions').findFiles('~/go/src/platform/accounting')<CR>", opts)
+set_keymap("n", "<leader>ep", "<CMD>lua require('functions').findFiles('~/go/src/platform')<CR>", opts)
 
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
@@ -123,8 +132,8 @@ set_keymap("v", "<leader>Sw", "<ESC>:lua require('spectre').open_visual()<CR>", 
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)
-set_keymap("n", "<leader>s", "<CMD>Telescope live_grep<CR>", opts)
-set_keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
+set_keymap("n", "<leader>s", "<CMD>Telescope live_grep hidden=true<CR>", opts)
+set_keymap("n", "<leader>ff", "<CMD>Telescope find_files hidden=true<CR>", opts)
 set_keymap("n", "<leader>h", "<CMD>Telescope help_tags<CR>", opts)
 set_keymap("n", "<leader>ss", "<CMD>Telescope grep_string<CR>", opts)
 set_keymap("n", "<leader>k", "<CMD>Telescope keymaps<CR>", opts)

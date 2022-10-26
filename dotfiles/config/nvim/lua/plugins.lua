@@ -436,13 +436,21 @@ require("packer").startup({
 		}) -- DAP virtual text
 
 		-- TESTING
+		-- use({
+		-- 	"yasudanaoya/gotests-nvim",
+		-- 	opt = true,
+		-- 	ft = "go",
+		-- 	config = function()
+		-- 		require("gotests").setup({})
+		-- 	end,
+		-- })
 		use({
-			"yasudanaoya/gotests-nvim",
+			"buoto/gotests-vim",
 			opt = true,
 			ft = "go",
-			config = function()
-				require("gotests").setup()
-			end,
+			-- config = function()
+			-- 	require("gotests").setup({})
+			-- end,
 		})
 		use({
 			"vim-test/vim-test",

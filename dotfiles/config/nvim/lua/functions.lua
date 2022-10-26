@@ -126,4 +126,8 @@ function M.openLink()
 	vim.notify("Valid URL not found.")
 end
 
+function M.findFiles(path)
+	require("telescope.builtin").find_files({ cwd = path, hidden = true })
+end
+
 return M
