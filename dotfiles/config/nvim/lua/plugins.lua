@@ -206,14 +206,14 @@ require("packer").startup({
 			end,
 		}) -- Visualize registers
 		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
-		-- use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
-		use({
-			"ggandor/leap.nvim",
-			requires = { "tpope/vim-repeat" },
-			config = function()
-				require("leap").set_default_keymaps(true)
-			end,
-		}) -- Faster movement
+		use({ "ggandor/lightspeed.nvim", requires = { "tpope/vim-repeat" } }) -- Faster movement
+		-- use({
+		-- 	"ggandor/leap.nvim",
+		-- 	requires = { "tpope/vim-repeat" },
+		-- 	config = function()
+		-- 		require("leap").set_default_keymaps(true)
+		-- 	end,
+		-- }) -- Faster movement
 		use("tpope/vim-sleuth") -- Auto adjust formatting
 		use({
 			"ethanholz/nvim-lastplace",

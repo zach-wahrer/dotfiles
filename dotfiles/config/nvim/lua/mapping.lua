@@ -30,6 +30,7 @@ set_keymap(
 )
 
 set_keymap("n", "<leader>ea", "<CMD>lua require('functions').findFiles('~/go/src/platform/accounting')<CR>", opts)
+set_keymap("n", "<leader>eb", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", opts)
 set_keymap("n", "<leader>ep", "<CMD>lua require('functions').findFiles('~/go/src/platform')<CR>", opts)
 
 set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
@@ -118,6 +119,7 @@ set_keymap("n", "<leader>ll", "<CMD>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Mini.map --
 set_keymap("n", "<Backspace>", "<CMD>lua MiniMap.toggle()<CR>", opts)
+set_keymap("n", "<Backspace><Backspace>", "<CMD>lua MiniMap.toggle_focus()<CR>", opts)
 
 -- Neogen --
 set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'func'})<CR>", opts)
@@ -160,4 +162,7 @@ set_keymap("n", "<leader>t", "<CMD>TestNearest<CR>", opts)
 set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
 
 -- Markdown --
-set_keymap("n", "<leader>pm", "<CMD>MarkdownPreview<CR>", opts)
+set_keymap("n", "pm", "<CMD>MarkdownPreview<CR>", opts)
+
+-- Lightspeed --
+set_keymap("n", "s", "<Plug>Lightspeed_s", opts)
