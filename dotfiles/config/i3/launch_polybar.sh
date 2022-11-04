@@ -16,7 +16,7 @@
     MONITOR=eDP-1 TRAY_POSITION=$tray_position polybar --reload main </dev/null >/var/tmp/polybar.log 2>&1 200>&- &
     disown
   else
-    tray_output=DP-2-1
+    tray_output=DP-1-1
     for m in $outputs; do
       if [[ $m == $tray_output ]]; then
         MONITOR=$m TRAY_POSITION=$tray_position polybar --reload main </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- &
