@@ -230,12 +230,6 @@ require("packer").startup({
 				require("plugins.dial")
 			end,
 		}) -- Increment/decrement
-		-- use({
-		-- 	"mvllow/modes.nvim",
-		-- 	config = function()
-		-- 		require("modes").setup()
-		-- 	end,
-		-- }) -- Modes show in different colors
 		use({
 			"melkster/modicator.nvim",
 			after = "onedark.nvim",
@@ -287,6 +281,7 @@ require("packer").startup({
 				require("plugins.mini_comment")
 				require("plugins.mini_indentscope")
 				require("mini.pairs").setup()
+				require("mini.cursorword").setup()
 				-- require("mini.bufremove").setup()
 				require("mini.surround").setup()
 			end,

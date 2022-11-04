@@ -13,7 +13,9 @@ require("nvim-treesitter.configs").setup({
 		"html",
 		"yaml",
 		"hcl",
-		-- "markdown", -- Doesn't do bold/italics yet.
+		"markdown",
+		"markdown_inline",
+		"regex",
 	},
 	sync_install = false,
 	highlight = {

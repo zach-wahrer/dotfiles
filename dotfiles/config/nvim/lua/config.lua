@@ -123,34 +123,49 @@ augroups.buf_enter = {
 			cmd([[ set fo-=c fo-=r fo-=o ]])
 		end,
 	},
-}
-augroups.cursor_hold = {
-	highlight_doc_on_cursor_hold = {
-		event = { "CursorHold" },
-		pattern = "*",
+	set_tf_to_hcl = {
+		event = { "BufEnter" },
+		pattern = "*.tf",
 		callback = function()
-			vim.lsp.for_each_buffer_client(0, function(client)
-				if client.server_capabilities.document_highlight then
-					vim.lsp.buf.document_highlight()
-				end
-			end)
+			cmd("set filetype=hcl")
 		end,
 	},
-	remove_highlight_on_cursor_moved = {
-		event = { "CursorMoved" },
-		pattern = "*",
+	set_tfvars_to_hcl = {
+		event = { "BufEnter" },
+		pattern = "*.tfvars",
 		callback = function()
-			vim.lsp.buf.clear_references()
+			cmd("set filetype=hcl")
 		end,
 	},
-	-- show_diags_on_cursor_hold = {
-	-- 	event = { "CursorHold" },
-	-- 	pattern = "*",
-	-- 	callback = function()
-	-- 		vim.diagnostic.open_float()
-	-- 	end,
-	-- },
 }
+
+-- augroups.cursor_hold = {
+-- highlight_doc_on_cursor_hold = {
+-- 	event = { "CursorHold" },
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.lsp.for_each_buffer_client(0, function(client)
+-- 			if client.server_capabilities.document_highlight then
+-- 				vim.lsp.buf.document_highlight()
+-- 			end
+-- 		end)
+-- 	end,
+-- },
+-- remove_highlight_on_cursor_moved = {
+-- 	event = { "CursorMoved" },
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.lsp.buf.clear_references()
+-- 	end,
+-- },
+-- show_diags_on_cursor_hold = {
+-- 	event = { "CursorHold" },
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.diagnostic.open_float()
+-- 	end,
+-- },
+-- }
 augroups.buf_write_pre = {
 	remove_whitespace_on_save = {
 		event = { "BufWritePre" },
