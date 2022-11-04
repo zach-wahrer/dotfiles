@@ -162,7 +162,7 @@ set_keymap("n", "<leader>t", "<CMD>TestNearest<CR>", opts)
 set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
 
 -- Markdown --
-set_keymap("n", "pm", "<CMD>MarkdownPreview<CR>", opts)
+set_keymap("n", "<leader>pm", "<CMD>MarkdownPreview<CR>", opts)
 
 -- Lightspeed --
 set_keymap("n", "s", "<Plug>Lightspeed_s", opts)
