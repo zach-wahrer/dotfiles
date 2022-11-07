@@ -206,6 +206,7 @@ bindsym Ctrl+1 exec sh $HOME/scripts/headset_audio.sh
 bindsym Ctrl+2 exec sh $HOME/scripts/laptop_audio.sh
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id i3lock-fancy
 bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+Shift+f exec --no-startup-id firefox
 
 # Only show border edges if more than one window present in workspace
 hide_edge_borders smart
