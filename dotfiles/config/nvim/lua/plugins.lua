@@ -65,13 +65,6 @@ require("packer").startup({
 				require("lsp_signature").setup()
 			end,
 		}) -- Show func signature
-		use({
-			"j-hui/fidget.nvim",
-			config = function()
-				require("fidget").setup({})
-			end,
-		}) -- Show lsp progress/status
-		use({ "cseickel/diagnostic-window.nvim", requires = { "MunifTanjim/nui.nvim" } })
 
 		-- INTERFACE
 		use({
@@ -145,10 +138,6 @@ require("packer").startup({
 			requires = { "nvim-telescope/telescope.nvim" },
 		}) -- Project management, needed for vim-test to work properly
 		use({
-			"windwp/nvim-spectre",
-			requires = { "nvim-lua/plenary.nvim" },
-		}) -- Find/Replace
-		use({
 			"kyazdani42/nvim-tree.lua",
 			requires = { "kyazdani42/nvim-web-devicons" },
 			config = function()
@@ -214,7 +203,6 @@ require("packer").startup({
 		-- 		require("leap").set_default_keymaps(true)
 		-- 	end,
 		-- }) -- Faster movement
-		use("tpope/vim-sleuth") -- Auto adjust formatting
 		use({
 			"ethanholz/nvim-lastplace",
 			config = function()
@@ -257,9 +245,6 @@ require("packer").startup({
 			requires = "nvim-treesitter/nvim-treesitter",
 		}) -- Documentation generation
 		use({
-			"stevearc/dressing.nvim",
-		}) -- Pretty default interfaces
-		use({
 			"tiagovla/scope.nvim",
 			config = function()
 				require("scope").setup()
@@ -286,7 +271,12 @@ require("packer").startup({
 				require("mini.surround").setup()
 			end,
 		})
-		use({ "kevinhwang91/nvim-hlslens" }) -- Improved search highlighting
+		use({
+			"kevinhwang91/nvim-hlslens",
+			config = function()
+				require("hlslens").setup()
+			end,
+		}) -- Improved search highlighting
 		use({ "moll/vim-bbye" }) -- Better buffer delete
 		use({
 			"NvChad/nvim-colorizer.lua",
@@ -294,7 +284,16 @@ require("packer").startup({
 				require("plugins.colorizer")
 			end,
 		})
-
+		use({
+			"folke/noice.nvim",
+			config = function()
+				require("plugins.noice")
+			end,
+			requires = {
+				"MunifTanjim/nui.nvim",
+				"rcarriga/nvim-notify",
+			},
+		})
 		-- KITTY
 		use({
 			"hermitmaster/nvim-kitty-navigator",
