@@ -128,11 +128,6 @@ set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'typ
 -- Nvim Tree --
 set_keymap("n", "\\", "<CMD>NvimTreeToggle<CR>", opts)
 
--- Spectre --
-set_keymap("n", "<leader>S", "<CMD>lua require('spectre').open()<CR>", opts)
-set_keymap("n", "<leader>Sw", "<CMD>lua require('spectre').open_visual({select_word=true})<CR>", opts)
-set_keymap("v", "<leader>Sw", "<ESC>:lua require('spectre').open_visual()<CR>", opts)
-
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)
 set_keymap("n", "<leader>s", "<CMD>Telescope live_grep hidden=true<CR>", opts)

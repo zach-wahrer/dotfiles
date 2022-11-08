@@ -9,10 +9,6 @@ require("onedark").setup({
 	style = "deep",
 })
 require("onedark").load()
--- require("onedarkpro").setup({
--- 	theme = "onedark",
--- })
--- require("onedarkpro").load()
 
 o.termguicolors = true
 
@@ -74,17 +70,16 @@ vim.cmd(
 -- Globals --
 o.ignorecase = true -- Case insensitive searching
 o.smartcase = true -- Override ignorecase if search pattern is mixed case
-o.autowrite = true
+o.autowriteall = true
 o.title = true
 o.updatetime = 100 -- Time it takes to write to swap / update git gutter
-o.wildmode = "longest,list" -- Bash like tab completions
 o.clipboard = "unnamedplus" -- Use system clipboard
 o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
 o.incsearch = true -- Show search results while still typing
 o.laststatus = 3 -- Only show one status bar
-o.timeoutlen = 500 -- Length of time to wait until accepting the keypress sequence
+o.timeoutlen = 400 -- Length of time to wait until accepting the keypress sequence
 o.fillchars = "vert:▏,vertleft:▏,vertright:▏,verthoriz:+,horiz:-,horizup:-,horizdown:-"
-o.cmdheight = 0
+-- o.cmdheight = 0 -- Uneeded due to Noice plugin
 
 -- Buffer --
 bo.tabstop = 4 -- Number of cols occupied by tab
@@ -93,11 +88,10 @@ bo.autoindent = true -- Indent new line the same as previous
 bo.shiftwidth = 4 -- Width for autoindents
 bo.matchpairs = "<:>,(:),{:},[:]" -- Hightlight matching brackets
 bo.undofile = true -- Save undo history in file
-bo.syntax = "on"
 
 -- Window --
 wo.cursorline = true -- Highlight current cursor line
-wo.relativenumber = true -- Set relative line numbers
+-- wo.relativenumber = true -- Set relative line numbers
 wo.number = true -- Set absolute line number
 wo.conceallevel = 2 -- Conceal markdown
 wo.spell = false -- Done with spelunker
@@ -166,6 +160,7 @@ augroups.buf_enter = {
 -- 	end,
 -- },
 -- }
+
 augroups.buf_write_pre = {
 	remove_whitespace_on_save = {
 		event = { "BufWritePre" },
@@ -277,27 +272,6 @@ augroups.misc = {
 -- 	},
 -- }
 augroups.file_type = {
-	ts = {
-		event = { "FileType" },
-		pattern = "ts",
-		callback = function()
-			cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
-		end,
-	},
-	js = {
-		event = { "FileType" },
-		pattern = "js",
-		callback = function()
-			cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
-		end,
-	},
-	vue = {
-		event = { "FileType" },
-		pattern = "vue",
-		callback = function()
-			cmd([[ set ts=4 sw=4 sts=0 autoindent ]])
-		end,
-	},
 	rainbow = { -- Make first rainbow bracket not gray
 		event = { "FileType" },
 		pattern = "*",
