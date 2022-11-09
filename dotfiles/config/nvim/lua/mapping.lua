@@ -160,5 +160,6 @@ set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
 -- Markdown --
 set_keymap("n", "<leader>pm", "<CMD>MarkdownPreview<CR>", opts)
 
--- Lightspeed --
-set_keymap("n", "s", "<Plug>Lightspeed_s", opts)
+-- Svart --
+set_keymap("n", "s", "<CMD>Svart<CR>", opts)
+set_keymap("n", "S", "<CMD>SvartRepeat<CR>", opts)
