@@ -16,6 +16,7 @@ require("nvim-treesitter.configs").setup({
 		"markdown",
 		"markdown_inline",
 		"regex",
+		"vim",
 	},
 	sync_install = false,
 	highlight = {

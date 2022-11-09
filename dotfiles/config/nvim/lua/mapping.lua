@@ -87,8 +87,8 @@ set_keymap("n", "<A-,>", "<CMD>BufferLineMovePrev<CR>", opts)
 set_keymap("n", "<A-.>", "<CMD>BufferLineMoveNext<CR>", opts)
 
 -- Dial --
-set_keymap("n", "<C-c>", require("dial.map").inc_normal(), opts)
-set_keymap("n", "<C-x>", require("dial.map").dec_normal(), opts)
+-- set_keymap("n", "<C-c>", require("dial.map").inc_normal(), opts)
+-- set_keymap("n", "<C-x>", require("dial.map").dec_normal(), opts)
 
 -- Diffview --
 set_keymap("n", "<leader>gv", "<CMD>DiffviewFileHistory<CR>", opts)

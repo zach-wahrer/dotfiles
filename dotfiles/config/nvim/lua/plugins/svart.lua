@@ -1,3 +1,3 @@
 require("svart").setup({
-	search_begin_regular = false,
+	search_begin_regular = true,
 })

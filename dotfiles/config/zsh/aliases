@@ -86,3 +86,6 @@ alias awslocal="aws --endpoint-url=http://localhost:4566"
 
 # DOTDROP #
 alias dotdrop='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
+
+# NVIM #
+alias bsnvim="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
