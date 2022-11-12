@@ -68,7 +68,7 @@ dotfiles:
     dst: ~/.config/ranger
   d_zsh:
     src: config/zsh
-    dst: ~/.config/zsh/
+    dst: ~/.config/zsh
   d_tridactyl:
     src: config/tridactyl
     dst: ~/.config/tridactyl
