@@ -6,38 +6,23 @@ layout vertical
 enabled_layouts vertical, horizontal, stack
 launch --cwd=$HOME/.config --env NVIM=true --env GOTESTS_TEMPLATE=testify zsh
 launch --title "Config Terminal" --cwd=$HOME/dotfiles zsh
-resize_window shorter 25
+resize_window shorter 50
 
-{%@@ if profile == "foundant-wolf" @@%}
-## Platform ##
-new_tab Platform
+{%@@ if profile == "to-wolf" @@%}
+## Code ##
+new_tab Code
 layout vertical
 enabled_layouts vertical, horizontal, stack
-launch --cwd=$HOME/go/src/platform --env NVIM=true --env GOTESTS_TEMPLATE=testify zsh
-launch --title "vim-test-output" --cwd=$HOME/go/src/platform zsh
-resize_window shorter 25
+launch --cwd=$HOME/go/src --env NVIM=true --env GOTESTS_TEMPLATE=testify zsh
+launch --title "vim-test-output" --cwd=$HOME/go/src zsh
+resize_window shorter 50
 {%@@ endif @@%}
-
 
 ## Term ##
 new_tab Term
 enabled_layouts vertical, horizontal, stack
-{%@@ if profile == "foundant-wolf" @@%}
-launch --cwd=$HOME/go/src/platform/accounting zsh
-launch --cwd=$HOME/go/src/platform/accounting zsh
-{%@@ else @@%}
 launch zsh
 launch zsh
-{%@@ endif @@%}
-
-{%@@ if profile == "foundant-wolf" @@%}
-## Accounting ##
-new_tab Accounting
-enabled_layouts vertical, horizontal, stack
-launch --title "Backend" --cwd=$HOME/go/src/platform/accounting zsh
-launch --title "Frontend" --cwd=$HOME/go/src/platform/accounting zsh
-launch --dont-take-focus --cwd=$HOME/scripts accounting-startup.sh
-{%@@ endif @@%}
 
 ## Notes ##
 new_tab Notes
