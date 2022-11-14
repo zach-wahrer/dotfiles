@@ -1,9 +1,9 @@
+---
 config:
   backup: true
   create: true
   dotpath: dotfiles
 dotfiles:
-  # File Imports
   f_gitconfig:
     src: dotfiles/.gitconfig
     dst: ~/.gitconfig
@@ -38,7 +38,6 @@ dotfiles:
     src: scripts/nvim-startup.sh
     dst: ~/scripts/nvim-startup.sh
     chmod: '744'
-  # Directory Imports
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
@@ -81,83 +80,93 @@ dotfiles:
   d_styles:
     src: styles
     dst: ~/styles
+  d_sway:
+    src: config/sway
+    dst: ~/.config/sway
+  d_swaylock:
+    src: config/swaylock
+    dst: ~/.config/swaylock
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_wofi:
+    src: config/wofi
+    dst: ~/.config/wofi
 profiles:
   foundant-wolf:
     dotfiles:
-    - f_gitconfig
-    - f_zshrc
-    - f_golangci.yml
-    - f_xmodmap
-    - f_functions
-    - f_vale.ini
-    - f_scroll.py
-    - f_kitty_opener.sh
-    - f_accounting-startup.sh
-    - f_nvim-startup.sh
-    - d_i3
-    - d_kitty
-    - d_nvim
-    - d_polybar
-    - d_rofi
-    - d_scripts
-    - d_ranger
-    - d_tridactyl
-    - d_screenlayout
-    - d_picom
-    - d_styles
-    - d_zsh
+      - f_gitconfig
+      - f_zshrc
+      - f_golangci.yml
+      - f_xmodmap
+      - f_functions
+      - f_vale.ini
+      - f_scroll.py
+      - f_kitty_opener.sh
+      - f_accounting-startup.sh
+      - f_nvim-startup.sh
+      - d_i3
+      - d_kitty
+      - d_nvim
+      - d_polybar
+      - d_rofi
+      - d_scripts
+      - d_ranger
+      - d_tridactyl
+      - d_screenlayout
+      - d_picom
+      - d_styles
+      - d_zsh
     variables:
       adapter: AC
       battery: BAT0
   to-wolf:
     dotfiles:
-    - f_gitconfig
-    - f_zshrc
-    - f_golangci.yml
-    - f_xmodmap
-    - f_functions
-    - f_vale.ini
-    - f_scroll.py
-    - f_kitty_opener.sh
-    - f_nvim-startup.sh
-    - d_i3
-    - d_kitty
-    - d_nvim
-    - d_polybar
-    - d_rofi
-    - d_scripts
-    - d_ranger
-    - d_tridactyl
-    - d_screenlayout
-    - d_picom
-    - d_styles
-    - d_zsh
+      - f_gitconfig
+      - f_zshrc
+      - f_golangci.yml
+      - f_functions
+      - f_vale.ini
+      - f_scroll.py
+      - f_kitty_opener.sh
+      - f_nvim-startup.sh
+      - d_kitty
+      - d_nvim
+      - d_scripts
+      - d_ranger
+      - d_tridactyl
+      - d_styles
+      - d_zsh
+      - d_sway
+      - d_swaylock
+      - d_waybar
+      - d_wofi
     variables:
       adapter: AC
       battery: BAT0
   red-wolf:
     dotfiles:
-    - f_gitconfig
-    - f_zshrc
-    - f_golangci.yml
-    - f_xmodmap
-    - f_functions
-    - f_vale.ini
-    - f_scroll.py
-    - f_kitty_opener.sh
-    - f_nvim-startup.sh
-    - d_i3
-    - d_kitty
-    - d_nvim
-    - d_polybar
-    - d_rofi
-    - d_scripts
-    - d_ranger
-    - d_tridactyl
-    - d_screenlayout
-    - d_picom
-    - d_styles
-    - d_zsh
+      - f_gitconfig
+      - f_zshrc
+      - f_golangci.yml
+      - f_xmodmap
+      - f_functions
+      - f_vale.ini
+      - f_scroll.py
+      - f_kitty_opener.sh
+      - f_nvim-startup.sh
+      - d_i3
+      - d_kitty
+      - d_nvim
+      - d_polybar
+      - d_rofi
+      - d_scripts
+      - d_ranger
+      - d_tridactyl
+      - d_screenlayout
+      - d_picom
+      - d_styles
+      - d_zsh
     variables:
       adapter: ADP1
       battery: BAT1
