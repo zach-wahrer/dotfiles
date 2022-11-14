@@ -16,19 +16,20 @@
     ],
 
     "modules-right": [
-        "network",
-        "idle_inhibitor",
         "memory",
         "cpu",
-        "pulseaudio",
-        "custom/keyboard-layout",
+	"disk",
         "battery",
+        "pulseaudio",
+        // "custom/keyboard-layout",
         //"custom/PBPbattery",
         "backlight#icon",
         "backlight#value",
+        "network",
+        // "custom/weather",
         "clock",
+        "idle_inhibitor",
         "tray",
-        //"custom/weather",
         "custom/power",
     ],
 
@@ -48,7 +49,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{icon} {capacity}% ",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         // "format-good": "", // An empty format will hide the module
@@ -70,12 +71,19 @@
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+        "format": "龍 {usage}% ({load})", // Icon: microchip
         "states": {
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "xfce4-terminal -e 'htop'",
+        "on-click": "kitty bpytop",
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_used}%",
+        "path": "/",
+	"on-click": "kitty ncdu"
     },
 
     "custom/keyboard-layout": {
@@ -91,8 +99,8 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%", // Icon: memory
-        "on-click": "xfce4-terminal -e 'htop'",
+        "format": " {}%", // Icon: memory
+        "on-click": "kitty bpytop",
         "states": {
             "warning": 70,
             "critical": 90
@@ -101,8 +109,8 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
         "on-click": "xfce4-terminal -e 'nmtui'",

@@ -51,7 +51,7 @@
 /* The whole bar */
 #waybar {
     background: transparent;
-    color: #aa03af;
+    color: @highlight1;
     background-color: @base1;
     font-family: SourceCodePro;
     font-size: 14px;
@@ -81,6 +81,8 @@
  * -------------------------------------------------------------------------- */
 
 #battery {
+    padding-left:10px;
+    padding-right:10px;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -104,6 +106,17 @@
     animation-duration: 2s;
 }
 
+#clock {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#cpu {
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
 #cpu.warning {
     color: orange;
 }
@@ -112,7 +125,14 @@
     color: red;
 }
 
+#disk {
+    padding-left:10px;
+    padding-right:10px;
+}
+
 #memory {
+    padding-left:10px;
+    padding-right:10px;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -138,12 +158,20 @@
     padding: 7px;
 }
 
+#network {
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
 #network.disconnected {
     color: orange;
 }
 
 #pulseaudio {
     padding-top:6px;
+    padding-left:10px;
+    padding-right:10px;
 }
 
 #pulseaudio.muted {
@@ -180,18 +208,20 @@
 }
 
 #custom-power {
+    color: @highlight;
     margin-left:15px;
     margin-right:15px;
     font-size:15px;
 }
 
 #custom-launcher {
+    color: @highlight;
     font-size:15px;
     margin-left:15px;
     margin-right:10px;
 }
 
 #backlight.icon {
-    padding-right:1px;
+    color: @highlight;
     font-size: 13px;
 }
