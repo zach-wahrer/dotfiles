@@ -94,6 +94,9 @@ dotfiles:
   d_envman:
     src: config/envman
     dst: ~/.config/envman
+  d_mako:
+    src: config/mako
+    dst: ~/.config/mako
 profiles:
   foundant-wolf:
     dotfiles:
@@ -144,6 +147,7 @@ profiles:
     - d_waybar
     - d_wofi
     - d_envman
+    - d_mako
     variables:
       adapter: AC
       battery: BAT0
