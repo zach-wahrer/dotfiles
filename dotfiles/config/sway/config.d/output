@@ -10,8 +10,8 @@
 #   input "1386:884:Wacom_Intuos_S_Pad" map_to_output HDMI-A-1
 #   input "1386:884:Wacom_Intuos_S_Pen" map_to_output HDMI-A-1
 
-output DP-2 resolution 3840x2160 position 0,0
-output eDP-1 resolution 1920x1200 position 3840,750
+output DP-2 resolution 3840x2160 position 0,0 scale 1.2
+output eDP-1 resolution 1920x1200 position 3200,450
 
 workspace 1 output DP-2
 workspace 2 output eDP-1
