@@ -18,6 +18,7 @@ set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
 set_keymap("n", "<leader>cp", "<CMD>cp<CR>", opts) -- Goto previous quickfix item
 set_keymap("n", "<leader>co", "<CMD>lua require('functions').openAllQuickFix()<CR>", opts) -- Open all quick fix list into buffers
 
+set_keymap("n", "<leader>od", "<CMD>lua require('functions').findFiles('~/dotfiles')<CR>", opts)
 set_keymap("n", "<leader>ok", "<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/kitty')<CR>", opts)
 set_keymap("n", "<leader>oz", "<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/zsh')<CR>", opts)
 set_keymap("n", "<leader>on", "<CMD>lua require('functions').findFiles('~/.config/nvim')<CR>", opts)
@@ -118,7 +119,7 @@ set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'fun
 set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'type'})<CR>", opts)
 
 -- Nvim Tree --
-set_keymap("n", "\\", "<CMD>NvimTreeToggle<CR>", opts)
+set_keymap("n", ";", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)

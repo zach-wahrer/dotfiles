@@ -72,3 +72,8 @@ alias d='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 
 # NVIM #
 alias bsnvim="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
+
+{%@@ if profile == "to-wolf" @@%}
+alias wgup="sudo wg-quick up wg0"
+alias wgdown="sudo wg-quick down wg0"
+{%@@ endif @@%}
