@@ -2,7 +2,7 @@
 
 ## Packages ##
 sudo pacman -Syy git kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls python-pip ncdu bpytop
-yay -install nerd-fonts-complete wdisplay
+yay -install nerd-fonts-complete wdisplay vale
 pip3 install pynvim
 /usr/lib/go/bin/go install github.com/kyoh86/richgo@latest
 
