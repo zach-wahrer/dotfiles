@@ -1,10 +1,12 @@
 #!/bin/sh
 
-## Packages ##
+## Packages / Tools ##
 sudo pacman -Syy git kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls python-pip ncdu bpytop
 yay -install nerd-fonts-complete wdisplay vale
 pip3 install pynvim
 /usr/lib/go/bin/go install github.com/kyoh86/richgo@latest
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
+sudo npm install -g dockerfile-language-server-nodejs
 
 ## Dotfiles ##
 echo "Generate ssh key and add to github. [Enter to continue...]"

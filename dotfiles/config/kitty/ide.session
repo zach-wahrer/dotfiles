@@ -13,8 +13,8 @@ resize_window shorter 50
 new_tab Code
 layout vertical
 enabled_layouts vertical, horizontal, stack
-launch --cwd=$HOME/go/src --env NVIM=true --env GOTESTS_TEMPLATE=testify zsh
-launch --title "vim-test-output" --cwd=$HOME/go/src zsh
+launch --cwd=$HOME/go/src/to --env NVIM=true --env GOTESTS_TEMPLATE=testify zsh
+launch --title "vim-test-output" --cwd=$HOME/go/src/to zsh
 resize_window shorter 50
 {%@@ endif @@%}
 

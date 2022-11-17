@@ -14,4 +14,4 @@ output DP-2 resolution 3840x2160 position 0,0 scale 1.2
 output eDP-1 resolution 1920x1200 position 3200,450
 
 workspace 1 output DP-2
-workspace 2 output eDP-1
+workspace 6 output eDP-1

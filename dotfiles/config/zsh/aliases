@@ -76,4 +76,6 @@ alias bsnvim="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'Packe
 {%@@ if profile == "to-wolf" @@%}
 alias wgup="sudo wg-quick up wg0"
 alias wgdown="sudo wg-quick down wg0"
+alias tsup="sudo tailscale up --accept-routes"
+alias tsdown="sudo tailscale down"
 {%@@ endif @@%}
