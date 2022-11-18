@@ -23,7 +23,7 @@ alias dnuke='docker stop $(docker ps -aq) && docker rm $(docker ps -aq); drmi; d
 alias dstop='docker stop $(docker ps -q --filter "since=portainer")'
 alias drmi='docker rmi $(docker images -a -q)'
 alias dprune='yes | docker system prune; yes | docker volume prune'
-alias portainer="docker volume create portainer_data; docker run -d -p 9100:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
+alias portainer="docker volume create portainer_data; docker run -d -p 9000:9000 --name=portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce"
 
 # GIT #
 alias gs='git status'
@@ -48,6 +48,7 @@ alias gke='gitk --all $(git log -g --pretty=%h) &!'
 
 # TESTS #
 alias gt="go test ./..."
+alias gl="golangci-lint run "
 
 # TERRAFORM #
 alias tfp='terraform plan'
