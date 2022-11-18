@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## Packages / Tools ##
-sudo pacman -Syy git kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls docker docker-compose python-pip ncdu bpytop
+sudo pacman -Syy git kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls docker docker-compose python-pip ncdu bpytop tk
 yay -install dbgate-bin nerd-fonts-complete wdisplay vale
 pip3 install pynvim
 /usr/lib/go/bin/go install github.com/kyoh86/richgo@latest
