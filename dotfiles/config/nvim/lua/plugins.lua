@@ -291,6 +291,15 @@ require("packer").startup({
 				"MunifTanjim/nui.nvim",
 				"rcarriga/nvim-notify",
 			},
+		}) -- Improved interface
+		use({
+			"ray-x/sad.nvim",
+			config = function()
+				require("sad").setup({
+					diff = "diff-so-fancy",
+				})
+			end,
+			requires = { "ray-x/guihua.lua" },
 		})
 		-- KITTY
 		use({
