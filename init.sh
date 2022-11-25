@@ -1,8 +1,9 @@
 #!/bin/sh
 
 ## Packages / Tools ##
-sudo pacman -Syy git kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls docker docker-compose python-pip ncdu bpytop tk
-yay -install dbgate-bin nerd-fonts-complete wdisplay vale
+sudo pacman -Syy git base-devel kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls docker docker-compose python-pip ncdu bpytop tk mako swaylock waybar wofi firefox gcc npm pulseaudio pulseaudio-alsa alsa-utils wl-clipboard xorg-xwayland network-manager-applet
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
+yay -S dbgate-bin nerd-fonts-complete wdisplays vale
 pip3 install pynvim
 /usr/lib/go/bin/go install github.com/kyoh86/richgo@latest
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$(go env GOPATH)"/bin v1.50.1
@@ -32,7 +33,3 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'  # Boot
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'  # Bootstrap neovim until it doesn't error
 
 chsh -s "$(which zsh)" # Change default shell to zsh.
-
-
-
-

@@ -136,18 +136,20 @@ profiles:
       - f_scroll.py
       - f_kitty_opener.sh
       - f_nvim-startup.sh
-      - d_i3
       - d_kitty
       - d_nvim
-      - d_polybar
-      - d_rofi
       - d_scripts
       - d_ranger
       - d_tridactyl
       - d_screenlayout
-      - d_picom
       - d_styles
       - d_zsh
+      - d_sway
+      - d_swaylock
+      - d_waybar
+      - d_wofi
+      - d_envman
+      - d_mako
     variables:
       adapter: ADP1
       battery: BAT1
