@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## Packages / Tools ##
-sudo pacman -Syy git base-devel kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls docker docker-compose python-pip ncdu bpytop tk mako swaylock waybar wofi firefox gcc npm pulseaudio pulseaudio-alsa alsa-utils wl-clipboard xorg-xwayland network-manager-applet
+sudo pacman -Syy git base-devel kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls docker docker-compose python-pip ncdu bpytop sad tk mako swaylock waybar wofi firefox gcc npm pulseaudio pulseaudio-alsa alsa-utils wl-clipboard xorg-xwayland network-manager-applet
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 yay -S dbgate-bin nerd-fonts-complete wdisplays vale
 pip3 install pynvim

@@ -27,7 +27,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 zstyle ':completion:*' list-prompt   '' # Remove "Do you want to see X possibility"
 zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibility"
 
-{%@@ if profile == "foundant-wolf" @@%}
+{%@@ if profile == "to-wolf" @@%}
 # USER COMPLETIONS #
 source <(kubectl completion zsh)
 source <(minikube completion zsh)

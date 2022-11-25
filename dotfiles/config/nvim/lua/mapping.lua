@@ -121,6 +121,9 @@ set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'typ
 -- Nvim Tree --
 set_keymap("n", ";", "<CMD>NvimTreeToggle<CR>", opts)
 
+-- Sad --
+set_keymap("n", "<leader>sr", "<CMD>Sad<CR>", opts)
+
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)
 set_keymap("n", "<leader>s", "<CMD>Telescope live_grep hidden=true<CR>", opts)

@@ -63,7 +63,8 @@ alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
 alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
 
 # K8S #
-alias kc="kubectl config use-context arn:aws:eks:us-west-2:CLUSTERNUMBER:cluster/hello-world-cluster; kubectl"
+# alias kc="kubectl config use-context arn:aws:eks:us-west-2:CLUSTERNUMBER:cluster/hello-world-cluster; kubectl"
+alias kc="kubectl config use-context proxmox; kubectl"
 alias mkc="kubectl config use-context minikube; kubectl"
 # compdef _kubectl kc
 
@@ -79,4 +80,5 @@ alias wgup="sudo wg-quick up wg0"
 alias wgdown="sudo wg-quick down wg0"
 alias tsup="sudo tailscale up --accept-routes"
 alias tsdown="sudo tailscale down"
+alias zt="z ~/go/src/to/"
 {%@@ endif @@%}
