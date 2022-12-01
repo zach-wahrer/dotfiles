@@ -300,6 +300,14 @@ require("packer").startup({
 				})
 			end,
 			requires = { "ray-x/guihua.lua" },
+		}) -- Find/replace
+		use({
+			"crusj/bookmarks.nvim",
+			branch = "main",
+			requires = { "kyazdani42/nvim-web-devicons" },
+			config = function()
+				require("plugins.bookmarks")
+			end,
 		})
 		-- KITTY
 		use({

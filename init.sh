@@ -10,6 +10,7 @@ pip3 install pynvim
 ${GO_BIN} install github.com/kyoh86/richgo@latest
 ${GO_BIN} install github.com/cweill/gotests/gotests@latest
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$(go env GOPATH)"/bin v1.50.1
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bhupesh-V/ugit/master/install)"
 sudo npm install -g dockerfile-language-server-nodejs
 
  ## Docker Setup ##

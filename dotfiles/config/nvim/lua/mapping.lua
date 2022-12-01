@@ -33,8 +33,6 @@ set_keymap("v", "k", "gk", opts) -- Up on wrapped lines visually while selecting
 set_keymap("v", ">", ">gv", opts) -- Indent while keeping selection
 set_keymap("v", "<", "<gv", opts) -- Remove indent while keeping selection
 
-set_keymap("v", "<A-j>", "<CMD>m '>+1<CR>gv=gv", opts) -- Move selected text down
-set_keymap("v", "<A-k>", "<CMD>m '<-2<CR>gv=gv", opts) -- Move selected text up
 set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
 set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
 set_keymap("n", "<ESC>", "<CMD>lua require('functions').removeSearch()<CR>", opts) -- Remove search highlighting
@@ -60,7 +58,6 @@ set_keymap("n", "#", "<CMD>lua require('functions').searchWordUnderCursorBackwar
 set_keymap("n", "<leader>dt", "<CMD>lua require('dapui').toggle()<CR>", opts)
 set_keymap("n", "<leader>dc", "<CMD>lua require('dap').continue()<CR>", opts)
 set_keymap("n", "<leader>dse", "<CMD>lua require('functions').debugSetEnvironment()<CR>", opts)
-
 set_keymap("n", "<leader>ds", "<CMD>lua require('dap').step_over()<CR>", opts)
 set_keymap("n", "<leader>di", "<CMD>lua require('dap').step_into()<CR>", opts)
 set_keymap("n", "<leader>do", "<CMD>lua require('dap').step_out()<CR>", opts)
@@ -147,6 +144,7 @@ set_keymap("n", "<leader>gc", "<CMD>GoCoverageToggle<CR>", opts)
 set_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", opts)
 set_keymap("n", "<leader>gt", "<CMD>GoTest<CR>", opts)
 set_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", opts)
+set_keymap("n", "<leader>gd", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
 
 -- Vim Test --
 set_keymap("n", "<leader>tf", "<CMD>TestFile<CR>", opts)
@@ -154,7 +152,7 @@ set_keymap("n", "<leader>t", "<CMD>TestNearest<CR>", opts)
 set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
 
 -- Markdown --
-set_keymap("n", "<leader>pm", "<CMD>MarkdownPreview<CR>", opts)
+set_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", opts)
 
 -- Svart --
 set_keymap("n", "s", "<CMD>Svart<CR>", opts)

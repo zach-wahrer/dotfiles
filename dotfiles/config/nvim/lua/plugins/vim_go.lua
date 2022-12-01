@@ -23,7 +23,7 @@ vim.g["go_metalinter_autosave_enabled"] = {
 	"gosec",
 }
 vim.g["go_metalinter_command"] = "golangci-lint"
-vim.g["go_metalinter_autosave"] = 1
+vim.g["go_metalinter_autosave"] = 0
 vim.g["go_jump_to_error"] = 0
 vim.g["go_fmt_command"] = "gopls"
 vim.g["go_fmt_autosave"] = 1

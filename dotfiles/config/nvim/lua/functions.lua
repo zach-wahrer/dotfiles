@@ -130,4 +130,12 @@ function M.findFiles(path)
 	require("telescope.builtin").find_files({ cwd = path, hidden = true })
 end
 
+function M.toggleGoMetalinterOnSave()
+	if vim.g["go_metalinter_autosave"] == 0 then
+		vim.g["go_metalinter_autosave"] = 1
+	else
+		vim.g["go_metalinter_autosave"] = 0
+	end
+end
+
 return M
