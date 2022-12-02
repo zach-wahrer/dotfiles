@@ -16,6 +16,7 @@ o.incsearch = true -- Show search results while still typing
 o.laststatus = 3 -- Only show one status bar
 o.timeoutlen = 400 -- Length of time to wait until accepting the keypress sequence
 o.fillchars = "vert:▏,vertleft:▏,vertright:▏,verthoriz:+,horiz:-,horizup:-,horizdown:-"
+o.commentstring = "# %s"
 -- o.cmdheight = 0 -- Uneeded due to Noice plugin
 
 -- Buffer --
