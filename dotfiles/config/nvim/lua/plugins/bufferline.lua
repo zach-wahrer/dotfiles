@@ -7,8 +7,14 @@ require("bufferline").setup({
 		diagnostics = "nvim_lsp",
 		sort_by = "directory",
 		offsets = {
+			-- {
+			-- 	filetype = "NvimTree",
+			-- 	text = "",
+			-- 	highlight = "Directory",
+			-- 	text_align = "left",
+			-- },
 			{
-				filetype = "NvimTree",
+				filetype = "neo-tree",
 				text = "",
 				highlight = "Directory",
 				text_align = "left",

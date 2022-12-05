@@ -116,7 +116,11 @@ set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'fun
 set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'type'})<CR>", opts)
 
 -- Nvim Tree --
-set_keymap("n", ";", "<CMD>NvimTreeToggle<CR>", opts)
+-- set_keymap("n", ";", "<CMD>NvimTreeToggle<CR>", opts)
+
+-- Nvim Tree --
+set_keymap("n", ";", "<CMD>Neotree filesystem toggle<CR>", opts)
+set_keymap("n", "'", "<CMD>Neotree buffers toggle<CR>", opts)
 
 -- Sad --
 set_keymap("n", "<leader>sr", "<CMD>Sad<CR>", opts)
