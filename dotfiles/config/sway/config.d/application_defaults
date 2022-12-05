@@ -49,3 +49,6 @@ for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
 # Inhibit idle
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [app_id="Chromium"] inhibit_idle fullscreen
+
+# Kitty nvim temp windows
+for_window [title="nvim-temp"] floating enable, resize set width 50 ppt height 50 ppt
