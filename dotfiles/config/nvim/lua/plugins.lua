@@ -137,13 +137,33 @@ require("packer").startup({
 			end,
 			requires = { "nvim-telescope/telescope.nvim" },
 		}) -- Project management, needed for vim-test to work properly
+		-- use({
+		-- 	"kyazdani42/nvim-tree.lua",
+		-- 	requires = { "kyazdani42/nvim-web-devicons" },
+		-- 	config = function()
+		-- 		require("plugins.nvim_tree")
+		-- 	end,
+		-- }) -- File browser
 		use({
-			"kyazdani42/nvim-tree.lua",
-			requires = { "kyazdani42/nvim-web-devicons" },
+			"nvim-neo-tree/neo-tree.nvim",
+			requires = {
+				"kyazdani42/nvim-web-devicons",
+				"nvim-lua/plenary.nvim",
+				"MunifTanjim/nui.nvim",
+				"s1n7ax/nvim-window-picker",
+			},
+			branch = "v2.x",
 			config = function()
-				require("plugins.nvim_tree")
+				require("plugins.neo_tree")
 			end,
 		}) -- File browser
+		use({
+			"s1n7ax/nvim-window-picker",
+			tag = "v1.*",
+			config = function()
+				require("plugins.window_picker")
+			end,
+		})
 		use({
 			"declancm/cinnamon.nvim",
 			config = function()
