@@ -16,5 +16,5 @@ fi
 if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
   [[ ! -f $ZSH_CONFIG/.p10k.zsh ]] || source $ZSH_CONFIG/.p10k.zsh
 else
-  [[ ! -f source $ZSH_CONFIG/.p10k.portable.zsh ]] || source $ZSH_CONFIG/.p10k.portable.zsh
+  [[ ! -f $ZSH_CONFIG/.p10k.portable.zsh ]] || source $ZSH_CONFIG/.p10k.portable.zsh
 fi
