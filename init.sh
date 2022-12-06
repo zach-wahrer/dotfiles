@@ -5,7 +5,7 @@ GO_BIN=/usr/lib/go/bin/go
 ## Packages / Tools ##
 sudo pacman -Syy git base-devel kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls docker docker-compose python-pip ncdu bpytop sad tk mako swaylock waybar wofi firefox gcc npm pulseaudio pulseaudio-alsa alsa-utils wtype wl-clipboard xorg-xwayland network-manager-applet jq fx
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
-yay -S dbgate-bin nerd-fonts-complete wdisplays vale
+yay -S dbgate-bin nerd-fonts-complete sudo-font-git wdisplays vale
 pip3 install pynvim
 ${GO_BIN} install github.com/kyoh86/richgo@latest
 ${GO_BIN} install github.com/cweill/gotests/gotests@latest
