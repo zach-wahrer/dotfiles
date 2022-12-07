@@ -3,13 +3,21 @@
 GO_BIN=/usr/lib/go/bin/go
 
 ## Packages / Tools ##
-sudo pacman -Syy git base-devel kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls docker docker-compose python-pip ncdu bpytop sad tk mako swaylock waybar wofi firefox gcc npm pulseaudio pulseaudio-alsa alsa-utils wtype wl-clipboard xorg-xwayland network-manager-applet jq fx
+sudo pacman -Syyu # Update
+sudo pacman -S kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
+sudo pacman -S git base-devel gcc docker docker-compose python-pip npm jq fx # Dev tools
+sudo pacman -S ncdu bpytop sad tk mako swaylock waybar wofi firefox pulseaudio pulseaudio-alsa alsa-utils wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl playerctl arc-gtk-theme # System
+
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
+
 yay -S dbgate-bin nerd-fonts-complete sudo-font-git wdisplays vale
+
 pip3 install pynvim
+
 ${GO_BIN} install github.com/kyoh86/richgo@latest
 ${GO_BIN} install github.com/cweill/gotests/gotests@latest
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$(go env GOPATH)"/bin v1.50.1
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bhupesh-V/ugit/master/install)"
 sudo npm install -g dockerfile-language-server-nodejs
 
