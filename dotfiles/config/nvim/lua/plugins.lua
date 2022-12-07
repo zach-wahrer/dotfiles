@@ -33,14 +33,20 @@ require("packer").startup({
 	},
 
 	function(use)
+		---------------------------------------------------
 		-- PACKER
+		---------------------------------------------------
 		use("wbthomason/packer.nvim")
 
+		---------------------------------------------------
 		-- OPTIMIZATION
+		---------------------------------------------------
 		use("lewis6991/impatient.nvim")
 		use("nathom/filetype.nvim")
 
+		---------------------------------------------------
 		-- THEMES
+		---------------------------------------------------
 		use("navarasu/onedark.nvim")
 		-- use("tiagovla/tokyodark.nvim")
 		-- use("rebelot/kanagawa.nvim")
@@ -52,7 +58,9 @@ require("packer").startup({
 		-- use("olimorris/onedarkpro.nvim")
 		-- use("rmehri01/onenord.nvim")
 
-		-- LSP
+		---------------------------------------------------
+		-- LSP --
+		---------------------------------------------------
 		use({
 			"neovim/nvim-lspconfig",
 			config = function()
@@ -66,7 +74,9 @@ require("packer").startup({
 			end,
 		}) -- Show func signature
 
-		-- INTERFACE
+		---------------------------------------------------
+		-- TREESITTER --
+		---------------------------------------------------
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
@@ -84,21 +94,10 @@ require("packer").startup({
 			end,
 			requires = { "nvim-treesitter/nvim-treesitter" },
 		}) -- Text objects
-		use({
-			"nvim-lualine/lualine.nvim",
-			requires = { "kyazdani42/nvim-web-devicons" },
-			config = function()
-				require("plugins.lualine")
-			end,
-		}) -- Status Bar
-		use({
-			"akinsho/bufferline.nvim",
-			tag = "v2.*",
-			requires = "kyazdani42/nvim-web-devicons",
-			config = function()
-				require("plugins.bufferline")
-			end,
-		}) -- Buffer management
+
+		---------------------------------------------------
+		-- TELESCOPE
+		---------------------------------------------------
 		use({
 			"nvim-telescope/telescope.nvim",
 			tag = "0.1.0",
@@ -130,13 +129,85 @@ require("packer").startup({
 			"jvgrootveld/telescope-zoxide",
 			requires = { "nvim-telescope/telescope.nvim", "nvim-lua/popup.nvim" },
 		}) -- Use zoxide within telescope
-		-- use({
-		-- 	"ahmedkhalf/project.nvim",
-		-- 	config = function()
-		-- 		require("project_nvim").setup()
-		-- 	end,
-		-- 	requires = { "nvim-telescope/telescope.nvim" },
-		-- }) -- Project management, needed for vim-test to work properly
+
+		---------------------------------------------------
+		-- INPUT
+		---------------------------------------------------
+		use({ "svban/YankAssassin.vim", opt = true, event = "BufReadPre" }) -- Keep cursor in same spot after yank
+		use({
+			"abecodes/tabout.nvim",
+			opt = true,
+			event = "BufReadPre",
+			config = function()
+				require("tabout").setup()
+			end,
+			requires = "nvim-treesitter/nvim-treesitter",
+		}) -- Tab out
+		use({
+			"https://gitlab.com/madyanov/svart.nvim",
+			config = function()
+				require("plugins.svart")
+			end,
+		}) -- Faster navigation within buffers
+		use({
+			"monaqa/dial.nvim",
+			opt = true,
+			event = "BufReadPre",
+			config = function()
+				require("plugins.dial")
+			end,
+		}) -- Increment/decrement
+		use({
+			"danymat/neogen",
+			opt = true,
+			event = "BufReadPre",
+			config = function()
+				require("neogen").setup({
+					snippet_engine = "luasnip",
+				})
+			end,
+			requires = "nvim-treesitter/nvim-treesitter",
+		}) -- Documentation generation
+		use({
+			"ray-x/sad.nvim",
+			config = function()
+				require("sad").setup({
+					diff = "diff-so-fancy",
+				})
+			end,
+			requires = { "ray-x/guihua.lua" },
+		}) -- Find/replace
+		use({
+			"monkoose/matchparen.nvim",
+			config = function()
+				require("matchparen").setup()
+			end,
+		}) -- Improved parentheses matching
+
+		---------------------------------------------------
+		-- INTERFACE
+		---------------------------------------------------
+		use({ "moll/vim-bbye" }) -- Better buffer delete
+		use("gpanders/editorconfig.nvim") -- Use .editorconfig files
+		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
+		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
+		use({ "kevinhwang91/nvim-bqf" }) -- Better quick fix
+		use({ "RRethy/vim-illuminate" }) -- Highlight cursor keyword
+		use({
+			"nvim-lualine/lualine.nvim",
+			requires = { "kyazdani42/nvim-web-devicons" },
+			config = function()
+				require("plugins.lualine")
+			end,
+		}) -- Status Bar
+		use({
+			"akinsho/bufferline.nvim",
+			tag = "v2.*",
+			requires = "kyazdani42/nvim-web-devicons",
+			config = function()
+				require("plugins.bufferline")
+			end,
+		}) -- Buffer management
 		-- use({
 		-- 	"kyazdani42/nvim-tree.lua",
 		-- 	requires = { "kyazdani42/nvim-web-devicons" },
@@ -163,7 +234,7 @@ require("packer").startup({
 			config = function()
 				require("plugins.window_picker")
 			end,
-		})
+		}) -- Window selection for neo-tree
 		use({
 			"declancm/cinnamon.nvim",
 			config = function()
@@ -171,41 +242,12 @@ require("packer").startup({
 			end,
 		}) -- Smooth scrolling
 		use({
-			"abecodes/tabout.nvim",
-			opt = true,
-			event = "BufReadPre",
-			config = function()
-				require("tabout").setup()
-			end,
-			requires = "nvim-treesitter/nvim-treesitter",
-		}) -- Tab out
-		use({
-			"lewis6991/spellsitter.nvim",
-			opt = true,
-			event = "BufReadPre",
-			config = function()
-				require("spellsitter").setup()
-			end,
-			requires = "nvim-treesitter/nvim-treesitter",
-		}) -- Spell check within treesitter
-		use({
-			"kamykn/spelunker.vim",
-			opt = true,
-			event = "BufReadPre",
-			requires = { "kamykn/popup-menu.nvim" },
-			config = function()
-				require("plugins.spelunker")
-			end,
-		}) -- Syntax aware spellcheck
-		use({
 			"folke/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
 			config = function()
 				require("plugins.todo_comments")
 			end,
 		}) -- Todo comment highlights
-		use("gpanders/editorconfig.nvim") -- Use .editorconfig files
-		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
 		use({
 			"tversteeg/registers.nvim",
 			opt = true,
@@ -214,35 +256,26 @@ require("packer").startup({
 				require("registers").setup()
 			end,
 		}) -- Visualize registers
-		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
-		use({
-			"https://gitlab.com/madyanov/svart.nvim",
-			config = function()
-				require("plugins.svart")
-			end,
-		}) -- Faster navigation within buffers
 		use({
 			"ethanholz/nvim-lastplace",
 			config = function()
 				require("nvim-lastplace").setup({})
 			end,
 		}) -- Remember last pace in file
-		use({ "svban/YankAssassin.vim", opt = true, event = "BufReadPre" }) -- Keep cursor in same spot after yank
+		-- use({
+		-- 	"melkster/modicator.nvim",
+		-- 	after = "onedark.nvim",
+		-- 	config = function()
+		-- 		require("plugins.modicator")
+		-- 	end,
+		-- }) -- Modes show in different colors
 		use({
-			"monaqa/dial.nvim",
-			opt = true,
-			event = "BufReadPre",
+			"mvllow/modes.nvim",
+			tag = "v0.2.0",
 			config = function()
-				require("plugins.dial")
+				require("plugins.modes")
 			end,
-		}) -- Increment/decrement
-		use({
-			"melkster/modicator.nvim",
-			after = "onedark.nvim",
-			config = function()
-				require("plugins.modicator")
-			end,
-		}) -- Modes show in different colors
+		})
 		use({
 			"zbirenbaum/neodim",
 			opt = true,
@@ -252,31 +285,11 @@ require("packer").startup({
 			end,
 		}) -- Dim unused vars/functions/etc
 		use({
-			"danymat/neogen",
-			opt = true,
-			event = "BufReadPre",
-			config = function()
-				require("neogen").setup({
-					snippet_engine = "luasnip",
-				})
-			end,
-			requires = "nvim-treesitter/nvim-treesitter",
-		}) -- Documentation generation
-		use({
 			"tiagovla/scope.nvim",
 			config = function()
 				require("scope").setup()
 			end,
 		}) -- Scope buffers to tabs
-		use({
-			"kevinhwang91/nvim-bqf",
-		}) -- Better quick fix
-		use({
-			"monkoose/matchparen.nvim",
-			config = function()
-				require("matchparen").setup()
-			end,
-		}) -- Improved parentheses matching
 		use({
 			"echasnovski/mini.nvim",
 			config = function()
@@ -284,7 +297,7 @@ require("packer").startup({
 				require("plugins.mini_comment")
 				require("plugins.mini_indentscope")
 				require("mini.pairs").setup()
-				require("mini.cursorword").setup()
+				-- require("mini.cursorword").setup()
 				-- require("mini.bufremove").setup()
 				require("mini.surround").setup()
 			end,
@@ -295,7 +308,6 @@ require("packer").startup({
 				require("hlslens").setup()
 			end,
 		}) -- Improved search highlighting
-		use({ "moll/vim-bbye" }) -- Better buffer delete
 		use({
 			"NvChad/nvim-colorizer.lua",
 			config = function()
@@ -313,52 +325,43 @@ require("packer").startup({
 			},
 		}) -- Improved interface
 		use({
-			"ray-x/sad.nvim",
-			config = function()
-				require("sad").setup({
-					diff = "diff-so-fancy",
-				})
-			end,
-			requires = { "ray-x/guihua.lua" },
-		}) -- Find/replace
-		use({
 			"crusj/bookmarks.nvim",
 			branch = "main",
 			requires = { "kyazdani42/nvim-web-devicons" },
 			config = function()
 				require("plugins.bookmarks")
 			end,
-		})
-		-- KITTY
-		use({
-			"hermitmaster/nvim-kitty-navigator",
-			run = "cp kitty/* ~/.config/kitty/",
-			config = function()
-				require("nvim-kitty-navigator").setup({})
-			end,
-		}) -- Navigation for kitty
-		use({ "fladson/vim-kitty", opt = true, ft = { "conf" } }) -- Syntax highlight for kitty config
+		}) -- Line bookmarking
+		-- use({
+		-- 	"ahmedkhalf/project.nvim",
+		-- 	config = function()
+		-- 		require("project_nvim").setup()
+		-- 	end,
+		-- 	requires = { "nvim-telescope/telescope.nvim" },
+		-- }) -- Project management, needed for vim-test to work properly
 
-		-- COMPLETIONS
+		---------------------------------------------------
+		-- COMPLETIONS / SNIPPETS
+		---------------------------------------------------
+		use({ "hrsh7th/cmp-nvim-lsp" }) -- Completions
+		use({ "hrsh7th/cmp-buffer" }) -- Completions
+		use({ "hrsh7th/cmp-path" }) -- Completions
+		use({ "hrsh7th/cmp-cmdline" }) -- Completions
+		use({ "saadparwaiz1/cmp_luasnip" }) -- Snips
+		-- use({ "hrsh7th/cmp-vsnip" }) -- Snips
+		-- use({ "hrsh7th/vim-vsnip" }) -- Snips
 		use({
 			"hrsh7th/nvim-cmp",
 			config = function()
 				require("plugins.nvm_cmp")
 			end,
 		}) -- Completions
-		use({ "hrsh7th/cmp-nvim-lsp" }) -- Completions
-		use({ "hrsh7th/cmp-buffer" }) -- Completions
-		use({ "hrsh7th/cmp-path" }) -- Completions
-		use({ "hrsh7th/cmp-cmdline" }) -- Completions
-		-- use({ "hrsh7th/cmp-vsnip" }) -- Snips
-		-- use({ "hrsh7th/vim-vsnip" }) -- Snips
 		use({
 			"L3MON4D3/LuaSnip",
 			config = function()
 				require("luasnip.loaders.from_vscode").lazy_load()
 			end,
 		}) -- Snips
-		use({ "saadparwaiz1/cmp_luasnip" }) -- Snips
 		use({
 			"rafamadriz/friendly-snippets",
 			config = function()
@@ -366,7 +369,11 @@ require("packer").startup({
 			end,
 		}) -- Snippets
 
+		---------------------------------------------------
 		-- LANGUAGES
+		---------------------------------------------------
+		use({ "sebdah/vim-delve", opt = true, ft = { "go" } }) -- Delve
+		use({ "ckipp01/stylua-nvim", opt = true, ft = { "lua" } }) -- Lua formatting
 		use({
 			"fatih/vim-go",
 			run = ":GoUpdateBinaries",
@@ -376,7 +383,6 @@ require("packer").startup({
 				require("plugins.vim_go")
 			end,
 		}) -- Go
-		use({ "sebdah/vim-delve", opt = true, ft = { "go" } }) -- Delve
 		use({
 			"MunifTanjim/prettier.nvim",
 			opt = true,
@@ -407,7 +413,6 @@ require("packer").startup({
 				require("nvim-ts-autotag").setup()
 			end,
 		}) -- Auto close html,tsx,vue,svelte,php,rescript tags
-		use({ "ckipp01/stylua-nvim", opt = true, ft = { "lua" } }) -- Lua formatting
 		use({
 			"iamcco/markdown-preview.nvim",
 			run = "cd app && npm install",
@@ -422,7 +427,9 @@ require("packer").startup({
 			ft = { "csv" },
 		}) -- CSV
 
+		---------------------------------------------------
 		-- DEBUG
+		---------------------------------------------------
 		use({
 			"mfussenegger/nvim-dap",
 			opt = true,
@@ -464,23 +471,9 @@ require("packer").startup({
 			requires = { "mfussenegger/nvim-dap" },
 		}) -- DAP virtual text
 
+		---------------------------------------------------
 		-- TESTING
-		-- use({
-		-- 	"yasudanaoya/gotests-nvim",
-		-- 	opt = true,
-		-- 	ft = "go",
-		-- 	config = function()
-		-- 		require("gotests").setup({})
-		-- 	end,
-		-- })
-		use({
-			"buoto/gotests-vim",
-			opt = true,
-			ft = "go",
-			-- config = function()
-			-- 	require("gotests").setup({})
-			-- end,
-		})
+		---------------------------------------------------
 		use({
 			"vim-test/vim-test",
 			opt = true,
@@ -489,11 +482,27 @@ require("packer").startup({
 				require("plugins.vim_test")
 			end,
 		}) -- Vim-test
+		use({
+			"buoto/gotests-vim",
+			opt = true,
+			ft = "go",
+			-- config = function()
+			-- 	require("gotests").setup({})
+			-- end,
+		})
+		-- use({
+		-- 	"yasudanaoya/gotests-nvim",
+		-- 	opt = true,
+		-- 	ft = "go",
+		-- 	config = function()
+		-- 		require("gotests").setup({})
+		-- 	end,
+		-- })
 
-		-- ENV MANAGEMENT
-		use({ "tpope/vim-dotenv", opt = true, event = "BufReadPre" })
-
+		---------------------------------------------------
 		-- GIT
+		---------------------------------------------------
+		use({ "rhysd/git-messenger.vim", opt = true, event = "BufReadPre" }) -- View diffs
 		use({
 			"sindrets/diffview.nvim",
 			opt = true,
@@ -508,27 +517,53 @@ require("packer").startup({
 				require("plugins.gitsigns")
 			end,
 		}) -- Git modified line display
-		use({ "rhysd/git-messenger.vim", opt = true, event = "BufReadPre" }) -- View diffs
 		use({
 			"tpope/vim-fugitive",
 		}) -- Git functions / Can't lazyload, breaks Treesitter
-		use({
-			"kdheepak/lazygit.nvim",
-		}) -- Lazygit integration/ Can't lazyload, breaks Treesitter
 
+		---------------------------------------------------
+		-- SPELLING
+		---------------------------------------------------
 		use({
-			"tamton-aquib/duck.nvim",
+			"lewis6991/spellsitter.nvim",
+			opt = true,
+			event = "BufReadPre",
 			config = function()
-				vim.keymap.set("n", "<leader>cc", function()
-					require("duck").hatch("🐈")
-				end, {})
-				vim.keymap.set("n", "<leader>cr", function()
-					require("duck").cook()
-				end, {})
+				require("spellsitter").setup()
 			end,
-		}) -- Other
+			requires = "nvim-treesitter/nvim-treesitter",
+		}) -- Spell check within treesitter
+		use({
+			"kamykn/spelunker.vim",
+			opt = true,
+			event = "BufReadPre",
+			requires = { "kamykn/popup-menu.nvim" },
+			config = function()
+				require("plugins.spelunker")
+			end,
+		}) -- Syntax aware spellcheck
 
+		---------------------------------------------------
+		-- KITTY
+		---------------------------------------------------
+		use({ "fladson/vim-kitty", opt = true, ft = { "conf", "session" } }) -- Syntax highlight for kitty config
+		use({
+			"hermitmaster/nvim-kitty-navigator",
+			run = "cp kitty/* ~/.config/kitty/",
+			config = function()
+				require("nvim-kitty-navigator").setup({})
+			end,
+		}) -- Navigation for kitty
+
+		---------------------------------------------------
+		-- ENV MANAGEMENT
+		---------------------------------------------------
+		-- use({ "tpope/vim-dotenv", opt = true, event = "BufReadPre" })
+		-- use({ "ellisonleao/dotenv.nvim", opt = true, event = "BufReadPre" })
+
+		---------------------------------------------------
 		-- PACKER BOOTSTRAP
+		---------------------------------------------------
 		if packer_bootstrap then
 			require("packer").sync()
 		end

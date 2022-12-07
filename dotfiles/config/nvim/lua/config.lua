@@ -69,6 +69,20 @@ augroups.buf_enter = {
 			cmd("set filetype=hcl")
 		end,
 	},
+	kitty_conf_highlighting = {
+		event = { "BufEnter" },
+		pattern = "kitty.conf",
+		callback = function()
+			api.nvim_command("set ft=kitty")
+		end,
+	},
+	kitty_session_highlighting = {
+		event = { "BufEnter" },
+		pattern = "*.session",
+		callback = function()
+			api.nvim_command("set ft=kitty")
+		end,
+	},
 }
 
 -- augroups.cursor_hold = {
