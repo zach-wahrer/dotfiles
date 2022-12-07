@@ -225,3 +225,7 @@
     color: @highlight;
     font-size: 13px;
 }
+
+#custom-notification {
+  font-family: SourceCodePro;
+}

@@ -1,3 +1,4 @@
+---
 config:
   backup: false
   create: true
@@ -97,6 +98,9 @@ dotfiles:
   d_gtk-3.0:
     src: config/gtk-3.0
     dst: ~/.config/gtk-3.0
+  d_swaync:
+    src: config/swaync
+    dst: ~/.config/swaync
 profiles:
   to-wolf:
     dotfiles:
@@ -120,7 +124,7 @@ profiles:
       - d_waybar
       - d_wofi
       - d_envman
-      - d_mako
+      - d_swaync
       - d_gtk-3.0
   red-wolf:
     dotfiles:
@@ -142,7 +146,7 @@ profiles:
       - d_zsh
       - d_sway
       - d_swaylock
-      - d_waybar
+      - d_swaync
       - d_wofi
       - d_envman
       - d_mako

@@ -192,7 +192,12 @@ require("packer").startup({
 		use({ "weilbith/nvim-code-action-menu" }) -- Code action menu / Can't lazyload, breaks Treesitter
 		use({ "arp242/undofile_warn.vim", opt = true, event = "BufReadPre" }) -- Warn if undoing past current
 		use({ "kevinhwang91/nvim-bqf" }) -- Better quick fix
-		use({ "RRethy/vim-illuminate" }) -- Highlight cursor keyword
+		use({
+			"RRethy/vim-illuminate",
+			config = function()
+				require("plugins.vim_illuminate")
+			end,
+		}) -- Highlight cursor keyword
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons" },

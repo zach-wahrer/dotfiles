@@ -221,8 +221,8 @@ bindsym $mod+r mode "resize"
 #
 # App shortcuts
 #
-    bindsym $mod+n exec thunar
-    bindsym $mod+o exec firefox
+    bindsym $mod+Shift+f exec thunar
+    bindsym $mod+Shift+b exec firefox
     bindsym $mod+Shift+e exec kitty --session $HOME/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty
 #
 # Screenshots
@@ -234,3 +234,4 @@ bindsym $mod+r mode "resize"
 #
     bindsym $mod+t exec kitty nvim ~/.config/sway/cheatsheet
     bindsym $mod+Shift+n exec ~/scripts/nvim-edit.sh
+    bindsym $mod+n exec swaync-client -t -sw
