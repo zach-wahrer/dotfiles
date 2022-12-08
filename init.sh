@@ -10,7 +10,7 @@ sudo pacman -S ncdu bpytop sad tk mako swaylock waybar wofi firefox pulseaudio p
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 
-yay -S dbgate-bin nerd-fonts-complete sudo-font-git swaync wdisplays vale
+yay -S dbgate-bin nerd-fonts-complete sudo-font-git swaync wdisplays wlogout vale
 
 pip3 install pynvim
 

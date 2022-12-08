@@ -1,4 +1,3 @@
----
 config:
   backup: false
   create: true
@@ -101,6 +100,9 @@ dotfiles:
   d_swaync:
     src: config/swaync
     dst: ~/.config/swaync
+  d_wlogout:
+    src: config/wlogout
+    dst: ~/.config/wlogout
 profiles:
   to-wolf:
     dotfiles:
@@ -126,6 +128,7 @@ profiles:
       - d_envman
       - d_swaync
       - d_gtk-3.0
+      - d_wlogout
   red-wolf:
     dotfiles:
       - f_gitconfig
@@ -151,3 +154,4 @@ profiles:
       - d_envman
       - d_mako
       - d_gtk-3.0
+      - d_wlogout

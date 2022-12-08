@@ -25,7 +25,8 @@ set $term-float kitty
 # on the original workspace that the command was run on.
 set $menu wofi -c ~/.config/wofi/config -I
 
-set $powermenu ~/.config/waybar/scripts/power-menu.sh
+# set $powermenu ~/.config/waybar/scripts/power-menu.sh
+set $powermenu wlogout
 
 ### Idle configuration
 exec swayidle -w\
