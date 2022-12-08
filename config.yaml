@@ -152,6 +152,5 @@ profiles:
       - d_swaync
       - d_wofi
       - d_envman
-      - d_mako
       - d_gtk-3.0
       - d_wlogout
