@@ -26,12 +26,15 @@ set_keymap("n", "<leader>os", "<CMD>lua require('functions').findFiles('~/.confi
 set_keymap("n", "<leader>og", "<CMD>lua require('functions').findFiles('~/go/src')<CR>", opts)
 set_keymap("n", "<leader>ob", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", opts)
 
-set_keymap("n", "j", "gj", opts) -- Down on wrapped lines visually
-set_keymap("n", "k", "gk", opts) -- Up on wrapped lines visually
-set_keymap("v", "j", "gj", opts) -- Down on wrapped lines visually while selecting
-set_keymap("v", "k", "gk", opts) -- Up on wrapped lines visually while selecting
+set_keymap("n", "j", "gjzz", opts) -- Down on wrapped lines visually and center cursor
+set_keymap("n", "k", "gkzz", opts) -- Up on wrapped lines visually and center cursor
+set_keymap("v", "j", "gjzz", opts) -- Down on wrapped lines visually while selecting and center cursor
+set_keymap("v", "k", "gkzz", opts) -- Up on wrapped lines visually while selecting and center cursor
 set_keymap("v", ">", ">gv", opts) -- Indent while keeping selection
 set_keymap("v", "<", "<gv", opts) -- Remove indent while keeping selection
+
+set_keymap("n", "n", "nzz", opts) -- Center curosr after search jump
+set_keymap("n", "N", "Nzz", opts) -- Center cursor after search jump
 
 set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
 set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
