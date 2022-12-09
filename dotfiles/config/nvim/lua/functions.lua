@@ -131,10 +131,17 @@ function M.findFiles(path)
 end
 
 function M.toggleGoMetalinterOnSave()
-	if vim.g["go_metalinter_autosave"] == 0 then
-		vim.g["go_metalinter_autosave"] = 1
-	else
-		vim.g["go_metalinter_autosave"] = 0
+	vim.g["go_metalinter_autosave"] = not vim.g["go_metalinter_autosave"]
+end
+
+function M.toggleCenterAfterScroll()
+	vim.g["center_after_scroll"] = not vim.g["center_after_scroll"]
+end
+
+function M.scroll(command)
+	vim.cmd("norm " .. command)
+	if vim.g["center_after_scroll"] and vim.bo.filetype ~= "neo-tree" then
+		vim.cmd("norm  zz")
 	end
 end
 

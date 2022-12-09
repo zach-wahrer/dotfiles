@@ -26,13 +26,13 @@ set_keymap("n", "<leader>os", "<CMD>lua require('functions').findFiles('~/.confi
 set_keymap("n", "<leader>og", "<CMD>lua require('functions').findFiles('~/go/src')<CR>", opts)
 set_keymap("n", "<leader>ob", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", opts)
 
-set_keymap("n", "j", "gjzz", opts) -- Down on wrapped lines visually and center cursor
-set_keymap("n", "k", "gkzz", opts) -- Up on wrapped lines visually and center cursor
-set_keymap("v", "j", "gjzz", opts) -- Down on wrapped lines visually while selecting and center cursor
-set_keymap("v", "k", "gkzz", opts) -- Up on wrapped lines visually while selecting and center cursor
+set_keymap("n", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts) -- Down on wrapped lines visually
+set_keymap("n", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts) -- Up on wrapped lines visually
+set_keymap("v", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts) -- Down on wrapped lines visually while selecting
+set_keymap("v", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts) -- Up on wrapped lines visually while selecting
+set_keymap("n", "<leader>cs", "<CMD>lua require('functions').toggleCenterAfterScroll()<CR>", opts) -- Toggle zz after scroll
 set_keymap("v", ">", ">gv", opts) -- Indent while keeping selection
 set_keymap("v", "<", "<gv", opts) -- Remove indent while keeping selection
-
 set_keymap("n", "n", "nzz", opts) -- Center curosr after search jump
 set_keymap("n", "N", "Nzz", opts) -- Center cursor after search jump
 
@@ -151,7 +151,7 @@ set_keymap("n", "<leader>gc", "<CMD>GoCoverageToggle<CR>", opts)
 set_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", opts)
 set_keymap("n", "<leader>gt", "<CMD>GoTest<CR>", opts)
 set_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", opts)
-set_keymap("n", "<leader>gd", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
+set_keymap("n", "<leader>gl", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
 
 -- Vim Test --
 set_keymap("n", "<leader>tf", "<CMD>TestFile<CR>", opts)
