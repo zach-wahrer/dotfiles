@@ -36,6 +36,7 @@ local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opts)
 end
 
+local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
@@ -43,7 +44,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 -- map buffer local keybindings when the language server attaches
 local servers = { "bashls", "dockerls", "vuels", "terraformls", "tsserver", "eslint", "pyright", "yamlls" }
 for _, lsp in pairs(servers) do
-	require("lspconfig")[lsp].setup({
+	lspconfig[lsp].setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
 	})
@@ -59,7 +60,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	},
 })
 
-require("lspconfig").sumneko_lua.setup({
+lspconfig.sumneko_lua.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -71,7 +72,7 @@ require("lspconfig").sumneko_lua.setup({
 	},
 })
 
-require("lspconfig").gopls.setup({
+lspconfig.gopls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -82,4 +83,30 @@ require("lspconfig").gopls.setup({
 	init_options = {
 		buildFlags = { "-tags=integration" },
 	},
+})
+
+local configs = require("lspconfig/configs")
+
+if not configs.golangcilsp then
+	configs.golangcilsp = {
+		default_config = {
+			cmd = { "golangci-lint-langserver" },
+			root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
+			init_options = {
+				command = {
+					"golangci-lint",
+					"run",
+					"--enable-all",
+					"--disable",
+					"lll",
+					"--out-format",
+					"json",
+					"--issues-exit-code=1",
+				},
+			},
+		},
+	}
+end
+lspconfig.golangci_lint_ls.setup({
+	filetypes = { "go", "gomod" },
 })

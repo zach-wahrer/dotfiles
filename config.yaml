@@ -103,6 +103,9 @@ dotfiles:
   d_wlogout:
     src: config/wlogout
     dst: ~/.config/wlogout
+  d_cspell:
+    src: config/cspell
+    dst: ~/.config/cspell
 profiles:
   to-wolf:
     dotfiles:
@@ -129,6 +132,7 @@ profiles:
       - d_swaync
       - d_gtk-3.0
       - d_wlogout
+      - d_cspell
   red-wolf:
     dotfiles:
       - f_gitconfig
@@ -154,3 +158,4 @@ profiles:
       - d_envman
       - d_gtk-3.0
       - d_wlogout
+      - d_cspell
