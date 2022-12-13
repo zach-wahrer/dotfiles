@@ -87,34 +87,6 @@ augroups.buf_enter = {
 	},
 }
 
--- augroups.cursor_hold = {
--- highlight_doc_on_cursor_hold = {
--- 	event = { "CursorHold" },
--- 	pattern = "*",
--- 	callback = function()
--- 		vim.lsp.for_each_buffer_client(0, function(client)
--- 			if client.server_capabilities.document_highlight then
--- 				vim.lsp.buf.document_highlight()
--- 			end
--- 		end)
--- 	end,
--- },
--- remove_highlight_on_cursor_moved = {
--- 	event = { "CursorMoved" },
--- 	pattern = "*",
--- 	callback = function()
--- 		vim.lsp.buf.clear_references()
--- 	end,
--- },
--- show_diags_on_cursor_hold = {
--- 	event = { "CursorHold" },
--- 	pattern = "*",
--- 	callback = function()
--- 		vim.diagnostic.open_float()
--- 	end,
--- },
--- }
-
 augroups.buf_write_pre = {
 	remove_whitespace_on_save = {
 		event = { "BufWritePre" },
@@ -124,11 +96,11 @@ augroups.buf_write_pre = {
 	},
 }
 augroups.buf_write_post = {
-	reload_i3_on_config_change = {
+	reload_sway_on_config_change = {
 		event = { "BufWritePost" },
-		pattern = "*/i3/config",
+		pattern = "*/sway/config.d/*",
 		callback = function()
-			cmd([[ silent !i3-msg reload ]])
+			cmd([[ silent !swaymsg reload ]])
 		end,
 	},
 	reload_kitty_on_config_change = {
