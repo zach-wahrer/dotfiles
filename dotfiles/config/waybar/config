@@ -162,7 +162,8 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [""]
+            "speaker": "",
+            "default": [""]
         },
         "on-click": "pavucontrol",
         "on-scroll-up": "pamixer -ui 2",

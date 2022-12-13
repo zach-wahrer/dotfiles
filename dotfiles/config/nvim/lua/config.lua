@@ -122,34 +122,6 @@ augroups.buf_write_pre = {
 			cmd([[ :%s/\s\+$//e ]])
 		end,
 	},
-	format_ts_files = {
-		event = { "BufWritePre" },
-		pattern = "*.ts",
-		callback = function()
-			cmd([[ EslintFixAll ]])
-		end,
-	},
-	format_js_files = {
-		event = { "BufWritePre" },
-		pattern = "*.js",
-		callback = function()
-			cmd([[ EslintFixAll ]])
-		end,
-	},
-	format_vue_files = {
-		event = { "BufWritePre" },
-		pattern = "*.vue",
-		callback = function()
-			cmd([[ EslintFixAll ]])
-		end,
-	},
-	format_lua_files = {
-		event = { "BufWritePre" },
-		pattern = "*.lua",
-		callback = function()
-			require("stylua-nvim").format_file()
-		end,
-	},
 }
 augroups.buf_write_post = {
 	reload_i3_on_config_change = {
@@ -166,36 +138,6 @@ augroups.buf_write_post = {
 			cmd([[ silent !kill -SIGUSR1 $(pgrep kitty) ]])
 		end,
 	},
-	format_terraform = {
-		event = { "BufWritePost" },
-		pattern = "*.tf",
-		callback = function()
-			cmd([[ silent !terraform fmt %:p:h ]])
-		end,
-	},
-	format_tfvars = {
-		event = { "BufWritePost" },
-		pattern = "*.tfvars",
-		callback = function()
-			cmd([[ silent !terraform fmt %:p:h ]])
-		end,
-	},
-	-- format_yml = {
-	-- 	event = { "BufWritePost" },
-	-- 	pattern = "*.yml",
-	-- 	callback = function()
-	-- 		os.execute("~/.config/nvim/lua/scripts/kitty_opener.sh")
-	-- 		cmd([[silent !kitty @ --to "$KITTY_LISTEN_ON" send-text --match title:"nvim-output" "yamllint %:p\x0d" ]])
-	-- 	end,
-	-- },
-	-- format_yaml = {
-	-- 	event = { "BufWritePost" },
-	-- 	pattern = "*.yaml",
-	-- 	callback = function()
-	-- 		os.execute("~/.config/nvim/lua/scripts/kitty_opener.sh")
-	-- 		cmd([[silent !kitty @ --to "$KITTY_LISTEN_ON" send-text --match title:"nvim-output" "yamllint %:p\x0d" ]])
-	-- 	end,
-	-- },
 }
 
 augroups.misc = {

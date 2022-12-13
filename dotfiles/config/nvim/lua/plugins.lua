@@ -389,19 +389,13 @@ require("packer").startup({
 			end,
 		}) -- Go
 		use({
-			"MunifTanjim/prettier.nvim",
+			"jose-elias-alvarez/null-ls.nvim",
 			opt = true,
 			event = "BufReadPre",
 			config = function()
-				require("plugins.prettier")
+				require("plugins.null_ls")
 			end,
-			requires = {
-				"jose-elias-alvarez/null-ls.nvim",
-				config = function()
-					require("plugins.null_ls")
-				end,
-			},
-		}) -- prettier formatting
+		}) -- Formatters and diagnostics
 		use({
 			"mfussenegger/nvim-lint",
 			opt = true,

@@ -48,7 +48,7 @@ alias gk='gitk --all --branches &!'
 alias gke='gitk --all $(git log -g --pretty=%h) &!'
 
 # TESTS #
-alias gt="go test ./..."
+alias gt="go test -race ./..."
 alias gl="golangci-lint run "
 
 # TERRAFORM #

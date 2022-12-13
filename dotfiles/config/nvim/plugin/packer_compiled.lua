@@ -278,11 +278,9 @@ _G.packer_plugins = {
   },
   ["null-ls.nvim"] = {
     config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.null_ls\frequire\0" },
-    load_after = {
-      ["prettier.nvim"] = true
-    },
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/home/zach/.local/share/nvim/site/pack/packer/opt/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
@@ -441,15 +439,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zach/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["prettier.nvim"] = {
-    after = { "null-ls.nvim" },
-    config = { "\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins.prettier\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/zach/.local/share/nvim/site/pack/packer/opt/prettier.nvim",
-    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   rainbow_csv = {
     loaded = false,
@@ -614,74 +603,14 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: nvim-hlslens
-time([[Config for nvim-hlslens]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fhlslens\frequire\0", "config", "nvim-hlslens")
-time([[Config for nvim-hlslens]], false)
--- Config for: scope.nvim
-time([[Config for scope.nvim]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nscope\frequire\0", "config", "scope.nvim")
-time([[Config for scope.nvim]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.bufferline\frequire\0", "config", "bufferline.nvim")
-time([[Config for bufferline.nvim]], false)
--- Config for: nvim-window-picker
-time([[Config for nvim-window-picker]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins.window_picker\frequire\0", "config", "nvim-window-picker")
-time([[Config for nvim-window-picker]], false)
--- Config for: mini.nvim
-time([[Config for mini.nvim]], true)
-try_loadstring("\27LJ\2\n½\1\0\0\3\0\a\0\0206\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0029\0\5\0B\0\1\0016\0\0\0'\2\6\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\18mini.surround\nsetup\15mini.pairs\29plugins.mini_indentscope\25plugins.mini_comment\21plugins.mini_map\frequire\0", "config", "mini.nvim")
-time([[Config for mini.nvim]], false)
--- Config for: cinnamon.nvim
-time([[Config for cinnamon.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rcinnamon\frequire\0", "config", "cinnamon.nvim")
-time([[Config for cinnamon.nvim]], false)
--- Config for: modes.nvim
-time([[Config for modes.nvim]], true)
-try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins.modes\frequire\0", "config", "modes.nvim")
-time([[Config for modes.nvim]], false)
--- Config for: nvim-treesitter-textsubjects
-time([[Config for nvim-treesitter-textsubjects]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0$plugins.treesitter_textsubjects\frequire\0", "config", "nvim-treesitter-textsubjects")
-time([[Config for nvim-treesitter-textsubjects]], false)
--- Config for: neo-tree.nvim
-time([[Config for neo-tree.nvim]], true)
-try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins.neo_tree\frequire\0", "config", "neo-tree.nvim")
-time([[Config for neo-tree.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-kitty-navigator
-time([[Config for nvim-kitty-navigator]], true)
-try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\25nvim-kitty-navigator\frequire\0", "config", "nvim-kitty-navigator")
-time([[Config for nvim-kitty-navigator]], false)
--- Config for: svart.nvim
-time([[Config for svart.nvim]], true)
-try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins.svart\frequire\0", "config", "svart.nvim")
-time([[Config for svart.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16plugins.lsp\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins.todo_comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
 -- Config for: lsp_signature.nvim
 time([[Config for lsp_signature.nvim]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
 time([[Config for lsp_signature.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.nvm_cmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
+-- Config for: sad.nvim
+time([[Config for sad.nvim]], true)
+try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tdiff\18diff-so-fancy\nsetup\bsad\frequire\0", "config", "sad.nvim")
+time([[Config for sad.nvim]], false)
 -- Config for: LuaSnip
 time([[Config for LuaSnip]], true)
 try_loadstring("\27LJ\2\nM\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14lazy_load luasnip.loaders.from_vscode\frequire\0", "config", "LuaSnip")
@@ -690,38 +619,98 @@ time([[Config for LuaSnip]], false)
 time([[Config for noice.nvim]], true)
 try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins.noice\frequire\0", "config", "noice.nvim")
 time([[Config for noice.nvim]], false)
--- Config for: friendly-snippets
-time([[Config for friendly-snippets]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.friendly_snippets\frequire\0", "config", "friendly-snippets")
-time([[Config for friendly-snippets]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.treesitter\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.lualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
--- Config for: matchparen.nvim
-time([[Config for matchparen.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15matchparen\frequire\0", "config", "matchparen.nvim")
-time([[Config for matchparen.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16plugins.lsp\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-kitty-navigator
+time([[Config for nvim-kitty-navigator]], true)
+try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\25nvim-kitty-navigator\frequire\0", "config", "nvim-kitty-navigator")
+time([[Config for nvim-kitty-navigator]], false)
 -- Config for: nvim-lastplace
 time([[Config for nvim-lastplace]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-lastplace\frequire\0", "config", "nvim-lastplace")
 time([[Config for nvim-lastplace]], false)
--- Config for: vim-illuminate
-time([[Config for vim-illuminate]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27plugins.vim_illuminate\frequire\0", "config", "vim-illuminate")
-time([[Config for vim-illuminate]], false)
--- Config for: sad.nvim
-time([[Config for sad.nvim]], true)
-try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tdiff\18diff-so-fancy\nsetup\bsad\frequire\0", "config", "sad.nvim")
-time([[Config for sad.nvim]], false)
+-- Config for: matchparen.nvim
+time([[Config for matchparen.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15matchparen\frequire\0", "config", "matchparen.nvim")
+time([[Config for matchparen.nvim]], false)
+-- Config for: nvim-treesitter-textsubjects
+time([[Config for nvim-treesitter-textsubjects]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0$plugins.treesitter_textsubjects\frequire\0", "config", "nvim-treesitter-textsubjects")
+time([[Config for nvim-treesitter-textsubjects]], false)
+-- Config for: neo-tree.nvim
+time([[Config for neo-tree.nvim]], true)
+try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins.neo_tree\frequire\0", "config", "neo-tree.nvim")
+time([[Config for neo-tree.nvim]], false)
+-- Config for: mini.nvim
+time([[Config for mini.nvim]], true)
+try_loadstring("\27LJ\2\n½\1\0\0\3\0\a\0\0206\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0029\0\5\0B\0\1\0016\0\0\0'\2\6\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\18mini.surround\nsetup\15mini.pairs\29plugins.mini_indentscope\25plugins.mini_comment\21plugins.mini_map\frequire\0", "config", "mini.nvim")
+time([[Config for mini.nvim]], false)
+-- Config for: svart.nvim
+time([[Config for svart.nvim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins.svart\frequire\0", "config", "svart.nvim")
+time([[Config for svart.nvim]], false)
+-- Config for: modes.nvim
+time([[Config for modes.nvim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins.modes\frequire\0", "config", "modes.nvim")
+time([[Config for modes.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: scope.nvim
+time([[Config for scope.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nscope\frequire\0", "config", "scope.nvim")
+time([[Config for scope.nvim]], false)
+-- Config for: nvim-hlslens
+time([[Config for nvim-hlslens]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fhlslens\frequire\0", "config", "nvim-hlslens")
+time([[Config for nvim-hlslens]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins.todo_comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
+-- Config for: friendly-snippets
+time([[Config for friendly-snippets]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.friendly_snippets\frequire\0", "config", "friendly-snippets")
+time([[Config for friendly-snippets]], false)
+-- Config for: cinnamon.nvim
+time([[Config for cinnamon.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rcinnamon\frequire\0", "config", "cinnamon.nvim")
+time([[Config for cinnamon.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.nvm_cmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.bufferline\frequire\0", "config", "bufferline.nvim")
+time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-window-picker
+time([[Config for nvim-window-picker]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins.window_picker\frequire\0", "config", "nvim-window-picker")
+time([[Config for nvim-window-picker]], false)
 -- Config for: bookmarks.nvim
 time([[Config for bookmarks.nvim]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.bookmarks\frequire\0", "config", "bookmarks.nvim")
 time([[Config for bookmarks.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.lualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
+-- Config for: vim-illuminate
+time([[Config for vim-illuminate]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27plugins.vim_illuminate\frequire\0", "config", "vim-illuminate")
+time([[Config for vim-illuminate]], false)
 -- Config for: dir-telescope.nvim
 time([[Config for dir-telescope.nvim]], true)
 try_loadstring("\27LJ\2\n]\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\vhidden\2\22respect_gitignore\2\nsetup\18dir-telescope\frequire\0", "config", "dir-telescope.nvim")
@@ -730,27 +719,27 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType session ++once lua require("packer.load")({'vim-kitty'}, { ft = "session" }, _G.packer_plugins)]]
-vim.cmd [[au FileType lua ++once lua require("packer.load")({'stylua-nvim'}, { ft = "lua" }, _G.packer_plugins)]]
-vim.cmd [[au FileType mod ++once lua require("packer.load")({'vim-go'}, { ft = "mod" }, _G.packer_plugins)]]
-vim.cmd [[au FileType csv ++once lua require("packer.load")({'rainbow_csv'}, { ft = "csv" }, _G.packer_plugins)]]
 vim.cmd [[au FileType md ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "md" }, _G.packer_plugins)]]
+vim.cmd [[au FileType session ++once lua require("packer.load")({'vim-kitty'}, { ft = "session" }, _G.packer_plugins)]]
+vim.cmd [[au FileType go ++once lua require("packer.load")({'nvim-dap-go', 'vim-go', 'vim-delve', 'gotests-vim'}, { ft = "go" }, _G.packer_plugins)]]
+vim.cmd [[au FileType mod ++once lua require("packer.load")({'vim-go'}, { ft = "mod" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
-vim.cmd [[au FileType go ++once lua require("packer.load")({'gotests-vim', 'vim-go', 'nvim-dap-go', 'vim-delve'}, { ft = "go" }, _G.packer_plugins)]]
+vim.cmd [[au FileType csv ++once lua require("packer.load")({'rainbow_csv'}, { ft = "csv" }, _G.packer_plugins)]]
 vim.cmd [[au FileType conf ++once lua require("packer.load")({'vim-kitty'}, { ft = "conf" }, _G.packer_plugins)]]
+vim.cmd [[au FileType lua ++once lua require("packer.load")({'stylua-nvim'}, { ft = "lua" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-lint', 'YankAssassin.vim', 'neogen', 'git-messenger.vim', 'gitsigns.nvim', 'spelunker.vim', 'undofile_warn.vim', 'dial.nvim', 'registers.nvim', 'diffview.nvim', 'spellsitter.nvim', 'tabout.nvim', 'prettier.nvim', 'neodim', 'nvim-ts-autotag', 'jester', 'nvim-dap', 'nvim-dap-virtual-text', 'nvim-dap-ui', 'vim-test'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'tabout.nvim', 'gitsigns.nvim', 'nvim-dap-virtual-text', 'git-messenger.vim', 'spelunker.vim', 'spellsitter.nvim', 'registers.nvim', 'neodim', 'nvim-ts-autotag', 'YankAssassin.vim', 'nvim-lint', 'nvim-dap-ui', 'null-ls.nvim', 'neogen', 'dial.nvim', 'undofile_warn.vim', 'vim-test', 'diffview.nvim', 'nvim-dap', 'jester'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /home/zach/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], true)
-vim.cmd [[source /home/zach/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]]
-time([[Sourcing ftdetect script at: /home/zach/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], false)
 time([[Sourcing ftdetect script at: /home/zach/.local/share/nvim/site/pack/packer/opt/vim-kitty/ftdetect/kitty.vim]], true)
 vim.cmd [[source /home/zach/.local/share/nvim/site/pack/packer/opt/vim-kitty/ftdetect/kitty.vim]]
 time([[Sourcing ftdetect script at: /home/zach/.local/share/nvim/site/pack/packer/opt/vim-kitty/ftdetect/kitty.vim]], false)
+time([[Sourcing ftdetect script at: /home/zach/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], true)
+vim.cmd [[source /home/zach/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]]
+time([[Sourcing ftdetect script at: /home/zach/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
