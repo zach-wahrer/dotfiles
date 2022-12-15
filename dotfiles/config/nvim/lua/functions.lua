@@ -41,7 +41,7 @@ function M.fileExists(name)
 end
 
 function M.toScratch()
-	vim.ui.input({ prompt = "enter command", completion = "command" }, function(input)
+	vim.ui.input({ prompt = "Enter Command: ", completion = "command" }, function(input)
 		if input == nil then
 			return
 		elseif input == "scratch" then
@@ -62,7 +62,7 @@ function M.diffOpenFileToggle()
 	if vim.wo.diff then
 		vim.cmd("windo diffoff")
 	else
-		vim.ui.input({ prompt = "enter file to diff", completion = "file" }, function(input)
+		vim.ui.input({ prompt = "Enter File to Diff: ", completion = "file" }, function(input)
 			if input == nil then
 				return
 			end
@@ -77,6 +77,15 @@ function M.diffToggle()
 	else
 		vim.cmd("windo diffthis")
 	end
+end
+
+function M.gitDiffToggle()
+	if not vim.g["git_diff_toggled"] then
+		vim.cmd("DiffviewFileHistory")
+	else
+		vim.cmd("DiffviewClose")
+	end
+	vim.g["git_diff_toggled"] = not vim.g["git_diff_toggled"]
 end
 
 function M.searchWordUnderCursorForward()

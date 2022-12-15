@@ -80,13 +80,14 @@ set_keymap("n", "<A-,>", "<CMD>BufferLineMovePrev<CR>", opts)
 set_keymap("n", "<A-.>", "<CMD>BufferLineMoveNext<CR>", opts)
 
 -- Dial --
-set_keymap("n", "<C-c>", require("dial.map").inc_normal(), opts)
-set_keymap("n", "<C-x>", require("dial.map").dec_normal(), opts)
+local ok, _ = pcall(require, "dial.map")
+if ok then
+	set_keymap("n", "<C-c>", require("dial.map").inc_normal(), opts)
+	set_keymap("n", "<C-x>", require("dial.map").dec_normal(), opts)
+end
 
 -- Diffview --
-set_keymap("n", "<leader>gv", "<CMD>DiffviewFileHistory<CR>", opts)
--- set_keymap("n", "<leader>dvo", "<CMD>DiffviewOpen<CR>", opts)
-set_keymap("n", "<leader>gvc", "<CMD>DiffviewClose<CR>", opts)
+set_keymap("n", "<leader>gv", "<CMD>lua require('functions').gitDiffToggle()<CR>", opts)
 
 -- Fugitive --
 set_keymap("n", "<leader>gb", "<CMD>Git blame<CR>", opts)
@@ -98,9 +99,6 @@ set_keymap("n", "<leader>hr", "<CMD>Gitsigns reset_hunk<CR>", opts)
 set_keymap("n", "<leader>hS", "<CMD>Gitsigns stage_buffer<CR>", opts)
 set_keymap("n", "<leader>hR", "<CMD>Gitsigns reset_buffer<CR>", opts)
 set_keymap("n", "<leader>hp", "<CMD>Gitsigns preview_hunk<CR>", opts)
-
--- Lazygit --
-set_keymap("n", "<leader>lg", "<CMD>LazyGit<CR>", opts)
 
 -- LSP -- Per client mappings are in lsp config file
 set_keymap("n", "<leader>lsp", "<CMD>LspStop<CR><CMD>call wait(1500, 1==0)<CR><CMD>LspStart<CR>", opts)
@@ -144,12 +142,10 @@ set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
 set_keymap("n", "<leader>m", "<CMD>Telescope notify<CR>", opts)
 
 -- Vim Go --
-set_keymap("n", "<leader>ggt", "<CMD>GoTests<CR>", opts)
+set_keymap("n", "<leader>gt", "<CMD>GoTests<CR>", opts)
 set_keymap("n", "<leader>gat", "<CMD>GoAddTags<CR>", opts)
-set_keymap("n", "<leader>gie", "<CMD>GoIfErr<CR>", opts)
 set_keymap("n", "<leader>gc", "<CMD>GoCoverageToggle<CR>", opts)
 set_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", opts)
-set_keymap("n", "<leader>gt", "<CMD>GoTest<CR>", opts)
 set_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", opts)
 set_keymap("n", "<leader>gl", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
 
@@ -162,5 +158,5 @@ set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
 set_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", opts)
 
 -- Svart --
-set_keymap("n", "s", "<CMD>Svart<CR>", opts)
-set_keymap("n", "S", "<CMD>SvartRepeat<CR>", opts)
+set_keymap("n", "q", "<CMD>Svart<CR>", opts)
+set_keymap("n", "Q", "<CMD>SvartRepeat<CR>", opts)
