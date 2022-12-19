@@ -1,47 +1,85 @@
 # AWS #
 function awsdecodeerr {
-	readonly encodedmessage=${1:?"Encoded message must be specified."}
- 	aws sts decode-authorization-message --encoded-message $encodedmessage --query DecodedMessage --output text | jq '.'
+    readonly encodedmessage=${1:?"Encoded message must be specified."}
+    aws sts decode-authorization-message --encoded-message $encodedmessage --query DecodedMessage --output text | jq '.'
 }
 
 # HTTPIE #
 function msr {
-	readonly address=${1:?"Address must be specified."}
-	readonly endpoint=${2:?"REST endpoint must be specified."}
-	readonly endpoint_id=${3}
-	readonly auth=$MOTHERSHIP_AUTH
-	if [[ $endpoint_id == "" ]]; then
-		https --verify false GET "$address/$endpoint" Authorization:$auth
-	else
-		https --verify false GET "$address/$endpoint?endpoint_id=$endpoint_id" Authorization:$auth
-	fi
+    readonly address=${1:?"Address must be specified."}
+    readonly endpoint=${2:?"REST endpoint must be specified."}
+    readonly endpoint_id=${3}
+    readonly auth=$MOTHERSHIP_AUTH
+    if [[ $endpoint_id == "" ]]; then
+        https --verify false GET "$address/$endpoint" Authorization:$auth
+    else
+        https --verify false GET "$address/$endpoint?endpoint_id=$endpoint_id" Authorization:$auth
+    fi
 }
 
 # Z #
 function zk() {
-	__zoxide_z "$1" && k
+    __zoxide_z "$1" && k
+}
+
+# Docker / K8s #
+function conit() {
+    local container=$(docker ps | sed '1d' | fzf -m | awk '{print $1}')
+    docker exec -it $container sh
+}
+
+function conlog() {
+    local container=$(docker ps | sed '1d' | fzf -m | awk '{print $1}')
+    docker logs -f $container
+}
+
+function podit() {
+    local context=`kubectl config get-contexts --output='name' | fzf`
+    kubectl config use-context $context
+
+    local namespace=`kubectl get ns | sed 1d | awk '{print $1}' | fzf`
+    local pod=`kubectl get pods -n $namespace | sed 1d | awk '{print $1}' | fzf`
+    echo "Connecting to $pod"
+
+    if [ -z "$1" ]
+    then
+        kubectl -n $namespace exec  --stdin --tty $pod -- /bin/bash
+    else
+        kubectl -n $namespace exec  --stdin --tty $pod -- $1
+    fi
+}
+
+function podlog() {
+    local context=`kubectl config get-contexts --output='name' | fzf`
+    kubectl config use-context $context
+
+    local namespace=`kubectl get ns | sed 1d | awk '{print $1}' | fzf`
+    local pod=`kubectl get pods -n $namespace | sed 1d | awk '{print $1}' | fzf`
+    echo "Connecting to $pod"
+
+    kubectl -n $namespace logs -f $pod
 }
 
 # FZF #
 function frm() {
-  if [[ "$#" -eq 0 ]]; then
-    local files
-    files=$(find . -maxdepth 1 -type f | fzf --multi)
-    echo $files | xargs -I '{}' rm {} #we use xargs to capture filenames with spaces in them properly
-  else
-    command rm "$@"
-  fi
+    if [[ "$#" -eq 0 ]]; then
+        local files
+        files=$(find . -maxdepth 1 -type f | fzf --multi)
+        echo $files | xargs -I '{}' rm {} #we use xargs to capture filenames with spaces in them properly
+    else
+        command rm "$@"
+    fi
 }
 
 function fman() {
-	MAN="/usr/bin/man"
-	if [ -n "$1" ]; then
-		$MAN "$@"
-		return $?
-	else
-		$MAN -k . | fzf --reverse --preview="echo {1,2} | sed 's/ (/./' | sed -E 's/\)\s*$//' | xargs $MAN" | awk '{print $1 "." $2}' | tr -d '()' | xargs -r $MAN
-		return $?
-	fi
+    MAN="/usr/bin/man"
+    if [ -n "$1" ]; then
+        $MAN "$@"
+        return $?
+    else
+        $MAN -k . | fzf --reverse --preview="echo {1,2} | sed 's/ (/./' | sed -E 's/\)\s*$//' | xargs $MAN" | awk '{print $1 "." $2}' | tr -d '()' | xargs -r $MAN
+        return $?
+    fi
 }
 
 function falias() {
@@ -56,21 +94,21 @@ function falias() {
 }
 
 function ffile() {
-  local file=$(fzf --multi --reverse) #get file from fzf
-  if [[ $file ]]; then
-    for prog in $(echo $file); #open all the selected files
-    do; $EDITOR $prog; done;
-  else
-    echo "cancelled fzf"
-  fi
+    local file=$(fzf --multi --reverse) #get file from fzf
+    if [[ $file ]]; then
+        for prog in $(echo $file); #open all the selected files
+        do; $EDITOR $prog; done;
+    else
+        echo "cancelled fzf"
+    fi
 }
 
 function fkill() {
-  local pid
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    local pid
+    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
-  if [ "x$pid" != "x" ]
-  then
-    echo $pid | xargs kill -${1:-9}
-  fi
+    if [ "x$pid" != "x" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+    fi
 }
