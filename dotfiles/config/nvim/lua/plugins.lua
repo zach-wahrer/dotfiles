@@ -129,6 +129,10 @@ require("packer").startup({
 			"jvgrootveld/telescope-zoxide",
 			requires = { "nvim-telescope/telescope.nvim", "nvim-lua/popup.nvim" },
 		}) -- Use zoxide within telescope
+		use({
+			"debugloop/telescope-undo.nvim",
+			requires = { "nvim-telescope/telescope.nvim" },
+		})
 
 		---------------------------------------------------
 		-- INPUT
@@ -241,11 +245,11 @@ require("packer").startup({
 			end,
 		}) -- Window selection for neo-tree
 		use({
-			"declancm/cinnamon.nvim",
+			"karb94/neoscroll.nvim",
 			config = function()
-				require("cinnamon").setup()
+				require("neoscroll").setup()
 			end,
-		}) -- Smooth scrolling
+		})
 		use({
 			"folke/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },

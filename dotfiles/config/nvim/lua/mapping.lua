@@ -140,6 +140,7 @@ set_keymap("n", "<leader>sf", "<CMD>GrepInDirectory<CR>", opts)
 set_keymap("n", "<leader>fd", "<CMD>FileInDirectory<CR>", opts)
 set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
 set_keymap("n", "<leader>m", "<CMD>Telescope notify<CR>", opts)
+set_keymap("n", "<leader>u", "<CMD>Telescope undo<CR>", opts)
 
 -- Vim Go --
 set_keymap("n", "<leader>gt", "<CMD>GoTests<CR>", opts)
