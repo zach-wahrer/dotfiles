@@ -40,10 +40,4 @@ echo "Create new profile for machine if needed. [Enter to continue...]"
 read -r _
 ~/dotfiles/dotdrop/dotdrop.sh install
 
-## Setup ##
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'  # Bootstrap neovim until it doesn't error
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'  # Bootstrap neovim until it doesn't error
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'  # Bootstrap neovim until it doesn't error
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'  # Bootstrap neovim until it doesn't error
-
 chsh -s "$(which zsh)" # Change default shell to zsh.
