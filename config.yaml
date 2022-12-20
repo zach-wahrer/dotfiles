@@ -18,22 +18,22 @@ dotfiles:
   f_functions:
     src: config/zsh/functions
     dst: ~/.config/zsh/functions
-    chmod: '644'
+    chmod: "644"
   f_scroll.py:
     src: config/kitty/scroll.py
     dst: ~/.config/kitty/scroll.py
   f_kitty_opener.sh:
-    src: config/nvim/lua/scripts/kitty_opener.sh
-    dst: ~/.config/nvim/lua/scripts/kitty_opener.sh
-    chmod: '744'
+    src: config/nvim/scripts/kitty_opener.sh
+    dst: ~/.config/nvim/scripts/kitty_opener.sh
+    chmod: "744"
   f_accounting-startup.sh:
     src: scripts/accounting-startup.sh
     dst: ~/scripts/accounting-startup.sh
-    chmod: '744'
+    chmod: "744"
   f_nvim-startup.sh:
     src: scripts/nvim-startup.sh
     dst: ~/scripts/nvim-startup.sh
-    chmod: '744'
+    chmod: "744"
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
