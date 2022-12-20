@@ -1,8 +1,17 @@
-require("modes").setup({
-	colors = {
-		copy = Colors.yellow,
-		delete = Colors.red,
-		insert = Colors.blue,
-		visual = Colors.purple,
-	},
-})
+local M = {
+	"mvllow/modes.nvim",
+}
+
+function M.config()
+	Colors = require("colors")
+	require("modes").setup({
+		colors = {
+			copy = Colors.yellow,
+			delete = Colors.red,
+			insert = Colors.blue,
+			visual = Colors.purple,
+		},
+	})
+end
+
+return M

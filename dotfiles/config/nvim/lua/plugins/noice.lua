@@ -1,10 +1,22 @@
-require("noice").setup({
-	cmdline = {
-		view = "cmdline",
+local M = {
+	"folke/noice.nvim",
+	dependencies = {
+		"MunifTanjim/nui.nvim",
+		"rcarriga/nvim-notify",
 	},
-	lsp = {
-		signature = {
-			enabled = false,
+}
+
+function M.config()
+	require("noice").setup({
+		cmdline = {
+			view = "cmdline",
 		},
-	},
-})
+		lsp = {
+			signature = {
+				enabled = false,
+			},
+		},
+	})
+end
+
+return M

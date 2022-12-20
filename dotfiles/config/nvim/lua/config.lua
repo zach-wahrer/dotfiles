@@ -3,6 +3,7 @@ local o = vim.o -- Global
 local bo = vim.bo -- Buffer
 local wo = vim.wo -- Window
 local api = vim.api -- Api
+Colors = require("colors")
 
 -- Globals --
 o.ignorecase = true -- Case insensitive searching
