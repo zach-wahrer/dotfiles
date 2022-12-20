@@ -3,7 +3,7 @@ local M = {
 	dependencies = { "nvim-lua/plenary.nvim" },
 }
 
-function M.setup()
+function M.config()
 	require("todo-comments").setup()
 end
 
