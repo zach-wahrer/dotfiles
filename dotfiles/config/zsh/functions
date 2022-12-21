@@ -23,6 +23,16 @@ function zk() {
 }
 
 # Docker / K8s #
+# alias kc="kubectl config use-context arn:aws:eks:us-west-2:CLUSTERNUMBER:cluster/hello-world-cluster; kubectl"
+# alias kc="kubectl config use-context proxmox; kubectl"
+# alias mkc="kubectl config use-context minikube; kubectl"
+# compdef _kubectl kc
+
+function kcc() {
+    local context=`kubectl config get-contexts --output='name' | fzf`
+    kubectl config use-context $context
+}
+
 function conit() {
     local container=$(docker ps | sed '1d' | fzf -m | awk '{print $1}')
     docker exec -it $container sh
@@ -34,9 +44,7 @@ function conlog() {
 }
 
 function podit() {
-    local context=`kubectl config get-contexts --output='name' | fzf`
-    kubectl config use-context $context
-
+    kcc()
     local namespace=`kubectl get ns | sed 1d | awk '{print $1}' | fzf`
     local pod=`kubectl get pods -n $namespace | sed 1d | awk '{print $1}' | fzf`
     echo "Connecting to $pod"
@@ -50,8 +58,7 @@ function podit() {
 }
 
 function podlog() {
-    local context=`kubectl config get-contexts --output='name' | fzf`
-    kubectl config use-context $context
+    kcc()
 
     local namespace=`kubectl get ns | sed 1d | awk '{print $1}' | fzf`
     local pod=`kubectl get pods -n $namespace | sed 1d | awk '{print $1}' | fzf`
