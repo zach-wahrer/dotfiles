@@ -53,6 +53,7 @@ alias gt="go test -race ./..."
 alias gl="golangci-lint run "
 
 # TERRAFORM #
+alias tf='terraform'
 alias tfp='terraform plan'
 alias tfa='terraform apply'
 
