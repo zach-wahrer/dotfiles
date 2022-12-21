@@ -40,6 +40,10 @@ set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
 set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
 set_keymap("n", "<ESC>", "<CMD>lua require('functions').removeSearch()<CR>", opts) -- Remove search highlighting
 
+set_keymap("n", "<leader>tn", "<CMD>tabnew<CR>", opts)
+set_keymap("n", "<CA-h>", "<CMD>tabp<CR>", opts)
+set_keymap("n", "<CA-l>", "<CMD>tabn<CR>", opts)
+
 set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
 set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
 set_keymap("n", "<C-\\>", "<C-W><C-V>", opts) -- Vertical split
