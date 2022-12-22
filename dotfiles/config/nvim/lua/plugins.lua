@@ -16,7 +16,12 @@ return {
 	---------------------------------------------------
 	-- LSP --
 	---------------------------------------------------
-	"ray-x/lsp_signature.nvim", -- Show func signature
+	{
+		"ray-x/lsp_signature.nvim",
+		config = function()
+			require("lsp_signature").setup()
+		end,
+	}, -- Show func signature
 
 	---------------------------------------------------
 	-- TREESITTER --
@@ -143,9 +148,8 @@ return {
 	"ckipp01/stylua-nvim", -- Lua formatting
 	{
 		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
+		build = function()
+			vim.fn["mkdp#util#install"]()
 		end,
 	}, -- Markdown
 	"mechatroner/rainbow_csv", -- CSV
