@@ -58,18 +58,18 @@ augroups.buf_enter = {
 			cmd([[ set fo-=c fo-=r fo-=o ]])
 		end,
 	},
-	set_tf_to_hcl = {
+	set_tf_to_tf_and_hcl = {
 		event = { "BufEnter" },
 		pattern = "*.tf",
 		callback = function()
-			cmd("set filetype=hcl")
+			cmd("set filetype=hcl.tf")
 		end,
 	},
-	set_tfvars_to_hcl = {
+	set_tfvars_to_tf_and_hcl = {
 		event = { "BufEnter" },
 		pattern = "*.tfvars",
 		callback = function()
-			cmd("set filetype=hcl")
+			cmd("set filetype=hcl.tf")
 		end,
 	},
 	kitty_conf_highlighting = {
