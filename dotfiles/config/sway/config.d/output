@@ -10,8 +10,32 @@
 #   input "1386:884:Wacom_Intuos_S_Pad" map_to_output HDMI-A-1
 #   input "1386:884:Wacom_Intuos_S_Pen" map_to_output HDMI-A-1
 
-output DP-2 resolution 3840x2160 position 0,0 scale 1.2
-output eDP-1 resolution 1920x1200 position 3200,450
+output "eDP-1" {
+    mode  1920x1200@59.95Hz
+    pos 3200 298
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
+}
+output "DP-3" {
+    mode  3840x2160@29.97Hz
+    pos 0 0
+    transform normal
+    scale 1.2000000000000002
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
+}
 
 workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
 workspace 6 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
+workspace 10 output eDP-1
