@@ -114,7 +114,7 @@
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "kitty -e 'nmtui'",
+        "on-click": "kitty nmtui",
     },
     "network#vpn": {
         "interface": "tun0",

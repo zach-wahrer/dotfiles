@@ -176,13 +176,13 @@ return {
 	---------------------------------------------------
 	-- TESTING
 	---------------------------------------------------
-	"buoto/gotests-vim",
-	-- {
-	-- 	"yasudanaoya/gotests-nvim",
-	-- 	config = function()
-	-- 		require("gotests").setup({})
-	-- 	end,
-	-- },
+	-- "buoto/gotests-vim",
+	{
+		"yanskun/gotests.nvim",
+		config = function()
+			require("gotests").setup()
+		end,
+	},
 
 	---------------------------------------------------
 	-- GIT

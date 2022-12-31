@@ -1,8 +1,13 @@
 local M = {
 	"neovim/nvim-lspconfig",
+	dependencies = {
+		"folke/neodev.nvim",
+	},
 }
 
 function M.config()
+	require("neodev").setup({})
+
 	-- Mappings.
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 	local opts = { noremap = true, silent = true }
@@ -78,6 +83,9 @@ function M.config()
 			Lua = {
 				diagnostics = {
 					globals = { "vim" },
+				},
+				completion = {
+					callSnippet = "Replace",
 				},
 			},
 		},
