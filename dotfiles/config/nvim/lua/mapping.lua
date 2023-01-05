@@ -102,7 +102,9 @@ set_keymap("n", "<leader>hu", "<CMD>Gitsigns undo_stage_hunk<CR>", opts)
 set_keymap("n", "<leader>hr", "<CMD>Gitsigns reset_hunk<CR>", opts)
 set_keymap("n", "<leader>hS", "<CMD>Gitsigns stage_buffer<CR>", opts)
 set_keymap("n", "<leader>hR", "<CMD>Gitsigns reset_buffer<CR>", opts)
-set_keymap("n", "<leader>hp", "<CMD>Gitsigns preview_hunk<CR>", opts)
+set_keymap("n", "<leader>hP", "<CMD>Gitsigns preview_hunk<CR>", opts)
+set_keymap("n", "<leader>hp", "<CMD>Gitsigns previous_hunk<CR>", opts)
+set_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", opts)
 
 -- LSP -- Per client mappings are in lsp config file
 set_keymap("n", "<leader>lsp", "<CMD>LspStop<CR><CMD>call wait(1500, 1==0)<CR><CMD>LspStart<CR>", opts)

@@ -27,7 +27,7 @@ return {
 	-- TREESITTER --
 	---------------------------------------------------
 	"windwp/nvim-ts-autotag", -- Auto close html,tsx,vue,svelte,php,rescript tags
-	"p00f/nvim-ts-rainbow", -- Rainbow tags
+	"mrjones2014/nvim-ts-rainbow", -- Rainbow tags
 
 	---------------------------------------------------
 	-- TELESCOPE
