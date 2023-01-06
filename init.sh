@@ -10,7 +10,7 @@ sudo pacman -S kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server ba
 sudo pacman -S git base-devel gcc docker docker-compose python-pip npm jq fx eslint prettier # Dev tools
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
-yay -S nwg-displays nerd-fonts-complete sudo-font-git swaync wlogout  # System
+yay -S nwg-displays nwg-launchers nerd-fonts-complete sudo-font-git swaync wlogout  # System
 yay -S checkmake dbgate-bin dotenv-linter hadolint vale # Dev tools
 
 pip3 install beautysh gitlint pynvim setuptools # Dev tools

@@ -23,7 +23,7 @@ set $term-float kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi -c ~/.config/wofi/config -I
+set $menu nwggrid -f
 
 # set $powermenu ~/.config/waybar/scripts/power-menu.sh
 set $powermenu wlogout
@@ -58,7 +58,7 @@ exec swayidle -w\
     bindsym $mod+d exec $menu
 
     # Activities
-    bindsym $mod+p exec ~/.config/wofi/windows.py
+    # bindsym $mod+p exec ~/.config/wofi/windows.py
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -223,7 +223,7 @@ bindsym $mod+r mode "resize"
 # App shortcuts
 #
     bindsym $mod+Shift+f exec thunar
-    bindsym $mod+Shift+b exec env MOZ_ENABLE_WAYLAND=1 firefox
+    bindsym $mod+Shift+b exec firefox
     bindsym $mod+Shift+e exec kitty --session $HOME/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty
 #
 # Screenshots

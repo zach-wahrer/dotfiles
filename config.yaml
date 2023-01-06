@@ -85,9 +85,6 @@ dotfiles:
   d_waybar:
     src: config/waybar
     dst: ~/.config/waybar
-  d_wofi:
-    src: config/wofi
-    dst: ~/.config/wofi
   d_envman:
     src: config/envman
     dst: ~/.config/envman
@@ -127,7 +124,6 @@ profiles:
       - d_sway
       - d_swaylock
       - d_waybar
-      - d_wofi
       - d_envman
       - d_swaync
       - d_gtk-3.0
@@ -154,7 +150,6 @@ profiles:
       - d_sway
       - d_swaylock
       - d_swaync
-      - d_wofi
       - d_envman
       - d_gtk-3.0
       - d_wlogout
