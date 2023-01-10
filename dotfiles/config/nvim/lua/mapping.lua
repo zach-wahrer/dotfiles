@@ -119,11 +119,9 @@ set_keymap("n", "<Backspace>", "<CMD>lua MiniMap.toggle()<CR>", opts)
 set_keymap("n", "<Backspace><Backspace>", "<CMD>lua MiniMap.toggle_focus()<CR>", opts)
 
 -- Neogen --
+set_keymap("n", "<leader>ia", "<CMD>lua require('neogen').generate()<CR>", opts)
 set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'func'})<CR>", opts)
 set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'type'})<CR>", opts)
-
--- Nvim Tree --
--- set_keymap("n", ";", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Nvim Tree --
 set_keymap("n", ";", "<CMD>Neotree filesystem toggle<CR>", opts)

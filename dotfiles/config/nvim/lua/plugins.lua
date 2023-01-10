@@ -63,7 +63,7 @@ return {
 	{
 		"abecodes/tabout.nvim",
 		config = function()
-			require("tabout").setup()
+			require("tabout").setup({})
 		end,
 		dependencies = "nvim-treesitter/nvim-treesitter",
 	}, -- Tab out
@@ -88,7 +88,7 @@ return {
 	{
 		"monkoose/matchparen.nvim",
 		config = function()
-			require("matchparen").setup()
+			require("matchparen").setup({})
 		end,
 	}, -- Improved parentheses matching
 
@@ -96,8 +96,7 @@ return {
 	-- INTERFACE
 	---------------------------------------------------
 	"moll/vim-bbye", -- Better buffer delete
-	"gpanders/editorconfig.nvim", -- Use .editorconfig files
-	"weilbith/nvim-code-action-menu", -- Code action menu / Can't lazyload, breaks Treesitter
+	"weilbith/nvim-code-action-menu", -- Code action menu
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	"kevinhwang91/nvim-bqf", -- Better quick fix
 	{
@@ -168,7 +167,7 @@ return {
 	{
 		"theHamsta/nvim-dap-virtual-text",
 		config = function()
-			require("nvim-dap-virtual-text").setup()
+			require("nvim-dap-virtual-text").setup({})
 		end,
 		dependencies = { "mfussenegger/nvim-dap" },
 	}, -- DAP virtual text
@@ -210,7 +209,7 @@ return {
 		"hermitmaster/nvim-kitty-navigator",
 		build = "cp kitty/* ~/.config/kitty/",
 		config = function()
-			require("nvim-kitty-navigator").setup({})
+			require("nvim-kitty-navigator").setup()
 		end,
 	}, -- Navigation for kitty
 
