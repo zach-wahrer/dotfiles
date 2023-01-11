@@ -1,18 +1,16 @@
 local M = {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp", -- Completions
-		"hrsh7th/cmp-buffer", -- Completions
-		"hrsh7th/cmp-path", -- Completions
-		"hrsh7th/cmp-cmdline", -- Completions
-		"saadparwaiz1/cmp_luasnip", -- Snips
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
+		"hrsh7th/cmp-nvim-lua",
+		"saadparwaiz1/cmp_luasnip",
 	},
 }
 
 function M.config()
-	-- local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-	-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
-
 	local cmp = require("cmp")
 	cmp.setup({
 		window = {
@@ -23,10 +21,7 @@ function M.config()
 		snippet = {
 			-- REQUIRED - you must specify a snippet engine
 			expand = function(args)
-				-- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-				require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-				-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-				-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+				require("luasnip").lsp_expand(args.body)
 			end,
 		},
 		mapping = {
@@ -61,10 +56,8 @@ function M.config()
 		},
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },
-			-- { name = "vsnip" }, -- For vsnip users.
-			{ name = "luasnip" }, -- For luasnip users.
-			-- { name = 'ultisnips' }, -- For ultisnips users.
-			-- { name = 'snippy' }, -- For snippy users.
+			{ name = "nvim_lua" },
+			{ name = "luasnip" },
 		}, {
 			{ name = "buffer" },
 		}),

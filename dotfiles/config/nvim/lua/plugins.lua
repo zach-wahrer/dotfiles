@@ -50,7 +50,7 @@ return {
 	{
 		"jvgrootveld/telescope-zoxide",
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/popup.nvim" },
-	}, -- Use zoxide within telescope
+	},
 	{
 		"debugloop/telescope-undo.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim" },
@@ -66,7 +66,7 @@ return {
 			require("tabout").setup({})
 		end,
 		dependencies = "nvim-treesitter/nvim-treesitter",
-	}, -- Tab out
+	},
 	{
 		"danymat/neogen",
 		config = function()
@@ -96,7 +96,7 @@ return {
 	-- INTERFACE
 	---------------------------------------------------
 	"moll/vim-bbye", -- Better buffer delete
-	"weilbith/nvim-code-action-menu", -- Code action menu
+	"weilbith/nvim-code-action-menu",
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	"kevinhwang91/nvim-bqf", -- Better quick fix
 	{
@@ -138,20 +138,20 @@ return {
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
-	}, -- Snips
+	},
 
 	---------------------------------------------------
 	-- LANGUAGES
 	---------------------------------------------------
-	"sebdah/vim-delve", -- Delve
+	"sebdah/vim-delve",
 	"ckipp01/stylua-nvim", -- Lua formatting
 	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-	}, -- Markdown
-	"mechatroner/rainbow_csv", -- CSV
+	},
+	"mechatroner/rainbow_csv",
 
 	---------------------------------------------------
 	-- DEBUG
@@ -175,7 +175,6 @@ return {
 	---------------------------------------------------
 	-- TESTING
 	---------------------------------------------------
-	-- "buoto/gotests-vim",
 	{
 		"yanskun/gotests.nvim",
 		config = function()
