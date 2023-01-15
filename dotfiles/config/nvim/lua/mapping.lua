@@ -163,5 +163,5 @@ set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
 set_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", opts)
 
 -- Svart --
-set_keymap("n", "q", "<CMD>Svart<CR>", opts)
-set_keymap("n", "Q", "<CMD>SvartRepeat<CR>", opts)
+set_keymap("n", "<delete>", "<CMD>Svart<CR>", opts)
+set_keymap("n", "<A-delete>", "<CMD>SvartRepeat<CR>", opts)
