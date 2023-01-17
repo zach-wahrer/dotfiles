@@ -114,6 +114,9 @@ set_keymap("n", "<leader>dn", "<CMD>lua vim.diagnostic.goto_next()<CR>", opts)
 set_keymap("n", "<leader>dp", "<CMD>lua vim.diagnostic.goto_prev()<CR>", opts)
 set_keymap("n", "<leader>ll", "<CMD>lua vim.diagnostic.setloclist()<CR>", opts)
 
+-- Markdown --
+set_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", opts)
+
 -- Mini.map --
 set_keymap("n", "<Backspace>", "<CMD>lua MiniMap.toggle()<CR>", opts)
 set_keymap("n", "<Backspace><Backspace>", "<CMD>lua MiniMap.toggle_focus()<CR>", opts)
@@ -123,6 +126,9 @@ set_keymap("n", "<leader>ia", "<CMD>lua require('neogen').generate()<CR>", opts)
 set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'func'})<CR>", opts)
 set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'type'})<CR>", opts)
 
+-- Notify --
+set_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", opts)
+
 -- Nvim Tree --
 set_keymap("n", ";", "<CMD>Neotree filesystem toggle<CR>", opts)
 set_keymap("n", "'", "<CMD>Neotree buffers toggle<CR>", opts)
@@ -130,6 +136,10 @@ set_keymap("n", "\\", "<CMD>Neotree reveal<CR>", opts)
 
 -- Sad --
 set_keymap("n", "<leader>sr", "<CMD>Sad<CR>", opts)
+
+-- Svart --
+set_keymap("n", "<delete>", "<CMD>Svart<CR>", opts)
+set_keymap("n", "<A-delete>", "<CMD>SvartRepeat<CR>", opts)
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)
@@ -154,14 +164,6 @@ set_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", opts)
 set_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", opts)
 set_keymap("n", "<leader>gl", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
 
--- Vim Test --
 set_keymap("n", "<leader>tf", "<CMD>TestFile<CR>", opts)
 set_keymap("n", "<leader>t", "<CMD>TestNearest<CR>", opts)
 set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
-
--- Markdown --
-set_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", opts)
-
--- Svart --
-set_keymap("n", "<delete>", "<CMD>Svart<CR>", opts)
-set_keymap("n", "<A-delete>", "<CMD>SvartRepeat<CR>", opts)
