@@ -1,9 +1,11 @@
 local M = {
 	"echasnovski/mini.nvim",
 }
+
 function M.config()
 	-- require("mini.cursorword").setup()
 	-- require("mini.bufremove").setup()
+	require("mini.move").setup()
 	require("mini.pairs").setup()
 	require("mini.surround").setup()
 
@@ -20,7 +22,7 @@ function M.config()
 	})
 
 	local map = require("mini.map")
-	require("mini.map").setup({
+	map.setup({
 		integrations = {
 			map.gen_integration.builtin_search(),
 			map.gen_integration.gitsigns(),
