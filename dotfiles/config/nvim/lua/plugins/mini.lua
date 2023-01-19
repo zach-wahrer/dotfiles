@@ -29,7 +29,7 @@ function M.config()
 			map.gen_integration.diagnostic(),
 		},
 	})
-	map.toggle()
+	-- map.toggle()
 end
 
 return M

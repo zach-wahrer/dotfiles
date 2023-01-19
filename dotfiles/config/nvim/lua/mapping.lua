@@ -1,17 +1,20 @@
 local opts = { noremap = true, silent = true }
 local noremap = { noremap = true }
 local set_keymap = vim.api.nvim_set_keymap
--- local set_vim_keymap = vim.keymap.set
+local set_vim_keymap = vim.keymap.set
 -- vim.keymap.set({"n","x"}, "p", "<CMD><CR>")
 
 -- General Keybinds --
-set_keymap("n", "<leader>n", "<CMD>enew<CR>", opts) -- New scratch buffer
-set_keymap("n", "<leader>w", "<CMD>w<CR>", opts) -- Write
-set_keymap("n", "<leader>a", "ggVG<CR>", opts) -- Select all
-set_keymap("n", "<leader>sc", "<CMD>lua require('functions').toScratch()<CR>", opts) -- Send output of command to scratch buffer
-set_keymap("n", "<leader>sa", "<CMD>lua require('functions').sourceAllConfigFiles()<CR>", opts) -- Source all config files
-set_keymap("n", "<leader>o", "<CMD>only<CR>", opts)
-set_keymap("n", "<leader>ol", "<CMD>lua require('functions').openLink()<CR>", opts)
+set_keymap("n", "<leader>n", "<CMD>enew<CR>", { desc = "Open new scratch buffer", noremap = true, silent = true })
+set_keymap("n", "<leader>w", "<CMD>w<CR>", { desc = "Write file", noremap = true, silent = true })
+set_keymap("n", "<leader>a", "ggVG<CR>", { desc = "Select all", noremap = true, silent = true })
+set_keymap("n", "<leader>sc", "<CMD>lua require('functions').toScratch()<CR>",
+	{ desc = "Send output of command to scratch buffer", noremap = true, silent = true })
+set_keymap("n", "<leader>sa", "<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
+	{ desc = "Source all config files", noremap = true, silent = true })
+set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
+set_keymap("n", "<leader>ol", "<CMD>lua require('functions').openLink()<CR>",
+	{ desc = "Open link", noremap = true, silent = true })
 
 set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts) -- Close quickfix and location list
 set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
@@ -26,6 +29,9 @@ set_keymap("n", "<leader>os", "<CMD>lua require('functions').findFiles('~/.confi
 set_keymap("n", "<leader>og", "<CMD>lua require('functions').findFiles('~/go/src')<CR>", opts)
 set_keymap("n", "<leader>ob", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", opts)
 
+set_vim_keymap({ "n", "v" }, "H", "_", opts) -- Beginning of line
+set_vim_keymap({ "n", "v" }, "L", "$", opts) -- End of line
+
 set_keymap("n", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts) -- Down on wrapped lines visually
 set_keymap("n", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts) -- Up on wrapped lines visually
 set_keymap("v", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts) -- Down on wrapped lines visually while selecting
@@ -33,7 +39,7 @@ set_keymap("v", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts) -- 
 set_keymap("n", "<leader>cs", "<CMD>lua require('functions').toggleCenterAfterScroll()<CR>", opts) -- Toggle zz after scroll
 set_keymap("v", ">", ">gv", opts) -- Indent while keeping selection
 set_keymap("v", "<", "<gv", opts) -- Remove indent while keeping selection
-set_keymap("n", "n", "nzz", opts) -- Center curosr after search jump
+set_keymap("n", "n", "nzz", opts) -- Center cursor after search jump
 set_keymap("n", "N", "Nzz", opts) -- Center cursor after search jump
 
 set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
@@ -53,8 +59,12 @@ set_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", opts) -- Resize horizontal spl
 set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts) -- Resize vertical split
 set_keymap("n", "<M-Right>", "<CMD>vertical resize +2<CR>", opts) -- Resize vertical split
 
-set_keymap("n", "<leader>df", "<CMD>lua require('functions').diffOpenFileToggle()<CR>", noremap) -- Diff an unopened file with the one currently open.
-set_keymap("n", "<leader>dv", "<CMD>lua require('functions').diffToggle()<CR>", noremap) -- Toggle diff
+
+set_keymap("n", "<leader>df", "<CMD>lua require('functions').diffOpenFileToggle()<CR>",
+	{ desc = "Diff an unopened file with the one currently open", noremap = true })
+
+set_keymap("n", "<leader>dv", "<CMD>lua require('functions').diffToggle()<CR>", { desc = "Toggle diff", noremap = true })
+
 set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
 set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts) -- Base64 decode string
 
