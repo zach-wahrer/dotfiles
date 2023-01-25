@@ -23,7 +23,7 @@ set $term-float kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu nwggrid -f
+set $menu nwggrid
 
 # set $powermenu ~/.config/waybar/scripts/power-menu.sh
 set $powermenu wlogout

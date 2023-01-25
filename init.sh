@@ -7,7 +7,7 @@ sudo pacman -Syyu # Update
 sudo pacman -S ncdu bpytop sad tk mako swaylock waybar wofi firefox pulseaudio pulseaudio-alsa alsa-utils pamixer wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl playerctl arc-gtk-theme ntp && \
     sudo systemctl enable ntpd && sudo systemctl start ntpd	# System
 sudo pacman -S kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
-sudo pacman -S git base-devel gcc docker docker-compose python-pip npm jq fx eslint prettier # Dev tools
+sudo pacman -S git base-devel gcc docker docker-compose python-pip pyright npm jq fx eslint prettier # Dev tools
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 yay -S nwg-displays nwg-launchers nerd-fonts-complete sudo-font-git swaync wlogout  # System
