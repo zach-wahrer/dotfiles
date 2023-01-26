@@ -47,6 +47,7 @@ function M.config()
 	telescope.load_extension("zoxide")
 	telescope.load_extension("notify")
 	telescope.load_extension("undo")
+	telescope.load_extension("docker")
 end
 
 return M

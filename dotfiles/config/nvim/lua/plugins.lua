@@ -55,6 +55,10 @@ return {
 		"debugloop/telescope-undo.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim" },
 	},
+	{
+		"lpoto/telescope-docker.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+	},
 
 	---------------------------------------------------
 	-- INPUT

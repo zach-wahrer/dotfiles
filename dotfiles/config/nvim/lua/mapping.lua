@@ -8,13 +8,25 @@ local set_vim_keymap = vim.keymap.set
 set_keymap("n", "<leader>n", "<CMD>enew<CR>", { desc = "Open new scratch buffer", noremap = true, silent = true })
 set_keymap("n", "<leader>w", "<CMD>w<CR>", { desc = "Write file", noremap = true, silent = true })
 set_keymap("n", "<leader>a", "ggVG<CR>", { desc = "Select all", noremap = true, silent = true })
-set_keymap("n", "<leader>sc", "<CMD>lua require('functions').toScratch()<CR>",
-	{ desc = "Send output of command to scratch buffer", noremap = true, silent = true })
-set_keymap("n", "<leader>sa", "<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
-	{ desc = "Source all config files", noremap = true, silent = true })
+set_keymap(
+	"n",
+	"<leader>sc",
+	"<CMD>lua require('functions').toScratch()<CR>",
+	{ desc = "Send output of command to scratch buffer", noremap = true, silent = true }
+)
+set_keymap(
+	"n",
+	"<leader>sa",
+	"<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
+	{ desc = "Source all config files", noremap = true, silent = true }
+)
 set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
-set_keymap("n", "<leader>ol", "<CMD>lua require('functions').openLink()<CR>",
-	{ desc = "Open link", noremap = true, silent = true })
+set_keymap(
+	"n",
+	"<leader>ol",
+	"<CMD>lua require('functions').openLink()<CR>",
+	{ desc = "Open link", noremap = true, silent = true }
+)
 
 set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts) -- Close quickfix and location list
 set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
@@ -59,11 +71,19 @@ set_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", opts) -- Resize horizontal spl
 set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts) -- Resize vertical split
 set_keymap("n", "<M-Right>", "<CMD>vertical resize +2<CR>", opts) -- Resize vertical split
 
+set_keymap(
+	"n",
+	"<leader>df",
+	"<CMD>lua require('functions').diffOpenFileToggle()<CR>",
+	{ desc = "Diff an unopened file with the one currently open", noremap = true }
+)
 
-set_keymap("n", "<leader>df", "<CMD>lua require('functions').diffOpenFileToggle()<CR>",
-	{ desc = "Diff an unopened file with the one currently open", noremap = true })
-
-set_keymap("n", "<leader>dv", "<CMD>lua require('functions').diffToggle()<CR>", { desc = "Toggle diff", noremap = true })
+set_keymap(
+	"n",
+	"<leader>dv",
+	"<CMD>lua require('functions').diffToggle()<CR>",
+	{ desc = "Toggle diff", noremap = true }
+)
 
 set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
 set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts) -- Base64 decode string
@@ -73,7 +93,7 @@ set_keymap("n", "#", "<CMD>lua require('functions').searchWordUnderCursorBackwar
 
 -- Dap --
 set_keymap("n", "<leader>dt", "<CMD>lua require('dapui').toggle()<CR>", opts)
-set_keymap("n", "<leader>dc", "<CMD>lua require('dap').continue()<CR>", opts)
+set_keymap("n", "<leader>d", "<CMD>lua require('dap').continue()<CR>", opts)
 set_keymap("n", "<leader>dse", "<CMD>lua require('functions').debugSetEnvironment()<CR>", opts)
 set_keymap("n", "<leader>ds", "<CMD>lua require('dap').step_over()<CR>", opts)
 set_keymap("n", "<leader>di", "<CMD>lua require('dap').step_into()<CR>", opts)
@@ -118,7 +138,7 @@ set_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", opts)
 
 -- LSP -- Per client mappings are in lsp config file
 set_keymap("n", "<leader>lsp", "<CMD>LspStop<CR><CMD>call wait(1500, 1==0)<CR><CMD>LspStart<CR>", opts)
-set_keymap("n", "<leader>d", "<CMD>lua vim.diagnostic.open_float()<CR>", opts)
+set_keymap("n", "<leader>m", "<CMD>lua vim.diagnostic.open_float()<CR>", opts)
 set_keymap("n", "<leader>dw", "<CMD>DiagWindowShow<CR>", opts)
 set_keymap("n", "<leader>dn", "<CMD>lua vim.diagnostic.goto_next()<CR>", opts)
 set_keymap("n", "<leader>dp", "<CMD>lua vim.diagnostic.goto_prev()<CR>", opts)
@@ -163,7 +183,7 @@ set_keymap("n", "<leader>e", "<CMD>Telescope env<CR>", opts)
 set_keymap("n", "<leader>sf", "<CMD>GrepInDirectory<CR>", opts)
 set_keymap("n", "<leader>fd", "<CMD>FileInDirectory<CR>", opts)
 set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
-set_keymap("n", "<leader>m", "<CMD>Telescope notify<CR>", opts)
+set_keymap("n", "<leader>mo", "<CMD>Telescope notify<CR>", opts)
 set_keymap("n", "<leader>u", "<CMD>Telescope undo<CR>", opts)
 
 -- Vim Go --
