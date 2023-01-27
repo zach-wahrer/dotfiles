@@ -18,7 +18,7 @@ function M.config()
 
 	require("mini.indentscope").setup({
 		symbol = "▏",
-		draw = { animation = require("mini.indentscope").gen_animation("none") },
+		draw = { animation = require("mini.indentscope").gen_animation.none() },
 	})
 
 	local map = require("mini.map")
