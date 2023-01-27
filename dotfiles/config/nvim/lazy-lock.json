@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "3181cef8a5c6a71f263a28e61651233d7a7afeb2" },
+  "NeoZoom.lua": { "branch": "main", "commit": "f47ce22a395cf4eb9847e865bccaa045175adbfe" },
   "SmoothCursor.nvim": { "branch": "main", "commit": "79f02173317a76ab406d182ac89b20b59f5e34fe" },
   "YankAssassin.vim": { "branch": "main", "commit": "55ce478a08333c086bcccdf087453085f85854d4" },
   "bookmarks.nvim": { "branch": "main", "commit": "982a774b27d5c6a383b025f43d20eb7b743fdbf0" },
@@ -82,5 +83,6 @@
   "vim-go": { "branch": "master", "commit": "9e64fc1ab60b2e97d39410482b64289dbbaf4eda" },
   "vim-illuminate": { "branch": "master", "commit": "4e1d43cdc39e35f495c7b39a78a349b4d5badad0" },
   "vim-kitty": { "branch": "main", "commit": "d4c60f096b751c1462c80cbf42550e29c8cd2983" },
-  "vim-test": { "branch": "master", "commit": "ca2502545a8c563e15f556d0eb8a59e0f74d2864" }
+  "vim-test": { "branch": "master", "commit": "ca2502545a8c563e15f556d0eb8a59e0f74d2864" },
+  "wpm.nvim": { "branch": "main", "commit": "968c213143311cd07acb299ebe5445f68ae57a67" }
 }

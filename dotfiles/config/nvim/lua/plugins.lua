@@ -133,6 +133,12 @@ return {
 			require("hlslens").setup()
 		end,
 	}, -- Improved search highlighting
+	{
+		"jcdickinson/wpm.nvim",
+		config = function()
+			require("wpm").setup()
+		end,
+	}, -- Words per minute widget
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS

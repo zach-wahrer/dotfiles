@@ -91,6 +91,12 @@ set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", 
 set_keymap("n", "*", "<CMD>lua require('functions').searchWordUnderCursorForward()<CR>", opts) -- Improved forward search
 set_keymap("n", "#", "<CMD>lua require('functions').searchWordUnderCursorBackward()<CR>", opts) -- Improved backward search
 
+-- Bufferline --
+set_keymap("n", "<A-h>", "<CMD>BufferLineCyclePrev<CR>", opts)
+set_keymap("n", "<A-l>", "<CMD>BufferLineCycleNext<CR>", opts)
+set_keymap("n", "<A-,>", "<CMD>BufferLineMovePrev<CR>", opts)
+set_keymap("n", "<A-.>", "<CMD>BufferLineMoveNext<CR>", opts)
+
 -- Dap --
 set_keymap("n", "<leader>dt", "<CMD>lua require('dapui').toggle()<CR>", opts)
 set_keymap("n", "<leader>d", "<CMD>lua require('dap').continue()<CR>", opts)
@@ -101,17 +107,6 @@ set_keymap("n", "<leader>do", "<CMD>lua require('dap').step_out()<CR>", opts)
 set_keymap("n", "<leader>db", "<CMD>lua require('dap').toggle_breakpoint()<CR>", opts)
 set_keymap("n", "<leader>dra", "<CMD>lua require('dap').clear_breakpoints()<CR>", opts)
 set_keymap("n", "<leader>dj", "<CMD>lua require('jester').debug({dap = { console = ''}})<CR>", opts)
-
--- MiniBufremove --
-set_keymap("n", "<leader>q", "<CMD>Bdelete<CR>", opts)
-set_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>Bdelete<CR>", opts)
-set_keymap("n", "<leader>1", "<CMD>Bdelete!<CR>", opts)
-
--- Bufferline --
-set_keymap("n", "<A-h>", "<CMD>BufferLineCyclePrev<CR>", opts)
-set_keymap("n", "<A-l>", "<CMD>BufferLineCycleNext<CR>", opts)
-set_keymap("n", "<A-,>", "<CMD>BufferLineMovePrev<CR>", opts)
-set_keymap("n", "<A-.>", "<CMD>BufferLineMoveNext<CR>", opts)
 
 -- Dial --
 local ok, _ = pcall(require, "dial.map")
@@ -156,6 +151,9 @@ set_keymap("n", "<leader>ia", "<CMD>lua require('neogen').generate()<CR>", opts)
 set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'func'})<CR>", opts)
 set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'type'})<CR>", opts)
 
+-- NeoZoom
+set_keymap("n", "<leader><CR>", "<CMD>NeoZoomToggle<CR>", opts)
+
 -- Notify --
 set_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", opts)
 
@@ -186,6 +184,11 @@ set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
 set_keymap("n", "<leader>mo", "<CMD>Telescope notify<CR>", opts)
 set_keymap("n", "<leader>u", "<CMD>Telescope undo<CR>", opts)
 
+-- Vim Bbye --
+set_keymap("n", "<leader>q", "<CMD>Bdelete<CR>", opts)
+set_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>Bdelete<CR>", opts)
+set_keymap("n", "<leader>1", "<CMD>Bdelete!<CR>", opts)
+
 -- Vim Go --
 set_keymap("n", "<leader>gt", "<CMD>GoTests<CR>", opts)
 set_keymap("n", "<leader>gat", "<CMD>GoAddTags<CR>", opts)
@@ -194,6 +197,7 @@ set_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", opts)
 set_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", opts)
 set_keymap("n", "<leader>gl", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
 
+-- Vim Test --
 set_keymap("n", "<leader>tf", "<CMD>TestFile<CR>", opts)
 set_keymap("n", "<leader>t", "<CMD>TestNearest<CR>", opts)
 set_keymap("n", "<leader>tt", "<CMD>TestLast<CR>", opts)
