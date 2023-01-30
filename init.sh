@@ -22,6 +22,8 @@ ${GO_BIN} install github.com/cweill/gotests/gotests@latest
 ${GO_BIN} install github.com/nametake/golangci-lint-langserver@latest
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$(go env GOPATH)"/bin v1.50.1
 
+${GO_BIN} install --ldflags "-s -w" --trimpath github.com/mjwhitta/artty/cmd/arTTY@latest
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bhupesh-V/ugit/master/install)" # Ugit
 
 ## Docker Setup ##

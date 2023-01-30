@@ -1,0 +1,19 @@
+{
+  "art": "",
+  "bsfact": false,
+  "clear_screen": true,
+  "dataColors": [
+    "green"
+  ],
+  "devexcuse": false,
+  "exclude": "",
+  "fieldColors": [
+    "blue"
+  ],
+  "fields": [],
+  "fit": false,
+  "fortune": true,
+  "match": "linux-arch",
+  "random": true,
+  "sysinfo": true
+}

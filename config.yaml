@@ -103,6 +103,9 @@ dotfiles:
   d_cspell:
     src: config/cspell
     dst: ~/.config/cspell
+  d_artty:
+    src: config/arTTY
+    dst: ~/.config/arTTY
 profiles:
   to-wolf:
     dotfiles:
@@ -129,6 +132,7 @@ profiles:
       - d_gtk-3.0
       - d_wlogout
       - d_cspell
+      - d_artty
   red-wolf:
     dotfiles:
       - f_gitconfig
@@ -154,3 +158,4 @@ profiles:
       - d_gtk-3.0
       - d_wlogout
       - d_cspell
+      - d_artty
