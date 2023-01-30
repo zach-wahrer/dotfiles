@@ -3,9 +3,21 @@ local M = {
 	tag = "0.1.0",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"LinArcX/telescope-env.nvim",
+		"tsakirist/telescope-lazy.nvim",
+		"lpoto/telescope-docker.nvim",
+		"benfowler/telescope-luasnip.nvim",
+		"debugloop/telescope-undo.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
+		},
+		{ "jvgrootveld/telescope-zoxide", dependencies = "nvim-lua/popup.nvim" },
+		{
+			"princejoogie/dir-telescope.nvim",
+			config = function()
+				require("dir-telescope").setup({ hidden = true, respect_gitignore = true })
+			end,
 		},
 	},
 }
@@ -48,6 +60,7 @@ function M.config()
 	telescope.load_extension("notify")
 	telescope.load_extension("undo")
 	telescope.load_extension("docker")
+	telescope.load_extension("lazy")
 end
 
 return M

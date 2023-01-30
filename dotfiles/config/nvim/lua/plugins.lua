@@ -30,37 +30,6 @@ return {
 	"mrjones2014/nvim-ts-rainbow", -- Rainbow tags
 
 	---------------------------------------------------
-	-- TELESCOPE
-	---------------------------------------------------
-	{
-		"benfowler/telescope-luasnip.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-	},
-	{
-		"LinArcX/telescope-env.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-	},
-	{
-		"princejoogie/dir-telescope.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-		config = function()
-			require("dir-telescope").setup({ hidden = true, respect_gitignore = true })
-		end,
-	},
-	{
-		"jvgrootveld/telescope-zoxide",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/popup.nvim" },
-	},
-	{
-		"debugloop/telescope-undo.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-	},
-	{
-		"lpoto/telescope-docker.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-	},
-
-	---------------------------------------------------
 	-- INPUT
 	---------------------------------------------------
 	"svban/YankAssassin.vim", -- Keep cursor in same spot after yank

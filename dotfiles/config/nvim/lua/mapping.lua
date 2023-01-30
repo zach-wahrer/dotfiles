@@ -21,12 +21,12 @@ set_keymap(
 	{ desc = "Source all config files", noremap = true, silent = true }
 )
 set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
-set_keymap(
-	"n",
-	"<leader>ol",
-	"<CMD>lua require('functions').openLink()<CR>",
-	{ desc = "Open link", noremap = true, silent = true }
-)
+-- set_keymap(
+-- 	"n",
+-- 	"<leader>ol",
+-- 	"<CMD>lua require('functions').openLink()<CR>",
+-- 	{ desc = "Open link", noremap = true, silent = true }
+-- )
 
 set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts) -- Close quickfix and location list
 set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
@@ -181,6 +181,7 @@ set_keymap("n", "<leader>e", "<CMD>Telescope env<CR>", opts)
 set_keymap("n", "<leader>sf", "<CMD>GrepInDirectory<CR>", opts)
 set_keymap("n", "<leader>fd", "<CMD>FileInDirectory<CR>", opts)
 set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
+set_keymap("n", "<leader>p", "<CMD>Telescope lazy<CR>", opts)
 set_keymap("n", "<leader>mo", "<CMD>Telescope notify<CR>", opts)
 set_keymap("n", "<leader>u", "<CMD>Telescope undo<CR>", opts)
 
