@@ -12,6 +12,7 @@ o.termguicolors = true
 Colors = require("colors")
 
 api.nvim_set_hl(0, "Search", { bg = Colors.blue, fg = Colors.black, underline = 1 })
+api.nvim_set_hl(0, "CurSearch", { bg = Colors.orange, fg = Colors.black, underline = 1 })
 api.nvim_set_hl(0, "SpelunkerSpellBad", { undercurl = 1 })
 api.nvim_set_hl(0, "SpelunkerComplexOrCompoundWord", { underdotted = 1 })
 api.nvim_set_hl(0, "LspDiagnosticsVirtualTextError", { fg = Colors.red })

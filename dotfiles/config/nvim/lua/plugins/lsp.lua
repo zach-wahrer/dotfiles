@@ -2,6 +2,12 @@ local M = {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		"folke/neodev.nvim",
+		{
+			"ray-x/lsp_signature.nvim",
+			config = function()
+				require("lsp_signature").setup()
+			end,
+		}, -- Show func signature
 	},
 }
 

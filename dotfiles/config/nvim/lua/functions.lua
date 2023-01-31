@@ -90,13 +90,11 @@ end
 
 function M.searchWordUnderCursorForward()
 	vim.fn.execute("normal! *N)")
-	require("hlslens").start()
 	require("mini.map").refresh()
 end
 
 function M.searchWordUnderCursorBackward()
 	vim.fn.execute("normal! #N)")
-	require("hlslens").start()
 	require("mini.map").refresh()
 end
 

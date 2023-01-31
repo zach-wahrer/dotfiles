@@ -14,16 +14,6 @@ return {
 	-- "rmehri01/onenord.nvim"
 
 	---------------------------------------------------
-	-- LSP --
-	---------------------------------------------------
-	{
-		"ray-x/lsp_signature.nvim",
-		config = function()
-			require("lsp_signature").setup()
-		end,
-	}, -- Show func signature
-
-	---------------------------------------------------
 	-- TREESITTER --
 	---------------------------------------------------
 	"windwp/nvim-ts-autotag", -- Auto close html,tsx,vue,svelte,php,rescript tags
@@ -96,18 +86,6 @@ return {
 			require("scope").setup()
 		end,
 	}, -- Scope buffers to tabs
-	{
-		"kevinhwang91/nvim-hlslens",
-		config = function()
-			require("hlslens").setup()
-		end,
-	}, -- Improved search highlighting
-	{
-		"jcdickinson/wpm.nvim",
-		config = function()
-			require("wpm").setup()
-		end,
-	}, -- Words per minute widget
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS
