@@ -132,9 +132,9 @@ function M.config()
 			},
 		}
 	end
-	lspconfig.golangci_lint_ls.setup({
-		filetypes = { "go", "gomod" },
-	})
+	-- lspconfig.golangci_lint_ls.setup({
+	-- 	filetypes = { "go", "gomod" },
+	-- })
 end
 
 return M

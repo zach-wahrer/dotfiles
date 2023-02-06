@@ -91,6 +91,8 @@ set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", 
 set_keymap("n", "*", "<CMD>lua require('functions').searchWordUnderCursorForward()<CR>", opts) -- Improved forward search
 set_keymap("n", "#", "<CMD>lua require('functions').searchWordUnderCursorBackward()<CR>", opts) -- Improved backward search
 
+set_keymap("n", "<leader>ek", "<CMD>lua require('functions').exportColorsKitty()<CR>", opts) -- Improved backward search
+
 -- Bufferline --
 set_keymap("n", "<A-h>", "<CMD>BufferLineCyclePrev<CR>", opts)
 set_keymap("n", "<A-l>", "<CMD>BufferLineCycleNext<CR>", opts)
