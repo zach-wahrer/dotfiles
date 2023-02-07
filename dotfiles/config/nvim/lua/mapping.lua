@@ -9,16 +9,16 @@ set_keymap("n", "<leader>n", "<CMD>enew<CR>", { desc = "Open new scratch buffer"
 set_keymap("n", "<leader>w", "<CMD>w<CR>", { desc = "Write file", noremap = true, silent = true })
 set_keymap("n", "<leader>a", "ggVG<CR>", { desc = "Select all", noremap = true, silent = true })
 set_keymap(
-	"n",
-	"<leader>sc",
-	"<CMD>lua require('functions').toScratch()<CR>",
-	{ desc = "Send output of command to scratch buffer", noremap = true, silent = true }
+    "n",
+    "<leader>sc",
+    "<CMD>lua require('functions').toScratch()<CR>",
+    { desc = "Send output of command to scratch buffer", noremap = true, silent = true }
 )
 set_keymap(
-	"n",
-	"<leader>sa",
-	"<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
-	{ desc = "Source all config files", noremap = true, silent = true }
+    "n",
+    "<leader>sa",
+    "<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
+    { desc = "Source all config files", noremap = true, silent = true }
 )
 set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
 -- set_keymap(
@@ -72,17 +72,17 @@ set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts) -- Resize verti
 set_keymap("n", "<M-Right>", "<CMD>vertical resize +2<CR>", opts) -- Resize vertical split
 
 set_keymap(
-	"n",
-	"<leader>df",
-	"<CMD>lua require('functions').diffOpenFileToggle()<CR>",
-	{ desc = "Diff an unopened file with the one currently open", noremap = true }
+    "n",
+    "<leader>df",
+    "<CMD>lua require('functions').diffOpenFileToggle()<CR>",
+    { desc = "Diff an unopened file with the one currently open", noremap = true }
 )
 
 set_keymap(
-	"n",
-	"<leader>dv",
-	"<CMD>lua require('functions').diffToggle()<CR>",
-	{ desc = "Toggle diff", noremap = true }
+    "n",
+    "<leader>dv",
+    "<CMD>lua require('functions').diffToggle()<CR>",
+    { desc = "Toggle diff", noremap = true }
 )
 
 set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
@@ -111,10 +111,10 @@ set_keymap("n", "<leader>dra", "<CMD>lua require('dap').clear_breakpoints()<CR>"
 set_keymap("n", "<leader>dj", "<CMD>lua require('jester').debug({dap = { console = ''}})<CR>", opts)
 
 -- Dial --
-local ok, _ = pcall(require, "dial.map")
-if ok then
-	set_keymap("n", "<C-c>", require("dial.map").inc_normal(), opts)
-	set_keymap("n", "<C-x>", require("dial.map").dec_normal(), opts)
+local dialOK, dialMap = pcall(require, "dial.map")
+if dialOK then
+	set_keymap("n", "<C-c>", dialMap.inc_normal(), opts)
+	set_keymap("n", "<C-x>", dialMap.dec_normal(), opts)
 end
 
 -- Diffview --
@@ -159,10 +159,24 @@ set_keymap("n", "<leader><CR>", "<CMD>NeoZoomToggle<CR>", opts)
 -- Notify --
 set_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", opts)
 
--- Nvim Tree --
+-- Neo Tree --
 set_keymap("n", ";", "<CMD>Neotree filesystem toggle<CR>", opts)
 set_keymap("n", "'", "<CMD>Neotree buffers toggle<CR>", opts)
 set_keymap("n", "\\", "<CMD>Neotree reveal<CR>", opts)
+
+-- Possession --
+local pOK, possession = pcall(require, "nvim-possession")
+if pOK then
+	vim.keymap.set("n", "<leader>sl", function()
+		possession.list()
+	end)
+	vim.keymap.set("n", "<leader>sn", function()
+		possession.new()
+	end)
+	vim.keymap.set("n", "<leader>su", function()
+		possession.update()
+	end)
+end
 
 -- Sad --
 set_keymap("n", "<leader>sr", "<CMD>Sad<CR>", opts)
