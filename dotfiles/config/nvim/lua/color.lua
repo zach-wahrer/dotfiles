@@ -3,7 +3,7 @@ local api = vim.api -- Api
 
 -- Color --
 require("onedark").setup({
-	style = "deep",
+    style = "deep",
 })
 require("onedark").load()
 
@@ -32,7 +32,8 @@ api.nvim_set_hl(0, "DapBreakpointYellow", { bg = "", fg = Colors.yellow })
 api.nvim_set_hl(0, "IlluminatedWordText", { bg = Colors.bg1, underline = 1 })
 api.nvim_set_hl(0, "IlluminatedWordRead", { bg = Colors.bg1, underline = 1 })
 api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = Colors.bg1, underline = 1 })
+vim.api.nvim_set_hl(0, "NoiceMini", { bg = Colors.black, fg = Colors.purple, blend = 0 })
 
 vim.cmd(
-	"let g:rcsv_colorpairs = [['cyan', '#48b0bd'], ['red', '#e55561'], ['lightgray', '#7a818e'],['yellow', '#e2b86b'], ['blue', '#4fa6ed'], ['green', '#8ebd6b'], ['magenta', '#bf68d9'], ['9', '#48b0bd'], ['darkred', '#8b3434'], ['darkyellow', '#835d1a'], ['darkcyan', '#266269'], ['gray', '#535965'], ['darkmagenta', '#7e3992']]"
+    "let g:rcsv_colorpairs = [['cyan', '#48b0bd'], ['red', '#e55561'], ['lightgray', '#7a818e'],['yellow', '#e2b86b'], ['blue', '#4fa6ed'], ['green', '#8ebd6b'], ['magenta', '#bf68d9'], ['9', '#48b0bd'], ['darkred', '#8b3434'], ['darkyellow', '#835d1a'], ['darkcyan', '#266269'], ['gray', '#535965'], ['darkmagenta', '#7e3992']]"
 )

@@ -216,7 +216,7 @@
 
     "custom/launcher": {
         "format":" ",
-        "on-click": "exec wofi -c ~/.config/wofi/config -I",
+        "on-click": "exec nwggrid",
         "tooltip": false,
     },
 

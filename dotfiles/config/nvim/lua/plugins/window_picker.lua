@@ -3,6 +3,8 @@ local M = {
 }
 
 function M.config()
+	Colors = require("colors")
+
 	require("window-picker").setup({
 		autoselect_one = true,
 		include_current = false,
@@ -16,7 +18,7 @@ function M.config()
 				buftype = { "terminal", "quickfix" },
 			},
 		},
-		other_win_hl_color = "#e35e4f",
+		other_win_hl_color = Colors.red,
 	})
 end
 
