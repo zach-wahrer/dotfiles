@@ -173,5 +173,10 @@ return {
     -- ENV MANAGEMENT
     ---------------------------------------------------
     --  "tpope/vim-dotenv",
-    --  "ellisonleao/dotenv.nvim",
+    {
+        "ellisonleao/dotenv.nvim",
+        config = function()
+	        require("dotenv").setup()
+        end,
+    },
 }
