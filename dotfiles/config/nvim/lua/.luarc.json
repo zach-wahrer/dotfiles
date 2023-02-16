@@ -71,6 +71,7 @@
         "/home/zach/.local/share/nvim/lazy/nvim-dap-go",
         "/home/zach/.local/share/nvim/lazy/telescope.nvim",
         "/home/zach/.local/share/nvim/lazy/nvim-colorizer.lua",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }
