@@ -1,7 +1,6 @@
 local M = {
 	"RRethy/nvim-treesitter-textsubjects",
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
-	enabled = false,
 }
 
 function M.config()
