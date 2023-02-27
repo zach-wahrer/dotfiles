@@ -27,6 +27,7 @@ function M.debugSetEnvironment()
 	}
 	for _, file in ipairs(envFiles) do
 		if M.fileExists(file) then
+			vim.notify("Setting env for: " .. file)
 			vim.cmd([[Dotenv ]] .. file)
 		end
 	end
