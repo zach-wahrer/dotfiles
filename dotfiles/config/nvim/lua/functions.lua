@@ -18,14 +18,16 @@ end
 
 function M.debugSetEnvironment()
 	local envFiles = {
-	    -- "deploy/local/.env",
-	    -- "deploy/local/.source.env",
-	    -- "deploy/local/.compiled.env",
-	    -- "../../.secret.env",
-	    "debug.env",
+		-- "deploy/local/.env",
+		-- "deploy/local/.source.env",
+		-- "deploy/local/.compiled.env",
+		-- "../../.secret.env",
+		"debug.env",
+		"deploy/local/debug.env",
 	}
 	for _, file in ipairs(envFiles) do
 		if M.fileExists(file) then
+			vim.notify("Setting env for: " .. file)
 			vim.cmd([[Dotenv ]] .. file)
 		end
 	end

@@ -86,7 +86,8 @@ set_keymap(
 )
 
 set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
-set_keymap("v", "<leader>64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts) -- Base64 decode string
+set_keymap("v", "<leader>d64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts) -- Base64 decode string
+set_keymap("v", "<leader>e64", "c<c-r>=system('base64', @\")<CR><ESC>", opts) -- Base64 decode string
 
 set_keymap("n", "*", "<CMD>lua require('functions').searchWordUnderCursorForward()<CR>", opts) -- Improved forward search
 set_keymap("n", "#", "<CMD>lua require('functions').searchWordUnderCursorBackward()<CR>", opts) -- Improved backward search
