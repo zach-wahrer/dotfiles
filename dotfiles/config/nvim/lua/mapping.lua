@@ -9,16 +9,16 @@ set_keymap("n", "<leader>n", "<CMD>enew<CR>", { desc = "Open new scratch buffer"
 set_keymap("n", "<leader>w", "<CMD>w<CR>", { desc = "Write file", noremap = true, silent = true })
 set_keymap("n", "<leader>a", "ggVG<CR>", { desc = "Select all", noremap = true, silent = true })
 set_keymap(
-    "n",
-    "<leader>sc",
-    "<CMD>lua require('functions').toScratch()<CR>",
-    { desc = "Send output of command to scratch buffer", noremap = true, silent = true }
+	"n",
+	"<leader>sc",
+	"<CMD>lua require('functions').toScratch()<CR>",
+	{ desc = "Send output of command to scratch buffer", noremap = true, silent = true }
 )
 set_keymap(
-    "n",
-    "<leader>sa",
-    "<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
-    { desc = "Source all config files", noremap = true, silent = true }
+	"n",
+	"<leader>sa",
+	"<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
+	{ desc = "Source all config files", noremap = true, silent = true }
 )
 set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
 -- set_keymap(
@@ -72,17 +72,17 @@ set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts) -- Resize verti
 set_keymap("n", "<M-Right>", "<CMD>vertical resize +2<CR>", opts) -- Resize vertical split
 
 set_keymap(
-    "n",
-    "<leader>df",
-    "<CMD>lua require('functions').diffOpenFileToggle()<CR>",
-    { desc = "Diff an unopened file with the one currently open", noremap = true }
+	"n",
+	"<leader>df",
+	"<CMD>lua require('functions').diffOpenFileToggle()<CR>",
+	{ desc = "Diff an unopened file with the one currently open", noremap = true }
 )
 
 set_keymap(
-    "n",
-    "<leader>dv",
-    "<CMD>lua require('functions').diffToggle()<CR>",
-    { desc = "Toggle diff", noremap = true }
+	"n",
+	"<leader>dv",
+	"<CMD>lua require('functions').diffToggle()<CR>",
+	{ desc = "Toggle diff", noremap = true }
 )
 
 set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
