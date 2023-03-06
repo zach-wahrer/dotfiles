@@ -106,6 +106,9 @@ dotfiles:
   d_artty:
     src: config/arTTY
     dst: ~/.config/arTTY
+  f_settings.ini:
+    src: config/gtk-3.0/settings.ini
+    dst: ~/.config/gtk-3.0/settings.ini
 profiles:
   to-wolf:
     dotfiles:
@@ -133,6 +136,7 @@ profiles:
       - d_wlogout
       - d_cspell
       - d_artty
+      - f_settings.ini
   red-wolf:
     dotfiles:
       - f_gitconfig
@@ -159,3 +163,4 @@ profiles:
       - d_wlogout
       - d_cspell
       - d_artty
+      - f_settings.ini
