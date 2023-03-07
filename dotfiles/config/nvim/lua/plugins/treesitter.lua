@@ -45,15 +45,15 @@ function M.config()
 		autotag = {
 			enable = true,
 		},
-		incremental_selection = {
-			enable = true,
-			keymaps = {
-				init_selection = "<leader>i", -- set to `false` to disable one of the mappings
-				node_incremental = "<leader>i",
-				-- scope_incremental = "<C-s>",
-				node_decremental = "<C-r>",
-			},
-		},
+		-- incremental_selection = {
+		-- 	enable = true,
+		-- 	keymaps = {
+		-- 		init_selection = "<leader>i", -- set to `false` to disable one of the mappings
+		-- 		node_incremental = "<leader>i",
+		-- 		-- scope_incremental = "<C-s>",
+		-- 		node_decremental = "<C-r>",
+		-- 	},
+		-- },
 	})
 end
 

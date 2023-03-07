@@ -17,7 +17,7 @@ return {
 	-- TREESITTER --
 	---------------------------------------------------
 	"windwp/nvim-ts-autotag", -- Auto close html,tsx,vue,svelte,php,rescript tags
-	"mrjones2014/nvim-ts-rainbow", -- Rainbow tags
+	"HiPhish/nvim-ts-rainbow2", -- Rainbow tags
 
 	---------------------------------------------------
 	-- INPUT
@@ -62,6 +62,7 @@ return {
 	"weilbith/nvim-code-action-menu",
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	"kevinhwang91/nvim-bqf", -- Better quick fix
+	"cbochs/portal.nvim", -- Improved jumplist
 	{
 		"karb94/neoscroll.nvim",
 		config = function()

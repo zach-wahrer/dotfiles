@@ -20,7 +20,7 @@ set_keymap(
 	"<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
 	{ desc = "Source all config files", noremap = true, silent = true }
 )
-set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
+-- set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
 -- set_keymap(
 -- 	"n",
 -- 	"<leader>ol",
@@ -165,6 +165,10 @@ set_keymap("n", ";", "<CMD>Neotree filesystem toggle<CR>", opts)
 set_keymap("n", "'", "<CMD>Neotree buffers toggle<CR>", opts)
 set_keymap("n", "\\", "<CMD>Neotree reveal<CR>", opts)
 
+-- Portal --
+set_keymap("n", "<leader>o", "<CMD>Portal jumplist backward<CR>", opts)
+set_keymap("n", "<leader>i", "<CMD>Portal jumplist forward<CR>", opts)
+
 -- Possession --
 local pOK, possession = pcall(require, "nvim-possession")
 if pOK then
@@ -201,6 +205,7 @@ set_keymap("n", "<leader>z", "<CMD>Telescope zoxide list<CR>", opts)
 set_keymap("n", "<leader>p", "<CMD>Telescope lazy<CR>", opts)
 set_keymap("n", "<leader>mo", "<CMD>Telescope notify<CR>", opts)
 set_keymap("n", "<leader>u", "<CMD>Telescope undo<CR>", opts)
+set_keymap("n", "<leader>g", "<CMD>Telescope advanced_git_search show_custom_functions<CR>", opts)
 
 -- Vim Bbye --
 set_keymap("n", "<leader>q", "<CMD>Bdelete<CR>", opts)

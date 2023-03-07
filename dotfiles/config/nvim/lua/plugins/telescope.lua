@@ -7,6 +7,7 @@ local M = {
 		"tsakirist/telescope-lazy.nvim",
 		"lpoto/telescope-docker.nvim",
 		"benfowler/telescope-luasnip.nvim",
+		{ "aaronhallaert/advanced-git-search.nvim", dependencies = "tpope/vim-fugitive" },
 		"debugloop/telescope-undo.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
@@ -53,6 +54,7 @@ function M.config()
 		},
 	})
 
+	telescope.load_extension("advanced_git_search")
 	telescope.load_extension("fzf")
 	telescope.load_extension("luasnip")
 	telescope.load_extension("env")

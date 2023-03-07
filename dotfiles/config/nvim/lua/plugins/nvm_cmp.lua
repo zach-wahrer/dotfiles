@@ -7,6 +7,12 @@ local M = {
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-nvim-lua",
 		"saadparwaiz1/cmp_luasnip",
+		{
+			"garyhurtz/cmp_kitty",
+			init = function()
+				require("cmp_kitty"):setup()
+			end,
+		},
 	},
 }
 
@@ -55,6 +61,7 @@ function M.config()
 			["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		},
 		sources = cmp.config.sources({
+			{ name = "kitty", option = { listen_on = "unix:@mykitty" } },
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
