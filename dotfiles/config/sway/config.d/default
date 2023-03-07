@@ -223,7 +223,7 @@ bindsym $mod+r mode "resize"
 # App shortcuts
 #
     bindsym $mod+Shift+f exec thunar
-    bindsym $mod+Shift+b exec firefox
+    bindsym $mod+Shift+b exec env MOZ_ENABLE_WAYLAND=1 firefox
     bindsym $mod+Shift+e exec kitty --session $HOME/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty
 #
 # Screenshots
