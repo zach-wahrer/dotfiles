@@ -146,8 +146,8 @@ set_keymap("n", "<leader>ll", "<CMD>lua vim.diagnostic.setloclist()<CR>", opts)
 set_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", opts)
 
 -- Mini.map --
-set_keymap("n", "<Backspace>", "<CMD>lua MiniMap.toggle()<CR>", opts)
-set_keymap("n", "<Backspace><Backspace>", "<CMD>lua MiniMap.toggle_focus()<CR>", opts)
+set_keymap("n", "<Delete>", "<CMD>lua MiniMap.toggle()<CR>", opts)
+set_keymap("n", "<Delete><Delete>", "<CMD>lua MiniMap.toggle_focus()<CR>", opts)
 
 -- Neogen --
 set_keymap("n", "<leader>ia", "<CMD>lua require('neogen').generate()<CR>", opts)
@@ -187,8 +187,8 @@ end
 set_keymap("n", "<leader>sr", "<CMD>Sad<CR>", opts)
 
 -- Svart --
-set_keymap("n", "<delete>", "<CMD>Svart<CR>", opts)
-set_keymap("n", "<A-delete>", "<CMD>SvartRepeat<CR>", opts)
+set_keymap("n", "<Backspace>", "<CMD>Svart<CR>", opts)
+set_keymap("n", "<A-Backspace>", "<CMD>SvartRepeat<CR>", opts)
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)
