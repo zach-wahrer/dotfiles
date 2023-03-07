@@ -35,7 +35,7 @@ function M.config()
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
-			opts)
+		opts)
 		vim.api.nvim_buf_set_keymap(
 			bufnr,
 			"n",
@@ -57,7 +57,7 @@ function M.config()
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references <CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>",
-			opts)
+		opts)
 	end
 
 	local lspconfig = require("lspconfig")
@@ -110,32 +110,6 @@ function M.config()
 		init_options = {
 			buildFlags = { "-tags=integration" },
 		},
-	})
-
-	local configs = require("lspconfig/configs")
-
-	if not configs.golangcilsp then
-		configs.golangcilsp = {
-			default_config = {
-				cmd = { "golangci-lint-langserver" },
-				root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
-				init_options = {
-					command = {
-						"golangci-lint",
-						"run",
-						"--enable-all",
-						"--disable",
-						"lll",
-						"--out-format",
-						"json",
-						"--issues-exit-code=1",
-					},
-				},
-			},
-		}
-	end
-	lspconfig.golangci_lint_ls.setup({
-		filetypes = { "go", "gomod" },
 	})
 end
 
