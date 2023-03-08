@@ -49,3 +49,7 @@ read -r _
 ~/dotfiles/dotdrop/dotdrop.sh install
 
 chsh -s "$(which zsh)" # Change default shell to zsh.
+
+echo "Add 'MOZ_ENABLE_WAYLAND=1' to '/etc/environment'"
+
+echo "DONE!"
