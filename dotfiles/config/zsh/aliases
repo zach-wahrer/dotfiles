@@ -13,6 +13,7 @@ alias ls='ls --color=auto'
 alias :q="exit"
 alias :qa="exit"
 alias edir="edir --trash"
+alias s="kitty +kitten ssh"
 
 # JUMPS #
 alias zd='z ~/dotfiles'
