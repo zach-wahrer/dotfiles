@@ -16,7 +16,7 @@ return {
 	---------------------------------------------------
 	-- TREESITTER --
 	---------------------------------------------------
-	"windwp/nvim-ts-autotag", -- Auto close html,tsx,vue,svelte,php,rescript tags
+	-- "windwp/nvim-ts-autotag", -- Auto close html,tsx,vue,svelte,php,rescript tags
 	"HiPhish/nvim-ts-rainbow2", -- Rainbow tags
 
 	---------------------------------------------------
@@ -58,7 +58,7 @@ return {
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	"moll/vim-bbye", -- Better buffer delete
+	"moll/vim-bbye",     -- Better buffer delete
 	"weilbith/nvim-code-action-menu",
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	"kevinhwang91/nvim-bqf", -- Better quick fix
@@ -121,14 +121,6 @@ return {
 		end,
 		dependencies = { "mfussenegger/nvim-dap" },
 	}, -- Adapt delve to dap
-	"David-Kunz/jester", -- Jest test dap debugger
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		config = function()
-			require("nvim-dap-virtual-text").setup({})
-		end,
-		dependencies = { "mfussenegger/nvim-dap" },
-	}, -- DAP virtual text
 
 	---------------------------------------------------
 	-- TESTING
@@ -173,7 +165,6 @@ return {
 	---------------------------------------------------
 	-- ENV MANAGEMENT
 	---------------------------------------------------
-	--  "tpope/vim-dotenv",
 	{
 		"ellisonleao/dotenv.nvim",
 		config = function()
