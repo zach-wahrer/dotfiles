@@ -30,7 +30,6 @@ zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibili
 {%@@ if profile == "to-wolf" @@%}
 # USER COMPLETIONS #
 source <(kubectl completion zsh)
-source <(minikube completion zsh)
 {%@@ endif @@%}
 
 # CONFIGS #
