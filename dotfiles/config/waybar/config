@@ -65,8 +65,9 @@
 
     "clock": {
         "interval": 10,
-        "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
-        "format": "{:%a %b %d %Y %I:%M%p}",
+	"timezones": ["America/Denver", "Etc/GMT"],
+        "format-alt": "{:%a %b %d %Y %H:%M:%S %Z}",
+        "format": "{:%a %b %d %Y %I:%M%p %Z}",
         "tooltip-format": "{:%e %B %Y}"
     },
 
