@@ -165,10 +165,6 @@ set_keymap("n", ";", "<CMD>Neotree filesystem toggle<CR>", opts)
 set_keymap("n", "'", "<CMD>Neotree buffers toggle<CR>", opts)
 set_keymap("n", "\\", "<CMD>Neotree reveal<CR>", opts)
 
--- Portal --
-set_keymap("n", "<leader>o", "<CMD>Portal jumplist backward<CR>", opts)
-set_keymap("n", "<leader>i", "<CMD>Portal jumplist forward<CR>", opts)
-
 -- Possession --
 local pOK, possession = pcall(require, "nvim-possession")
 if pOK then

@@ -25,11 +25,16 @@ function M.debugSetEnvironment()
 		"debug.env",
 		"deploy/local/debug.env",
 	}
+	local total = 0
 	for _, file in ipairs(envFiles) do
 		if M.fileExists(file) then
 			vim.notify("Setting env for: " .. file)
 			vim.cmd([[Dotenv ]] .. file)
+			total = total + 1
 		end
+	end
+	if total == 0 then
+		vim.notify("no env files sourced", "error")
 	end
 end
 

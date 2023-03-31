@@ -24,22 +24,6 @@ return {
 	---------------------------------------------------
 	"svban/YankAssassin.vim", -- Keep cursor in same spot after yank
 	{
-		"abecodes/tabout.nvim",
-		config = function()
-			require("tabout").setup({})
-		end,
-		dependencies = "nvim-treesitter/nvim-treesitter",
-	},
-	{
-		"danymat/neogen",
-		config = function()
-			require("neogen").setup({
-				snippet_engine = "luasnip",
-			})
-		end,
-		dependencies = "nvim-treesitter/nvim-treesitter",
-	}, -- Documentation generation
-	{
 		"ray-x/sad.nvim",
 		config = function()
 			require("sad").setup({
@@ -62,7 +46,6 @@ return {
 	"weilbith/nvim-code-action-menu",
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	"kevinhwang91/nvim-bqf", -- Better quick fix
-	"cbochs/portal.nvim", -- Improved jumplist
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
