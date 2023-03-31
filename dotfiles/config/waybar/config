@@ -41,7 +41,7 @@
         "format-icons":{
             "activated": "",
             "deactivated": ""
-        }
+        },
 	{%@@ if profile == "red-wolf" @@%}
 	"start-activated": true,
 	{%@@ endif @@%}
