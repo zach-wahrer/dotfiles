@@ -67,7 +67,7 @@
     },
 
     "clock": {
-        "interval": 10,
+        "interval": 1,
 	"timezones": ["America/Denver", "Etc/GMT"],
         "format-alt": "{:%a %b %d %Y %H:%M:%S %Z}",
         "format": "{:%a %b %d %Y %I:%M%p %Z}",
