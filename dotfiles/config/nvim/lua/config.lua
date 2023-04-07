@@ -19,7 +19,8 @@ o.timeoutlen = 400 -- Length of time to wait until accepting the keypress sequen
 o.fillchars = "vert:▏,vertleft:▏,vertright:▏,verthoriz:+,horiz:-,horizup:-,horizdown:-"
 o.commentstring = "# %s"
 o.virtualedit = "block"
-vim.g["center_after_scroll"] = true
+o.scrolloff = 15
+vim.g["center_after_scroll"] = false
 -- o.cmdheight = 0 -- Uneeded due to Noice plugin
 
 -- Buffer --
@@ -141,7 +142,8 @@ augroups.misc = {
 -- 	},
 -- }
 augroups.file_type = {
-	rainbow = { -- Make first rainbow bracket not gray
+	rainbow = {
+		-- Make first rainbow bracket not gray
 		event = { "FileType" },
 		pattern = "*",
 		callback = function()

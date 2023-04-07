@@ -70,6 +70,18 @@ return {
 			require("scope").setup()
 		end,
 	}, -- Scope buffers to tabs
+	{
+		"chrishrb/gx.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
+		config = function()
+			require("gx").setup()
+		end,
+	}, -- Open links with `gx`
+	{
+		"willothy/veil.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
+		config = true,
+	}, -- Dashboard
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS
