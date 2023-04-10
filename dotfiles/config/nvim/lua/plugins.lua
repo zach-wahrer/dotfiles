@@ -2,7 +2,8 @@ return {
 	---------------------------------------------------
 	-- THEMES
 	---------------------------------------------------
-	"navarasu/onedark.nvim",
+	{ "navarasu/onedark.nvim", lazy = false, priority = 1000 },
+	-- { "cesaralvarod/tokyogogh.nvim", lazy = false, priority = 1000 }, -- GOOD!
 	-- "tiagovla/tokyodark.nvim"
 	-- "rebelot/kanagawa.nvim"
 	-- "Th3Whit3Wolf/one-nvim"
@@ -42,7 +43,7 @@ return {
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	"moll/vim-bbye",     -- Better buffer delete
+	"moll/vim-bbye", -- Better buffer delete
 	"weilbith/nvim-code-action-menu",
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	"kevinhwang91/nvim-bqf", -- Better quick fix
@@ -77,11 +78,6 @@ return {
 			require("gx").setup()
 		end,
 	}, -- Open links with `gx`
-	{
-		"willothy/veil.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = true,
-	}, -- Dashboard
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS
