@@ -1,5 +1,6 @@
 local M = {
 	"zbirenbaum/neodim",
+	enable = false,
 }
 
 function M.config()
