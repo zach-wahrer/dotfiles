@@ -20,7 +20,7 @@ function M.config()
 
 	-- Use an on_attach function to only map the following keys
 	-- after the language server attaches to the current buffer
-	local on_attach = function(_, bufnr)
+	local on_attach = function(client, bufnr)
 		-- Enable completion triggered by <c-x><c-o>
 		vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
@@ -58,6 +58,19 @@ function M.config()
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references <CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>",
 		opts)
+
+		-- Workaround for gopls semantic token highlighting https://github.com/golang/go/issues/54531#issuecomment-1464982242
+		if not client.server_capabilities.semanticTokensProvider then
+			local semantic = client.config.capabilities.textDocument.semanticTokens
+			client.server_capabilities.semanticTokensProvider = {
+				full = true,
+				legend = {
+					tokenTypes = semantic.tokenTypes,
+					tokenModifiers = semantic.tokenModifiers,
+				},
+				range = true,
+			}
+		end
 	end
 
 	local lspconfig = require("lspconfig")
@@ -98,17 +111,55 @@ function M.config()
 			},
 		},
 	})
-
 	lspconfig.gopls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
 		settings = {
 			gopls = {
-				buildFlags = { "-tags=integration" },
+				buildFlags = { "-tags", "integration" },
+				semanticTokens = true,
+				analyses = {
+					unreachable = true,
+					nilness = true,
+					unusedparams = true,
+					useany = true,
+					unusedwrite = true,
+					ST1003 = true,
+					undeclaredname = true,
+					fillreturns = true,
+					nonewvars = true,
+					fieldalignment = false,
+					shadow = true,
+				},
+				codelenses = {
+					generate = true, -- show the `go generate` lens.
+					gc_details = true, -- Show a code lens toggling the display of gc's choices.
+					test = true,
+					tidy = true,
+					vendor = true,
+					regenerate_cgo = true,
+					upgrade_dependency = true,
+				},
+				usePlaceholders = true,
+				completeUnimported = true,
+				staticcheck = true,
+				hints = {
+					assignVariableTypes = true,
+					compositeLiteralFields = true,
+					compositeLiteralTypes = true,
+					constantValues = true,
+					functionTypeParameters = true,
+					parameterNames = true,
+					rangeVariableTypes = true,
+				},
+				matcher = "Fuzzy",
+				diagnosticsDelay = "500ms",
+				symbolMatcher = "fuzzy",
+				gofumpt = true,
 			},
 		},
 		init_options = {
-			buildFlags = { "-tags=integration" },
+			buildFlags = { "-tags", "integration" },
 		},
 	})
 end

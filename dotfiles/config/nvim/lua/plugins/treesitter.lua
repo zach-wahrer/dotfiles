@@ -22,6 +22,7 @@ function M.config()
 			"markdown",
 			"markdown_inline",
 			"regex",
+			"vimdoc",
 			"vim",
 		},
 		sync_install = false,

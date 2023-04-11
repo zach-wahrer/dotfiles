@@ -11,7 +11,7 @@ return {
 	-- "yonlu/omni.vim"
 	-- "sainnhe/edge"
 	-- "PHSix/nvim-hybrid"
-	-- "olimorris/onedarkpro.nvim"
+	-- "olimorris/onedarkpro.nvim",
 	-- "rmehri01/onenord.nvim"
 
 	---------------------------------------------------
@@ -43,7 +43,7 @@ return {
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	"moll/vim-bbye", -- Better buffer delete
+	"moll/vim-bbye",     -- Better buffer delete
 	"weilbith/nvim-code-action-menu",
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	"kevinhwang91/nvim-bqf", -- Better quick fix
