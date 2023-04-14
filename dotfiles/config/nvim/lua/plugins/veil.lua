@@ -8,14 +8,17 @@ function M.config()
 	local cfgPath = vim.fn.stdpath("config")
 
 	local slides = {
-		"/slides/dashboard.cat",
+		"/slides/dashboard7.cat",
 		"/slides/dashboard2.cat",
-		"/slides/dashboard3.cat",
 		"/slides/dashboard3.cat",
 		"/slides/dashboard4.cat",
 		"/slides/dashboard5.cat",
 		"/slides/dashboard6.cat",
-		"/slides/dashboard7.cat",
+		"/slides/dashboard.cat",
+		"/slides/dashboard5.cat",
+		"/slides/dashboard4.cat",
+		"/slides/dashboard3.cat",
+		"/slides/dashboard2.cat",
 	}
 
 	texts = {}
