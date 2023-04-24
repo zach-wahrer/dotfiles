@@ -122,25 +122,6 @@ function M.sourceAllConfigFiles()
 	vim.notify("All config files sourced successfully.")
 end
 
--- function M.openLink()
--- 	local command = ""
--- 	local url = string.match(vim.fn.getline("."), "[a-z]*://[^ >,;]*")
--- 	if url then
--- 		command = "!xdg-open " .. url
--- 		vim.fn.execute(command)
--- 		return
--- 	end
---
--- 	url = string.match(vim.fn.getline("."), '[^"][0-9a-z.]*/[a-z.-0-9]*[^"]')
--- 	if url then
--- 		command = "!xdg-open " .. "http://www.github.com/" .. url
--- 		vim.fn.execute(command)
--- 		return
--- 	end
---
--- 	vim.notify("Valid URL not found.")
--- end
-
 function M.findFiles(path)
 	require("telescope.builtin").find_files({ cwd = path, hidden = true })
 end
@@ -149,8 +130,13 @@ function M.toggleGoMetalinterOnSave()
 	vim.g["go_metalinter_autosave"] = not vim.g["go_metalinter_autosave"]
 end
 
-function M.toggleCenterAfterScroll()
-	vim.g["center_after_scroll"] = not vim.g["center_after_scroll"]
+function M.toggleCenterScroll()
+	vim.g["center_scroll"] = not vim.g["center_scroll"]
+	if vim.g["center_scroll"] then
+		vim.cmd("set scrolloff=999")
+	else
+		vim.cmd("set scrolloff=15")
+	end
 end
 
 function M.scroll(command)

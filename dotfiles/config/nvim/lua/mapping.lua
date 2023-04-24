@@ -41,22 +41,22 @@ set_keymap("n", "<leader>os", "<CMD>lua require('functions').findFiles('~/.confi
 set_keymap("n", "<leader>og", "<CMD>lua require('functions').findFiles('~/go/src')<CR>", opts)
 set_keymap("n", "<leader>ob", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", opts)
 
-set_vim_keymap({ "n", "v" }, "H", "_", opts)                                                       -- Beginning of line
-set_vim_keymap({ "n", "v" }, "L", "$", opts)                                                       -- End of line
+set_vim_keymap({ "n", "v" }, "H", "_", opts)                                                  -- Beginning of line
+set_vim_keymap({ "n", "v" }, "L", "$", opts)                                                  -- End of line
 
-set_keymap("n", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts)                       -- Down on wrapped lines visually
-set_keymap("n", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts)                       -- Up on wrapped lines visually
-set_keymap("v", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts)                       -- Down on wrapped lines visually while selecting
-set_keymap("v", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts)                       -- Up on wrapped lines visually while selecting
-set_keymap("n", "<leader>cs", "<CMD>lua require('functions').toggleCenterAfterScroll()<CR>", opts) -- Toggle zz after scroll
-set_keymap("v", ">", ">gv", opts)                                                                  -- Indent while keeping selection
-set_keymap("v", "<", "<gv", opts)                                                                  -- Remove indent while keeping selection
-set_keymap("n", "n", "nzz", opts)                                                                  -- Center cursor after search jump
-set_keymap("n", "N", "Nzz", opts)                                                                  -- Center cursor after search jump
+set_keymap("n", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts)                  -- Down on wrapped lines visually
+set_keymap("n", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts)                  -- Up on wrapped lines visually
+set_keymap("v", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts)                  -- Down on wrapped lines visually while selecting
+set_keymap("v", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts)                  -- Up on wrapped lines visually while selecting
+set_keymap("n", "<leader>cs", "<CMD>lua require('functions').toggleCenterScroll()<CR>", opts) -- Toggle keeping cursor in center of screen
+set_keymap("v", ">", ">gv", opts)                                                             -- Indent while keeping selection
+set_keymap("v", "<", "<gv", opts)                                                             -- Remove indent while keeping selection
+set_keymap("n", "n", "nzz", opts)                                                             -- Center cursor after search jump
+set_keymap("n", "N", "Nzz", opts)                                                             -- Center cursor after search jump
 
-set_keymap("n", "<A-Enter>", "O<ESC>", opts)                                                       -- Add line above
-set_keymap("n", "<CR>", "o<ESC>", opts)                                                            -- Add line below
-set_keymap("n", "<ESC>", "<CMD>lua require('functions').removeSearch()<CR>", opts)                 -- Remove search highlighting
+set_keymap("n", "<A-Enter>", "O<ESC>", opts)                                                  -- Add line above
+set_keymap("n", "<CR>", "o<ESC>", opts)                                                       -- Add line below
+set_keymap("n", "<ESC>", "<CMD>lua require('functions').removeSearch()<CR>", opts)            -- Remove search highlighting
 
 set_keymap("n", "<leader>tn", "<CMD>tabnew<CR>", opts)
 set_keymap("n", "<CA-h>", "<CMD>tabp<CR>", opts)

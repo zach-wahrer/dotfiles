@@ -1,63 +1,63 @@
 # FZF #
 if [[ ! -d $ZSH_PLUGINS/fzf ]]; then
-  git clone --depth 1 https://github.com/junegunn/fzf.git $ZSH_PLUGINS/fzf
-  $ZSH_PLUGINS/fzf/install
+    git clone --depth 1 https://github.com/junegunn/fzf.git $ZSH_PLUGINS/fzf
+    $ZSH_PLUGINS/fzf/install
 fi
 source ~/.fzf.zsh
 
 ## Zsh Completions ##
 if [[ ! -d $ZSH_PLUGINS/zsh-completions ]]; then
-  git clone https://github.com/clarketm/zsh-completions.git $ZSH_PLUGINS/zsh-completions
+    git clone https://github.com/clarketm/zsh-completions.git $ZSH_PLUGINS/zsh-completions
 fi
 fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
 
 ## Zsh Autosuggestions ##
 if [[ ! -d $ZSH_PLUGINS/zsh-autosuggestions ]]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
 fi
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#61afef,bold,underline"
 
 ## Zsh Better NPM Completion ##
 if [[ ! -d $ZSH_PLUGINS/zsh-better-npm-completion ]]; then
-  git clone https://github.com/lukechilds/zsh-better-npm-completion $ZSH_PLUGINS/zsh-better-npm-completion
+    git clone https://github.com/lukechilds/zsh-better-npm-completion $ZSH_PLUGINS/zsh-better-npm-completion
 fi
 source $ZSH_PLUGINS/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh
 
 ## Auto Pairs ##
 if [[ ! -d $ZSH_PLUGINS/zsh-autopair ]]; then
-  git clone https://github.com/hlissner/zsh-autopair $ZSH_PLUGINS/zsh-autopair
+    git clone https://github.com/hlissner/zsh-autopair $ZSH_PLUGINS/zsh-autopair
 fi
 source $ZSH_PLUGINS/zsh-autopair/autopair.zsh
 autopair-init
 
 ## AWS ##
 if [[ ! -d $ZSH_PLUGINS/aws-plugin-zsh ]]; then
-  git clone https://github.com/eastokes/aws-plugin-zsh.git $ZSH_PLUGINS/aws-plugin-zsh
+    git clone https://github.com/eastokes/aws-plugin-zsh.git $ZSH_PLUGINS/aws-plugin-zsh
 fi
 source $ZSH_PLUGINS/aws-plugin-zsh/aws.plugin.zsh
 
 ## Docker ##
 if [[ ! -d $ZSH_PLUGINS/docker-zsh-completion ]]; then
-  git clone https://github.com/greymd/docker-zsh-completion.git $ZSH_PLUGINS/docker-zsh-completion
+    git clone https://github.com/greymd/docker-zsh-completion.git $ZSH_PLUGINS/docker-zsh-completion
 fi
 source $ZSH_PLUGINS/docker-zsh-completion/docker-zsh-completion.plugin.zsh
 
 ## K (better ls) ##
 if [[ ! -d $ZSH_PLUGINS/k ]]; then
-  git clone https://github.com/supercrabtree/k $ZSH_PLUGINS/k
+    git clone https://github.com/supercrabtree/k $ZSH_PLUGINS/k
 fi
 source $ZSH_PLUGINS/k/k.sh
 
 ## zoxide (better cd) ##
 if ! [ -x "$(command -v zoxide)" ]; then
-  curl -sS https://webinstall.dev/zoxide | bash
+    curl -sS https://webinstall.dev/zoxide | bash
 fi
 eval "$(zoxide init zsh)"
 
 ## Diff So Fancy ##
 if [[ ! -d $ZSH_PLUGINS/diff-so-fancy ]]; then
-  git clone https://github.com/so-fancy/diff-so-fancy $ZSH_PLUGINS/diff-so-fancy
+    git clone https://github.com/so-fancy/diff-so-fancy $ZSH_PLUGINS/diff-so-fancy
 fi
 export PATH="$ZSH_PLUGINS/diff-so-fancy:$PATH"
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"

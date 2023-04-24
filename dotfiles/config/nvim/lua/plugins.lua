@@ -78,6 +78,11 @@ return {
 			require("gx").setup()
 		end,
 	}, -- Open links with `gx`
+	{
+		"lukas-reineke/headlines.nvim",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = true,
+	}, -- Highlighting for headlines in markdown files
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS

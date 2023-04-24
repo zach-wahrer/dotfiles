@@ -20,7 +20,7 @@ o.fillchars = "vert:▏,vertleft:▏,vertright:▏,verthoriz:+,horiz:-,horizup:-
 o.commentstring = "# %s"
 o.virtualedit = "block"
 o.scrolloff = 15
-vim.g["center_after_scroll"] = false
+vim.g["center_scroll"] = false
 -- o.cmdheight = 0 -- Uneeded due to Noice plugin
 
 -- Buffer --
