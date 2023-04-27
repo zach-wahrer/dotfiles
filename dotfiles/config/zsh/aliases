@@ -15,6 +15,11 @@ alias :qa="exit"
 alias edir="edir --trash"
 alias s="kitty +kitten ssh"
 
+# LS #
+alias ls="lsd"
+alias l="lsd -al"
+alias lt="lsd --tree"
+
 # JUMPS #
 alias zd='z ~/dotfiles'
 alias zg='z ~/go/src'
