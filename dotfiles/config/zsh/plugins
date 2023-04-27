@@ -62,7 +62,3 @@ fi
 export PATH="$ZSH_PLUGINS/diff-so-fancy:$PATH"
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 git config --global interactive.diffFilter "diff-so-fancy --patch"
-
-## OTHER THINGS TO INSTALL ##
-# bat - https://github.com/sharkdp/bat
-# bpytop - https://github.com/aristocratos/bpytop
