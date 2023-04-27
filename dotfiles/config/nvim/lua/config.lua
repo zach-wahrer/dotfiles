@@ -6,6 +6,7 @@ local api = vim.api -- Api
 Colors = require("colors")
 
 -- Globals --
+o.filetype = "on"
 o.ignorecase = true -- Case insensitive searching
 o.smartcase = true  -- Override ignorecase if search pattern is mixed case
 o.autowriteall = true

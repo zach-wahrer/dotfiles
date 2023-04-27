@@ -1,5 +1,6 @@
 local M = {
 	"nathom/filetype.nvim",
+	enabled = false,
 }
 
 function M.config()
