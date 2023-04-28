@@ -83,6 +83,12 @@ return {
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = true,
 	}, -- Highlighting for headlines in markdown files
+	{
+		"phaazon/hop.nvim",
+		config = function()
+			require("hop").setup()
+		end,
+	},
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS

@@ -9,6 +9,14 @@ function M.config()
 	require("mini.move").setup()
 	require("mini.pairs").setup()
 	require("mini.surround").setup()
+	-- require("mini.jump2d").setup({
+	-- view = {
+	-- 	dim = true,
+	-- },
+	-- 	mappings = {
+	-- 		start_jumping = "<Backspace>",
+	-- 	},
+	-- })
 
 	require("mini.comment").setup({
 		mappings = {

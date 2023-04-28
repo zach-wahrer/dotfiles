@@ -131,6 +131,9 @@ set_keymap("n", "<leader>hP", "<CMD>Gitsigns preview_hunk<CR>", opts)
 set_keymap("n", "<leader>hp", "<CMD>Gitsigns prev_hunk<CR>", opts)
 set_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", opts)
 
+-- Hop --
+set_vim_keymap({ "n", "v" }, "<Backspace>", "<CMD>HopWordMW<CR>", opts) -- Beginning of line
+
 -- LSP -- Per client mappings are in lsp config file
 set_keymap("n", "<leader>lsp", "<CMD>LspStop<CR><CMD>call wait(1500, 1==0)<CR><CMD>LspStart<CR>", opts)
 set_keymap("n", "<leader>m", "<CMD>lua vim.diagnostic.open_float()<CR>", opts)
@@ -180,8 +183,8 @@ end
 set_keymap("n", "<leader>sr", "<CMD>Sad<CR>", opts)
 
 -- Svart --
-set_keymap("n", "<Backspace>", "<CMD>Svart<CR>", opts)
-set_keymap("n", "<A-Backspace>", "<CMD>SvartRepeat<CR>", opts)
+-- set_keymap("n", "<Backspace>", "<CMD>Svart<CR>", opts)
+-- set_keymap("n", "<A-Backspace>", "<CMD>SvartRepeat<CR>", opts)
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)

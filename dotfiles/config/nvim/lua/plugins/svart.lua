@@ -1,4 +1,4 @@
-local M = { url = "https://gitlab.com/madyanov/svart.nvim" }
+local M = { url = "https://gitlab.com/madyanov/svart.nvim", enabled = false }
 
 function M.config()
 	require("svart").configure({
