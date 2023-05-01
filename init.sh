@@ -10,7 +10,7 @@ sudo pacman -S kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server ba
 sudo pacman -S git base-devel gcc docker docker-compose python-pip pyright npm jq fx eslint prettier # Dev tools
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
-yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers ttf-nerd-fonts-symbols-2048-em ttf-sudo swaync wlogout  # System
+yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers ttf-sourcecodepro-nerd ttf-sudo swaync wlogout  # System
 yay -S checkmake dbgate-bin dotenv-linter hadolint vale # Dev tools
 
 pip3 install beautysh gitlint pynvim setuptools # Dev tools

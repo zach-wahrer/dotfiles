@@ -57,7 +57,7 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format-full": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
 
@@ -76,7 +76,7 @@
 
     "cpu": {
         "interval": 5,
-        "format": "龍 {usage}% ({load})", // Icon: microchip
+        "format": "󰓅  {usage}% ({load})",
         "states": {
             "warning": 70,
             "critical": 90,
@@ -86,7 +86,7 @@
 
     "disk": {
         "interval": 30,
-        "format": " {percentage_used}%",
+        "format": "󰋊 {percentage_used}%",
         "path": "/",
 	"on-click": "kitty ncdu"
     },
@@ -104,7 +104,7 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%", // Icon: memory
+        "format": "󰍛 {}%", // Icon: memory
         "on-click": "kitty bpytop",
         "states": {
             "warning": 70,
@@ -155,19 +155,19 @@
         "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "婢 {format_source}",
+        "format-bluetooth-muted": "󰟎 {icon}  {format_source}",
+        "format-muted": "󰟎  {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
+            "headphone": "󰋋",
             "hands-free": "וֹ",
-            "headset": "  ",
+            "headset": " 󰋎 ",
             "phone": "",
             "portable": "",
             "car": "",
             "speaker": "",
-            "default": [""]
+            "default": ["󰋋"]
         },
         "on-click": "pavucontrol",
         "on-scroll-up": "pamixer -ui 2",
@@ -219,7 +219,7 @@
     },
 
     "custom/launcher": {
-        "format":" ",
+        "format":"󰚌 ",
         "on-click": "exec nwggrid",
         "tooltip": false,
     },
