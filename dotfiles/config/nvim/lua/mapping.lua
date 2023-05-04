@@ -25,6 +25,8 @@ set_vim_keymap({ "n", "v", "i" }, "<S-Down>", "", opts) -- Disable shift down
 
 -- set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
 
+set_keymap("n", "<leader>wo", "<CMD>set wrap<CR>", opts)                                   -- Close quickfix and location list
+
 set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts)                       -- Close quickfix and location list
 set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts)                                         -- Goto next quickfix item
 set_keymap("n", "<leader>cp", "<CMD>cp<CR>", opts)                                         -- Goto previous quickfix item

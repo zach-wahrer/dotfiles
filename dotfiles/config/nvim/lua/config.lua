@@ -10,6 +10,7 @@ o.filetype = "on"
 o.ignorecase = true -- Case insensitive searching
 o.smartcase = true  -- Override ignorecase if search pattern is mixed case
 o.autowriteall = true
+o.hidden = false
 o.title = true
 o.updatetime = 100                      -- Time it takes to write to swap / update git gutter
 o.clipboard = "unnamedplus"             -- Use system clipboard
@@ -124,6 +125,7 @@ augroups.misc = {
 		end,
 	},
 }
+
 -- augroups.win_enter = {
 -- 	set_rel_line_numbers_on_focus = {
 -- 		event = { "WinEnter,FocusGained" },

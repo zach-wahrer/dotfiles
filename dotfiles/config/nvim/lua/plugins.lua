@@ -3,6 +3,11 @@ return {
 	-- THEMES
 	---------------------------------------------------
 	{ "navarasu/onedark.nvim", lazy = false, priority = 1000 },
+	-- {
+	-- 	"maxmx03/fluoromachine.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
 	-- { "cesaralvarod/tokyogogh.nvim", lazy = false, priority = 1000 }, -- GOOD!
 	-- "tiagovla/tokyodark.nvim"
 	-- "rebelot/kanagawa.nvim"
@@ -89,6 +94,20 @@ return {
 			require("hop").setup()
 		end,
 	},
+	-- {
+	-- 	"okuuva/auto-save.nvim",
+	-- 	config = function()
+	-- 		require("auto-save").setup({
+	-- 			execution_message = {
+	-- 				-- enabled = false,
+	-- 			},
+	-- 			trigger_events = {
+	-- 				immediate_save = { "BufLeave", "FocusLost" },
+	-- 				defer_save = {},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS
