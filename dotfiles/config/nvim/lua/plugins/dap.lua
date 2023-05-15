@@ -8,9 +8,9 @@ function M.config()
 	vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointRed", linehl = "", numhl = "" })
 	vim.fn.sign_define(
 	    "DapBreakpointCondition",
-	    { text = "", texthl = "DapBreakpointYellow", linehl = "", numhl = "" }
+	    { text = "󰃻", texthl = "DapBreakpointYellow", linehl = "", numhl = "" }
 	)
-	vim.fn.sign_define("DapLogPoint", { text = "ﲀ", texthl = "DapBreakpointYellow", linehl = "", numhl = "" })
+	vim.fn.sign_define("DapLogPoint", { text = "󰞂", texthl = "DapBreakpointYellow", linehl = "", numhl = "" })
 	vim.fn.sign_define("DapStopped", { text = "", texthl = "DapBreakpointGreen", linehl = "", numhl = "" })
 	vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRed", linehl = "", numhl = "" })
 

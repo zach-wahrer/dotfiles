@@ -14,7 +14,7 @@ function M.config()
 			show_desc = "<leader>bs",
 		},
 		preview_ext_enable = true,
-		virt_text = "",
+		virt_text = "󰃃",
 	})
 end
 

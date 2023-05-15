@@ -6,7 +6,7 @@ local M = {
 function M.config()
 	require("nvim-possession").setup({
 	    sessions = {
-	        sessions_icon = " ",
+	        sessions_icon = "󰍳 ",
 	    },
 	    autoswitch = {
 	        enable = true,
