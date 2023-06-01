@@ -5,7 +5,6 @@ local M = {
 		"nvim-lua/plenary.nvim",
 		"LinArcX/telescope-env.nvim",
 		"tsakirist/telescope-lazy.nvim",
-		"lpoto/telescope-docker.nvim",
 		"benfowler/telescope-luasnip.nvim",
 		{ "aaronhallaert/advanced-git-search.nvim", dependencies = "tpope/vim-fugitive" },
 		"debugloop/telescope-undo.nvim",
@@ -13,7 +12,6 @@ local M = {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
 		},
-		{ "jvgrootveld/telescope-zoxide", dependencies = "nvim-lua/popup.nvim" },
 		{
 			"princejoogie/dir-telescope.nvim",
 			config = function()
@@ -58,10 +56,8 @@ function M.config()
 	telescope.load_extension("fzf")
 	telescope.load_extension("luasnip")
 	telescope.load_extension("env")
-	telescope.load_extension("zoxide")
 	telescope.load_extension("notify")
 	telescope.load_extension("undo")
-	telescope.load_extension("docker")
 	telescope.load_extension("lazy")
 end
 
