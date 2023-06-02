@@ -22,12 +22,12 @@ function zk() {
     __zoxide_z "$1" && k
 }
 
-# Docker / K8s #
-# alias kc="kubectl config use-context arn:aws:eks:us-west-2:CLUSTERNUMBER:cluster/hello-world-cluster; kubectl"
-# alias kc="kubectl config use-context proxmox; kubectl"
-# alias mkc="kubectl config use-context minikube; kubectl"
-# compdef _kubectl kc
+# Other *
+function cheat() {
+    curl -s cheat.sh/${*}
+}
 
+# Docker / K8s #
 function kcc() {
     local context=`kubectl config get-contexts --output='name' | fzf`
     kubectl config use-context $context
