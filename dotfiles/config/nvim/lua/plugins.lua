@@ -48,7 +48,7 @@ return {
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	"moll/vim-bbye", -- Better buffer delete
+	"moll/vim-bbye",     -- Better buffer delete
 	"weilbith/nvim-code-action-menu",
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	-- "kevinhwang91/nvim-bqf", -- Better quick fix
@@ -89,25 +89,8 @@ return {
 		config = true,
 	}, -- Highlighting for headlines in markdown files
 	{
-		"phaazon/hop.nvim",
-		config = function()
-			require("hop").setup()
-		end,
+		"ggandor/leap.nvim",
 	},
-	-- {
-	-- 	"okuuva/auto-save.nvim",
-	-- 	config = function()
-	-- 		require("auto-save").setup({
-	-- 			execution_message = {
-	-- 				-- enabled = false,
-	-- 			},
-	-- 			trigger_events = {
-	-- 				immediate_save = { "BufLeave", "FocusLost" },
-	-- 				defer_save = {},
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS
