@@ -2,6 +2,7 @@ local M = {
 	"crusj/bookmarks.nvim",
 	branch = "main",
 	dependencies = { "kyazdani42/nvim-web-devicons" },
+	enabled = false,
 }
 
 function M.config()

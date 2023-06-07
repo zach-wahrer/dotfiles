@@ -22,7 +22,6 @@ return {
 	---------------------------------------------------
 	-- TREESITTER --
 	---------------------------------------------------
-	-- "windwp/nvim-ts-autotag", -- Auto close html,tsx,vue,svelte,php,rescript tags
 	"HiPhish/nvim-ts-rainbow2", -- Rainbow tags
 
 	---------------------------------------------------
@@ -38,20 +37,14 @@ return {
 		end,
 		dependencies = { "ray-x/guihua.lua" },
 	}, -- Find/replace
-	{
-		"monkoose/matchparen.nvim",
-		config = function()
-			require("matchparen").setup({})
-		end,
-	}, -- Improved parentheses matching
 
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	"moll/vim-bbye",     -- Better buffer delete
-	"weilbith/nvim-code-action-menu",
-	"arp242/undofile_warn.vim", -- Warn if undoing past current
+	-- "weilbith/nvim-code-action-menu",
 	-- "kevinhwang91/nvim-bqf", -- Better quick fix
+	"moll/vim-bbye", -- Better buffer delete
+	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
@@ -105,7 +98,7 @@ return {
 	---------------------------------------------------
 	-- LANGUAGES
 	---------------------------------------------------
-	"sebdah/vim-delve",
+	-- "mechatroner/rainbow_csv",
 	"ckipp01/stylua-nvim", -- Lua formatting
 	{
 		"iamcco/markdown-preview.nvim",
@@ -113,7 +106,6 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	"mechatroner/rainbow_csv",
 
 	---------------------------------------------------
 	-- DEBUG
@@ -134,24 +126,14 @@ return {
 		config = function()
 			require("gotests").setup()
 		end,
-	},
+	}, -- Generate tests for go functions
 
 	---------------------------------------------------
 	-- GIT
 	---------------------------------------------------
-	"rhysd/git-messenger.vim", -- View diffs
+	"tpope/vim-fugitive", -- Git functions / Only using blame feature
+	"rhysd/git-messenger.vim", -- Enhanced gitblame
 	"sindrets/diffview.nvim", -- Git diff view
-	"tpope/vim-fugitive", -- Git functions
-
-	---------------------------------------------------
-	-- SPELLING
-	---------------------------------------------------
-	{
-		"lewis6991/spellsitter.nvim",
-		config = function()
-			require("spellsitter").setup()
-		end,
-	}, -- Spell check within treesitter
 
 	---------------------------------------------------
 

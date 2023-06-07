@@ -1,5 +1,6 @@
 local M = {
 	"nyngwang/NeoZoom.lua",
+	enabled = false,
 }
 
 function M.config()
