@@ -5,7 +5,7 @@ local M = {
 		"nvim-lua/plenary.nvim",
 		"LinArcX/telescope-env.nvim",
 		"tsakirist/telescope-lazy.nvim",
-		"benfowler/telescope-luasnip.nvim",
+		-- "benfowler/telescope-luasnip.nvim",
 		{ "aaronhallaert/advanced-git-search.nvim", dependencies = "tpope/vim-fugitive" },
 		"debugloop/telescope-undo.nvim",
 		{
@@ -54,7 +54,7 @@ function M.config()
 
 	telescope.load_extension("advanced_git_search")
 	telescope.load_extension("fzf")
-	telescope.load_extension("luasnip")
+	-- telescope.load_extension("luasnip")
 	telescope.load_extension("env")
 	telescope.load_extension("notify")
 	telescope.load_extension("undo")
