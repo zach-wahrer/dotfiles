@@ -34,8 +34,7 @@ function M.config()
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
-			opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(
 			bufnr,
 			"n",
@@ -56,8 +55,7 @@ function M.config()
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>CodeActionMenu<CR>", opts)
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references <CR>", opts)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>",
-			opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opts)
 
 		-- Workaround for gopls semantic token highlighting https://github.com/golang/go/issues/54531#issuecomment-1464982242
 		if not client.server_capabilities.semanticTokensProvider then
@@ -114,6 +112,9 @@ function M.config()
 	lspconfig.gopls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
+		fillstruct = "gopls",
+		dap_debug = true,
+		dap_debug_gui = true,
 		settings = {
 			gopls = {
 				buildFlags = { "-tags", "integration" },
