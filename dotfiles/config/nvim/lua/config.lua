@@ -1,23 +1,23 @@
 local cmd = vim.cmd -- Commands
-local o = vim.o -- Global
-local bo = vim.bo -- Buffer
-local wo = vim.wo -- Window
+local o = vim.o     -- Global
+local bo = vim.bo   -- Buffer
+local wo = vim.wo   -- Window
 local api = vim.api -- Api
 Colors = require("colors")
 
 -- Globals --
 o.filetype = "on"
 o.ignorecase = true -- Case insensitive searching
-o.smartcase = true -- Override ignorecase if search pattern is mixed case
+o.smartcase = true  -- Override ignorecase if search pattern is mixed case
 o.autowriteall = true
 -- o.hidden = false
 o.title = true
-o.updatetime = 100 -- Time it takes to write to swap / update git gutter
-o.clipboard = "unnamedplus" -- Use system clipboard
+o.updatetime = 100                      -- Time it takes to write to swap / update git gutter
+o.clipboard = "unnamedplus"             -- Use system clipboard
 o.completeopt = "menu,menuone,noselect" -- For LSP/Complete
-o.incsearch = true -- Show search results while still typing
-o.laststatus = 3 -- Only show one status bar
-o.timeoutlen = 400 -- Length of time to wait until accepting the keypress sequence
+o.incsearch = true                      -- Show search results while still typing
+o.laststatus = 3                        -- Only show one status bar
+o.timeoutlen = 400                      -- Length of time to wait until accepting the keypress sequence
 o.fillchars = "vert:▏,vertleft:▏,vertright:▏,verthoriz:+,horiz:-,horizup:-,horizdown:-"
 o.commentstring = "# %s"
 o.virtualedit = "block"
@@ -26,19 +26,19 @@ vim.g["center_scroll"] = false
 -- o.cmdheight = 0 -- Uneeded due to Noice plugin
 
 -- Buffer --
-bo.tabstop = 4 -- Number of cols occupied by tab
-bo.expandtab = true -- Converts tabs to whitespace
-bo.autoindent = true -- Indent new line the same as previous
-bo.shiftwidth = 4 -- Width for autoindents
+bo.tabstop = 4                    -- Number of cols occupied by tab
+bo.expandtab = true               -- Converts tabs to whitespace
+bo.autoindent = true              -- Indent new line the same as previous
+bo.shiftwidth = 4                 -- Width for autoindents
 bo.matchpairs = "<:>,(:),{:},[:]" -- Hightlight matching brackets
-bo.undofile = true -- Save undo history in file
+bo.undofile = true                -- Save undo history in file
 
 -- Window --
 wo.cursorline = true -- Highlight current cursor line
 -- wo.relativenumber = true -- Set relative line numbers
-wo.number = true -- Set absolute line number
-wo.conceallevel = 2 -- Conceal markdown
-wo.spell = false -- Done with spelunker
+wo.number = true     -- Set absolute line number
+wo.conceallevel = 2  -- Conceal markdown
+wo.spell = false     -- Done with spelunker
 wo.signcolumn = "yes:2"
 
 -- Diagnostic --
@@ -96,13 +96,6 @@ augroups.buf_write_pre = {
 		event = { "BufWritePre" },
 		callback = function()
 			cmd([[ :%s/\s\+$//e ]])
-		end,
-	},
-	go_fmt_go_import = {
-		event = { "BufWritePre" },
-		pattern = "*.go",
-		callback = function()
-			require("go.format").goimport()
 		end,
 	},
 }

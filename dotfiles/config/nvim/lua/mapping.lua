@@ -20,16 +20,16 @@ set_keymap(
 	"<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
 	{ desc = "Source all config files", noremap = true, silent = true }
 )
-set_vim_keymap({ "n", "v", "i" }, "<S-Up>", "", opts)   -- Disable shift up
+set_vim_keymap({ "n", "v", "i" }, "<S-Up>", "", opts) -- Disable shift up
 set_vim_keymap({ "n", "v", "i" }, "<S-Down>", "", opts) -- Disable shift down
 
 -- set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
 
-set_keymap("n", "<leader>wo", "<CMD>set wrap<CR>", opts)                                   -- Close quickfix and location list
+set_keymap("n", "<leader>wo", "<CMD>set wrap<CR>", opts) -- Close quickfix and location list
 
-set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts)                       -- Close quickfix and location list
-set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts)                                         -- Goto next quickfix item
-set_keymap("n", "<leader>cp", "<CMD>cp<CR>", opts)                                         -- Goto previous quickfix item
+set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts) -- Close quickfix and location list
+set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
+set_keymap("n", "<leader>cp", "<CMD>cp<CR>", opts) -- Goto previous quickfix item
 set_keymap("n", "<leader>co", "<CMD>lua require('functions').openAllQuickFix()<CR>", opts) -- Open all quick fix list into buffers
 
 set_keymap("n", "<leader>od", "<CMD>lua require('functions').findFiles('~/dotfiles')<CR>", opts)
@@ -40,22 +40,22 @@ set_keymap("n", "<leader>os", "<CMD>lua require('functions').findFiles('~/.confi
 set_keymap("n", "<leader>og", "<CMD>lua require('functions').findFiles('~/go/src')<CR>", opts)
 set_keymap("n", "<leader>ob", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", opts)
 
-set_vim_keymap({ "n", "v" }, "H", "_", opts)                                                  -- Beginning of line
-set_vim_keymap({ "n", "v" }, "L", "$", opts)                                                  -- End of line
+set_vim_keymap({ "n", "v" }, "H", "_", opts) -- Beginning of line
+set_vim_keymap({ "n", "v" }, "L", "$", opts) -- End of line
 
-set_keymap("n", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts)                  -- Down on wrapped lines visually
-set_keymap("n", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts)                  -- Up on wrapped lines visually
-set_keymap("v", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts)                  -- Down on wrapped lines visually while selecting
-set_keymap("v", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts)                  -- Up on wrapped lines visually while selecting
+set_keymap("n", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts) -- Down on wrapped lines visually
+set_keymap("n", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts) -- Up on wrapped lines visually
+set_keymap("v", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts) -- Down on wrapped lines visually while selecting
+set_keymap("v", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts) -- Up on wrapped lines visually while selecting
 set_keymap("n", "<leader>cs", "<CMD>lua require('functions').toggleCenterScroll()<CR>", opts) -- Toggle keeping cursor in center of screen
-set_keymap("v", ">", ">gv", opts)                                                             -- Indent while keeping selection
-set_keymap("v", "<", "<gv", opts)                                                             -- Remove indent while keeping selection
-set_keymap("n", "n", "nzz", opts)                                                             -- Center cursor after search jump
-set_keymap("n", "N", "Nzz", opts)                                                             -- Center cursor after search jump
+set_keymap("v", ">", ">gv", opts) -- Indent while keeping selection
+set_keymap("v", "<", "<gv", opts) -- Remove indent while keeping selection
+set_keymap("n", "n", "nzz", opts) -- Center cursor after search jump
+set_keymap("n", "N", "Nzz", opts) -- Center cursor after search jump
 
-set_keymap("n", "<A-Enter>", "O<ESC>", opts)                                                  -- Add line above
-set_keymap("n", "<CR>", "o<ESC>", opts)                                                       -- Add line below
-set_keymap("n", "<ESC>", "<CMD>lua require('functions').removeSearch()<CR>", opts)            -- Remove search highlighting
+set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
+set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
+set_keymap("n", "<ESC>", "<CMD>lua require('functions').removeSearch()<CR>", opts) -- Remove search highlighting
 
 set_keymap("n", "<C-Space>", "ciw", opts)
 set_keymap("n", "<C-Enter>", 'ci"', opts)
@@ -64,13 +64,13 @@ set_keymap("n", "<leader>tn", "<CMD>tabnew<CR>", opts)
 set_keymap("n", "<CA-h>", "<CMD>tabp<CR>", opts)
 set_keymap("n", "<CA-l>", "<CMD>tabn<CR>", opts)
 
-set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts)                   -- Change to vertical splits
-set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts)                   -- Change to horizontal splits
-set_keymap("n", "<C-\\>", "<C-W><C-V>", opts)                     -- Vertical split
-set_keymap("n", "<C-->", "<C-W><C-S>", opts)                      -- Horizontal split
-set_keymap("n", "<M-Up>", "<CMD>resize +2<CR>", opts)             -- Resize horizontal split
-set_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", opts)           -- Resize horizontal split
-set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts)  -- Resize vertical split
+set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
+set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
+set_keymap("n", "<C-\\>", "<C-W><C-V>", opts) -- Vertical split
+set_keymap("n", "<C-->", "<C-W><C-S>", opts) -- Horizontal split
+set_keymap("n", "<M-Up>", "<CMD>resize +2<CR>", opts) -- Resize horizontal split
+set_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", opts) -- Resize horizontal split
+set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts) -- Resize vertical split
 set_keymap("n", "<M-Right>", "<CMD>vertical resize +2<CR>", opts) -- Resize vertical split
 
 set_keymap(
@@ -87,14 +87,14 @@ set_keymap(
 	{ desc = "Toggle diff", noremap = true }
 )
 
-set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts)                        -- Insert current date
-set_keymap("v", "<leader>d64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts)          -- Base64 decode string
-set_keymap("v", "<leader>e64", "c<c-r>=system('base64', @\")<CR><ESC>", opts)                   -- Base64 decode string
+set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
+set_keymap("v", "<leader>d64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts) -- Base64 decode string
+set_keymap("v", "<leader>e64", "c<c-r>=system('base64', @\")<CR><ESC>", opts) -- Base64 decode string
 
-set_keymap("n", "*", "<CMD>lua require('functions').searchWordUnderCursorForward()<CR>", opts)  -- Improved forward search
+set_keymap("n", "*", "<CMD>lua require('functions').searchWordUnderCursorForward()<CR>", opts) -- Improved forward search
 set_keymap("n", "#", "<CMD>lua require('functions').searchWordUnderCursorBackward()<CR>", opts) -- Improved backward search
 
-set_keymap("n", "<leader>ek", "<CMD>lua require('functions').exportColorsKitty()<CR>", opts)    -- Improved backward search
+set_keymap("n", "<leader>ek", "<CMD>lua require('functions').exportColorsKitty()<CR>", opts) -- Improved backward search
 
 -- Bufferline --
 set_keymap("n", "<A-h>", "<CMD>BufferLineCyclePrev<CR>", opts)
@@ -111,6 +111,7 @@ set_keymap("n", "<leader>di", "<CMD>lua require('dap').step_into()<CR>", opts)
 set_keymap("n", "<leader>do", "<CMD>lua require('dap').step_out()<CR>", opts)
 set_keymap("n", "<leader>db", "<CMD>lua require('dap').toggle_breakpoint()<CR>", opts)
 set_keymap("n", "<leader>dra", "<CMD>lua require('dap').clear_breakpoints()<CR>", opts)
+set_keymap("n", "<leader>dj", "<CMD>lua require('jester').debug({dap = { console = ''}})<CR>", opts)
 
 -- Dial --
 local dialOK, dialMap = pcall(require, "dial.map")
@@ -138,19 +139,6 @@ set_keymap("n", "<leader>hP", "<CMD>Gitsigns preview_hunk<CR>", opts)
 set_keymap("n", "<leader>hp", "<CMD>Gitsigns prev_hunk<CR>", opts)
 set_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", opts)
 
--- go.nvim --
-set_keymap("n", "<leader>gt", "<CMD>GoAddTest<CR>", opts)
-set_keymap("n", "<leader>gat", "<CMD>GoAddTag<CR>", opts)
-set_keymap("n", "<leader>gc", "<CMD>GoCoverage -t<CR>", opts)
-set_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", opts)
-set_keymap("n", "<leader>gs", "<CMD>GoFillSwitch<CR>", opts)
-set_keymap("n", "<leader>ga", "<CMD>GoAlt<CR>", opts)
-set_keymap("n", "<leader>gl", "<CMD>GoLint<CR>", opts)
-set_keymap("n", "<leader>gmt", "<CMD>GoModTidy<CR>", opts)
--- set_keymap("n", "<leader>d", "<CMD>GoDebug<CR>", opts)
--- set_keymap("n", "<leader>tf", "<CMD>GoTest -f<CR>", opts)
--- set_keymap("n", "<leader>t", "<CMD>GoTest -n 1<CR>", opts)
-
 -- Leap --
 set_vim_keymap("n", "<Backspace>", function()
 	local focusable_windows_on_tabpage = vim.tbl_filter(function(win)
@@ -173,6 +161,14 @@ set_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", opts)
 -- Mini.map --
 set_keymap("n", "<Delete>", "<CMD>lua MiniMap.toggle()<CR>", opts)
 set_keymap("n", "<Delete><Delete>", "<CMD>lua MiniMap.toggle_focus()<CR>", opts)
+
+-- Neogen --
+set_keymap("n", "<leader>ia", "<CMD>lua require('neogen').generate()<CR>", opts)
+set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'func'})<CR>", opts)
+set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'type'})<CR>", opts)
+
+-- NeoZoom
+set_keymap("n", "<leader><CR>", "<CMD>NeoZoomToggle<CR>", opts)
 
 -- Notify --
 set_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", opts)
@@ -199,6 +195,10 @@ end
 -- Sad --
 set_keymap("n", "<leader>sr", "<CMD>Sad<CR>", opts)
 
+-- Svart --
+-- set_keymap("n", "<Backspace>", "<CMD>Svart<CR>", opts)
+-- set_keymap("n", "<A-Backspace>", "<CMD>SvartRepeat<CR>", opts)
+
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)
 set_keymap("n", "<leader>s", "<CMD>Telescope live_grep hidden=true<CR>", opts)
@@ -219,6 +219,14 @@ set_keymap("n", "<leader>g", "<CMD>Telescope advanced_git_search show_custom_fun
 set_keymap("n", "<leader>q", "<CMD>Bdelete<CR>", opts)
 set_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>Bdelete<CR>", opts)
 set_keymap("n", "<leader>1", "<CMD>Bdelete!<CR>", opts)
+
+-- Vim Go --
+set_keymap("n", "<leader>gt", "<CMD>GoTests<CR>", opts)
+set_keymap("n", "<leader>gat", "<CMD>GoAddTags<CR>", opts)
+set_keymap("n", "<leader>gc", "<CMD>GoCoverageToggle<CR>", opts)
+set_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", opts)
+set_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", opts)
+set_keymap("n", "<leader>gl", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
 
 -- Vim Test --
 set_keymap("n", "<leader>tf", "<CMD>TestFile<CR>", opts)

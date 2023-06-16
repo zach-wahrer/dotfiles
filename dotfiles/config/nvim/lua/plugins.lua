@@ -43,9 +43,8 @@ return {
 	---------------------------------------------------
 	-- "weilbith/nvim-code-action-menu",
 	-- "kevinhwang91/nvim-bqf", -- Better quick fix
-	"moll/vim-bbye",     -- Better buffer delete
+	"moll/vim-bbye", -- Better buffer delete
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
-	"ggandor/leap.nvim",
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
@@ -77,6 +76,9 @@ return {
 			require("gx").setup()
 		end,
 	}, -- Open links with `gx`
+	{
+		"ggandor/leap.nvim",
+	},
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS
@@ -112,6 +114,16 @@ return {
 	}, -- Adapt delve to dap
 
 	---------------------------------------------------
+	-- TESTING
+	---------------------------------------------------
+	{
+		"yanskun/gotests.nvim",
+		config = function()
+			require("gotests").setup()
+		end,
+	}, -- Generate tests for go functions
+
+	---------------------------------------------------
 	-- GIT
 	---------------------------------------------------
 	"tpope/vim-fugitive", -- Git functions / Only using blame feature
@@ -119,6 +131,7 @@ return {
 	"sindrets/diffview.nvim", -- Git diff view
 
 	---------------------------------------------------
+
 	-- KITTY
 	---------------------------------------------------
 	"fladson/vim-kitty", -- Syntax highlight for kitty config
@@ -129,4 +142,14 @@ return {
 			require("nvim-kitty-navigator").setup()
 		end,
 	}, -- Navigation for kitty
+
+	---------------------------------------------------
+	-- ENV MANAGEMENT
+	---------------------------------------------------
+	{
+		"ellisonleao/dotenv.nvim",
+		config = function()
+			require("dotenv").setup()
+		end,
+	},
 }
