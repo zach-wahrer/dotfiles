@@ -36,6 +36,7 @@ function M.config()
 				mappings = {
 					["o"] = "system_open",
 				},
+				auto_expand_width = true,
 			},
 			commands = {
 				system_open = function(state)
