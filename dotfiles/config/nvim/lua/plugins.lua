@@ -77,7 +77,15 @@ return {
 		end,
 	}, -- Open links with `gx`
 	{
-		"ggandor/leap.nvim",
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {
+			modes = {
+				char = {
+					keys = { "f", "F", "t", "T" },
+				},
+			},
+		},
 	},
 
 	---------------------------------------------------

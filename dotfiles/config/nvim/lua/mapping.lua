@@ -123,6 +123,10 @@ end
 -- Diffview --
 set_keymap("n", "<leader>gv", "<CMD>lua require('functions').gitDiffToggle()<CR>", opts)
 
+-- Flash --
+set_keymap("n", "<Backspace>", "<CMD>lua require('flash').jump()<CR>", opts)
+set_keymap("n", "<leader><Backspace>", "<CMD>lua require('flash').treesitter()<CR>", opts)
+
 -- Fugitive --
 set_keymap("n", "<leader>gb", "<CMD>Git blame<CR>", opts)
 
@@ -138,14 +142,6 @@ set_keymap("n", "<leader>hR", "<CMD>Gitsigns reset_buffer<CR>", opts)
 set_keymap("n", "<leader>hP", "<CMD>Gitsigns preview_hunk<CR>", opts)
 set_keymap("n", "<leader>hp", "<CMD>Gitsigns prev_hunk<CR>", opts)
 set_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", opts)
-
--- Leap --
-set_vim_keymap("n", "<Backspace>", function()
-	local focusable_windows_on_tabpage = vim.tbl_filter(function(win)
-		return vim.api.nvim_win_get_config(win).focusable
-	end, vim.api.nvim_tabpage_list_wins(0))
-	require("leap").leap({ target_windows = focusable_windows_on_tabpage })
-end)
 
 -- LSP -- Per client mappings are in lsp config file
 set_keymap("n", "<leader>lsp", "<CMD>LspStop<CR><CMD>call wait(1500, 1==0)<CR><CMD>LspStart<CR>", opts)
@@ -164,7 +160,7 @@ set_keymap("n", "<Delete><Delete>", "<CMD>lua MiniMap.toggle_focus()<CR>", opts)
 
 -- Neogen --
 set_keymap("n", "<leader>ia", "<CMD>lua require('neogen').generate()<CR>", opts)
-set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({type = 'func'})<CR>", opts)
+set_keymap("n", "<leader>ifa", "<CMD>lua require('neogen').generate({})<CR>", opts)
 set_keymap("n", "<leader>ita", "<CMD>lua require('neogen').generate({type = 'type'})<CR>", opts)
 
 -- NeoZoom
@@ -194,10 +190,6 @@ end
 
 -- Sad --
 set_keymap("n", "<leader>sr", "<CMD>Sad<CR>", opts)
-
--- Svart --
--- set_keymap("n", "<Backspace>", "<CMD>Svart<CR>", opts)
--- set_keymap("n", "<A-Backspace>", "<CMD>SvartRepeat<CR>", opts)
 
 -- Telescope --
 set_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", opts)
