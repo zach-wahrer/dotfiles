@@ -48,6 +48,9 @@ function M.config()
 			use_libuv_file_watcher = true,
 		},
 		default_component_configs = {
+			name = {
+				highlight_opened_files = true,
+			},
 			icon = {
 				folder_empty = "󰜌",
 				folder_empty_open = "󰜌",

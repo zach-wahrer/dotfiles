@@ -1,4 +1,4 @@
-local o = vim.o     -- Global
+local o = vim.o -- Global
 local api = vim.api -- Api
 
 -- Color               --
@@ -22,6 +22,7 @@ Colors = require("colors")
 
 o.termguicolors = true
 
+api.nvim_set_hl(0, "CursorLine", { bg = Colors.black })
 api.nvim_set_hl(0, "Search", { bg = Colors.blue, fg = Colors.black, underline = 1 })
 api.nvim_set_hl(0, "CurSearch", { bg = Colors.orange, fg = Colors.black, underline = 1 })
 api.nvim_set_hl(0, "SpelunkerSpellBad", { undercurl = 1 })
@@ -34,6 +35,7 @@ api.nvim_set_hl(0, "LspDiagnosticsUnderlineError", { underline = 1 })
 api.nvim_set_hl(0, "LspDiagnosticsUnderlineWarning", { underline = 1 })
 api.nvim_set_hl(0, "LspDiagnosticsUnderlineInformation", { underline = 1 })
 api.nvim_set_hl(0, "LspDiagnosticsUnderlineHint", { underline = 1 })
+api.nvim_set_hl(0, "NeoTreeFileNameOpened", { bg = Colors.black })
 api.nvim_set_hl(0, "WinSeparator", { fg = Colors.dark_grey })
 api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = Colors.dark_grey })
 api.nvim_set_hl(0, "YankHighlight", { bg = Colors.dark_purple })

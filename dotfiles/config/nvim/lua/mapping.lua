@@ -130,6 +130,20 @@ set_keymap("n", "<leader><Backspace>", "<CMD>lua require('flash').treesitter()<C
 -- Fugitive --
 set_keymap("n", "<leader>gb", "<CMD>Git blame<CR>", opts)
 
+-- GitLinker --
+set_vim_keymap(
+	{ "n", "v" },
+	"<leader>gl",
+	"<CMD>lua require('gitlinker').link({action = require('gitlinker.actions').clipboard})<CR>",
+	opts
+)
+set_vim_keymap(
+	{ "n", "v" },
+	"<leader>gL",
+	"<CMD>lua require('gitlinker').link({action = require('gitlinker.actions').system})<CR>",
+	opts
+)
+
 -- GitMessenger --
 set_keymap("n", "<leader>gd", "<CMD>GitMessenger<CR>", opts)
 
@@ -218,7 +232,7 @@ set_keymap("n", "<leader>gat", "<CMD>GoAddTags<CR>", opts)
 set_keymap("n", "<leader>gc", "<CMD>GoCoverageToggle<CR>", opts)
 set_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", opts)
 set_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", opts)
-set_keymap("n", "<leader>gl", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
+-- set_keymap("n", "<leader>gl", "<CMD>lua require('functions').toggleGoMetalinterOnSave()<CR>", opts)
 
 -- Vim Test --
 set_keymap("n", "<leader>tf", "<CMD>TestFile<CR>", opts)
