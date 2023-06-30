@@ -9,6 +9,7 @@ function M.config()
 			"go",
 			"gomod",
 			"bash",
+			"c",
 			"javascript",
 			"json",
 			"lua",
