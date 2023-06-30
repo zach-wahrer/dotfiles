@@ -5,96 +5,221 @@ local set_vim_keymap = vim.keymap.set
 -- vim.keymap.set({"n","x"}, "p", "<CMD><CR>")
 
 -- General Keybinds --
-set_keymap("n", "<leader>n", "<CMD>enew<CR>", { desc = "Open new scratch buffer", noremap = true, silent = true })
-set_keymap("n", "<leader>w", "<CMD>w<CR>", { desc = "Write file", noremap = true, silent = true })
-set_keymap("n", "<leader>a", "ggVG<CR>", { desc = "Select all", noremap = true, silent = true })
-set_keymap(
+set_vim_keymap("n", "<leader>n", "<CMD>enew<CR>", { desc = "Open new scratch buffer", noremap = true, silent = true })
+set_vim_keymap("n", "<leader>w", "<CMD>w<CR>", { desc = "Write file", noremap = true, silent = true })
+set_vim_keymap("n", "<leader>a", "ggVG<CR>", { desc = "Select all", noremap = true, silent = true })
+set_vim_keymap(
 	"n",
 	"<leader>sc",
 	"<CMD>lua require('functions').toScratch()<CR>",
 	{ desc = "Send output of command to scratch buffer", noremap = true, silent = true }
 )
-set_keymap(
+set_vim_keymap({ "n", "v", "i" }, "<S-Up>", "", { desc = "Disable shift up", noremap = true, silent = true })
+set_vim_keymap({ "n", "v", "i" }, "<S-Down>", "", { desc = "Disable shift down", noremap = true, silent = true })
+
+set_vim_keymap(
 	"n",
-	"<leader>sa",
-	"<CMD>lua require('functions').sourceAllConfigFiles()<CR>",
-	{ desc = "Source all config files", noremap = true, silent = true }
+	"<leader>o",
+	"<CMD>only<CR>",
+	{ desc = "Close all windows but current", noremap = true, silent = true }
 )
-set_vim_keymap({ "n", "v", "i" }, "<S-Up>", "", opts) -- Disable shift up
-set_vim_keymap({ "n", "v", "i" }, "<S-Down>", "", opts) -- Disable shift down
+set_vim_keymap("n", "<leader>wo", "<CMD>set wrap<CR>", { desc = "Wrap text", noremap = true, silent = true })
 
--- set_keymap("n", "<leader>o", "<CMD>only<CR>", { desc = "Close all windows but current", noremap = true, silent = true })
+set_vim_keymap({ "n", "v" }, "H", "_", { desc = "Beginning of line", noremap = true, silent = true })
+set_vim_keymap({ "n", "v" }, "L", "$", { desc = "End of line", noremap = true, silent = true })
 
-set_keymap("n", "<leader>wo", "<CMD>set wrap<CR>", opts) -- Close quickfix and location list
+set_vim_keymap(
+	"n",
+	"<leader>cs",
+	"<CMD>lua require('functions').toggleCenterScroll()<CR>",
+	{ desc = "Toggle keeping cursor in center of screen", noremap = true, silent = true }
+)
 
-set_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", opts) -- Close quickfix and location list
-set_keymap("n", "<leader>cn", "<CMD>cn<CR>", opts) -- Goto next quickfix item
-set_keymap("n", "<leader>cp", "<CMD>cp<CR>", opts) -- Goto previous quickfix item
-set_keymap("n", "<leader>co", "<CMD>lua require('functions').openAllQuickFix()<CR>", opts) -- Open all quick fix list into buffers
+set_vim_keymap("n", "<A-Enter>", "O<ESC>", { desc = "Add line above", noremap = true, silent = true })
+set_vim_keymap("n", "<CR>", "o<ESC>", { desc = "Add line below", noremap = true, silent = true })
 
-set_keymap("n", "<leader>od", "<CMD>lua require('functions').findFiles('~/dotfiles')<CR>", opts)
-set_keymap("n", "<leader>ok", "<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/kitty')<CR>", opts)
-set_keymap("n", "<leader>oz", "<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/zsh')<CR>", opts)
-set_keymap("n", "<leader>on", "<CMD>lua require('functions').findFiles('~/.config/nvim')<CR>", opts)
-set_keymap("n", "<leader>os", "<CMD>lua require('functions').findFiles('~/.config/sway')<CR>", opts)
-set_keymap("n", "<leader>og", "<CMD>lua require('functions').findFiles('~/go/src')<CR>", opts)
-set_keymap("n", "<leader>ob", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", opts)
+set_vim_keymap("n", "<C-Space>", "ciw", { desc = "Change inner word", noremap = true, silent = true })
+set_vim_keymap("n", "<C-Enter>", 'ci"', { desc = "Change inner quote", noremap = true, silent = true })
 
-set_vim_keymap({ "n", "v" }, "H", "_", opts) -- Beginning of line
-set_vim_keymap({ "n", "v" }, "L", "$", opts) -- End of line
+set_vim_keymap(
+	"n",
+	"<leader>ek",
+	"<CMD>lua require('functions').exportColorsKitty()<CR>",
+	{ desc = "Export colors for kitty terminal", noremap = true, silent = true }
+)
 
-set_keymap("n", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts) -- Down on wrapped lines visually
-set_keymap("n", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts) -- Up on wrapped lines visually
-set_keymap("v", "j", "<CMD>lua require('functions').scroll('gj')<CR>", opts) -- Down on wrapped lines visually while selecting
-set_keymap("v", "k", "<CMD>lua require('functions').scroll('gk')<CR>", opts) -- Up on wrapped lines visually while selecting
-set_keymap("n", "<leader>cs", "<CMD>lua require('functions').toggleCenterScroll()<CR>", opts) -- Toggle keeping cursor in center of screen
-set_keymap("v", ">", ">gv", opts) -- Indent while keeping selection
-set_keymap("v", "<", "<gv", opts) -- Remove indent while keeping selection
-set_keymap("n", "n", "nzz", opts) -- Center cursor after search jump
-set_keymap("n", "N", "Nzz", opts) -- Center cursor after search jump
+set_vim_keymap(
+	"n",
+	"<leader>id",
+	"<CMD>put=strftime('%Y-%m-%d')<CR>",
+	{ desc = "Insert current date", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"v",
+	"<leader>d64",
+	"c<c-r>=system('base64 --decode', @\")<CR><ESC>",
+	{ desc = "Base64 decode string", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"v",
+	"<leader>e64",
+	"c<c-r>=system('base64', @\")<CR><ESC>",
+	{ desc = "Base64 decode string", noremap = true, silent = true }
+)
 
-set_keymap("n", "<A-Enter>", "O<ESC>", opts) -- Add line above
-set_keymap("n", "<CR>", "o<ESC>", opts) -- Add line below
-set_keymap("n", "<ESC>", "<CMD>lua require('functions').removeSearch()<CR>", opts) -- Remove search highlighting
+-- Tab Keybinds --
+set_vim_keymap("n", "<leader>tn", "<CMD>tabnew<CR>", { desc = "New tab page", noremap = true, silent = true })
+set_vim_keymap("n", "<CA-h>", "<CMD>tabp<CR>", { desc = "Previous tab page", noremap = true, silent = true })
+set_vim_keymap("n", "<CA-l>", "<CMD>tabn<CR>", { desc = "Next tab page", noremap = true, silent = true })
 
-set_keymap("n", "<C-Space>", "ciw", opts)
-set_keymap("n", "<C-Enter>", 'ci"', opts)
+-- Quickfix Keybinds --
+set_vim_keymap(
+	"n",
+	"<leader>c",
+	"<CMD>lclose<CR><CMD>cclose<CR>",
+	{ desc = "Close quickfix and location list", noremap = true, silent = true }
+)
+set_vim_keymap("n", "<leader>cn", "<CMD>cn<CR>", { desc = "Goto next quickfix item", noremap = true, silent = true })
+set_vim_keymap(
+	"n",
+	"<leader>cp",
+	"<CMD>cp<CR>",
+	{ desc = "Goto previous quick fix item", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<leader>co",
+	"<CMD>lua require('functions').openAllQuickFix()<CR>",
+	{ desc = "Open all quick fix list into buffers", noremap = true, silent = true }
+)
 
-set_keymap("n", "<leader>tn", "<CMD>tabnew<CR>", opts)
-set_keymap("n", "<CA-h>", "<CMD>tabp<CR>", opts)
-set_keymap("n", "<CA-l>", "<CMD>tabn<CR>", opts)
+-- Find Keybinds --
+set_vim_keymap(
+	"n",
+	"<leader>od",
+	"<CMD>lua require('functions').findFiles('~/dotfiles')<CR>",
+	{ desc = "Find in dotfiles", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<leader>ok",
+	"<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/kitty')<CR>",
+	{ desc = "Find in kitty files", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<leader>oz",
+	"<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/zsh')<CR>",
+	{ desc = "Find in zsh files", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<leader>on",
+	"<CMD>lua require('functions').findFiles('~/.config/nvim')<CR>",
+	{ desc = "Find in nvim files", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<leader>os",
+	"<CMD>lua require('functions').findFiles('~/.config/sway')<CR>",
+	{ desc = "Find in sway files", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<leader>og",
+	"<CMD>lua require('functions').findFiles('~/go/src')<CR>",
+	{ desc = "Find in go src files", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<leader>ob",
+	"<CMD>lua require('functions').findFiles('~/Brainhole')<CR>",
+	{ desc = "Find in note files", noremap = true, silent = true }
+)
 
-set_keymap("n", "<C-W>|", "<C-W>t<C-W>H", opts) -- Change to vertical splits
-set_keymap("n", "<C-W>-", "<C-W>t<C-W>K", opts) -- Change to horizontal splits
-set_keymap("n", "<C-\\>", "<C-W><C-V>", opts) -- Vertical split
-set_keymap("n", "<C-->", "<C-W><C-S>", opts) -- Horizontal split
-set_keymap("n", "<M-Up>", "<CMD>resize +2<CR>", opts) -- Resize horizontal split
-set_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", opts) -- Resize horizontal split
-set_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", opts) -- Resize vertical split
-set_keymap("n", "<M-Right>", "<CMD>vertical resize +2<CR>", opts) -- Resize vertical split
+-- Scroll Keybinds --
+set_vim_keymap(
+	{ "n", "v" },
+	"j",
+	"<CMD>lua require('functions').scroll('gj')<CR>",
+	{ desc = "Down on wrapped lines visually", noremap = true, silent = true }
+)
+set_vim_keymap(
+	{ "n", "v" },
+	"k",
+	"<CMD>lua require('functions').scroll('gk')<CR>",
+	{ desc = "Up on wrapped lines visually", noremap = true, silent = true }
+)
+set_vim_keymap("n", "n", "nzz", { desc = "Center cursor after search jump", noremap = true, silent = true })
+set_vim_keymap("n", "N", "Nzz", { desc = "Center cursor after search jump", noremap = true, silent = true })
 
-set_keymap(
+-- Indent Keybinds --
+set_vim_keymap("v", ">", ">gv", { desc = "Indent while keeping selection", noremap = true, silent = true })
+set_vim_keymap("v", "<", "<gv", { desc = "Remove indent while keeping selection", noremap = true, silent = true })
+
+-- Split Keybinds --
+set_vim_keymap("n", "<C-W>|", "<C-W>t<C-W>H", { desc = "Change to vertical splits", noremap = true, silent = true })
+set_vim_keymap("n", "<C-W>-", "<C-W>t<C-W>K", { desc = "Change to horizontal splits", noremap = true, silent = true })
+set_vim_keymap("n", "<C-\\>", "<C-W><C-V>", { desc = "Vertical split", noremap = true, silent = true })
+set_vim_keymap("n", "<C-->", "<C-W><C-S>", { desc = "Horizontal split", noremap = true, silent = true })
+set_vim_keymap(
+	"n",
+	"<M-Up>",
+	"<CMD>resize +2<CR>",
+	{ desc = "Resize horizontal split bigger", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<M-Down>",
+	"<CMD>resize -2<CR>",
+	{ desc = "Resize horizontal split smaller", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<M-Left>",
+	"<CMD>vertical resize -2<CR>",
+	{ desc = "Resize vertical split smaller", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"<M-Right>",
+	"<CMD>vertical resize +2<CR>",
+	{ desc = "Resize vertical split bigger", noremap = true, silent = true }
+)
+
+-- Diff Keybinds --
+set_vim_keymap(
 	"n",
 	"<leader>df",
 	"<CMD>lua require('functions').diffOpenFileToggle()<CR>",
 	{ desc = "Diff an unopened file with the one currently open", noremap = true }
 )
-
-set_keymap(
+set_vim_keymap(
 	"n",
 	"<leader>dv",
 	"<CMD>lua require('functions').diffToggle()<CR>",
 	{ desc = "Toggle diff", noremap = true }
 )
 
-set_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", opts) -- Insert current date
-set_keymap("v", "<leader>d64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", opts) -- Base64 decode string
-set_keymap("v", "<leader>e64", "c<c-r>=system('base64', @\")<CR><ESC>", opts) -- Base64 decode string
-
-set_keymap("n", "*", "<CMD>lua require('functions').searchWordUnderCursorForward()<CR>", opts) -- Improved forward search
-set_keymap("n", "#", "<CMD>lua require('functions').searchWordUnderCursorBackward()<CR>", opts) -- Improved backward search
-
-set_keymap("n", "<leader>ek", "<CMD>lua require('functions').exportColorsKitty()<CR>", opts) -- Improved backward search
+-- Search Keybinds --
+set_vim_keymap(
+	"n",
+	"<ESC>",
+	"<CMD>lua require('functions').removeSearch()<CR>",
+	{ desc = "Remove search highlighting", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"*",
+	"<CMD>lua require('functions').searchWordUnderCursorForward()<CR>",
+	{ desc = "Improved forward search", noremap = true, silent = true }
+)
+set_vim_keymap(
+	"n",
+	"#",
+	"<CMD>lua require('functions').searchWordUnderCursorBackward()<CR>",
+	{ desc = "Improved backward search", noremap = true, silent = true }
+)
 
 -- Bufferline --
 set_keymap("n", "<A-h>", "<CMD>BufferLineCyclePrev<CR>", opts)
