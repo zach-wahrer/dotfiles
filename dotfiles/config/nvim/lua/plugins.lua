@@ -43,6 +43,12 @@ return {
 	---------------------------------------------------
 	-- "weilbith/nvim-code-action-menu",
 	-- "kevinhwang91/nvim-bqf", -- Better quick fix
+	-- {
+	-- 	"tversteeg/registers.nvim",
+	-- 	config = function()
+	-- 		require("registers").setup()
+	-- 	end,
+	-- }, -- Visualize registers
 	"moll/vim-bbye", -- Better buffer delete
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	{
@@ -51,12 +57,6 @@ return {
 			require("neoscroll").setup()
 		end,
 	},
-	{
-		"tversteeg/registers.nvim",
-		config = function()
-			require("registers").setup()
-		end,
-	}, -- Visualize registers
 	{
 		"ethanholz/nvim-lastplace",
 		config = function()
