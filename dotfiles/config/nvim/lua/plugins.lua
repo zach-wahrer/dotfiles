@@ -93,6 +93,11 @@ return {
 			require("gitlinker").setup()
 		end,
 	},
+	{
+		"smoka7/multicursors.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS
