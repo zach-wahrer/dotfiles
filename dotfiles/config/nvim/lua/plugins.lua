@@ -2,12 +2,8 @@ return {
 	---------------------------------------------------
 	-- THEMES
 	---------------------------------------------------
-	{ "navarasu/onedark.nvim", lazy = false, priority = 1000 },
-	-- {
-	-- 	"maxmx03/fluoromachine.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- },
+	-- { "navarasu/onedark.nvim", lazy = false, priority = 1000 },
+	{ "maxmx03/fluoromachine.nvim", lazy = false, priority = 1000 },
 	-- { "cesaralvarod/tokyogogh.nvim", lazy = false, priority = 1000 }, -- GOOD!
 	-- "tiagovla/tokyodark.nvim"
 	-- "rebelot/kanagawa.nvim"
@@ -49,7 +45,7 @@ return {
 	-- 		require("registers").setup()
 	-- 	end,
 	-- }, -- Visualize registers
-	"moll/vim-bbye", -- Better buffer delete
+	"moll/vim-bbye",     -- Better buffer delete
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	{
 		"karb94/neoscroll.nvim",

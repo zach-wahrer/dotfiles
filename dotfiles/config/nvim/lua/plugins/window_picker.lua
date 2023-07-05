@@ -18,7 +18,15 @@ function M.config()
 				buftype = { "terminal", "quickfix" },
 			},
 		},
-		other_win_hl_color = Colors.red,
+		highlights = {
+			statusline = {
+				focused = {
+					fg = Colors.fg,
+					bg = Colors.pink,
+					bold = true,
+				},
+			},
+		},
 	})
 end
 

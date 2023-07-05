@@ -37,7 +37,7 @@ function M.config()
 	require("veil").setup({
 		sections = {
 			builtin.sections.animated(texts, {
-				hl = { fg = Colors.red },
+				hl = { fg = Colors.pink },
 			}),
 		},
 	})

@@ -1,24 +1,31 @@
-local o = vim.o -- Global
+local o = vim.o     -- Global
 local api = vim.api -- Api
 
 -- Color               --
-require("onedark").setup({
-	style = "deep",
-})
-require("onedark").load()
+-- require("onedark").setup({
+-- 	style = "deep",
+-- })
+-- require("onedark").load()
 
 Colors = require("colors")
 
--- require("fluoromachine").setup({
--- 	glow = false,
--- 	-- theme = "retrowave",
--- 	theme = "fluromachine",
--- 	overrides = {
--- 		["Normal"] = { bg = Colors.black },
--- 	},
--- })
---
--- vim.cmd.colorscheme("fluoromachine")
+require("fluoromachine").setup({
+	glow = false,
+	-- theme = "retrowave",
+	theme = "fluromachine",
+	colors = function(_, d)
+		return {
+			bg = Colors.bg0,
+		}
+	end,
+	overrides = {
+		-- ["Normal"] = { bg = Colors.bg0 },
+		-- ["SignColumn"] = { bg = Colors.bg0 },
+		-- ["NumberColumn"] = { bg = Colors.bg0 },
+	},
+})
+
+vim.cmd.colorscheme("fluoromachine")
 
 o.termguicolors = true
 

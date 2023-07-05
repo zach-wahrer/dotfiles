@@ -24,13 +24,14 @@ function M.config()
 
 	lualine.setup({
 		options = {
-			theme = "onedark",
+			theme = "fluoromachine",
+			-- theme = "onedark",
 			globalstatus = true,
 		},
 		sections = {
 			lualine_a = { "mode" },
 			lualine_b = {
-				{ "filename", path = 3, color = { fg = Colors.blue } },
+				{ "filename", path = 3, color = { fg = Colors.black } },
 				"branch",
 				"diff",
 				"diagnostics",
