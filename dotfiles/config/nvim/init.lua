@@ -15,11 +15,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("config")
 require("lazy").setup("plugins", {
 	defaults = { lazy = false },
-	install = { colorscheme = { "onedark" } },
+	install = { colorscheme = { "fluoromachine" } },
 	checker = { enabled = true },
 })
+require("config")
 require("mapping")
-require("color")
+require("colors")
