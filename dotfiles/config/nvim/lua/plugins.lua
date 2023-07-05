@@ -45,7 +45,7 @@ return {
 	-- 		require("registers").setup()
 	-- 	end,
 	-- }, -- Visualize registers
-	"moll/vim-bbye",     -- Better buffer delete
+	"moll/vim-bbye", -- Better buffer delete
 	"arp242/undofile_warn.vim", -- Warn if undoing past current
 	{
 		"karb94/neoscroll.nvim",
