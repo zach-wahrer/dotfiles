@@ -18,52 +18,38 @@ return {
 	---------------------------------------------------
 	-- TREESITTER --
 	---------------------------------------------------
-	"HiPhish/nvim-ts-rainbow2", -- Rainbow tags
+	{ "HiPhish/nvim-ts-rainbow2", event = "VeryLazy" }, -- Rainbow tags
 
 	---------------------------------------------------
 	-- INPUT
 	---------------------------------------------------
-	"svban/YankAssassin.vim", -- Keep cursor in same spot after yank
-	{
-		"ray-x/sad.nvim",
-		config = function()
-			require("sad").setup({
-				diff = "diff-so-fancy",
-			})
-		end,
-		dependencies = { "ray-x/guihua.lua" },
-	}, -- Find/replace
+	{ "svban/YankAssassin.vim", event = "VeryLazy" }, -- Keep cursor in same spot after yank
 
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	-- "weilbith/nvim-code-action-menu",
-	-- "kevinhwang91/nvim-bqf", -- Better quick fix
-	-- {
-	-- 	"tversteeg/registers.nvim",
-	-- 	config = function()
-	-- 		require("registers").setup()
-	-- 	end,
-	-- }, -- Visualize registers
-	"moll/vim-bbye", -- Better buffer delete
-	"arp242/undofile_warn.vim", -- Warn if undoing past current
+	{ "moll/vim-bbye", event = "VeryLazy" }, -- Better buffer delete
+	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
 			require("neoscroll").setup()
 		end,
+		event = "VeryLazy",
 	},
 	{
 		"ethanholz/nvim-lastplace",
 		config = function()
 			require("nvim-lastplace").setup({})
 		end,
+		event = "VeryLazy",
 	}, -- Remember last pace in file
 	{
 		"tiagovla/scope.nvim",
 		config = function()
 			require("scope").setup()
 		end,
+		event = "VeryLazy",
 	}, -- Scope buffers to tabs
 	{
 		"chrishrb/gx.nvim",
@@ -71,23 +57,15 @@ return {
 		config = function()
 			require("gx").setup()
 		end,
+		event = "VeryLazy",
 	}, -- Open links with `gx`
-	{
-		"folke/flash.nvim",
-		opts = {
-			modes = {
-				char = {
-					keys = { "f", "F", "", "T" },
-				},
-			},
-		},
-	},
 	{
 		"linrongbin16/gitlinker.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("gitlinker").setup()
 		end,
+		event = "VeryLazy",
 	},
 	{
 		"smoka7/multicursors.nvim",
@@ -103,18 +81,19 @@ return {
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
+		event = "VeryLazy",
 	},
 
 	---------------------------------------------------
 	-- LANGUAGES
 	---------------------------------------------------
-	-- "mechatroner/rainbow_csv",
-	"ckipp01/stylua-nvim", -- Lua formatting
+	{ "ckipp01/stylua-nvim", ft = "lua" }, -- Lua formatting
 	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
+		ft = "markdown",
 	},
 
 	---------------------------------------------------
@@ -126,6 +105,7 @@ return {
 			require("dap-go").setup()
 		end,
 		dependencies = { "mfussenegger/nvim-dap" },
+		ft = { "go", "gomod" },
 	}, -- Adapt delve to dap
 
 	---------------------------------------------------
@@ -136,26 +116,30 @@ return {
 		config = function()
 			require("gotests").setup()
 		end,
+		ft = { "go", "gomod" },
 	}, -- Generate tests for go functions
 
 	---------------------------------------------------
 	-- GIT
 	---------------------------------------------------
-	"tpope/vim-fugitive", -- Git functions / Only using blame feature
-	"rhysd/git-messenger.vim", -- Enhanced gitblame
-	"sindrets/diffview.nvim", -- Git diff view
+	{ "tpope/vim-fugitive", event = "VeryLazy" }, -- Git functions / Only using blame feature
+	{ "rhysd/git-messenger.vim", event = "VeryLazy" }, -- Enhanced gitblame
+	{ "sindrets/diffview.nvim", event = "VeryLazy" }, -- Git diff view
 
 	---------------------------------------------------
-
 	-- KITTY
 	---------------------------------------------------
-	"fladson/vim-kitty", -- Syntax highlight for kitty config
+	{
+		"fladson/vim-kitty",
+		ft = "kitty",
+	}, -- Syntax highlight for kitty config
 	{
 		"hermitmaster/nvim-kitty-navigator",
 		build = "cp kitty/* ~/.config/kitty/",
 		config = function()
 			require("nvim-kitty-navigator").setup()
 		end,
+		event = "VeryLazy",
 	}, -- Navigation for kitty
 
 	---------------------------------------------------
@@ -166,5 +150,6 @@ return {
 		config = function()
 			require("dotenv").setup()
 		end,
+		event = "VeryLazy",
 	},
 }

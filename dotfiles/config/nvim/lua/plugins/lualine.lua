@@ -6,6 +6,7 @@ local M = {
 		"gennaro-tedesco/nvim-possession",
 		"lewis6991/gitsigns.nvim",
 	},
+	event = "VeryLazy",
 }
 
 function M.config()
@@ -32,6 +33,7 @@ function M.config()
 			lualine_a = { "mode" },
 			lualine_b = {
 				{ "filename", path = 3, color = { fg = Colors.black } },
+				"filetype",
 				"branch",
 				"diff",
 				"diagnostics",
@@ -45,7 +47,7 @@ function M.config()
 					fmt = show_macro_recording,
 					color = { fg = Colors.red },
 				},
-				{ "searchcount",                       color = { fg = Colors.yellow } },
+				{ "searchcount", color = { fg = Colors.yellow } },
 				{ "require'nvim-possession'.status()", color = { fg = Colors.green } },
 				-- "encoding",
 				-- "fileformat",

@@ -1,6 +1,7 @@
 local M = {
 	"rafamadriz/friendly-snippets",
 	enabled = false,
+	event = "VeryLazy",
 }
 
 function M.config()

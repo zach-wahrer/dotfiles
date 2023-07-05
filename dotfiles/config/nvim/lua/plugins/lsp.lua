@@ -9,6 +9,7 @@ local M = {
 			end,
 		}, -- Show func signature
 	},
+	event = "VeryLazy",
 }
 
 function M.config()

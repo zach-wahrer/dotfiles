@@ -1,6 +1,7 @@
 local M = {
 	"rcarriga/nvim-dap-ui",
 	dependencies = { "mfussenegger/nvim-dap" },
+	event = "VeryLazy",
 }
 
 function M.config()

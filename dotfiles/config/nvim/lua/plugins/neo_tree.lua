@@ -6,6 +6,7 @@ local M = {
 		"MunifTanjim/nui.nvim",
 		"s1n7ax/nvim-window-picker",
 	},
+	event = "VeryLazy",
 }
 
 function M.config()

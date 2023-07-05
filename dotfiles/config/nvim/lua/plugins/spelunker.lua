@@ -1,6 +1,7 @@
 local M = {
 	"kamykn/spelunker.vim",
 	dependencies = { "kamykn/popup-menu.nvim" },
+	event = "VeryLazy",
 }
 
 function M.config()

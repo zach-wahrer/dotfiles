@@ -1,5 +1,6 @@
 local M = {
 	"mvllow/modes.nvim",
+	event = "VeryLazy",
 }
 
 function M.config()

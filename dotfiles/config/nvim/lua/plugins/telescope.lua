@@ -12,6 +12,7 @@ local M = {
 			build = "make",
 		},
 	},
+	event = "VeryLazy",
 }
 
 function M.config()

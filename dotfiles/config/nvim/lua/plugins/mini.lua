@@ -1,5 +1,6 @@
 local M = {
 	"echasnovski/mini.nvim",
+	event = "VeryLazy",
 }
 
 function M.config()
