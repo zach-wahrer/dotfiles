@@ -3,7 +3,7 @@ return {
 	-- THEMES
 	---------------------------------------------------
 	-- { "navarasu/onedark.nvim", lazy = false, priority = 1000 },
-	{ "maxmx03/fluoromachine.nvim", lazy = false, priority = 1000 },
+	{ "maxmx03/fluoromachine.nvim", lazy = false,      priority = 1000 },
 	-- { "cesaralvarod/tokyogogh.nvim", lazy = false, priority = 1000 }, -- GOOD!
 	-- "tiagovla/tokyodark.nvim"
 	-- "rebelot/kanagawa.nvim"
@@ -18,18 +18,18 @@ return {
 	---------------------------------------------------
 	-- TREESITTER --
 	---------------------------------------------------
-	{ "HiPhish/nvim-ts-rainbow2", event = "VeryLazy" }, -- Rainbow tags
+	{ "HiPhish/nvim-ts-rainbow2",   event = "VeryLazy" }, -- Rainbow tags
 
 	---------------------------------------------------
 	-- INPUT
 	---------------------------------------------------
-	{ "svban/YankAssassin.vim", event = "VeryLazy" }, -- Keep cursor in same spot after yank
+	{ "svban/YankAssassin.vim",     event = "VeryLazy" }, -- Keep cursor in same spot after yank
 
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	{ "moll/vim-bbye", event = "VeryLazy" }, -- Better buffer delete
-	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
+	{ "moll/vim-bbye",              event = "VeryLazy" }, -- Better buffer delete
+	{ "arp242/undofile_warn.vim",   event = "VeryLazy" }, -- Warn if undoing past current
 	{
 		"karb94/neoscroll.nvim",
 		config = function()
@@ -69,6 +69,7 @@ return {
 	},
 	{
 		"smoka7/multicursors.nvim",
+		dependencies = { "smoka7/hydra.nvim" },
 		event = "VeryLazy",
 		opts = {},
 	},
@@ -87,7 +88,7 @@ return {
 	---------------------------------------------------
 	-- LANGUAGES
 	---------------------------------------------------
-	{ "ckipp01/stylua-nvim", ft = "lua" }, -- Lua formatting
+	{ "ckipp01/stylua-nvim",     ft = "lua" }, -- Lua formatting
 	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
@@ -122,9 +123,9 @@ return {
 	---------------------------------------------------
 	-- GIT
 	---------------------------------------------------
-	{ "tpope/vim-fugitive", event = "VeryLazy" }, -- Git functions / Only using blame feature
+	{ "tpope/vim-fugitive",      event = "VeryLazy" }, -- Git functions / Only using blame feature
 	{ "rhysd/git-messenger.vim", event = "VeryLazy" }, -- Enhanced gitblame
-	{ "sindrets/diffview.nvim", event = "VeryLazy" }, -- Git diff view
+	{ "sindrets/diffview.nvim",  event = "VeryLazy" }, -- Git diff view
 
 	---------------------------------------------------
 	-- KITTY
