@@ -16,11 +16,6 @@ return {
 	-- "rmehri01/onenord.nvim"
 
 	---------------------------------------------------
-	-- TREESITTER --
-	---------------------------------------------------
-	{ "HiPhish/nvim-ts-rainbow2",   event = "VeryLazy" }, -- Rainbow tags
-
-	---------------------------------------------------
 	-- INPUT
 	---------------------------------------------------
 	{ "svban/YankAssassin.vim",     event = "VeryLazy" }, -- Keep cursor in same spot after yank
