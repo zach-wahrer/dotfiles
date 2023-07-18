@@ -41,9 +41,11 @@ set_vim_keymap(
 	"Export colors for kitty terminal"
 )
 
+-- Format Keybinds --
 set_vim_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", "Insert current date")
 set_vim_keymap("v", "<leader>d64", "c<c-r>=system('base64 --decode', @\")<CR><ESC>", "Base64 decode string")
 set_vim_keymap("v", "<leader>e64", "c<c-r>=system('base64', @\")<CR><ESC>", "Base64 decode string")
+set_vim_keymap("n", "<leader>jq", "<CMD>%!jq -S .<CR>", "Format current buffer with JQ")
 
 -- Tab Keybinds --
 set_vim_keymap("n", "<leader>tn", "<CMD>tabnew<CR>", "New tab page")
