@@ -16,13 +16,9 @@ return {
 	-- "rmehri01/onenord.nvim"
 
 	---------------------------------------------------
-	-- INPUT
-	---------------------------------------------------
-	{ "svban/YankAssassin.vim",     event = "VeryLazy" }, -- Keep cursor in same spot after yank
-
-	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
+	{ "svban/YankAssassin.vim",     event = "VeryLazy" }, -- Keep cursor in same spot after yank
 	{ "moll/vim-bbye",              event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim",   event = "VeryLazy" }, -- Warn if undoing past current
 	{
