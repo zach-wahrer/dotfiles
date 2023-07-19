@@ -1,4 +1,4 @@
-local o = vim.o -- Global
+local o = vim.o     -- Global
 local api = vim.api -- Api
 
 Colors = {
@@ -75,19 +75,21 @@ require("fluoromachine").setup({
 	colors = function(_, d)
 		return {
 			bg = Colors.bg0,
+			alt_bg = Colors.bg0,
 		}
 	end,
-	overrides = {
-		-- ["Normal"] = { bg = Colors.bg0 },
-		-- ["SignColumn"] = { bg = Colors.bg0 },
-		-- ["NumberColumn"] = { bg = Colors.bg0 },
-	},
+	-- overrides = {
+	-- ["Normal"] = { bg = Colors.bg0 },
+	-- ["SignColumn"] = { bg = Colors.bg0 },
+	-- ["NumberColumn"] = { bg = Colors.bg0 },
+	-- },
 })
 
 vim.cmd.colorscheme("fluoromachine")
 
 o.termguicolors = true
 
+api.nvim_set_hl(0, "Normal", { bg = Colors.bg0 })
 api.nvim_set_hl(0, "CursorLine", { bg = Colors.black })
 api.nvim_set_hl(0, "Search", { bg = Colors.blue, fg = Colors.black, underline = 1 })
 api.nvim_set_hl(0, "CurSearch", { bg = Colors.orange, fg = Colors.black, underline = 1 })
@@ -111,6 +113,6 @@ api.nvim_set_hl(0, "DapBreakpointYellow", { bg = "", fg = Colors.yellow })
 api.nvim_set_hl(0, "IlluminatedWordText", { bg = Colors.bg1, underline = 1 })
 api.nvim_set_hl(0, "IlluminatedWordRead", { bg = Colors.bg1, underline = 1 })
 api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = Colors.bg1, underline = 1 })
-vim.api.nvim_set_hl(0, "NoiceMini", { bg = Colors.black, fg = Colors.purple, blend = 0 })
+api.nvim_set_hl(0, "NoiceMini", { bg = Colors.black, fg = Colors.purple, blend = 0 })
 
 return Colors
