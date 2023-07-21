@@ -23,6 +23,22 @@ function M.config()
 		end
 	end
 
+	local function wordcount()
+		local wc = vim.fn.wordcount()
+		local words = 0
+		local chars = 0
+
+		if wc.visual_words then
+			words = wc.visual_words
+			chars = wc.visual_chars
+		else
+			words = wc.words
+			chars = wc.chars
+		end
+
+		return words .. "w / " .. chars .. "c"
+	end
+
 	lualine.setup({
 		options = {
 			theme = "fluoromachine",
@@ -47,8 +63,9 @@ function M.config()
 					fmt = show_macro_recording,
 					color = { fg = Colors.red },
 				},
-				{ "searchcount", color = { fg = Colors.yellow } },
+				{ "searchcount",                       color = { fg = Colors.yellow } },
 				{ "require'nvim-possession'.status()", color = { fg = Colors.green } },
+				{ "wordcount",                         fmt = wordcount },
 				-- "encoding",
 				-- "fileformat",
 				-- "filetype",
