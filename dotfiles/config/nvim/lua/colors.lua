@@ -1,4 +1,4 @@
-local o = vim.o     -- Global
+local o = vim.o -- Global
 local api = vim.api -- Api
 
 Colors = {
@@ -114,5 +114,6 @@ api.nvim_set_hl(0, "IlluminatedWordText", { bg = Colors.bg1, underline = 1 })
 api.nvim_set_hl(0, "IlluminatedWordRead", { bg = Colors.bg1, underline = 1 })
 api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = Colors.bg1, underline = 1 })
 api.nvim_set_hl(0, "NoiceMini", { bg = Colors.black, fg = Colors.purple, blend = 0 })
+api.nvim_set_hl(0, "TelescopeBorder", { fg = Colors.purple })
 
 return Colors

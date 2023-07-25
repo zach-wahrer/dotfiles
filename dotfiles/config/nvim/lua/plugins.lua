@@ -21,10 +21,20 @@ return {
 	{ "svban/YankAssassin.vim",     event = "VeryLazy" }, -- Keep cursor in same spot after yank
 	{ "moll/vim-bbye",              event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim",   event = "VeryLazy" }, -- Warn if undoing past current
+	-- {
+	-- 	"karb94/neoscroll.nvim",
+	-- 	config = function()
+	-- 		require("neoscroll").setup()
+	-- 	end,
+	-- 	event = "VeryLazy",
+	-- },
 	{
-		"karb94/neoscroll.nvim",
+		"declancm/cinnamon.nvim",
 		config = function()
-			require("neoscroll").setup()
+			require("cinnamon").setup({
+				default_delay = 3,
+				hide_cursor = true,
+			})
 		end,
 		event = "VeryLazy",
 	},
