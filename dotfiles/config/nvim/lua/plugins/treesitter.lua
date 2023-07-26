@@ -21,6 +21,7 @@ function M.config()
 			"html",
 			"yaml",
 			"hcl",
+			"make",
 			"markdown",
 			"markdown_inline",
 			"regex",
