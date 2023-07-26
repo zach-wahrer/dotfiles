@@ -150,6 +150,7 @@ set_vim_keymap("n", "<leader>gv", "<CMD>lua require('functions').gitDiffToggle()
 -- Flash --
 set_vim_keymap("n", "<Backspace>", "<CMD>lua require('flash').jump()<CR>", "Flash jump")
 set_vim_keymap("n", "<leader><Backspace>", "<CMD>lua require('flash').treesitter()<CR>", "Flash treesitter")
+set_vim_keymap("n", "<leader>y", "<CMD>lua require('flash').treesitter_search()<CR>", "Flash treesitter search")
 
 -- Fugitive --
 set_vim_keymap("n", "<leader>gb", "<CMD>Git blame<CR>", "Git blame buffer")
