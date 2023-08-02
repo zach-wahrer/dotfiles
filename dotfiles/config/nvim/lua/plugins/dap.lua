@@ -15,6 +15,8 @@ function M.config()
 	vim.fn.sign_define("DapStopped", { text = "", texthl = "DapBreakpointGreen", linehl = "", numhl = "" })
 	vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRed", linehl = "", numhl = "" })
 
+	dap.defaults.switchbuf = "uselast" -- For dap-tab plugin
+
 	dap.adapters.node2 = {
 		type = "executable",
 		command = "node",

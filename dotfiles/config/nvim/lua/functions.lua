@@ -38,6 +38,11 @@ function M.debugSetEnvironment()
 	end
 end
 
+function M.resetDAPLayout()
+	vim.cmd("lua require('dapui').close()")
+	vim.cmd("lua require('dapui').open({reset = true})")
+end
+
 function M.fileExists(name)
 	local f = io.open(name, "r")
 	if f ~= nil then
