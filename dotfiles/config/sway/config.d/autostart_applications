@@ -21,5 +21,5 @@ exec syncthing serve
 # Sway Fader
 # exec python3 ~/.config/sway/scripts/swayfader.py
 
-# Comms
-exec slack
+# Make java applications work
+exec wmname
