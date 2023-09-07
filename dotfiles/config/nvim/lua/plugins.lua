@@ -22,6 +22,27 @@ return {
 	{ "moll/vim-bbye", event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
 	{
+		"tversteeg/registers.nvim",
+		config = function()
+			require("registers").setup({})
+		end,
+	},
+	{
+		"utilyre/sentiment.nvim",
+		version = "*",
+		event = "VeryLazy", -- keep for lazy loading
+		opts = {},
+		init = function()
+			-- `matchparen.vim` needs to be disabled manually in case of lazy loading
+			vim.g.loaded_matchparen = 1
+		end,
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
+	{
 		"declancm/cinnamon.nvim",
 		config = function()
 			require("cinnamon").setup({
