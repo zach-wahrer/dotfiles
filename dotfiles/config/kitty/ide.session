@@ -8,8 +8,6 @@ launch --cwd=$HOME/.config --env NVIM=true --env GOTESTS_TEMPLATE=testify zsh
 launch --title "Config Terminal" --cwd=$HOME/dotfiles zsh
 resize_window shorter 28
 
-# {%@@ if profile == "to-wolf" @@%}
-# {%@@ endif @@%}
 ## Code ##
 new_tab Code
 layout vertical

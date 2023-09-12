@@ -67,9 +67,6 @@ dotfiles:
   d_tridactyl:
     src: config/tridactyl
     dst: ~/.config/tridactyl
-  d_screenlayout:
-    src: config/screenlayout
-    dst: ~/.config/screenlayout
   d_picom:
     src: config/picom
     dst: ~/.config/picom
@@ -153,7 +150,6 @@ profiles:
       - d_scripts
       - d_ranger
       - d_tridactyl
-      - d_screenlayout
       - d_styles
       - d_zsh
       - d_sway

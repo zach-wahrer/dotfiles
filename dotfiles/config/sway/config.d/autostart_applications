@@ -18,6 +18,11 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 # Syncthing
 exec syncthing serve
 
+# Slack
+{%@@ if profile == "neto-wolf" @@%}
+exec slack
+{%@@ endif @@%}
+
 # Sway Fader
 # exec python3 ~/.config/sway/scripts/swayfader.py
 

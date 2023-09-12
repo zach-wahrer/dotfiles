@@ -91,8 +91,6 @@ alias bsnvim="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'Packe
 
 alias wgup="sudo wg-quick up wg0"
 alias wgdown="sudo wg-quick down wg0"
-{%@@ if profile == "to-wolf" @@%}
-alias tsup="sudo tailscale up --accept-routes"
-alias tsdown="sudo tailscale down"
-alias zt="z ~/go/src/to/"
+{%@@ if profile == "neto-wolf" @@%}
+alias sway="WLR_NO_HARDWARE_CURSORS=1 \sway --unsupported-gpu"
 {%@@ endif @@%}
