@@ -50,6 +50,7 @@ source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 export BROWSER='firefox'
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" ## https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
