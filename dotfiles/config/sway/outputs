@@ -1,18 +1,72 @@
+{%@@ if profile == "neto-wolf" @@%}
 output "eDP-1" {
-    mode  1920x1200@59.95Hz
-    pos 5331 1606
+    mode  1920x1080@144.003Hz
+    pos 5140 4126
     transform normal
     scale 1.0
     scale_filter nearest
     adaptive_sync off
     dpms on
 }
-output "DP-3" {
-    mode  3840x2160@30.0Hz
-    pos 2131 1242
-    transform normal
-    scale 1.2000000000000002
+output "DP-4" {
+    mode  1920x1080@60.0Hz
+    pos 7714 2417
+    transform 90
+    scale 1.0
     scale_filter nearest
     adaptive_sync off
     dpms on
 }
+output "HDMI-A-4" {
+    mode  3440x1440@99.982Hz
+    pos 4274 2686
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
+}
+
+workspace 1 output HDMI-A-4
+workspace 2 output HDMI-A-4
+workspace 3 output HDMI-A-4
+workspace 4 output HDMI-A-4
+workspace 5 output HDMI-A-4
+workspace 6 output DP-4
+workspace 7 output DP-4
+workspace 8 output DP-4
+workspace 9 output DP-4
+workspace 10 output DP-4
+
+{%@@ else @@%}
+output "HDMI-A-2" {
+    mode  1920x1200@60.0Hz
+    pos 1238 320
+    transform 270
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
+}
+output "eDP-1" {
+    mode  1920x1080@60.03Hz
+    pos 2318 733
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
+}
+
+workspace 1 output HDMI-A-2
+workspace 2 output HDMI-A-2
+workspace 3 output HDMI-A-2
+workspace 4 output HDMI-A-2
+workspace 5 output HDMI-A-2
+workspace 6 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
+workspace 10 output eDP-1
+
+{%@@ endif @@%}
