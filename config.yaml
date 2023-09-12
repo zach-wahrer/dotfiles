@@ -110,7 +110,7 @@ dotfiles:
     src: config/gtk-3.0/settings.ini
     dst: ~/.config/gtk-3.0/settings.ini
 profiles:
-  to-wolf:
+  neto-wolf:
     dotfiles:
       - f_gitconfig
       - f_zshrc
