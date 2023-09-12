@@ -37,7 +37,7 @@ sudo usermod -aG docker "$USER"
 # newgrp docker # Or reboot if still getting non-sudo docker permission errors
 
 ## Dotfiles ##
-echo "Generate ssh key and add to github. [Enter to continue...]"git@github.cloudoptix.io:Bayonet/agentless-server.git
+echo "Generate ssh key and add to github. [Enter to continue...]"
 firefox https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent &
 read -r _
 
