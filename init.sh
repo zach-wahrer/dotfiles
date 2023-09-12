@@ -43,7 +43,8 @@ read -r _
 
 cd ~ && git clone git@github.com:zach-wahrer/dotfiles.git
 
-pip3 install --user -r ~/dotfiles/dotdrop/requirements.txt
+## pip3 install --user -r ~/dotfiles/dotdrop/requirements.txt
+sudo pacman -S python-jinja python-requests python-tomli-w python-docopt python-ruamel-yaml
 echo "Create new profile for machine if needed. [Enter to continue...]"
 read -r _
 ~/dotfiles/dotdrop/dotdrop.sh install
