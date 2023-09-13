@@ -236,3 +236,9 @@ bindsym $mod+r mode "resize"
     bindsym $mod+t exec kitty nvim ~/.config/sway/cheatsheet
     bindsym $mod+Shift+n exec ~/scripts/nvim-edit.sh
     bindsym $mod+n exec swaync-client -t -sw
+
+#
+# Profile Specific
+#
+    bindsym $mod+Shift+r output HDMI-A-2 transform 0
+    bindsym $mod+Shift+v output HDMI-A-2 transform 270
