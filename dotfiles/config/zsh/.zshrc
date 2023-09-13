@@ -27,9 +27,14 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 zstyle ':completion:*' list-prompt   '' # Remove "Do you want to see X possibility"
 zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibility"
 
-{%@@ if profile == "to-wolf" @@%}
+{%@@ if profile == "neto-wolf" @@%}
 # USER COMPLETIONS #
 source <(kubectl completion zsh)
+{%@@ endif @@%}
+
+{%@@ if profile == "neto-wolf" @@%}
+# SOURCE KEYS #
+ssh-add ~/.ssh/personal_github
 {%@@ endif @@%}
 
 # CONFIGS #

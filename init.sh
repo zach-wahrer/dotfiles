@@ -11,9 +11,8 @@ sudo pacman -S git base-devel gcc docker docker-compose python-pip pyright npm j
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers ttf-sourcecodepro-nerd ttf-sudo swaync wlogout wmname  # System
-yay -S checkmake dbgate-bin dotenv-linter hadolint syncthing vale # Dev tools
+yay -S checkmake beautysh dbgate-bin dotenv-linter gitlint hadolint python-pynvim python-setuptools syncthing vale # Dev tools
 
-pip3 install beautysh gitlint pynvim setuptools # Dev tools
 sudo npm install -g dockerfile-language-server-nodejs cspell markdownlint-cli2 # Dev tools
 
 systemctl --user enable --now pipewire pipewire.socket pipewire-media-session.service xdg-desktop-portal-rewrite-launchers.service
