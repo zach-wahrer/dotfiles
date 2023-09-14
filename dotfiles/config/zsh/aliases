@@ -59,10 +59,6 @@ alias gwp='git worktree prune -v'
 alias gk='gitk --all --branches &!'
 alias gke='gitk --all $(git log -g --pretty=%h) &!'
 
-# TESTS #
-alias gt="go test -race ./..."
-alias gl="golangci-lint run "
-
 # TERRAFORM #
 alias tf='terraform'
 alias tfp='terraform plan'
@@ -71,7 +67,9 @@ alias tfa='terraform apply'
 # GO #
 alias go="richgo"
 alias gmt="go mod tidy"
-alias c="go mod tidy; golangci-lint run; goreportcard-cli -v"
+alias gt="go test -race ./..."
+alias gtc="go test ./... -coverprofile=coverage.out && go tool cover -html=coverage.out && rm coverage.out"
+alias gl="golangci-lint run "
 
 # LUA #
 alias luamake=/home/zach/Desktop/lua-language-server/3rd/luamake/luamake
