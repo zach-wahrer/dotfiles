@@ -30,6 +30,7 @@ function M.config()
 			"markdown_inline",
 			"python",
 			"regex",
+			"toml",
 			"terraform",
 			"typescript",
 			"vim",
