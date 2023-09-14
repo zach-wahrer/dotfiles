@@ -35,6 +35,7 @@ source <(kubectl completion zsh)
 {%@@ if profile == "neto-wolf" @@%}
 # SOURCE KEYS #
 ssh-add ~/.ssh/personal_github
+ssh-add ~/.ssh/gitlab
 {%@@ endif @@%}
 
 # CONFIGS #
