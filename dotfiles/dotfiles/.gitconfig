@@ -1,6 +1,6 @@
 [user]
 	name = Zach Wahrer
-	email = zach.wahrer@threatoptix.ai
+	email = zach.wahrer@netography.com
 [core]
 	editor = nvim
 	pager = delta --dark --line-numbers --side-by-side
@@ -36,5 +36,3 @@
 [gc]
 	reflogExpire = 200
 	reflogExpireUnreachable = 90
-[url "ssh://github.cloudoptix.io/"]
-	insteadOf = https://github.cloudoptix.io/
