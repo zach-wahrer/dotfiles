@@ -18,7 +18,7 @@ vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup("plugins", {
 	defaults = { lazy = false },
 	install = { colorscheme = { "fluoromachine" } },
-	checker = { enabled = true },
+	checker = { enabled = false },
 })
 require("config")
 require("mapping")
