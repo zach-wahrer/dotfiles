@@ -1,6 +1,10 @@
 [user]
 	name = Zach Wahrer
+{%@@ if profile == "neto-wolf" @@%}
 	email = zach.wahrer@netography.com
+{%@@ else @@%}
+	email = me@zachw.io
+{%@@ endif @@%}
 [core]
 	editor = nvim
 	pager = delta --dark --line-numbers --side-by-side
@@ -36,3 +40,7 @@
 [gc]
 	reflogExpire = 200
 	reflogExpireUnreachable = 90
+{%@@ if profile == "neto-wolf" @@%}
+[url "git@gitlab.com:netography/"]
+	insteadOf = https://gitlab.com/netography/
+{%@@ endif @@%}
