@@ -24,7 +24,7 @@ exec syncthing serve
 
 # Slack
 {%@@ if profile == "neto-wolf" @@%}
-exec slack
+exec slack --enable-features=WebRTCPipeWireCapturer # https://forums.slackcommunity.com/s/feed/0D53a00009BSEGACA5?language=en_US
 {%@@ endif @@%}
 
 # Sway Fader
