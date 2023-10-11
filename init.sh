@@ -8,7 +8,7 @@ sudo pacman -S ncdu bpytop lsd bat git-delta sad tk mako swaylock waybar wofi fi
     sudo systemctl enable --now ntpd && sudo systemctl enable --now ufw	# System
 sudo ufw enable && sudo ufw default deny # Firewall
 sudo pacman -S kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
-sudo pacman -S git base-devel gcc docker docker-compose python-pip pyright npm jq fx eslint prettier # Dev tools
+sudo pacman -S git base-devel gcc deno docker docker-compose python-pip pyright npm jq fx eslint prettier # Dev tools
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers ttf-sourcecodepro-nerd ttf-sudo swaync wlogout wmname grim slurp swappy usbutils  # System

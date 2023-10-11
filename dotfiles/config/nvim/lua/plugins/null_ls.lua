@@ -28,7 +28,8 @@ function M.config()
 
 			null_ls.builtins.formatting.beautysh,
 			-- null_ls.builtins.formatting.eslint,
-			null_ls.builtins.formatting.prettier,
+			-- null_ls.builtins.formatting.prettier,
+			null_ls.builtins.formatting.deno_fmt,
 			null_ls.builtins.formatting.stylua,
 			null_ls.builtins.formatting.terraform_fmt,
 		},
