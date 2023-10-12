@@ -9,6 +9,7 @@
     "modules-left": [
         "custom/launcher",
         "sway/workspaces",
+	"sway/scratchpad",
         "sway/mode",
     ],
 
@@ -153,6 +154,14 @@
 //            "3": "",
 //            "4": "",
         }
+    },
+
+   "sway/scratchpad": {
+	"format": "{icon} {count}",
+	"show-empty": false,
+	"format-icons": ["", ""],
+	"tooltip": true,
+	"tooltip-format": "{app}: {title}"
     },
 
     "pulseaudio": {
