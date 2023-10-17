@@ -48,7 +48,7 @@ function M.config()
 	telescope.load_extension("advanced_git_search")
 	telescope.load_extension("fzf")
 	telescope.load_extension("env")
-	telescope.load_extension("notify")
+	-- telescope.load_extension("notify")
 	telescope.load_extension("undo")
 	telescope.load_extension("lazy")
 end

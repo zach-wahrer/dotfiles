@@ -16,7 +16,7 @@ set_vim_keymap({ "n", "v", "i" }, "<S-Up>", "", "Disable shift up")
 set_vim_keymap({ "n", "v", "i" }, "<S-Down>", "", "Disable shift down")
 
 set_vim_keymap("n", "<leader>o", "<CMD>only<CR>", "Close all windows but current")
-set_vim_keymap("n", "<leader>wo", "<CMD>set wrap<CR>", "Wrap text")
+set_vim_keymap("n", "<leader>wo", "<CMD>set wrap!<CR>", "Wrap text toggle")
 
 set_vim_keymap({ "n", "v" }, "H", "_", "Beginning of line")
 set_vim_keymap({ "n", "v" }, "L", "$", "End of line")
@@ -213,7 +213,7 @@ set_vim_keymap("n", "<leader>mc", "<CMD>MCstart<CR>", "Start multicursors using 
 set_vim_keymap("n", "<leader>mp", "<CMD>MCpattern<CR>", "Start multicursors and ask for pattern")
 
 -- Notify --
-set_vim_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", "Dismiss messages")
+-- set_vim_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", "Dismiss messages")
 
 -- Neo Tree --
 set_vim_keymap("n", ";", "<CMD>Neotree filesystem toggle<CR>", "Toggle neotree")
@@ -247,7 +247,7 @@ set_vim_keymap("n", "<leader>k", "<CMD>Telescope keymaps<CR>", "Search keymaps")
 set_vim_keymap("n", "<leader>ls", "<CMD>Telescope luasnip<CR>", "Search luasnip")
 set_vim_keymap("n", "<leader>e", "<CMD>Telescope env<CR>", "Search env vars")
 set_vim_keymap("n", "<leader>p", "<CMD>Telescope lazy<CR>", "Search in plugins/lazy")
-set_vim_keymap("n", "<leader>mo", "<CMD>Telescope notify<CR>", "Search in messages")
+-- set_vim_keymap("n", "<leader>mo", "<CMD>Telescope notify<CR>", "Search in messages")
 set_vim_keymap("n", "<leader>u", "<CMD>Telescope undo<CR>", "Search in undo history")
 set_vim_keymap(
 	"n",
