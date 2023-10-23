@@ -20,9 +20,13 @@ function M.config()
 	-- })
 
 	require("mini.comment").setup({
+		options = {
+			ignore_blank_line = true,
+		},
 		mappings = {
 			comment = "<C-/>",
 			comment_line = "<C-/>",
+			comment_visual = "<C-/>",
 		},
 	})
 
