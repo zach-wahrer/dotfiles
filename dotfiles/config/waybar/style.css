@@ -10,7 +10,7 @@
  * Keyframes
  * -------------------------------------------------------------------------- */
 
-@define-color highlight #AF6DF9;
+@define-color highlight #72f1b8;
 @define-color base1  #0e1013;
 
 @keyframes blink-warning {

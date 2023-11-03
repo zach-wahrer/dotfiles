@@ -30,7 +30,7 @@ for_window [shell="x_wayland"] title_format "%class - %title"
 #client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 #client.background       #F8F8F2
 
-client.focused          #000000 #000000 #000000 #FC199A   #FC199A
+client.focused          #000000 #000000 #000000 #72f1b8   #72f1b8
 client.focused_inactive #000000 #000000 #ffffff #484e50   #5f676a
 client.unfocused        #000000 #222222 #888888 #292d2e   #222222
 client.urgent           #fe4450 #fe4450 #ffffff #fe4450   #fe4450
