@@ -216,9 +216,9 @@ set_vim_keymap("n", "<leader>mp", "<CMD>MCpattern<CR>", "Start multicursors and 
 -- set_vim_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", "Dismiss messages")
 
 -- Neo Tree --
-set_vim_keymap("n", ";", "<CMD>Neotree filesystem toggle<CR>", "Toggle neotree")
-set_vim_keymap("n", "'", "<CMD>Neotree buffers toggle<CR>", "Toggle neotree buffer view")
-set_vim_keymap("n", "\\", "<CMD>Neotree reveal<CR>", "Show current buffer in neotree")
+set_vim_keymap("n", ";", "<CMD>Neotree filesystem toggle right<CR>", "Toggle neotree")
+set_vim_keymap("n", "'", "<CMD>Neotree buffers toggle right<CR>", "Toggle neotree buffer view")
+set_vim_keymap("n", "\\", "<CMD>Neotree reveal right<CR>", "Show current buffer in neotree")
 
 -- Possession --
 local pOK, possession = pcall(require, "nvim-possession")

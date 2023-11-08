@@ -17,7 +17,7 @@ function M.config()
 			vim.cmd("lua require('dap-tab').closeDebugWin()")
 		end,
 		post_hook = function()
-			vim.cmd("Neotree")
+			vim.cmd("Neotree reveal right")
 		end,
 	})
 end
