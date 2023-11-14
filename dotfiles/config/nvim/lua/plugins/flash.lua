@@ -3,8 +3,11 @@ local M = {
 	event = "VeryLazy",
 	opts = {
 		modes = {
+			search = {
+				enabled = false,
+			},
 			char = {
-				keys = { "f", "F", "", "T" },
+				enabled = false,
 			},
 		},
 	},
