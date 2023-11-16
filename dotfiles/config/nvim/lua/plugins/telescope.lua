@@ -17,8 +17,23 @@ local M = {
 function M.config()
 	local multi_open_mappings = require("scripts.telescope_multi_open")
 	local telescope = require("telescope")
+	local defaults = {
+		vimgrep_arguments = {
+			"rg",
+			-- "--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+			"--hidden",
+			"--sort",
+			"path",
+		},
+	}
 
 	telescope.setup({
+		defaults = defaults,
 		extensions = {
 			fzf = {
 				fuzzy = true, -- false will only do exact matching
