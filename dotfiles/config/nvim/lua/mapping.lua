@@ -158,18 +158,8 @@ set_vim_keymap("n", "<leader>y", "<CMD>lua require('flash').treesitter_search()<
 set_vim_keymap("n", "<leader>gb", "<CMD>Git blame<CR>", "Git blame buffer")
 
 -- GitLinker --
-set_vim_keymap(
-	{ "n", "v" },
-	"<leader>gl",
-	"<CMD>lua require('gitlinker').link({action = require('gitlinker.actions').clipboard})<CR>",
-	"Copy git link to clipboard"
-)
-set_vim_keymap(
-	{ "n", "v" },
-	"<leader>gL",
-	"<CMD>lua require('gitlinker').link({action = require('gitlinker.actions').system})<CR>",
-	"Open git link in browser"
-)
+set_vim_keymap({ "n", "v" }, "<leader>gl", "<CMD>GitLink<CR>", "Copy git link to clipboard")
+set_vim_keymap({ "n", "v" }, "<leader>gL", "<CMD>GitLink!<CR>", "Open git link in browser")
 
 -- GitMessenger --
 set_vim_keymap("n", "<leader>gd", "<CMD>GitMessenger<CR>", "Open additional git details about current line")
