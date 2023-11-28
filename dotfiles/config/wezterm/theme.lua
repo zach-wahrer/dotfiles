@@ -4,7 +4,12 @@ local module = {}
 function module.apply_to_config(config)
 	-- config.color_scheme = "Galizur"
 	config.font = wezterm.font("Sudo")
+
+{%@@ if profile == "red-wolf" @@%}
+	config.font_size = 13
+{%@@ else @@%}
 	config.font_size = 15
+{%@@ endif @@%}
 	config.tab_bar_at_bottom = true
 	config.use_fancy_tab_bar = false
 	config.enable_scroll_bar = true
