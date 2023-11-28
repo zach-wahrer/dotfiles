@@ -18,22 +18,11 @@ dotfiles:
   f_functions:
     src: config/zsh/functions
     dst: ~/.config/zsh/functions
-    chmod: "644"
-  f_scroll.py:
-    src: config/kitty/scroll.py
-    dst: ~/.config/kitty/scroll.py
-  f_kitty_opener.sh:
-    src: config/nvim/scripts/kitty_opener.sh
-    dst: ~/.config/nvim/scripts/kitty_opener.sh
-    chmod: "744"
-  f_accounting-startup.sh:
-    src: scripts/accounting-startup.sh
-    dst: ~/scripts/accounting-startup.sh
-    chmod: "744"
+    chmod: '644'
   f_nvim-startup.sh:
     src: scripts/nvim-startup.sh
     dst: ~/scripts/nvim-startup.sh
-    chmod: "744"
+    chmod: '744'
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
@@ -106,58 +95,57 @@ dotfiles:
   f_settings.ini:
     src: config/gtk-3.0/settings.ini
     dst: ~/.config/gtk-3.0/settings.ini
+  d_wezterm:
+    src: config/wezterm
+    dst: ~/.config/wezterm
 profiles:
   neto-wolf:
     dotfiles:
-      - f_gitconfig
-      - f_zshrc
-      - f_golangci.yml
-      - f_functions
-      - f_vale.ini
-      - f_scroll.py
-      - f_kitty_opener.sh
-      - f_nvim-startup.sh
-      - d_kitty
-      - d_nvim
-      - d_scripts
-      - d_ranger
-      - d_tridactyl
-      - d_styles
-      - d_zsh
-      - d_sway
-      - d_swaylock
-      - d_waybar
-      - d_envman
-      - d_swaync
-      - d_gtk-3.0
-      - d_wlogout
-      - d_cspell
-      - d_artty
-      - f_settings.ini
+    - f_gitconfig
+    - f_zshrc
+    - f_golangci.yml
+    - f_functions
+    - f_vale.ini
+    - f_nvim-startup.sh
+    - d_nvim
+    - d_scripts
+    - d_ranger
+    - d_tridactyl
+    - d_styles
+    - d_zsh
+    - d_sway
+    - d_swaylock
+    - d_waybar
+    - d_envman
+    - d_swaync
+    - d_gtk-3.0
+    - d_wlogout
+    - d_cspell
+    - d_artty
+    - f_settings.ini
+    - d_wezterm
   red-wolf:
     dotfiles:
-      - f_gitconfig
-      - f_zshrc
-      - f_golangci.yml
-      - f_functions
-      - f_vale.ini
-      - f_scroll.py
-      - f_kitty_opener.sh
-      - f_nvim-startup.sh
-      - d_kitty
-      - d_waybar
-      - d_nvim
-      - d_scripts
-      - d_ranger
-      - d_tridactyl
-      - d_styles
-      - d_zsh
-      - d_sway
-      - d_swaylock
-      - d_swaync
-      - d_envman
-      - d_gtk-3.0
-      - d_wlogout
-      - d_cspell
-      - d_artty
-      - f_settings.ini
+    - f_gitconfig
+    - f_zshrc
+    - f_golangci.yml
+    - f_functions
+    - f_vale.ini
+    - f_nvim-startup.sh
+    - d_waybar
+    - d_nvim
+    - d_scripts
+    - d_ranger
+    - d_tridactyl
+    - d_styles
+    - d_zsh
+    - d_sway
+    - d_swaylock
+    - d_swaync
+    - d_envman
+    - d_gtk-3.0
+    - d_wlogout
+    - d_cspell
+    - d_artty
+    - f_settings.ini
+    - d_wezterm

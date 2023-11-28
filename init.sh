@@ -7,7 +7,7 @@ sudo pacman -Syyu # Update
 sudo pacman -S ncdu bpytop lsd bat git-delta sad tk mako swaylock waybar wofi firefox pulseaudio pulseaudio-alsa alsa-utils pamixer wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl playerctl pavucontrol arc-gtk-theme ntp thunar thunar-volman gvfs swaybg man ufw && \
     sudo systemctl enable --now ntpd && sudo systemctl enable --now ufw	# System
 sudo ufw enable && sudo ufw default deny # Firewall
-sudo pacman -S kitty neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
+sudo pacman -S wezterm neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
 sudo pacman -S git base-devel gcc deno docker docker-compose python-pip pyright npm jq fx eslint prettier # Dev tools
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay

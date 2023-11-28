@@ -205,6 +205,12 @@ set_vim_keymap("n", "<leader>mp", "<CMD>MCpattern<CR>", "Start multicursors and 
 -- Notify --
 -- set_vim_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", "Dismiss messages")
 
+-- Navigator --
+set_vim_keymap("n", "<C-h>", "<CMD>NavigatorLeft<CR>", "Navigate Left")
+set_vim_keymap("n", "<C-l>", "<CMD>NavigatorRight<CR>", "Navigate Right")
+set_vim_keymap("n", "<C-k>", "<CMD>NavigatorUp<CR>", "Navigate Up")
+set_vim_keymap("n", "<C-j>", "<CMD>NavigatorDown<CR>", "Navigate Down")
+
 -- Neo Tree --
 set_vim_keymap("n", ";", "<CMD>Neotree filesystem toggle right<CR>", "Toggle neotree")
 set_vim_keymap("n", "'", "<CMD>Neotree buffers toggle right<CR>", "Toggle neotree buffer view")
