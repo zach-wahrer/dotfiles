@@ -45,6 +45,7 @@ source $ZSH_CONFIG/aliases
 source $ZSH_CONFIG/functions
 source $ZSH_CONFIG/plugins
 source $ZSH_CONFIG/arTTY
+source $ZSH_CONFIG/cursor
 
 ## Zsh Syntax Highlighting - Needs to be at end of .zshrc ##
 if [[ ! -d $ZSH_PLUGINS/zsh-syntax-highlighting ]]; then
@@ -57,6 +58,7 @@ export BROWSER='firefox'
 export MANPAGER='nvim --clean +Man!'
 export MANWIDTH=999
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" ## https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
+export ZVM_CURSOR_STYLE_ENABLED=false
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
