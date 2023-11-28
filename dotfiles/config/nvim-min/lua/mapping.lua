@@ -176,6 +176,12 @@ set_vim_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", "Next git hunk"
 set_vim_keymap("n", "<Delete>", "<CMD>lua MiniMap.toggle()<CR>", "Toggle minimap")
 set_vim_keymap("n", "<Delete><Delete>", "<CMD>lua MiniMap.toggle_focus()<CR>", "Toggle focus into minimap")
 
+-- Navigator --
+set_vim_keymap("n", "<C-h>", "<CMD>NavigatorLeft<CR>", "Navigate Left")
+set_vim_keymap("n", "<C-l>", "<CMD>NavigatorRight<CR>", "Navigate Right")
+set_vim_keymap("n", "<C-k>", "<CMD>NavigatorUp<CR>", "Navigate Up")
+set_vim_keymap("n", "<C-j>", "<CMD>NavigatorDown<CR>", "Navigate Down")
+
 -- Neo Tree --
 set_vim_keymap("n", ";", "<CMD>Neotree filesystem toggle right<CR>", "Toggle neotree")
 set_vim_keymap("n", "'", "<CMD>Neotree buffers toggle right<CR>", "Toggle neotree buffer view")
