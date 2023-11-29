@@ -34,13 +34,6 @@ set_vim_keymap("n", "<CR>", "o<ESC>", "Add line below")
 set_vim_keymap("n", "<C-Space>", "ciw", "Change inner word")
 set_vim_keymap("n", "<C-Enter>", 'ci"', "Change inner quote")
 
-set_vim_keymap(
-	"n",
-	"<leader>ek",
-	"<CMD>lua require('functions').exportColorsKitty()<CR>",
-	"Export colors for kitty terminal"
-)
-
 -- Format Keybinds --
 set_vim_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", "Insert current date")
 set_vim_keymap("n", "<leader>iu", "<CMD>put=system('uuidgen')<CR>", "Insert UUID")
@@ -66,12 +59,6 @@ set_vim_keymap(
 
 -- Find Keybinds --
 set_vim_keymap("n", "<leader>od", "<CMD>lua require('functions').findFiles('~/dotfiles')<CR>", "Find in dotfiles")
-set_vim_keymap(
-	"n",
-	"<leader>ok",
-	"<CMD>lua require('functions').findFiles('~/dotfiles/dotfiles/config/kitty')<CR>",
-	"Find in kitty files"
-)
 set_vim_keymap(
 	"n",
 	"<leader>oz",

@@ -224,7 +224,7 @@ bindsym $mod+r mode "resize"
 #
     bindsym $mod+Shift+f exec thunar
     bindsym $mod+Shift+b exec env MOZ_ENABLE_WAYLAND=1 firefox
-    bindsym $mod+Shift+e exec wezterm start --always-new-process -- pde
+    bindsym $mod+Shift+e splith, exec wezterm start --always-new-process -- pde
 #
 # Screenshots
 #

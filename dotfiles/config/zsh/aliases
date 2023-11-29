@@ -9,11 +9,8 @@
 
 # GENERAL #
 alias ls='ls --color=auto'
-#alias pe="ksitty --session /home/zach/.config/kitty/ide.session -o allow_remote_control=yes --single-instance --listen-on unix:@mykitty"
 alias :q="exit"
 alias :qa="exit"
-alias edir="edir --trash"
-alias s="kitty +kitten ssh"
 
 # LS #
 alias ls="lsd"

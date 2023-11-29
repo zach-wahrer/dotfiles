@@ -75,20 +75,6 @@ augroups.buf_enter = {
 			cmd("set filetype=hcl.tf")
 		end,
 	},
-	kitty_conf_highlighting = {
-		event = { "BufEnter" },
-		pattern = "kitty.conf",
-		callback = function()
-			api.nvim_command("set ft=kitty")
-		end,
-	},
-	kitty_session_highlighting = {
-		event = { "BufEnter" },
-		pattern = "*.session",
-		callback = function()
-			api.nvim_command("set ft=kitty")
-		end,
-	},
 }
 
 augroups.buf_write_pre = {
@@ -105,13 +91,6 @@ augroups.buf_write_post = {
 		pattern = "*/sway/config.d/*",
 		callback = function()
 			cmd([[ silent !swaymsg reload ]])
-		end,
-	},
-	reload_kitty_on_config_change = {
-		event = { "BufWritePost" },
-		pattern = "kitty.conf",
-		callback = function()
-			cmd([[ silent !kill -SIGUSR1 $(pgrep kitty) ]])
 		end,
 	},
 }

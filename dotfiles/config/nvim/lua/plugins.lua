@@ -143,22 +143,6 @@ return {
 	{ "sindrets/diffview.nvim",  event = "VeryLazy" }, -- Git diff view
 
 	---------------------------------------------------
-	-- KITTY
-	---------------------------------------------------
-	-- {
-	-- 	"fladson/vim-kitty",
-	-- 	ft = "kitty",
-	-- }, -- Syntax highlight for kitty config
-	-- {
-	-- 	"hermitmaster/nvim-kitty-navigator",
-	-- 	build = "cp kitty/* ~/.config/kitty/",
-	-- 	config = function()
-	-- 		require("nvim-kitty-navigator").setup()
-	-- 	end,
-	-- 	event = "VeryLazy",
-	-- }, -- Navigation for kitty
-
-	---------------------------------------------------
 	-- WEZTERM
 	---------------------------------------------------
 	{

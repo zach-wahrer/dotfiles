@@ -64,14 +64,10 @@ function module.apply_to_config(config)
 		grey = "#535965",
 		light_gray = "#7a818e",
 		dark_cyan = "#0081A1",
-		dark_red = "#BF000D",
+		dark_red = "#f7202e",
 		dark_yellow = "#9A7B00",
-		dark_purple = "#440092",
-		dark_green = "#004626",
-		diff_add = "#272e23",
-		diff_delete = "#2d2223",
-		diff_change = "#172a3a",
-		diff_text = "#274964",
+		dark_purple = "#8420f5",
+		dark_green = "#0ff58e",
 
 		-- Personal
 		dark_grey = "#191919",
