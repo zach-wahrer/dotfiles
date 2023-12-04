@@ -25,6 +25,7 @@ function M.config()
 			-- null_ls.builtins.diagnostics.markdownlint_cli2,
 			-- null_ls.builtins.diagnostics.vale,
 			-- null_ls.builtins.diagnostics.zsh,
+			null_ls.builtins.diagnostics.golangci_lint,
 
 			null_ls.builtins.formatting.beautysh,
 			-- null_ls.builtins.formatting.eslint,
