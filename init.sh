@@ -7,14 +7,14 @@ sudo pacman -Syyu # Update
 sudo pacman -S ncdu bpytop lsd bat git-delta sad tk mako swaylock waybar wofi firefox pulseaudio pulseaudio-alsa alsa-utils pamixer wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl playerctl pavucontrol arc-gtk-theme ntp thunar thunar-volman gvfs swaybg man ufw && \
     sudo systemctl enable --now ntpd && sudo systemctl enable --now ufw	# System
 sudo ufw enable && sudo ufw default deny # Firewall
-sudo pacman -S wezterm neovim zsh fd ripgrep fzf shellcheck lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
-sudo pacman -S git base-devel gcc deno docker docker-compose python-pip python-pipx pyright npm jq fx eslint prettier; pipx install shtuff # Dev tools
+sudo pacman -S wezterm neovim zsh fd ripgrep fzf lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
+sudo pacman -S git base-devel gcc deno docker docker-compose python-pip python-pipx pyright npm jq fx; pipx install shtuff # Dev tools
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers ttf-sourcecodepro-nerd ttf-sudo swaync wlogout wmname grim slurp swappy usbutils  # System
-yay -S checkmake beautysh dbgate-bin dotenv-linter gitlint hadolint python-pynvim python-setuptools syncthing vale # Dev tools
+yay -S beautysh dbgate-bin python-pynvim python-setuptools syncthing # Dev tools
 
-sudo npm install -g dockerfile-language-server-nodejs cspell markdownlint-cli2 # Dev tools
+sudo npm install -g dockerfile-language-server-nodejs # Dev tools
 
 systemctl --user enable --now pipewire pipewire.socket pipewire-media-session.service xdg-desktop-portal-rewrite-launchers.service
 

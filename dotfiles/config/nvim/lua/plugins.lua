@@ -82,10 +82,14 @@ return {
 		event = "VeryLazy",
 	},
 	{
-		"smoka7/multicursors.nvim",
-		dependencies = { "smoka7/hydra.nvim" },
+		"levouh/tint.nvim",
 		event = "VeryLazy",
-		opts = {},
+		config = function()
+			require("tint").setup({
+				tint = -30,
+				saturation = 0.99,
+			})
+		end,
 	},
 
 	---------------------------------------------------
