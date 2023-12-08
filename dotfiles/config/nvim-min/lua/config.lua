@@ -61,20 +61,6 @@ augroups.buf_enter = {
 			cmd([[ set fo-=c fo-=r fo-=o ]])
 		end,
 	},
-	kitty_conf_highlighting = {
-		event = { "BufEnter" },
-		pattern = "kitty.conf",
-		callback = function()
-			api.nvim_command("set ft=kitty")
-		end,
-	},
-	kitty_session_highlighting = {
-		event = { "BufEnter" },
-		pattern = "*.session",
-		callback = function()
-			api.nvim_command("set ft=kitty")
-		end,
-	},
 }
 
 augroups.buf_write_pre = {
@@ -82,15 +68,6 @@ augroups.buf_write_pre = {
 		event = { "BufWritePre" },
 		callback = function()
 			cmd([[ :%s/\s\+$//e ]])
-		end,
-	},
-}
-augroups.buf_write_post = {
-	reload_kitty_on_config_change = {
-		event = { "BufWritePost" },
-		pattern = "kitty.conf",
-		callback = function()
-			cmd([[ silent !kill -SIGUSR1 $(pgrep kitty) ]])
 		end,
 	},
 }
