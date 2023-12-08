@@ -4,8 +4,13 @@ function module.apply_to_wezterm(wezterm)
 	local mux = wezterm.mux
 
 	wezterm.on("gui-startup", function(cmd)
-		if cmd == nil or cmd.args == nil or not string.find(cmd.args[1], "pde") then
+		if cmd == nil or cmd.args == nil then
 			mux.spawn_window({})
+			return
+		end
+
+		if not string.find(cmd.args[1], "pde") then
+			mux.spawn_window(cmd)
 			return
 		end
 

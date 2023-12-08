@@ -42,6 +42,7 @@ local module = {}
 
 function module.apply_to_config(config)
 	config.keys = {
+		{ key = "D",          mods = wez_mod, action = act.ShowDebugOverlay },
 		-- Scrollback
 		{
 			key = ";",
