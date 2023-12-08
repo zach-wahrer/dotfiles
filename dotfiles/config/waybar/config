@@ -86,14 +86,14 @@
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "kitty bpytop",
+        "on-click": "wezterm start -- bpytop",
     },
 
     "disk": {
         "interval": 30,
         "format": "󰋊 {percentage_used}%",
         "path": "/",
-	"on-click": "kitty ncdu"
+	"on-click": "wezterm start -- ncdu"
     },
 
     "custom/keyboard-layout": {
@@ -110,7 +110,7 @@
     "memory": {
         "interval": 5,
         "format": "󰍛 {}%", // Icon: memory
-        "on-click": "kitty bpytop",
+        "on-click": "wezterm start -- bpytop",
         "states": {
             "warning": 70,
             "critical": 90
@@ -123,7 +123,7 @@
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "kitty nmtui",
+        "on-click": "wezterm start -- nmtui",
     },
     "network#vpn": {
         "interface": "tun0",
@@ -221,7 +221,7 @@
 
     "custom/terminal": {
         "format": " ",
-        "on-click": "exec kitty",
+        "on-click": "exec wezterm start",
         "tooltip": false
     },
 

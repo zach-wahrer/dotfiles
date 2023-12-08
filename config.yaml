@@ -12,56 +12,22 @@ dotfiles:
   f_golangci.yml:
     src: dotfiles/.golangci.yml
     dst: ~/.golangci.yml
-  f_vale.ini:
-    src: vale.ini
-    dst: ~/.vale.ini
   f_functions:
     src: config/zsh/functions
     dst: ~/.config/zsh/functions
     chmod: '644'
-  f_nvim-startup.sh:
-    src: scripts/nvim-startup.sh
-    dst: ~/scripts/nvim-startup.sh
-    chmod: '744'
-  d_alacritty:
-    src: config/alacritty
-    dst: ~/.config/alacritty
-  d_awesome:
-    src: config/awesome
-    dst: ~/.config/awesome
-  d_i3:
-    src: config/i3
-    dst: ~/.config/i3
-  d_kitty:
-    src: config/kitty
-    dst: ~/.config/kitty
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
-  d_polybar:
-    src: config/polybar
-    dst: ~/.config/polybar
-  d_rofi:
-    src: config/rofi
-    dst: ~/.config/rofi
   d_scripts:
     src: scripts
     dst: ~/scripts
-  d_ranger:
-    src: config/ranger
-    dst: ~/.config/ranger
   d_zsh:
     src: config/zsh
     dst: ~/.config/zsh
   d_tridactyl:
     src: config/tridactyl
     dst: ~/.config/tridactyl
-  d_picom:
-    src: config/picom
-    dst: ~/.config/picom
-  d_styles:
-    src: styles
-    dst: ~/styles
   d_sway:
     src: config/sway
     dst: ~/.config/sway
@@ -74,9 +40,6 @@ dotfiles:
   d_envman:
     src: config/envman
     dst: ~/.config/envman
-  d_mako:
-    src: config/mako
-    dst: ~/.config/mako
   d_gtk-3.0:
     src: config/gtk-3.0
     dst: ~/.config/gtk-3.0
@@ -86,9 +49,6 @@ dotfiles:
   d_wlogout:
     src: config/wlogout
     dst: ~/.config/wlogout
-  d_cspell:
-    src: config/cspell
-    dst: ~/.config/cspell
   d_artty:
     src: config/arTTY
     dst: ~/.config/arTTY
@@ -105,13 +65,9 @@ profiles:
     - f_zshrc
     - f_golangci.yml
     - f_functions
-    - f_vale.ini
-    - f_nvim-startup.sh
     - d_nvim
     - d_scripts
-    - d_ranger
     - d_tridactyl
-    - d_styles
     - d_zsh
     - d_sway
     - d_swaylock
@@ -120,7 +76,6 @@ profiles:
     - d_swaync
     - d_gtk-3.0
     - d_wlogout
-    - d_cspell
     - d_artty
     - f_settings.ini
     - d_wezterm
@@ -130,14 +85,10 @@ profiles:
     - f_zshrc
     - f_golangci.yml
     - f_functions
-    - f_vale.ini
-    - f_nvim-startup.sh
     - d_waybar
     - d_nvim
     - d_scripts
-    - d_ranger
     - d_tridactyl
-    - d_styles
     - d_zsh
     - d_sway
     - d_swaylock
@@ -145,7 +96,6 @@ profiles:
     - d_envman
     - d_gtk-3.0
     - d_wlogout
-    - d_cspell
     - d_artty
     - f_settings.ini
     - d_wezterm
