@@ -8,11 +8,11 @@ sudo pacman -S ncdu bpytop lsd bat git-delta sad tk mako swaylock waybar wofi fi
     sudo systemctl enable --now ntpd && sudo systemctl enable --now ufw	# System
 sudo ufw enable && sudo ufw default deny # Firewall
 sudo pacman -S wezterm neovim zsh fd ripgrep fzf lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
-sudo pacman -S git base-devel gcc deno docker docker-compose python-pip python-pipx pyright npm jq fx; pipx install shtuff # Dev tools
+sudo pacman -S git base-devel gcc deno docker docker-compose fx python-pip python-pipx pyright npm jq shfmt; pipx install shtuff # Dev tools
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers ttf-sourcecodepro-nerd ttf-sudo swaync wlogout wmname grim slurp swappy usbutils  # System
-yay -S beautysh dbgate-bin python-pynvim python-setuptools syncthing # Dev tools
+yay -S dbgate-bin python-pynvim python-setuptools syncthing # Dev tools
 
 sudo npm install -g dockerfile-language-server-nodejs # Dev tools
 

@@ -11,7 +11,7 @@ function M.config()
 		sources = {
 			null_ls.builtins.diagnostics.golangci_lint,
 
-			null_ls.builtins.formatting.beautysh,
+			null_ls.builtins.formatting.shfmt,
 			null_ls.builtins.formatting.deno_fmt,
 			null_ls.builtins.formatting.stylua,
 			null_ls.builtins.formatting.terraform_fmt,
