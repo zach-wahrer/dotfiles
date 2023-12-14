@@ -12,7 +12,7 @@ sudo pacman -S git base-devel gcc deno docker docker-compose fx python-pip pytho
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers ttf-sourcecodepro-nerd ttf-sudo swaync wlogout wmname grim slurp swappy usbutils  # System
-yay -S dbgate-bin python-pynvim python-setuptools syncthing # Dev tools
+yay -S dbgate-bin python-pynvim python-setuptools shellcheck-bin syncthing # Dev tools
 
 sudo npm install -g dockerfile-language-server-nodejs # Dev tools
 
