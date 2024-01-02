@@ -42,8 +42,6 @@ function module.apply_to_wezterm(wezterm)
 				size = 0.1,
 				cwd = code_dir,
 			})
-			code_term_pane:send_text("shtuff as devrunner\n")
-
 			window:active_tab():set_title("Code")
 
 			-- Terms
