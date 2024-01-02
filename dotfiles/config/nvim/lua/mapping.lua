@@ -189,9 +189,6 @@ set_vim_keymap("n", "<Delete><Delete>", "<CMD>lua MiniMap.toggle_focus()<CR>", "
 set_vim_keymap("n", "<leader>mc", "<CMD>MCstart<CR>", "Start multicursors using current word")
 set_vim_keymap("n", "<leader>mp", "<CMD>MCpattern<CR>", "Start multicursors and ask for pattern")
 
--- Notify --
--- set_vim_keymap("n", "<leader>mr", "<CMD>lua require('notify').dismiss()<CR>", "Dismiss messages")
-
 -- Navigator --
 set_vim_keymap("n", "<C-h>", "<CMD>NavigatorLeft<CR>", "Navigate Left")
 set_vim_keymap("n", "<C-l>", "<CMD>NavigatorRight<CR>", "Navigate Right")
