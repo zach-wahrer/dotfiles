@@ -227,7 +227,7 @@ set_vim_keymap("n", "<leader>k", "<CMD>Telescope keymaps<CR>", "Search keymaps")
 set_vim_keymap("n", "<leader>ls", "<CMD>Telescope luasnip<CR>", "Search luasnip")
 set_vim_keymap("n", "<leader>e", "<CMD>Telescope env<CR>", "Search env vars")
 set_vim_keymap("n", "<leader>p", "<CMD>Telescope lazy<CR>", "Search in plugins/lazy")
--- set_vim_keymap("n", "<leader>mo", "<CMD>Telescope notify<CR>", "Search in messages")
+set_vim_keymap("n", "<leader>i", "<CMD>Telescope find_template type=insert<CR>", "Insert template")
 set_vim_keymap("n", "<leader>u", "<CMD>Telescope undo<CR>", "Search in undo history")
 set_vim_keymap(
 	"n",

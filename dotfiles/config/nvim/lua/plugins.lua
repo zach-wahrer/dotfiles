@@ -93,13 +93,23 @@ return {
 	},
 
 	---------------------------------------------------
-	-- COMPLETIONS / SNIPPETS
+	-- COMPLETIONS / SNIPPETS / TEMPLATES
 	---------------------------------------------------
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
+		end,
+		event = "VeryLazy",
+	},
+	{
+		"glepnir/template.nvim",
+		cmd = { "Template", "TemProject" },
+		config = function()
+			require("template").setup({
+				temp_dir = "~/.config/nvim/templates",
+			})
 		end,
 		event = "VeryLazy",
 	},
