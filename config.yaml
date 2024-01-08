@@ -58,6 +58,9 @@ dotfiles:
   d_wezterm:
     src: config/wezterm
     dst: ~/.config/wezterm
+  d_foot:
+    src: config/foot
+    dst: ~/.config/foot
 profiles:
   neto-wolf:
     dotfiles:
@@ -79,6 +82,7 @@ profiles:
     - d_artty
     - f_settings.ini
     - d_wezterm
+    - d_foot
   red-wolf:
     dotfiles:
     - f_gitconfig
@@ -99,3 +103,4 @@ profiles:
     - d_artty
     - f_settings.ini
     - d_wezterm
+    - d_foot
