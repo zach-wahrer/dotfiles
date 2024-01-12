@@ -122,3 +122,20 @@ function fkill() {
         echo $pid | xargs kill -${1:-9}
     fi
 }
+
+# GIT #
+function gcount() {
+    git diff --stat ^HEAD
+    local gcount=$(git diff --stat ^HEAD | tail -n1 | cut -d " " -f 5,7)
+
+    if [ $(echo $gcount | grep -o " " | wc -c ) -eq 0 ]; then
+        printf "Total Line Changes: $gcount\n"
+	return
+    fi
+
+    local inserts=$(echo $gcount | cut -d " " -f 1)
+    local deletes=$(echo $gcount | cut -d " " -f 2)
+    local sum=$(expr $inserts + $deletes)
+
+    printf "Total Line Changes: $sum\n"
+}

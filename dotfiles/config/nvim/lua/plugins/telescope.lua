@@ -30,6 +30,7 @@ function M.config()
 			"--sort",
 			"path",
 		},
+		path_display = { "smart" },
 	}
 
 	telescope.setup({
