@@ -161,6 +161,9 @@ set_vim_keymap("n", "<leader>hP", "<CMD>Gitsigns preview_hunk<CR>", "Preview git
 set_vim_keymap("n", "<leader>hp", "<CMD>Gitsigns prev_hunk<CR>", "Previous git hunk")
 set_vim_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", "Next git hunk")
 
+-- GX --
+set_vim_keymap("n", "gx", "<CMD>Browse<CR>", "Open link")
+
 -- LSP -- Per client mappings are in lsp config file
 set_vim_keymap(
 	"n",

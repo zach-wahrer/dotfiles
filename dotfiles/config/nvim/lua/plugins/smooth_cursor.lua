@@ -1,4 +1,4 @@
-local M = { "gen740/SmoothCursor.nvim", event = "VeryLazy" }
+local M = { "gen740/SmoothCursor.nvim", event = "VeryLazy", enabled = false }
 
 function M.config()
 	Colors = require("colors")

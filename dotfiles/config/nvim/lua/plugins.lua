@@ -36,21 +36,12 @@ return {
 			-- `matchparen.vim` needs to be disabled manually in case of lazy loading
 			vim.g.loaded_matchparen = 1
 		end,
-	},
+	}, -- Enhanced matchparen.vim
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {},
 	},
-	-- {
-	-- 	"declancm/cinnamon.nvim",
-	-- 	config = function()
-	-- 		require("cinnamon").setup({
-	-- 			default_delay = 3,
-	-- 		})
-	-- 	end,
-	-- 	event = "VeryLazy",
-	-- },
 	{
 		"ethanholz/nvim-lastplace",
 		config = function()
@@ -69,7 +60,11 @@ return {
 		"chrishrb/gx.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
-			require("gx").setup()
+			require("gx").setup({
+				handler_options = {
+					search_engine = "duckduckgo",
+				},
+			})
 		end,
 		event = "VeryLazy",
 	}, -- Open links with `gx`
@@ -90,7 +85,7 @@ return {
 				saturation = 0.99,
 			})
 		end,
-	},
+	}, -- Tint inactive windows
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS / TEMPLATES

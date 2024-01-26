@@ -1,5 +1,5 @@
 local M = {
-	"dgagn/diagflow.nvim",
+	"dgagn/diagflow.nvim", -- Show diagnostics in an unobtrusive way
 	event = "VeryLazy",
 }
 
