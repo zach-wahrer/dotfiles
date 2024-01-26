@@ -43,15 +43,6 @@ return {
 		opts = {},
 	},
 	{
-		"declancm/cinnamon.nvim",
-		config = function()
-			require("cinnamon").setup({
-				default_delay = 3,
-			})
-		end,
-		event = "VeryLazy",
-	},
-	{
 		"ethanholz/nvim-lastplace",
 		config = function()
 			require("nvim-lastplace").setup({})

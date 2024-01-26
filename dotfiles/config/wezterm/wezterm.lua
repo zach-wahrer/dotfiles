@@ -9,6 +9,7 @@ end
 config.warn_about_missing_glyphs = false
 config.pane_focus_follows_mouse = true
 config.enable_wayland = true
+config.scrollback_lines = 10000
 
 require("theme").apply_to_config(config)
 require("mapping").apply_to_config(config)
