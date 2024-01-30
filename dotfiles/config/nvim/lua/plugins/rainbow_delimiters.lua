@@ -1,5 +1,5 @@
 local M = {
-	url = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+	url = "https://github.com/HiPhish/rainbow-delimiters.nvim",
 	event = "VeryLazy",
 }
 
