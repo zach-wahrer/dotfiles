@@ -5,7 +5,16 @@ local M = {
 }
 
 function M.config()
-	require("todo-comments").setup()
+	local Colors = require("colors")
+	require("todo-comments").setup({
+		keywords = {
+			TODO = { icon = " ", color = Colors.green },
+		},
+		highlight = {
+			before = "fg",
+			after = "fg",
+		},
+	})
 end
 
 return M
