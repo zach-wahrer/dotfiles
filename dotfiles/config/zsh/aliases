@@ -87,3 +87,5 @@ alias sway="WLR_NO_HARDWARE_CURSORS=1 XDG_CURRENT_DESKTOP=sway SDL_VIDEODRIVER=w
 {%@@ else @@%}
 alias sway="XDG_CURRENT_DESKTOP=sway SDL_VIDEODRIVER=wayland QT_QPA_PLATFORM=wayland QT_QPA_PLATFORM=wayland QT_QPA_PLATFORM=wayland XDG_SESSION_DESKTOP=sway \sway"
 {%@@ endif @@%}
+
+alias hyprland="WLR_NO_HARDWARE_CURSORS=1 Hyprland"

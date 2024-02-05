@@ -61,6 +61,9 @@ dotfiles:
   d_foot:
     src: config/foot
     dst: ~/.config/foot
+  d_hypr:
+    src: config/hypr
+    dst: ~/.config/hypr
 profiles:
   neto-wolf:
     dotfiles:
@@ -83,6 +86,7 @@ profiles:
     - f_settings.ini
     - d_wezterm
     - d_foot
+    - d_hypr
   red-wolf:
     dotfiles:
     - f_gitconfig

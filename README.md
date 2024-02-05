@@ -1,3 +1,3 @@
 # dotfiles
 
-My personal dotfiles and scripts for Linux, Neovim, Sway, Wezterm, etc.
+My personal dotfiles and scripts for Linux, Neovim, Hyprland, Wezterm, etc.

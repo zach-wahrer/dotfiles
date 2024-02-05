@@ -8,10 +8,11 @@
 
     "modules-left": [
         "custom/launcher",
-        "sway/workspaces",
-	"sway/scratchpad",
-        "sway/mode",
+        "hyprland/workspaces",
     ],
+        // "sway/workspaces",
+	// "sway/scratchpad",
+        // "sway/mode",
 
     "modules-center": [
     ],
