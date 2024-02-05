@@ -108,3 +108,4 @@ profiles:
     - f_settings.ini
     - d_wezterm
     - d_foot
+    - d_hypr
