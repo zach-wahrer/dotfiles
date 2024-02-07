@@ -6,7 +6,7 @@ window {
 	background-image: url("../sway/swaylock.png");
 }
 button {
-    color: #FFFFFF;
+    color: #AF6DF9;
 	background-color: #000000;
 	border-style: solid;
 	border-width: 2px;
@@ -16,7 +16,7 @@ button {
 }
 
 button:focus, button:active, button:hover {
-	background-color: #61E2FF;
+	background-color: #440092;
 	outline-style: none;
 }
 
