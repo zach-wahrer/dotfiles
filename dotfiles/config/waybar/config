@@ -165,6 +165,10 @@
 	"tooltip-format": "{app}: {title}"
     },
 
+    "hyprland/workspaces": {
+	"show-special": true,
+    },
+
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",

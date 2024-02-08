@@ -8,9 +8,15 @@ end
 
 config.warn_about_missing_glyphs = false
 config.pane_focus_follows_mouse = true
-config.enable_wayland = true
+
+{%@@ if profile == "neto-wolf" @@%}
+config.enable_wayland = false
+{%@@ endif @@%}
+
 config.scrollback_lines = 10000
-config.front_end = "OpenGL"
+config.front_end = "WebGpu"
+-- config.front_end = "OpenGL"
+-- config.front_end = "Software"
 
 require("theme").apply_to_config(config)
 require("mapping").apply_to_config(config)

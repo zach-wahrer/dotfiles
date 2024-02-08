@@ -14,9 +14,9 @@ local function is_inside_vim(pane)
 		"sh",
 		"-c",
 		"ps -o state= -o comm= -t"
-			.. wezterm.shell_quote_arg(tty)
-			.. " | "
-			.. "grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$'",
+		.. wezterm.shell_quote_arg(tty)
+		.. " | "
+		.. "grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$'",
 	})
 
 	return success
@@ -42,7 +42,7 @@ local module = {}
 
 function module.apply_to_config(config)
 	config.keys = {
-		{ key = "D", mods = wez_mod, action = act.ShowDebugOverlay },
+		{ key = "D",          mods = wez_mod, action = act.ShowDebugOverlay },
 		-- Scrollback
 		{
 			key = ";",
@@ -54,14 +54,14 @@ function module.apply_to_config(config)
 		},
 
 		-- Search
-		{ key = "?", mods = wez_mod, action = act.Search({ CaseSensitiveString = "" }) },
+		{ key = "?",          mods = wez_mod, action = act.Search({ CaseSensitiveString = "" }) },
 
 		-- Tabs
-		{ key = "Space", mods = wez_mod, action = act.SpawnTab("CurrentPaneDomain") },
-		{ key = "w", mods = wez_mod, action = act.CloseCurrentTab({ confirm = true }) },
-		{ key = "l", mods = wez_mod, action = act.ActivateTabRelative(1) },
-		{ key = "h", mods = wez_mod, action = act.ActivateTabRelative(-1) },
-		{ key = "LeftArrow", mods = wez_mod, action = act.MoveTabRelative(-1) },
+		{ key = "Space",      mods = wez_mod, action = act.SpawnTab("CurrentPaneDomain") },
+		{ key = "w",          mods = wez_mod, action = act.CloseCurrentTab({ confirm = true }) },
+		{ key = "l",          mods = wez_mod, action = act.ActivateTabRelative(1) },
+		{ key = "h",          mods = wez_mod, action = act.ActivateTabRelative(-1) },
+		{ key = "LeftArrow",  mods = wez_mod, action = act.MoveTabRelative(-1) },
 		{ key = "RightArrow", mods = wez_mod, action = act.MoveTabRelative(1) },
 		{
 			key = "r",
@@ -80,34 +80,42 @@ function module.apply_to_config(config)
 		},
 
 		-- Pane
-		{ key = "Enter", mods = wez_mod, action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+		{ key = "Enter", mods = wez_mod,          action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 		{ key = "Enter", mods = wez_mod_with_alt, action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-		{ key = "q", mods = wez_mod, action = act.CloseCurrentPane({ confirm = true }) },
-		{ key = "a", mods = "CTRL", action = act.TogglePaneZoomState },
+		{ key = "q",     mods = wez_mod,          action = act.CloseCurrentPane({ confirm = true }) },
+		{ key = "a",     mods = "CTRL",           action = act.TogglePaneZoomState },
 
 		bind_if(is_outside_vim, "k", "CTRL", act.ActivatePaneDirection("Up")),
 		bind_if(is_outside_vim, "j", "CTRL", act.ActivatePaneDirection("Down")),
 		bind_if(is_outside_vim, "h", "CTRL", act.ActivatePaneDirection("Left")),
 		bind_if(is_outside_vim, "l", "CTRL", act.ActivatePaneDirection("Right")),
 
-		{ key = "LeftArrow", mods = wez_mod, action = act.AdjustPaneSize({ "Left", 3 }) },
-		{ key = "RightArrow", mods = wez_mod, action = act.AdjustPaneSize({ "Right", 3 }) },
-		{ key = "UpArrow", mods = wez_mod, action = act.AdjustPaneSize({ "Up", 3 }) },
-		{ key = "DownArrow", mods = wez_mod, action = act.AdjustPaneSize({ "Down", 3 }) },
+		{ key = "LeftArrow",  mods = wez_mod,          action = act.AdjustPaneSize({ "Left", 3 }) },
+		{ key = "RightArrow", mods = wez_mod,          action = act.AdjustPaneSize({ "Right", 3 }) },
+		{ key = "UpArrow",    mods = wez_mod,          action = act.AdjustPaneSize({ "Up", 3 }) },
+		{ key = "DownArrow",  mods = wez_mod,          action = act.AdjustPaneSize({ "Down", 3 }) },
 
-		{ key = "LeftArrow", mods = wez_mod_with_alt, action = act.PaneSelect({ mode = "SwapWithActive" }) },
+		{ key = "LeftArrow",  mods = wez_mod_with_alt, action = act.PaneSelect({ mode = "SwapWithActive" }) },
 		{ key = "RightArrow", mods = wez_mod_with_alt, action = act.PaneSelect({ mode = "SwapWithActive" }) },
-		{ key = "UpArrow", mods = wez_mod_with_alt, action = act.PaneSelect({ mode = "SwapWithActive" }) },
-		{ key = "DownArrow", mods = wez_mod_with_alt, action = act.PaneSelect({ mode = "SwapWithActive" }) },
+		{ key = "UpArrow",    mods = wez_mod_with_alt, action = act.PaneSelect({ mode = "SwapWithActive" }) },
+		{ key = "DownArrow",  mods = wez_mod_with_alt, action = act.PaneSelect({ mode = "SwapWithActive" }) },
 
 		-- Scroll
 		bind_if(is_outside_vim, "u", "CTRL", act.ScrollByLine(-1)),
 		bind_if(is_outside_vim, "d", "CTRL", act.ScrollByLine(1)),
 		bind_if(is_outside_vim, "b", "CTRL", act.ScrollByPage(-1)),
 		bind_if(is_outside_vim, "f", "CTRL", act.ScrollByPage(1)),
+
+		-- Font Size
+		-- { key = "-", mods = wez_mod, action = act.DecreaseFontSize },
+		-- { key = "=", mods = wez_mod, action = act.IncreaseFontSize },
+
+		-- NOOPs
+		{ key = "-", mods = "SUPER", action = act.Nop },
+		{ key = "=", mods = "SUPER", action = act.Nop },
 	}
 	config.mouse_bindings = {
-		{ event = { Down = { streak = 1, button = { WheelUp = 1 } } }, action = act.ScrollByLine(-1) },
+		{ event = { Down = { streak = 1, button = { WheelUp = 1 } } },   action = act.ScrollByLine(-1) },
 		{ event = { Down = { streak = 1, button = { WheelDown = 1 } } }, action = act.ScrollByLine(1) },
 		{
 			event = { Down = { streak = 1, button = { WheelUp = 1 } } },

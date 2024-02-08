@@ -24,7 +24,7 @@ function module.apply_to_wezterm(wezterm)
 
 			config_editor_pane:split({
 				direction = "Bottom",
-				size = 0.1,
+				size = 0.2,
 				cwd = config_dir,
 			})
 
@@ -39,7 +39,7 @@ function module.apply_to_wezterm(wezterm)
 
 			local code_term_pane = code_editor_pane:split({
 				direction = "Bottom",
-				size = 0.1,
+				size = 0.2,
 				cwd = code_dir,
 			})
 			window:active_tab():set_title("Code")

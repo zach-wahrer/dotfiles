@@ -4,7 +4,7 @@ GO_BIN=/usr/lib/go/bin/go
 
 ## Packages / Tools ##
 sudo pacman -Syyu # Update
-sudo pacman -S ncdu bpytop lsd bat git-delta hyprland hyprrpaper sad tk mako eaudio pulseaudio-alsa polkit-kde-agent alsa-utils pamixer qt5-wayland qt6-wayland wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl playerctl pavucontrol arc-gtk-theme ntp thunar thunar-volman gvfs swaybg man ufw &&
+sudo pacman -S ncdu bpytop lsd bat git-delta hyprland hyprrpaper sad tk mako eaudio pulseaudio-alsa polkit-kde-agent alsa-utils pamixer qt5-wayland qt6-wayland wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl playerctl pavucontrol arc-gtk-theme ntp thunar thunar-volman gvfs swaybg swayidle man ufw &&
 	sudo systemctl enable --now ntpd && sudo systemctl enable --now ufw                                                                    # System
 sudo ufw enable && sudo ufw default deny                                                                                                # Firewall
 sudo pacman -S wezterm neovim zsh fd ripgrep fzf lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
