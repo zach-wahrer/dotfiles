@@ -114,6 +114,10 @@ return {
 	---------------------------------------------------
 	{ "ckipp01/stylua-nvim",     ft = "lua" }, -- Lua formatting
 	{
+		"luckasRanarison/tree-sitter-hyprlang",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+	}, -- Hyprland config grammar
+	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()

@@ -11,12 +11,13 @@ config.pane_focus_follows_mouse = true
 
 {%@@ if profile == "neto-wolf" @@%}
 config.enable_wayland = false
+config.front_end = "OpenGL"
+-- config.front_end = "Software"
+{%@@ else @@%}
+config.front_end = "WebGpu" -- Seems to have a glitch where the screen doesn't update when it is fullscreen.
 {%@@ endif @@%}
 
 config.scrollback_lines = 10000
-config.front_end = "WebGpu"
--- config.front_end = "OpenGL"
--- config.front_end = "Software"
 
 require("theme").apply_to_config(config)
 require("mapping").apply_to_config(config)
