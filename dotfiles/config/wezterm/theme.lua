@@ -5,7 +5,7 @@ function module.apply_to_config(config)
 	-- config.color_scheme = "Galizur"
 	config.font = wezterm.font("Sudo")
 
-{%@@ if profile == "red-wolf" @@%}
+{%@@ if profile == "red-wolf" or profile == "vm" @@%}
 	config.font_size = 13
 {%@@ else @@%}
 	config.font_size = 15
