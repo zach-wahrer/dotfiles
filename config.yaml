@@ -12,12 +12,14 @@ dotfiles:
   f_golangci.yml:
     src: dotfiles/.golangci.yml
     dst: ~/.golangci.yml
-  f_functions:
-    src: config/zsh/functions
-    dst: ~/.config/zsh/functions
-    chmod: '644'
+  f_gtk-settings.ini:
+    src: config/gtk-3.0/settings.ini
+    dst: ~/.config/gtk-3.0/settings.ini
   d_nvim:
     src: config/nvim
+    dst: ~/.config/nvim
+  d_nvim-min:
+    src: config/nvim-min
     dst: ~/.config/nvim
   d_scripts:
     src: scripts
@@ -52,9 +54,6 @@ dotfiles:
   d_artty:
     src: config/arTTY
     dst: ~/.config/arTTY
-  f_settings.ini:
-    src: config/gtk-3.0/settings.ini
-    dst: ~/.config/gtk-3.0/settings.ini
   d_wezterm:
     src: config/wezterm
     dst: ~/.config/wezterm
@@ -70,7 +69,6 @@ profiles:
     - f_gitconfig
     - f_zshrc
     - f_golangci.yml
-    - f_functions
     - d_nvim
     - d_scripts
     - d_tridactyl
@@ -83,7 +81,7 @@ profiles:
     - d_gtk-3.0
     - d_wlogout
     - d_artty
-    - f_settings.ini
+    - f_gtk-settings.ini
     - d_wezterm
     - d_foot
     - d_hypr
@@ -92,7 +90,6 @@ profiles:
     - f_gitconfig
     - f_zshrc
     - f_golangci.yml
-    - f_functions
     - d_waybar
     - d_nvim
     - d_scripts
@@ -105,7 +102,13 @@ profiles:
     - d_gtk-3.0
     - d_wlogout
     - d_artty
-    - f_settings.ini
+    - f_gtk-settings.ini
     - d_wezterm
     - d_foot
     - d_hypr
+  vm:
+    dotfiles:
+    - f_zshrc
+    - d_nvim-min
+    - d_zsh
+    - d_wezterm
