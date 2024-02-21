@@ -7,7 +7,8 @@ local M = {
 				enabled = false,
 			},
 			char = {
-				enabled = false,
+				enabled = true,
+				jump_labels = true,
 			},
 		},
 	},
