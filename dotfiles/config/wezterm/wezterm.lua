@@ -9,7 +9,7 @@ end
 config.warn_about_missing_glyphs = false
 config.pane_focus_follows_mouse = true
 
-{%@@ if profile == "neto-wolf" @@%}
+{%@@ if profile == "neto-wolf" or profile == "vm" @@%}
 config.enable_wayland = false
 config.front_end = "OpenGL"
 -- config.front_end = "Software"
