@@ -9,6 +9,8 @@ local M = {
 			char = {
 				enabled = true,
 				jump_labels = true,
+				keys = { "f", "F" },
+				multi_line = false,
 			},
 		},
 	},
