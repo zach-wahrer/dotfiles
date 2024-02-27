@@ -1,0 +1,83 @@
+# https://alacritty.org/config-alacritty.html
+
+[font]
+size = 15
+
+[font.bold]
+family = "Sudo"
+style = "Bold"
+
+[font.bold_italic]
+family = "Sudo"
+style = "Bold Italic"
+
+[font.italic]
+family = "Sudo"
+style = "Italic"
+
+[font.normal]
+family = "Sudo"
+style = "Regular"
+
+# Default colors
+[colors.primary]
+background = '#1f2329'
+foreground = '#a0a8b7'
+
+# Cursor colors
+[colors.cursor]
+text = '#a0a8b7'
+cursor = '#8420f5'
+
+# Normal colors
+[colors.normal]
+black   = '#0e1013'
+red     = '#fe4450'
+green   = '#72f1b8'
+yellow  = '#FFCC00'
+blue    = '#3A47FF'
+magenta = '#AF6DF9'
+cyan    = '#61E2FF'
+white   = '#EBEBEB'
+
+# Bright colors
+[colors.bright]
+black   = '#101216'
+red     = '#f7202e'
+green   = '#0ff58e'
+yellow  = '#FFF700'
+blue    = '#3A89FF'
+magenta = '#8420f5'
+cyan    = '#0081A1'
+white   = '#FEFEF8'
+
+[keyboard]
+bindings = [
+   { key = 'B', mods = "Control|Shift", chars = "\uE000" },
+   { key = '_', mods = "Control|Shift", chars = "\uE001" },
+   { key = '|', mods = "Control|Shift", chars = "\uE002" },
+   { key = 'H', mods = "Control|Shift", chars = "\uE003" },
+   { key = 'L', mods = "Control|Shift", chars = "\uE004" },
+   { key = 'K', mods = "Control|Shift", chars = "\uE005" },
+   { key = 'J', mods = "Control|Shift", chars = "\uE006" },
+   { key = 'T', mods = "Control|Shift", chars = "\uE007" },
+   { key = 'Enter', mods = "Control|Shift", chars = "\uE008" },
+   { key = 'R', mods = "Control|Shift", chars = "\uE009" },
+   { key = 'ArrowUp', mods = "Control|Shift", chars = "\uE00A" },
+   { key = 'ArrowDown', mods = "Control|Shift", chars = "\uE00B" },
+   { key = 'ArrowLeft', mods = "Control|Shift", chars = "\uE00C" },
+   { key = 'ArrowRight', mods = "Control|Shift", chars = "\uE00D" },
+   { key = 'S', mods = "Control|Shift", chars = "\uE00E" },
+   { key = 'Space', mods = "Control|Shift", chars = "\uE00F" },
+
+   { key = ';', mods = "Control", chars = "\uE010" },
+   { key = 'W', mods = "Control|Shift", chars = "\uE011" },
+   { key = 'Q', mods = "Control|Shift", chars = "\uE012" },
+   { key = 'N', mods = "Control|Shift", chars = "\uE013" },
+   { key = 'H', mods = "Control|Shift|Alt", chars = "\uE014" },
+   { key = 'L', mods = "Control|Shift|Alt", chars = "\uE015" },
+   { key = 'J', mods = "Control|Shift|Alt", chars = "\uE016" },
+   { key = 'K', mods = "Control|Shift|Alt", chars = "\uE017" },
+   { key = 'ArrowLeft', mods = "Control|Shift|Alt", chars = "\uE018" },
+   { key = 'ArrowRight', mods = "Control|Shift|Alt", chars = "\uE019" },
+]
