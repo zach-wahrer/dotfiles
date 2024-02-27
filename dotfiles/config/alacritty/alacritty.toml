@@ -1,7 +1,13 @@
 # https://alacritty.org/config-alacritty.html
 
 [font]
+# size = 15
+{%@@ if profile == "red-wolf" or profile == "vm" @@%}
+size = 13
+{%@@ else @@%}
 size = 15
+{%@@ endif @@%}
+
 
 [font.bold]
 family = "Sudo"
