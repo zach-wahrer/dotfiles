@@ -24,9 +24,13 @@ function M.config()
 			ignore_blank_line = true,
 		},
 		mappings = {
-			comment = "<C-/>",
-			comment_line = "<C-/>",
-			comment_visual = "<C-/>",
+			comment = "<C-_>",
+			comment_line = "<C-_>",
+			comment_visual = "<C-_>",
+			-- For non-alacritty terms
+			-- comment = "<C-/>",
+			-- comment_line = "<C-/>",
+			-- comment_visual = "<C-/>",
 		},
 	})
 

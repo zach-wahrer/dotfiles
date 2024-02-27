@@ -63,6 +63,12 @@ dotfiles:
   d_hypr:
     src: config/hypr
     dst: ~/.config/hypr
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+  d_tmux:
+    src: config/tmux
+    dst: ~/.config/tmux
 profiles:
   neto-wolf:
     dotfiles:
@@ -82,9 +88,10 @@ profiles:
     - d_wlogout
     - d_artty
     - f_gtk-settings.ini
-    - d_wezterm
     - d_foot
     - d_hypr
+    - d_alacritty
+    - d_tmux
   red-wolf:
     dotfiles:
     - f_gitconfig
@@ -103,12 +110,14 @@ profiles:
     - d_wlogout
     - d_artty
     - f_gtk-settings.ini
-    - d_wezterm
     - d_foot
     - d_hypr
+    - d_alacritty
+    - d_tmux
   vm:
     dotfiles:
     - f_zshrc
     - d_nvim-min
     - d_zsh
-    - d_wezterm
+    - d_alacritty
+    - d_tmux

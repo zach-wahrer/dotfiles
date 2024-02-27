@@ -5,10 +5,10 @@ GO_BIN=/usr/lib/go/bin/go
 ## Packages / Tools ##
 sudo pacman -Syyu # Update
 sudo pacman -S cpio ncdu bpytop lsd bat git-delta hyprland hyprrpaper sad tk mako eaudio pulseaudio-alsa polkit-kde-agent alsa-utils pamixer qt5-wayland qt6-wayland wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl playerctl pavucontrol arc-gtk-theme ntp thunar thunar-volman gvfs swaybg swayidle swayimg man ufw &&
-	sudo systemctl enable --now ntpd && sudo systemctl enable --now ufw                                                                    # System
-sudo ufw enable && sudo ufw default deny                                                                                                # Firewall
-sudo pacman -S wezterm neovim zsh fd ripgrep fzf lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls # Terminal / Neovim
-sudo pacman -S git base-devel gcc deno docker docker-compose fx python-pip python-pipx pyright npm jq shfmt                             # Dev tools
+	sudo systemctl enable --now ntpd && sudo systemctl enable --now ufw                                                                           # System
+sudo ufw enable && sudo ufw default deny                                                                                                       # Firewall
+sudo pacman -S alacritty neovim zsh fd ripgrep fzf lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls tmux # Terminal / Neovim
+sudo pacman -S git base-devel gcc deno docker docker-compose fx python-pip python-pipx pyright npm jq shfmt                                    # Dev tools
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers ttf-sourcecodepro-nerd ttf-sudo swaync wlogout wmname grim slurp swappy usbutils wlr-randr # System
