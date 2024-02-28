@@ -31,9 +31,6 @@ set_vim_keymap(
 set_vim_keymap("n", "<A-Enter>", "O<ESC>", "Add line above")
 set_vim_keymap("n", "<CR>", "o<ESC>", "Add line below")
 
-set_vim_keymap("n", "<C-Space>", "ciw", "Change inner word")
-set_vim_keymap("n", "<C-Enter>", 'ci"', "Change inner quote")
-
 -- Format Keybinds --
 set_vim_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", "Insert current date")
 set_vim_keymap("n", "<leader>iu", "<CMD>put=system('uuidgen')<CR>", "Insert UUID")
@@ -83,8 +80,8 @@ set_vim_keymap("v", "<", "<gv", "Remove indent while keeping selection")
 -- Split Keybinds --
 set_vim_keymap("n", "<C-W>|", "<C-W>t<C-W>H", "Change to vertical splits")
 set_vim_keymap("n", "<C-W>-", "<C-W>t<C-W>K", "Change to horizontal splits")
-set_vim_keymap("n", "<C-\\>", "<C-W><C-V>", "Vertical split")
-set_vim_keymap("n", "<C-->", "<C-W><C-S>", "Horizontal split")
+set_vim_keymap("n", "<A-\\>", "<C-W><C-V>", "Vertical split")
+set_vim_keymap("n", "<A-->", "<C-W><C-S>", "Horizontal split")
 set_vim_keymap("n", "<M-Up>", "<CMD>resize +2<CR>", "Resize horizontal split bigger")
 set_vim_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", "Resize horizontal split smaller")
 set_vim_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", "Resize vertical split smaller")

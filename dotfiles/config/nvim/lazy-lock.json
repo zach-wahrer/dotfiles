@@ -24,7 +24,6 @@
   "gotests.nvim": { "branch": "main", "commit": "571563a6667723b3570238b9d7d56978cc9e213e" },
   "guihua.lua": { "branch": "master", "commit": "9fb6795474918b492d9ab01b1ebaf85e8bf6fe0b" },
   "gx.nvim": { "branch": "main", "commit": "78070bbd8e7e15a1623cdd6832a9529d2ee63e0c" },
-  "incline.nvim": { "branch": "main", "commit": "7a053e74459d73ca2a8227f8e7f2f8cd3a9cc79c" },
   "lazy.nvim": { "branch": "main", "commit": "aedcd79811d491b60d0a6577a9c1701063c2a609" },
   "lsp_signature.nvim": { "branch": "master", "commit": "fed2c8389c148ff1dfdcdca63c2b48d08a50dea0" },
   "lualine.nvim": { "branch": "master", "commit": "7d131a8d3ba5016229e8a1d08bf8782acea98852" },
@@ -72,5 +71,6 @@
   "vim-fugitive": { "branch": "master", "commit": "011cf4fcb93a9649ffc6dcdff56ef948f5d0f7cc" },
   "vim-go": { "branch": "master", "commit": "0e975560df38be387cca1d7d33df7a4744091303" },
   "vim-illuminate": { "branch": "master", "commit": "305bf07b919ac526deb5193280379e2f8b599926" },
-  "vim-test": { "branch": "master", "commit": "46d2067586b788e2194e812bbfdbb2061b93a5ee" }
+  "vim-test": { "branch": "master", "commit": "46d2067586b788e2194e812bbfdbb2061b93a5ee" },
+  "vimux": { "branch": "master", "commit": "f7c41607d9246ec4b6cc28587cce84d75d106e3e" }
 }

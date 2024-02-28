@@ -1,11 +1,12 @@
 local M = {
 	"vim-test/vim-test",
 	event = "VeryLazy",
+	dependencies = "preservim/vimux",
 }
 
 function M.config()
 	vim.g["test#go#runner"] = "richgo"
-	vim.g["test#strategy"] = "wezterm"
+	vim.g["test#strategy"] = "vimux"
 
 	vim.g["test#custom_transformations"] = { WeztermTransform }
 	vim.g["test#transformation"] = "wezterm"
