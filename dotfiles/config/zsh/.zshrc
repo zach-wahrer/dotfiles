@@ -59,6 +59,7 @@ export MANPAGER='nvim --clean +Man!'
 export MANWIDTH=999
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" ## https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
 export ZVM_CURSOR_STYLE_ENABLED=false
+export TERM=alacritty
 setopt ignoreeof ## Ignore Ctrl-D, ie. eof
 
 if [[ -n $SSH_CONNECTION ]]; then

@@ -81,6 +81,7 @@ alias kc="kubectl"
 alias dotdrop='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 alias d='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 
+# MISC #
 alias wgup="sudo wg-quick up wg0"
 alias wgdown="sudo wg-quick down wg0"
 {%@@ if profile == "neto-wolf" @@%}
@@ -90,3 +91,4 @@ alias sway="XDG_CURRENT_DESKTOP=sway SDL_VIDEODRIVER=wayland QT_QPA_PLATFORM=way
 {%@@ endif @@%}
 
 alias hyprland="WLR_NO_HARDWARE_CURSORS=1 Hyprland"
+alias ssh="TERM=xterm-256color ssh"
