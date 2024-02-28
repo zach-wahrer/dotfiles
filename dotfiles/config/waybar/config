@@ -87,14 +87,14 @@
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "wezterm start -- bpytop",
+        "on-click": "alacritty -e bpytop",
     },
 
     "disk": {
         "interval": 30,
         "format": "󰋊 {percentage_used}%",
         "path": "/",
-	"on-click": "wezterm start -- ncdu"
+	"on-click": "alacritty -e ncdu"
     },
 
     "custom/keyboard-layout": {
@@ -111,7 +111,7 @@
     "memory": {
         "interval": 5,
         "format": "󰍛 {}%", // Icon: memory
-        "on-click": "wezterm start -- bpytop",
+        "on-click": "alacritty -e bpytop",
         "states": {
             "warning": 70,
             "critical": 90
@@ -124,7 +124,7 @@
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "wezterm start -- nmtui",
+        "on-click": "alacritty -e nmtui",
     },
     "network#vpn": {
         "interface": "tun0",
@@ -226,7 +226,7 @@
 
     "custom/terminal": {
         "format": " ",
-        "on-click": "exec wezterm start",
+        "on-click": "exec alacritty",
         "tooltip": false
     },
 

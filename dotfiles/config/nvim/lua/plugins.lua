@@ -156,7 +156,7 @@ return {
 	{ "sindrets/diffview.nvim", event = "VeryLazy" }, -- Git diff view
 
 	---------------------------------------------------
-	-- WEZTERM
+	-- TERMINAL
 	---------------------------------------------------
 	{
 		"numToStr/Navigator.nvim",

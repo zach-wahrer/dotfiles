@@ -3,7 +3,7 @@ return {
 	-- THEMES
 	---------------------------------------------------
 	-- { "navarasu/onedark.nvim", lazy = false, priority = 1000 },
-	{ "maxmx03/fluoromachine.nvim", lazy = false, priority = 1000 },
+	{ "maxmx03/fluoromachine.nvim", lazy = false,      priority = 1000 },
 	-- { "cesaralvarod/tokyogogh.nvim", lazy = false, priority = 1000 }, -- GOOD!
 	-- "tiagovla/tokyodark.nvim"
 	-- "rebelot/kanagawa.nvim"
@@ -18,9 +18,9 @@ return {
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	{ "svban/YankAssassin.vim", event = "VeryLazy" }, -- Keep cursor in same spot after yank
-	{ "moll/vim-bbye", event = "VeryLazy" }, -- Better buffer delete
-	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
+	{ "svban/YankAssassin.vim",     event = "VeryLazy" }, -- Keep cursor in same spot after yank
+	{ "moll/vim-bbye",              event = "VeryLazy" }, -- Better buffer delete
+	{ "arp242/undofile_warn.vim",   event = "VeryLazy" }, -- Warn if undoing past current
 	{
 		"tversteeg/registers.nvim",
 		config = function()
@@ -88,17 +88,17 @@ return {
 	---------------------------------------------------
 	-- LANGUAGES
 	---------------------------------------------------
-	{ "ckipp01/stylua-nvim", ft = "lua" }, -- Lua formatting
+	{ "ckipp01/stylua-nvim",     ft = "lua" }, -- Lua formatting
 
 	---------------------------------------------------
 	-- GIT
 	---------------------------------------------------
-	{ "tpope/vim-fugitive", event = "VeryLazy" }, -- Git functions / Only using blame feature
+	{ "tpope/vim-fugitive",      event = "VeryLazy" }, -- Git functions / Only using blame feature
 	{ "rhysd/git-messenger.vim", event = "VeryLazy" }, -- Enhanced gitblame
-	{ "sindrets/diffview.nvim", event = "VeryLazy" }, -- Git diff view
+	{ "sindrets/diffview.nvim",  event = "VeryLazy" }, -- Git diff view
 
 	--------------------------------------------------
-	-- WEZTERM
+	-- TERMINAL
 	---------------------------------------------------
 	{
 		"numToStr/Navigator.nvim",
