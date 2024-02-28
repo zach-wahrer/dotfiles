@@ -1,4 +1,7 @@
 # https://alacritty.org/config-alacritty.html
+[window]
+padding = { x = 3, y = 3 }
+resize_increments = true
 
 [font]
 {%@@ if profile == "red-wolf" or profile == "vm" @@%}
