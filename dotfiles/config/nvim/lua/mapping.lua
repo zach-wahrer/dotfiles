@@ -40,8 +40,9 @@ set_vim_keymap("n", "<leader>jq", "<CMD>%!jq -S .<CR>", "Format current buffer w
 
 -- Tab Keybinds --
 set_vim_keymap("n", "<leader>tn", "<CMD>tabnew<CR>", "New tab page")
-set_vim_keymap("n", "<CA-h>", "<CMD>tabp<CR>", "Previous tab page")
-set_vim_keymap("n", "<CA-l>", "<CMD>tabn<CR>", "Next tab page")
+set_vim_keymap("n", "<leader>tc", "<CMD>tabclose<CR>", "Close tab page")
+set_vim_keymap("n", "<A-y>", "<CMD>tabp<CR>", "Previous tab page")
+set_vim_keymap("n", "<A-o>", "<CMD>tabn<CR>", "Next tab page")
 
 -- Quickfix Keybinds --
 set_vim_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", "Close quickfix and location list")
