@@ -1,4 +1,4 @@
-local o = vim.o     -- Global
+local o = vim.o -- Global
 local api = vim.api -- Api
 
 Colors = {
@@ -116,5 +116,14 @@ api.nvim_set_hl(0, "NoiceMini", { bg = Colors.black, fg = Colors.purple, blend =
 api.nvim_set_hl(0, "TelescopeBorder", { fg = Colors.purple })
 api.nvim_set_hl(0, "FlashMatch", { fg = Colors.pruple })
 api.nvim_set_hl(0, "FlashLabel", { fg = Colors.orange })
+api.nvim_set_hl(0, "MarkdownHeadline1", { bg = Colors.red, fg = Colors.dark_grey, bold = 1 })
+api.nvim_set_hl(0, "MarkdownHeadline2", { bg = Colors.orange, fg = Colors.dark_grey, bold = 1 })
+api.nvim_set_hl(0, "MarkdownHeadline3", { bg = Colors.yellow, fg = Colors.dark_grey, bold = 1 })
+api.nvim_set_hl(0, "MarkdownHeadline4", { bg = Colors.green, fg = Colors.dark_grey, bold = 1 })
+api.nvim_set_hl(0, "MarkdownHeadline5", { bg = Colors.blue, fg = Colors.dark_grey, bold = 1 })
+api.nvim_set_hl(0, "MarkdownHeadline6", { bg = Colors.purple, fg = Colors.dark_grey, bold = 1 })
+api.nvim_set_hl(0, "MarkdownDash", { fg = Colors.dark_purple, bold = 1 })
+api.nvim_set_hl(0, "MarkdownQuote", { fg = Colors.dark_purple, bold = 1 })
+api.nvim_set_hl(0, "MarkdownCodeBlock", { bg = Colors.dark_grey })
 
 return Colors
