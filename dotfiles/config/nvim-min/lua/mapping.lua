@@ -31,9 +31,6 @@ set_vim_keymap(
 set_vim_keymap("n", "<A-Enter>", "O<ESC>", "Add line above")
 set_vim_keymap("n", "<CR>", "o<ESC>", "Add line below")
 
-set_vim_keymap("n", "<C-Space>", "ciw", "Change inner word")
-set_vim_keymap("n", "<C-Enter>", 'ci"', "Change inner quote")
-
 -- Format Keybinds --
 set_vim_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", "Insert current date")
 set_vim_keymap("n", "<leader>iu", "<CMD>put=system('uuidgen')<CR>", "Insert UUID")
@@ -43,8 +40,9 @@ set_vim_keymap("n", "<leader>jq", "<CMD>%!jq -S .<CR>", "Format current buffer w
 
 -- Tab Keybinds --
 set_vim_keymap("n", "<leader>tn", "<CMD>tabnew<CR>", "New tab page")
-set_vim_keymap("n", "<CA-h>", "<CMD>tabp<CR>", "Previous tab page")
-set_vim_keymap("n", "<CA-l>", "<CMD>tabn<CR>", "Next tab page")
+set_vim_keymap("n", "<leader>tc", "<CMD>tabclose<CR>", "Close tab page")
+set_vim_keymap("n", "<A-y>", "<CMD>tabp<CR>", "Previous tab page")
+set_vim_keymap("n", "<A-o>", "<CMD>tabn<CR>", "Next tab page")
 
 -- Quickfix Keybinds --
 set_vim_keymap("n", "<leader>c", "<CMD>lclose<CR><CMD>cclose<CR>", "Close quickfix and location list")
@@ -82,8 +80,8 @@ set_vim_keymap("v", "<", "<gv", "Remove indent while keeping selection")
 -- Split Keybinds --
 set_vim_keymap("n", "<C-W>|", "<C-W>t<C-W>H", "Change to vertical splits")
 set_vim_keymap("n", "<C-W>-", "<C-W>t<C-W>K", "Change to horizontal splits")
-set_vim_keymap("n", "<C-\\>", "<C-W><C-V>", "Vertical split")
-set_vim_keymap("n", "<C-->", "<C-W><C-S>", "Horizontal split")
+set_vim_keymap("n", "<A-\\>", "<C-W><C-V>", "Vertical split")
+set_vim_keymap("n", "<A-->", "<C-W><C-S>", "Horizontal split")
 set_vim_keymap("n", "<M-Up>", "<CMD>resize +2<CR>", "Resize horizontal split bigger")
 set_vim_keymap("n", "<M-Down>", "<CMD>resize -2<CR>", "Resize horizontal split smaller")
 set_vim_keymap("n", "<M-Left>", "<CMD>vertical resize -2<CR>", "Resize vertical split smaller")
@@ -133,18 +131,8 @@ set_vim_keymap("n", "<leader>y", "<CMD>lua require('flash').treesitter_search()<
 set_vim_keymap("n", "<leader>gb", "<CMD>Git blame<CR>", "Git blame buffer")
 
 -- GitLinker --
-set_vim_keymap(
-	{ "n", "v" },
-	"<leader>gl",
-	"<CMD>lua require('gitlinker').link({action = require('gitlinker.actions').clipboard})<CR>",
-	"Copy git link to clipboard"
-)
-set_vim_keymap(
-	{ "n", "v" },
-	"<leader>gL",
-	"<CMD>lua require('gitlinker').link({action = require('gitlinker.actions').system})<CR>",
-	"Open git link in browser"
-)
+set_vim_keymap({ "n", "v" }, "<leader>gl", "<CMD>GitLink<CR>", "Copy git link to clipboard")
+set_vim_keymap({ "n", "v" }, "<leader>gL", "<CMD>GitLink!<CR>", "Open git link in browser")
 
 -- GitMessenger --
 set_vim_keymap("n", "<leader>gd", "<CMD>GitMessenger<CR>", "Open additional git details about current line")
@@ -159,6 +147,8 @@ set_vim_keymap("n", "<leader>hP", "<CMD>Gitsigns preview_hunk<CR>", "Preview git
 set_vim_keymap("n", "<leader>hp", "<CMD>Gitsigns prev_hunk<CR>", "Previous git hunk")
 set_vim_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", "Next git hunk")
 
+-- GX --
+set_vim_keymap("n", "gx", "<CMD>Browse<CR>", "Open link")
 -- Mini.map --
 set_vim_keymap("n", "<Delete>", "<CMD>lua MiniMap.toggle()<CR>", "Toggle minimap")
 set_vim_keymap("n", "<Delete><Delete>", "<CMD>lua MiniMap.toggle_focus()<CR>", "Toggle focus into minimap")

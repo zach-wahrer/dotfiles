@@ -64,7 +64,7 @@ set_vim_keymap(
 	"Find in zsh files"
 )
 set_vim_keymap("n", "<leader>on", "<CMD>lua require('functions').findFiles('~/.config/nvim')<CR>", "Find in nvim files")
-set_vim_keymap("n", "<leader>os", "<CMD>lua require('functions').findFiles('~/.config/sway')<CR>", "Find in sway files")
+set_vim_keymap("n", "<leader>oh", "<CMD>lua require('functions').findFiles('~/.config/hypr')<CR>", "Find in hypr files")
 set_vim_keymap("n", "<leader>og", "<CMD>lua require('functions').findFiles('~/go/src')<CR>", "Find in go src files")
 set_vim_keymap("n", "<leader>ob", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", "Find in note files")
 
@@ -185,10 +185,6 @@ set_vim_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", "Preview markdown 
 -- Mini.map --
 set_vim_keymap("n", "<Delete>", "<CMD>lua MiniMap.toggle()<CR>", "Toggle minimap")
 set_vim_keymap("n", "<Delete><Delete>", "<CMD>lua MiniMap.toggle_focus()<CR>", "Toggle focus into minimap")
-
--- Multicursor --
-set_vim_keymap("n", "<leader>mc", "<CMD>MCstart<CR>", "Start multicursors using current word")
-set_vim_keymap("n", "<leader>mp", "<CMD>MCpattern<CR>", "Start multicursors and ask for pattern")
 
 -- Navigator --
 set_vim_keymap("n", "<C-h>", "<CMD>NavigatorLeft<CR>", "Navigate Left")
