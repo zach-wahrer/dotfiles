@@ -7,7 +7,7 @@ sudo pacman -Syyu # Update
 ### System Packages
 sudo pacman -S cpio ncdu bpytop lsd bat git-delta hyprland hyprrpaper sad tk mako eaudio pulseaudio-alsa polkit-kde-agent \
 	alsa-utils pamixer qt5-wayland qt6-wayland wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl \
-	playerctl pavucontrol arc-gtk-theme ntp thunar thunar-volman gvfs swaybg swayidle swayimg man ufw
+	playerctl pavucontrol arc-gtk-theme ntp thunar thunar-volman gvfs reflector swaybg swayidle swayimg man ufw
 ### Terminal / Neovim Packages
 sudo pacman -S alacritty neovim zsh fd ripgrep fzf lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls tmux
 ### Dev tools Packages
@@ -55,6 +55,9 @@ sudo systemctl enable --now ntpd
 ### Firewall
 sudo systemctl enable --now ufw
 sudo ufw enable && sudo ufw default deny
+### Reflector (Pacman mirror updater)
+sudo systemctl enable --now reflector.service
+sudo systemctl enable --now reflector.timer
 ### Docker Setup
 sudo systemctl enable docker && sudo systemctl daemon-reload
 sudo usermod -aG docker "$USER"
