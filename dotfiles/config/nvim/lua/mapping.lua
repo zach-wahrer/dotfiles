@@ -181,6 +181,12 @@ set_vim_keymap(
 
 -- Markdown --
 set_vim_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", "Preview markdown file in browser")
+set_vim_keymap("n", "<leader>h1", "i# ", "Insert markdown h1")
+set_vim_keymap("n", "<leader>h2", "i## ", "Insert markdown h2")
+set_vim_keymap("n", "<leader>h3", "i### ", "Insert markdown h3")
+set_vim_keymap("n", "<leader>h4", "i#### ", "Insert markdown h4")
+set_vim_keymap("n", "<leader>h5", "i##### ", "Insert markdown h5")
+set_vim_keymap("n", "<leader>h6", "i###### ", "Insert markdown h6")
 
 -- Mini.map --
 set_vim_keymap("n", "<Delete>", "<CMD>lua MiniMap.toggle()<CR>", "Toggle minimap")
