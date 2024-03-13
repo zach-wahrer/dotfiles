@@ -4,20 +4,26 @@ GO_BIN=/usr/lib/go/bin/go
 
 ## Packages / Tools
 sudo pacman -Syyu # Update
+
 ### System Packages
-sudo pacman -S cpio ncdu bpytop lsd bat git-delta hyprland hyprrpaper sad tk mako eaudio pulseaudio-alsa polkit-kde-agent \
-	alsa-utils pamixer qt5-wayland qt6-wayland wtype wl-clipboard xorg-xwayland network-manager-applet brightnessctl \
-	playerctl pavucontrol arc-gtk-theme ntp thunar thunar-volman gvfs reflector swaybg swayidle swayimg man ufw
+sudo pacman -S alsa-utils arc-gtk-theme bat bpytop brightnessctl cpio eaudio git-delta gvfs lsd hyprland hyprrpaper \
+	mako man network-manager-applet ncdu ntp pavucontrol playerctl polkit-kde-agent pulseaudio-alsa \
+	pamixer qt5-wayland qt6-wayland reflector sad swaybg swayidle swayimg tk thunar thunar-volman ufw \
+	wtype wl-clipboard xorg-xwayland
+
 ### Terminal / Neovim Packages
-sudo pacman -S alacritty neovim zsh fd ripgrep fzf lua-language-server bash-language-server yaml-language-server yamllint stylua go gopls tmux
+sudo pacman -S alacritty bash-language-server fd fzf go gopls lua-language-server neovim ripgrep stylua tmux \
+	yaml-language-server yamllint zsh
+
 ### Dev tools Packages
-sudo pacman -S git base-devel gcc deno docker docker-compose fx python-pip python-pipx pyright npm jq shfmt
+sudo pacman -S base-devel deno docker docker-compose fx gcc git jq npm python-pip python-pipx pyright shfmt
 
 ## Yay
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 ### AUR System Packages
-yay -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr pipewire-media-session nwg-displays nwg-launchers \
-	ttf-sharetech-mono-nerd ttf-sourcecodepro-nerd ttf-sudo swaync wlogout wmname grim slurp swappy usbutils wlr-randr
+yay -S grim pipewire pipewire-media-session nwg-displays nwg-launchers slurp swappy swaync \
+	ttf-sharetech-mono-nerd ttf-sourcecodepro-nerd ttf-sudo usbutils wlogout wmname wlr-randr \
+	xdg-desktop-portal xdg-desktop-portal-wlr
 ### AUR Dev Packages
 yay -S dbgate-bin marksman-bin python-pynvim python-setuptools shellcheck-bin syncthing
 ### AUR Hyprland Plugins
