@@ -3,7 +3,11 @@ return {
 	-- THEMES
 	---------------------------------------------------
 	-- { "navarasu/onedark.nvim", lazy = false, priority = 1000 },
-	{ "maxmx03/fluoromachine.nvim", lazy = false, priority = 1000 },
+	{
+		"maxmx03/fluoromachine.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	-- { "cesaralvarod/tokyogogh.nvim", lazy = false, priority = 1000 }, -- GOOD!
 	-- "tiagovla/tokyodark.nvim"
 	-- "rebelot/kanagawa.nvim"
@@ -21,6 +25,13 @@ return {
 	{ "svban/YankAssassin.vim", event = "VeryLazy" }, -- Keep cursor in same spot after yank
 	{ "moll/vim-bbye", event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
+	{ "chrisbra/Recover.vim", event = "VeryLazy" }, -- Show diffs for swap files
+	{ "gbprod/substitute.nvim", event = "VeryLazy" }, -- Substitution operator
+	{
+		"LintaoAmons/bookmarks.nvim",
+		dependencies = "stevearc/dressing.nvim",
+		event = "VeryLazy",
+	},
 	{
 		"tversteeg/registers.nvim",
 		config = function()

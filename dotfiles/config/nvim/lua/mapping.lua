@@ -107,6 +107,11 @@ set_vim_keymap(
 	"Improved backward search"
 )
 
+-- Bookmarks --
+set_vim_keymap("n", "<leader>b", "<CMD>BookmarksGoto<CR>", "Goto bookmark")
+set_vim_keymap("n", "<leader>bt", "<CMD>BookmarksMark<CR>", "Toggle bookmark")
+set_vim_keymap("n", "<leader>bc", "<CMD>BookmarksCommands<CR>", "Bookmark commands")
+
 -- Bufferline --
 set_vim_keymap("n", "<A-h>", "<CMD>BufferLineCyclePrev<CR>", "Bufferline view previous")
 set_vim_keymap("n", "<A-l>", "<CMD>BufferLineCycleNext<CR>", "Bufferline view next")
@@ -192,6 +197,9 @@ set_vim_keymap("n", "<leader>h6", "i###### ", "Insert markdown h6")
 set_vim_keymap("n", "<Delete>", "<CMD>lua MiniMap.toggle()<CR>", "Toggle minimap")
 set_vim_keymap("n", "<Delete><Delete>", "<CMD>lua MiniMap.toggle_focus()<CR>", "Toggle focus into minimap")
 
+-- Navbuddy --
+set_vim_keymap("n", "<leader>m", "<CMD>Navbuddy<CR>", "Open navbuddy")
+
 -- Navigator --
 set_vim_keymap("n", "<C-h>", "<CMD>NavigatorLeft<CR>", "Navigate Left")
 set_vim_keymap("n", "<C-l>", "<CMD>NavigatorRight<CR>", "Navigate Right")
@@ -219,6 +227,15 @@ end
 
 -- Sad --
 set_vim_keymap("n", "<leader>sr", "<CMD>Sad<CR>", "Search/replace within cwd")
+
+-- Substitute --
+local subOK, sub = pcall(require, "substitute")
+if subOK then
+	set_vim_keymap("n", "s", sub.operator, "Substitute operator")
+	set_vim_keymap("n", "ss", sub.line, "Substitute line")
+	set_vim_keymap("n", "S", sub.eol, "Substitute EOL")
+	set_vim_keymap("x", "s", sub.visual, "Substitute visual")
+end
 
 -- Telescope --
 set_vim_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", "Search recently opened files")

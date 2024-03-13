@@ -8,12 +8,17 @@ local M = {
 				require("lsp_signature").setup()
 			end,
 		}, -- Show func signature
+		{
+			"SmiteshP/nvim-navbuddy",
+			dependencies = { "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
+		},
 	},
 	event = "VeryLazy",
 }
 
 function M.config()
 	require("neodev").setup({})
+	local navbuddy = require("nvim-navbuddy")
 
 	-- Mappings.
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -21,7 +26,9 @@ function M.config()
 
 	-- Use an on_attach function to only map the following keys
 	-- after the language server attaches to the current buffer
+
 	local on_attach = function(client, bufnr)
+		navbuddy.attach(client, bufnr)
 		-- Enable completion triggered by <c-x><c-o>
 		vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
