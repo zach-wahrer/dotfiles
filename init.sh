@@ -26,8 +26,10 @@ yay -S grim pipewire pipewire-media-session nwg-displays nwg-launchers slurp swa
 	xdg-desktop-portal xdg-desktop-portal-wlr
 ### AUR Dev Packages
 yay -S dbgate-bin marksman-bin python-pynvim python-setuptools shellcheck-bin syncthing
-### AUR Hyprland Plugins
-yay -S hy3
+### Hyprland Plugins
+hyprpm update -v
+hyprpm add https://github.com/outfoxxed/hy3
+hyprpm enable hy3
 
 ## NPM Dev Tools
 sudo npm install -g dockerfile-language-server-nodejs

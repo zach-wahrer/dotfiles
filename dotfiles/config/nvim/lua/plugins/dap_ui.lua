@@ -3,6 +3,7 @@ local M = {
 	dependencies = {
 		"mfussenegger/nvim-dap",
 		"przepompownia/nvim-dap-tab",
+		"nvim-neotest/nvim-nio",
 	},
 	event = "VeryLazy",
 }
