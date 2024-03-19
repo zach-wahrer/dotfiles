@@ -26,7 +26,13 @@ return {
 	{ "moll/vim-bbye", event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
 	{ "chrisbra/Recover.vim", event = "VeryLazy" }, -- Show diffs for swap files
-	{ "gbprod/substitute.nvim", event = "VeryLazy" }, -- Substitution operator
+	{
+		"gbprod/substitute.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("substitute").setup()
+		end,
+	}, -- Substitution operator
 	{
 		"LintaoAmons/bookmarks.nvim",
 		dependencies = "stevearc/dressing.nvim",
