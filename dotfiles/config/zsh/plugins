@@ -1,3 +1,10 @@
+## Zsh Vi Mode ##
+if [[ ! -d $ZSH_PLUGINS/zsh-vi-mode ]]; then
+    git clone https://github.com/jeffreytse/zsh-vi-mode.git $ZSH_PLUGINS/zsh-vi-mode
+fi
+ZVM_INIT_MODE=sourcing
+source $ZSH_PLUGINS/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 # FZF #
 if [[ ! -d $ZSH_PLUGINS/fzf ]]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git $ZSH_PLUGINS/fzf

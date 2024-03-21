@@ -1,7 +1,11 @@
-bindkey -v # vi mode
+# bindkey -v # vi mode
 bindkey -M menuselect '^[' undo # Esc exits completion menu
 bindkey '^[[Z' reverse-menu-complete # Shift-Tab goes back in complete menu
 bindkey '^[[1;3A' fzf-history-widget # Alt-Up to show history in fzf
 bindkey '^R' fzf-history-widget # Ctrl-r for fzf history
 bindkey "^[[3~" delete-char # Fix delete key in insert mode
 bindkey -r "^D" # Prevent choices being listed when scrolled to the bottom
+function zvm_after_lazy_keybindings() {
+    zvm_bindkey vicmd 'H' beginning-of-line
+    zvm_bindkey vicmd 'L' end-of-line
+}

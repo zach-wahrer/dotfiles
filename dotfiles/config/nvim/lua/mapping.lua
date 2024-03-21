@@ -226,7 +226,7 @@ if pOK then
 end
 
 -- Sad --
-set_vim_keymap("n", "<leader>sr", "<CMD>Sad<CR>", "Search/replace within cwd")
+set_vim_keymap({ "n", "x" }, "<leader>sr", "<CMD>Sad<CR>", "Search/replace within cwd")
 
 -- Substitute --
 local subOK, sub = pcall(require, "substitute")
