@@ -8,6 +8,7 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
+	-- { "eldritch-theme/eldritch.nvim", lazy = false, priority = 1000 }, -- Interesting
 	-- { "cesaralvarod/tokyogogh.nvim", lazy = false, priority = 1000 }, -- GOOD!
 	-- "tiagovla/tokyodark.nvim"
 	-- "rebelot/kanagawa.nvim"

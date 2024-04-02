@@ -102,7 +102,11 @@ function M.config()
 			end,
 		},
 		view = {
-			entries = { name = "custom", selection_order = "near_cusor" },
+			entries = {
+				name = "custom",
+				selection_order = "near_cusor",
+				follow_cursor = true,
+			},
 		},
 	})
 
