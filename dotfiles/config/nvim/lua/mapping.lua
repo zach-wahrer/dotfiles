@@ -174,7 +174,7 @@ set_vim_keymap(
 	"<CMD>LspStop<CR><CMD>call wait(1500, 1==0)<CR><CMD>LspStart<CR>",
 	"Reset LSP server for current buffer"
 )
-set_vim_keymap("n", "<leader>m", "<CMD>lua vim.diagnostic.open_float()<CR>", "Open LSP diagnostic message in float")
+set_vim_keymap("n", "<leader>ms", "<CMD>lua vim.diagnostic.open_float()<CR>", "Open LSP diagnostic message in float")
 set_vim_keymap("n", "<leader>dn", "<CMD>lua vim.diagnostic.goto_next()<CR>", "Next LSP diagnostic location")
 set_vim_keymap("n", "<leader>dp", "<CMD>lua vim.diagnostic.goto_prev()<CR>", "Previous LSP diagnostic location")
 set_vim_keymap(
@@ -241,7 +241,7 @@ end
 set_vim_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", "Search recently opened files")
 set_vim_keymap("n", "<leader>s", "<CMD>Telescope live_grep hidden=true<CR>", "Search inside files in cwd")
 set_vim_keymap("n", "<leader>ff", "<CMD>Telescope find_files hidden=true<CR>", "Search for files by name in cwd")
-set_vim_keymap("n", "<leader>f", "<CMD>Telescope spell_suggest<CR>", "Fix spelling")
+set_vim_keymap("n", "<leader>fs", "<CMD>Telescope spell_suggest<CR>", "Fix spelling")
 set_vim_keymap("n", "<leader>h", "<CMD>Telescope help_tags<CR>", "Search help files")
 set_vim_keymap("n", "<leader>ss", "<CMD>Telescope grep_string<CR>", "Search for word under cursor in cwd")
 set_vim_keymap("n", "<leader>k", "<CMD>Telescope keymaps<CR>", "Search keymaps")
