@@ -232,9 +232,9 @@ set_vim_keymap({ "n", "x" }, "<leader>sr", "<CMD>Sad<CR>", "Search/replace withi
 local subOK, sub = pcall(require, "substitute")
 if subOK then
 	set_vim_keymap("n", "s", sub.operator, "Substitute operator")
+	set_vim_keymap("x", "s", sub.visual, "Substitute visual")
 	set_vim_keymap("n", "ss", sub.line, "Substitute line")
 	set_vim_keymap("n", "S", sub.eol, "Substitute EOL")
-	set_vim_keymap("x", "s", sub.visual, "Substitute visual")
 end
 
 -- Telescope --
