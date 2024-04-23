@@ -10,6 +10,8 @@ sudo pacman -S alsa-utils arc-gtk-theme bat bpytop brightnessctl cpio eaudio git
 	mako man network-manager-applet ncdu ntp pavucontrol playerctl polkit-kde-agent pulseaudio-alsa \
 	pamixer qt5-wayland qt6-wayland reflector sad swaybg swayidle swayimg tk thunar thunar-volman ufw \
 	wtype wl-clipboard xorg-xwayland
+#### KDE
+sudo pacman -S kde-desktop kscreen xorg-xinit
 
 ### Terminal / Neovim Packages
 sudo pacman -S alacritty bash-language-server fd fzf go gopls lua-language-server neovim ripgrep stylua tmux \
