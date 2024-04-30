@@ -2,6 +2,9 @@
 [window]
 padding = { x = 3, y = 3 }
 resize_increments = true
+{%@@ if profile == "fr-wolf" @@%}
+option_as_alt = "Both"
+{%@@ endif @@%}
 
 [font]
 {%@@ if profile == "red-wolf" or profile == "vm" @@%}

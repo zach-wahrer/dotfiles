@@ -92,6 +92,17 @@ profiles:
     - d_hypr
     - d_alacritty
     - d_tmux
+  fr-wolf:
+    dotfiles:
+    - f_zshrc
+    - f_golangci.yml
+    - d_nvim
+    - d_scripts
+    - d_tridactyl
+    - d_zsh
+    - d_artty
+    - d_alacritty
+    - d_tmux
   red-wolf:
     dotfiles:
     - f_gitconfig

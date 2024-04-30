@@ -42,6 +42,9 @@ ssh-add ~/.ssh/gitlab
 source $ZSH_CONFIG/keybinds
 source $ZSH_CONFIG/paths
 source $ZSH_CONFIG/aliases
+{%@@ if profile == "fr-wolf" @@%}
+source "$HOME/.zshenv"
+{%@@ endif @@%}
 source $ZSH_CONFIG/functions
 source $ZSH_CONFIG/plugins
 source $ZSH_CONFIG/arTTY
