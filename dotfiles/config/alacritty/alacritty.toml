@@ -9,6 +9,8 @@ option_as_alt = "Both"
 [font]
 {%@@ if profile == "red-wolf" or profile == "vm" @@%}
 size = 11
+{%@@ elif profile == "fr-wolf" @@%}
+size = 16
 {%@@ else @@%}
 size = 13
 {%@@ endif @@%}

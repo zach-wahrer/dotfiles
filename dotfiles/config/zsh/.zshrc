@@ -32,8 +32,11 @@ zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibili
 source <(kubectl completion zsh)
 {%@@ endif @@%}
 
-{%@@ if profile == "neto-wolf" @@%}
 # SOURCE KEYS #
+eval "$(ssh-agent -s)"
+{%@@ if profile == "fr-wolf" @@%}
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
+{%@@ elif profile == "neto-wolf" @@%}
 ssh-add ~/.ssh/personal_github
 ssh-add ~/.ssh/gitlab
 {%@@ endif @@%}
