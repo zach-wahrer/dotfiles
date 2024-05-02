@@ -66,4 +66,7 @@ white   = '#FEFEF8'
 [keyboard]
 bindings = [
    # { key = '_', mods = "Control|Shift", chars = "\uE001" },
+{%@@ if profile == "fr-wolf" @@%}
+   { key = 'Slash', mods = "Control", chars = "\u001F" }
+{%@@ endif @@%}
 ]
