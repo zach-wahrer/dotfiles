@@ -75,6 +75,13 @@ augroups.buf_enter = {
 			cmd("set filetype=hcl.tf")
 		end,
 	},
+	set_hurl_to_hurl = {
+		event = { "BufEnter" },
+		pattern = "*.hurl",
+		callback = function()
+			cmd("set filetype=hurl")
+		end,
+	},
 }
 
 augroups.buf_write_pre = {

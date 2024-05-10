@@ -8,8 +8,8 @@ function M.config()
 	vim.g["test#go#runner"] = "richgo"
 	vim.g["test#strategy"] = "vimux"
 
-	vim.g["test#custom_transformations"] = { WeztermTransform }
-	vim.g["test#transformation"] = "wezterm"
+	-- vim.g["test#custom_transformations"] = { WeztermTransform }
+	-- vim.g["test#transformation"] = "wezterm"
 end
 
 function WeztermTransform(cmd)

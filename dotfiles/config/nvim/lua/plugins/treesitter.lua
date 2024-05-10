@@ -21,6 +21,7 @@ function M.config()
 			"gomod",
 			"hcl",
 			"html",
+			"hurl",
 			"javascript",
 			"jq",
 			"json",
