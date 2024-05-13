@@ -11,6 +11,8 @@
 alias ls='ls --color=auto'
 alias :q="exit"
 alias :qa="exit"
+alias n="nvim"
+alias N='nvim $(fzf)'
 
 # LS #
 alias ls="lsd"
@@ -80,7 +82,7 @@ alias kc="kubectl"
 # DOTDROP #
 alias dotdrop='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 {%@@ if profile == "fr-wolf" @@%}
-alias d='/usr/local/Cellar/dotdrop/1.14.0_2/bin/dotdrop --cfg=~/dotfiles/config.yaml --profile=fr-wolf'
+alias d='/usr/local/Cellar/dotdrop/1.14.0_3/bin/dotdrop --cfg=~/dotfiles/config.yaml --profile=fr-wolf'
 {%@@ else @@%}
 alias d='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 {%@@ endif @@%}
