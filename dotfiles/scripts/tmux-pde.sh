@@ -2,19 +2,19 @@
 
 tmux has-session -t "PDE" 2>/dev/null
 if [ $? != 0 ]; then
-	tmux new-session -d -n "Config" -s "PDE"
-	tmux send-keys -t 0 "cd ~/.config" "Enter" "nvim" "Enter"
+	tmux new-session -d -n "Config" -s "PDE" -x - -y -
 	tmux split-window -v
-	tmux send-keys -t 1 "cd ~/.config" "Enter"
-	tmux resize-pane -y 15%
 	tmux select-pane -t 0
+	tmux resize-pane -t 0 -y 75%
+	tmux send-keys -t 0 "cd ~/dotfiles" "Enter" "nvim" "Enter"
+	tmux send-keys -t 1 "cd ~/dotfiles" "Enter"
 
 	tmux new-window -n "Code"
-	tmux send-keys -t 0 "cd ~/go/src" "Enter" "nvim" "Enter"
 	tmux split-window -v
-	tmux send-keys -t 1 "cd ~/go/src" "Enter"
-	tmux resize-pane -y 15%
 	tmux select-pane -t 0
+	tmux resize-pane -t 0 -y 75%
+	tmux send-keys -t 0 "cd ~/go/src" "Enter" "nvim" "Enter"
+	tmux send-keys -t 1 "cd ~/go/src" "Enter"
 
 	tmux new-window -n "Terms"
 	tmux split-window -v
