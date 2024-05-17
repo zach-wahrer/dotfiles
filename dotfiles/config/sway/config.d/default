@@ -224,6 +224,7 @@ bindsym $mod+r mode "resize"
 #
     bindsym $mod+Shift+f exec thunar
     bindsym $mod+Shift+b exec env MOZ_ENABLE_WAYLAND=1 firefox
+    bindsym $mod+c exec qalculate-gtk
     bindsym $mod+Shift+e splith, exec alacritty -e zsh -c "~/scripts/tmux-pde.sh"
 #
 # Screenshots

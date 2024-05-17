@@ -27,18 +27,13 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 zstyle ':completion:*' list-prompt   '' # Remove "Do you want to see X possibility"
 zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibility"
 
-{%@@ if profile == "neto-wolf" @@%}
 # USER COMPLETIONS #
-source <(kubectl completion zsh)
-{%@@ endif @@%}
+# source <(kubectl completion zsh)
 
 # SOURCE KEYS #
 eval "$(ssh-agent -s)"
 {%@@ if profile == "fr-wolf" @@%}
 ssh-add --apple-use-keychain ~/.ssh/id_rsa
-{%@@ elif profile == "neto-wolf" @@%}
-ssh-add ~/.ssh/personal_github
-ssh-add ~/.ssh/gitlab
 {%@@ endif @@%}
 
 # CONFIGS #

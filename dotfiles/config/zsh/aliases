@@ -90,11 +90,7 @@ alias d='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 # MISC #
 alias wgup="sudo wg-quick up wg0"
 alias wgdown="sudo wg-quick down wg0"
-{%@@ if profile == "neto-wolf" @@%}
-alias sway="WLR_NO_HARDWARE_CURSORS=1 XDG_CURRENT_DESKTOP=sway SDL_VIDEODRIVER=wayland QT_QPA_PLATFORM=wayland QT_QPA_PLATFORM=wayland QT_QPA_PLATFORM=wayland XDG_SESSION_DESKTOP=sway \sway --unsupported-gpu"
-{%@@ else @@%}
 alias sway="XDG_CURRENT_DESKTOP=sway SDL_VIDEODRIVER=wayland QT_QPA_PLATFORM=wayland QT_QPA_PLATFORM=wayland QT_QPA_PLATFORM=wayland XDG_SESSION_DESKTOP=sway \sway"
-{%@@ endif @@%}
 
 alias plasma="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland"
 alias plasmax="startx /usr/bin/startplasma-x11"
