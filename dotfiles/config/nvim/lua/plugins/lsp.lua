@@ -42,7 +42,8 @@ function M.config()
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
+			opts)
 		vim.api.nvim_buf_set_keymap(
 			bufnr,
 			"n",
@@ -63,7 +64,8 @@ function M.config()
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>CodeActionMenu<CR>", opts)
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references <CR>", opts)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>",
+			opts)
 
 		-- Workaround for gopls semantic token highlighting https://github.com/golang/go/issues/54531#issuecomment-1464982242
 		if not client.server_capabilities.semanticTokensProvider then
@@ -86,7 +88,7 @@ function M.config()
 	-- Use a loop to conveniently call 'setup' on multiple servers and
 	-- map buffer local keybindings when the language server attaches
 	local servers =
-		{ "bashls", "clangd", "dockerls", "marksman", "terraformls", "tsserver", "eslint", "pyright", "yamlls" }
+	{ "bashls", "clangd", "dockerls", "marksman", "terraformls", "tsserver", "eslint", "pyright", "yamlls" }
 	for _, lsp in pairs(servers) do
 		lspconfig[lsp].setup({
 			on_attach = on_attach,
@@ -100,7 +102,7 @@ function M.config()
 		-- Enable virtual text only on Warning or above, override spacing to 2
 		virtual_text = {
 			spacing = 2,
-			severity_limit = "Warning",
+			min = vim.diagnostic.severity.WARN,
 		},
 	})
 
@@ -109,6 +111,9 @@ function M.config()
 		capabilities = capabilities,
 		settings = {
 			Lua = {
+				hint = {
+					enable = true,
+				},
 				diagnostics = {
 					globals = { "vim" },
 				},
@@ -150,7 +155,7 @@ function M.config()
 				usePlaceholders = true,
 				completeUnimported = true,
 				staticcheck = true,
-				hints = {
+				["ui.inlayhint.hints"] = {
 					assignVariableTypes = true,
 					compositeLiteralFields = true,
 					compositeLiteralTypes = true,

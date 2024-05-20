@@ -186,6 +186,12 @@ set_vim_keymap(
 	"<CMD>lua vim.diagnostic.setloclist()<CR>",
 	"Open all LSP diagnostic locations in location list"
 )
+set_vim_keymap(
+	"n",
+	"<leader>ih",
+	"<CMD>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>",
+	"Toggle inlay hints"
+)
 
 -- Markdown --
 set_vim_keymap("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", "Preview markdown file in browser")

@@ -19,7 +19,15 @@ function M.config()
 		if recording_register == "" then
 			return ""
 		else
-			return "Recording @" .. recording_register
+			return "󰑊 @" .. recording_register .. " "
+		end
+	end
+
+	local function show_inlay_hints()
+		if vim.lsp.inlay_hint.is_enabled() then
+			return " 󰇉 "
+		else
+			return ""
 		end
 	end
 
@@ -62,6 +70,11 @@ function M.config()
 					"macro-recording",
 					fmt = show_macro_recording,
 					color = { fg = Colors.red },
+				},
+				{
+					"inlay-hints",
+					fmt = show_inlay_hints,
+					color = { fg = Colors.purple },
 				},
 				{ "searchcount",                       color = { fg = Colors.yellow } },
 				{ "require'nvim-possession'.status()", color = { fg = Colors.green } },
