@@ -28,7 +28,9 @@ zstyle ':completion:*' list-prompt   '' # Remove "Do you want to see X possibili
 zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibility"
 
 # USER COMPLETIONS #
-# source <(kubectl completion zsh)
+{%@@ if profile == "fr-wolf" @@%}
+source <(kubectl completion zsh)
+{%@@ endif @@%}
 
 # SOURCE KEYS #
 eval "$(ssh-agent -s)"

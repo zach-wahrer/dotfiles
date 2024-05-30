@@ -13,7 +13,7 @@ function M.config()
 			"diff",
 			"git_config",
 			"git_rebase",
-			"gitcommit",
+			-- "gitcommit", -- Currently erroring when opening up a commit message
 			"gitignore",
 			"go",
 			"gosum",
