@@ -13,7 +13,7 @@ function M.config()
 		-- Show debugging info
 		debug = false,
 		-- Show notification on run
-		show_notification = false,
+		show_notification = true,
 		-- Show response in popup or split
 		mode = "popup",
 		-- Default formatter
