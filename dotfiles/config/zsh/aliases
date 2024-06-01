@@ -91,6 +91,7 @@ alias d='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 alias wgup="sudo wg-quick up wg0"
 alias wgdown="sudo wg-quick down wg0"
 alias sway="XDG_CURRENT_DESKTOP=sway SDL_VIDEODRIVER=wayland QT_QPA_PLATFORM=wayland QT_QPA_PLATFORM=wayland QT_QPA_PLATFORM=wayland XDG_SESSION_DESKTOP=sway \sway"
+alias urlencode="python3 -c 'import urllib.parse; import sys; print(urllib.parse.quote(sys.argv[1]))'"
 
 alias plasma="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland"
 alias plasmax="startx /usr/bin/startplasma-x11"
