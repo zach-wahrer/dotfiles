@@ -94,7 +94,7 @@ end
 
 function M.gitDiffToggle()
 	if not vim.g["git_diff_toggled"] then
-		vim.cmd("DiffviewFileHistory")
+		vim.cmd("DiffviewFileHistory %")
 	else
 		vim.cmd("DiffviewClose")
 	end

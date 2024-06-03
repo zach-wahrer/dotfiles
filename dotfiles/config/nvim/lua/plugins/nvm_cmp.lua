@@ -59,6 +59,7 @@ function M.config()
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
+			{ name = "lazydev", group_index = 0 },
 		}, {
 			{ name = "buffer" },
 		}),
