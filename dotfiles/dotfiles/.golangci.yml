@@ -1,12 +1,11 @@
 output:
-  format: colored-line-number
+  formats:
+  - format: colored-line-number
   sort-results: true
 linters:
-  enable:
-    - gosec
-    - goimports
-    - revive
-    - gofmt
+  enable-all: true
 issues:
   fix: true
-  
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
