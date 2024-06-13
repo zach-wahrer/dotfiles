@@ -31,6 +31,8 @@ set_vim_keymap(
 set_vim_keymap("n", "<A-Enter>", "O<ESC>", "Add line above")
 set_vim_keymap("n", "<CR>", "o<ESC>", "Add line below")
 
+set_vim_keymap("n", "<leader>uq", "<CMD>e#<CR>", "Undo quit buffer")
+
 -- Format Keybinds --
 set_vim_keymap("n", "<leader>id", "<CMD>put=strftime('%Y-%m-%d')<CR>", "Insert current date")
 set_vim_keymap("n", "<leader>iu", "<CMD>put=system('uuidgen')<CR>", "Insert UUID")
