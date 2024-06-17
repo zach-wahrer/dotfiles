@@ -1,4 +1,4 @@
-local o = vim.o -- Global
+local o = vim.o     -- Global
 local api = vim.api -- Api
 
 Colors = {
@@ -71,7 +71,7 @@ Colors = {
 require("fluoromachine").setup({
 	glow = false,
 	-- theme = "retrowave",
-	theme = "fluromachine",
+	theme = "fluoromachine",
 	colors = function(_, d)
 		return {
 			bg = Colors.bg0,

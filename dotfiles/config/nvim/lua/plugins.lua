@@ -9,7 +9,7 @@ return {
 		priority = 1000,
 	},
 	-- { "eldritch-theme/eldritch.nvim", lazy = false, priority = 1000 }, -- Interesting
-	-- { "cesaralvarod/tokyogogh.nvim", lazy = false, priority = 1000 }, -- GOOD!
+	-- { "cesaralvarod/tokyogogh.nvim", lazy = false,      priority = 1000 }, -- GOOD!
 	-- "tiagovla/tokyodark.nvim"
 	-- "rebelot/kanagawa.nvim"
 	-- "Th3Whit3Wolf/one-nvim"
@@ -23,10 +23,10 @@ return {
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	{ "svban/YankAssassin.vim", event = "VeryLazy" }, -- Keep cursor in same spot after yank
-	{ "moll/vim-bbye", event = "VeryLazy" }, -- Better buffer delete
+	{ "svban/YankAssassin.vim",   event = "VeryLazy" }, -- Keep cursor in same spot after yank
+	{ "moll/vim-bbye",            event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
-	{ "chrisbra/Recover.vim", event = "VeryLazy" }, -- Show diffs for swap files
+	{ "chrisbra/Recover.vim",     event = "VeryLazy" }, -- Show diffs for swap files
 	{
 		"gbprod/substitute.nvim",
 		event = "VeryLazy",
@@ -143,7 +143,7 @@ return {
 	---------------------------------------------------
 	-- LANGUAGES
 	---------------------------------------------------
-	{ "ckipp01/stylua-nvim", ft = "lua" }, -- Lua formatting
+	{ "ckipp01/stylua-nvim",     ft = "lua" }, -- Lua formatting
 	{
 		"luckasRanarison/tree-sitter-hyprlang",
 		dependencies = "nvim-treesitter/nvim-treesitter",
@@ -182,9 +182,9 @@ return {
 	---------------------------------------------------
 	-- GIT
 	---------------------------------------------------
-	{ "tpope/vim-fugitive", event = "VeryLazy" }, -- Git functions / Only using blame feature
+	{ "tpope/vim-fugitive",      event = "VeryLazy" }, -- Git functions / Only using blame feature
 	{ "rhysd/git-messenger.vim", event = "VeryLazy" }, -- Enhanced gitblame
-	{ "sindrets/diffview.nvim", event = "VeryLazy" }, -- Git diff view
+	{ "sindrets/diffview.nvim",  event = "VeryLazy" }, -- Git diff view
 
 	---------------------------------------------------
 	-- TERMINAL
