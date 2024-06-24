@@ -66,7 +66,6 @@ set_vim_keymap(
 	"Find in zsh files"
 )
 set_vim_keymap("n", "<leader>on", "<CMD>lua require('functions').findFiles('~/.config/nvim')<CR>", "Find in nvim files")
-set_vim_keymap("n", "<leader>oh", "<CMD>lua require('functions').findFiles('~/.config/hypr')<CR>", "Find in hypr files")
 set_vim_keymap("n", "<leader>og", "<CMD>lua require('functions').findFiles('~/go/src')<CR>", "Find in go src files")
 set_vim_keymap("n", "<leader>ob", "<CMD>lua require('functions').findFiles('~/Brainhole')<CR>", "Find in note files")
 
