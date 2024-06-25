@@ -49,6 +49,7 @@ source $ZSH_CONFIG/functions
 source $ZSH_CONFIG/plugins
 source $ZSH_CONFIG/arTTY
 source $ZSH_CONFIG/cursor
+source "$HOME/.cargo/env"
 
 ## Zsh Syntax Highlighting - Needs to be at end of .zshrc ##
 if [[ ! -d $ZSH_PLUGINS/zsh-syntax-highlighting ]]; then

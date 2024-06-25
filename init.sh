@@ -18,7 +18,7 @@ sudo pacman -S alacritty bash-language-server fd fzf go gopls lua-language-serve
 	yaml-language-server yamllint zsh
 
 ### Dev tools Packages
-sudo pacman -S base-devel deno docker docker-compose fx gcc git hurl jq npm python-pip python-pipx pyright shfmt
+sudo pacman -S base-devel deno docker docker-compose fx gcc git hurl jq npm python-pip python-pipx pyright rustup rust-analyzer shfmt
 
 ## Yay
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
