@@ -6,7 +6,7 @@ GO_BIN=/usr/lib/go/bin/go
 sudo pacman -Syyu # Update
 
 ### System Packages
-sudo pacman -S alsa-utils arc-gtk-theme bat bpytop brightnessctl cpio eaudio git-delta gvfs lsd hyprland hyprrpaper \
+sudo pacman -S alsa-utils arc-gtk-theme bat bpytop brightnessctl cpio eaudio git-delta gvfs lsd \
 	mako man network-manager-applet ncdu ntp pavucontrol playerctl polkit-kde-agent pulseaudio-alsa \
 	pamixer qt5-wayland qt6-wayland reflector sad swaybg swayidle swayimg tk thunar thunar-volman ufw \
 	wtype wl-clipboard xorg-xwayland
@@ -28,10 +28,6 @@ yay -S grim pipewire pipewire-media-session nwg-displays nwg-launchers slurp swa
 	xdg-desktop-portal xdg-desktop-portal-wlr
 ### AUR Dev Packages
 yay -S dbgate-bin marksman-bin python-pynvim python-setuptools shellcheck-bin syncthing
-### Hyprland Plugins
-hyprpm update -v
-hyprpm add https://github.com/outfoxxed/hy3
-hyprpm enable hy3
 
 ## NPM Dev Tools
 sudo npm install -g dockerfile-language-server-nodejs
