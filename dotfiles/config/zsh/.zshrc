@@ -58,7 +58,11 @@ fi
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # DEFAULTS #
+{%@@ if profile == "fr-wolf" @@%}
+export BROWSER='/Applications/Firefox.app/Contents/MacOS/firefox'
+{%@@ else @@%}
 export BROWSER='firefox'
+{%@@ endif @@%}
 export MANPAGER='nvim --clean +Man!'
 export MANWIDTH=999
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" ## https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
