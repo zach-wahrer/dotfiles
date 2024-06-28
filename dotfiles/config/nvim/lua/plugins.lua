@@ -24,7 +24,7 @@ return {
 	-- INTERFACE
 	---------------------------------------------------
 	{ "svban/YankAssassin.vim", event = "VeryLazy" }, -- Keep cursor in same spot after yank
-	{ "moll/vim-bbye", event = "VeryLazy" }, -- Better buffer delete
+	{ "famiu/bufdelete.nvim", event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
 	{ "chrisbra/Recover.vim", event = "VeryLazy" }, -- Show diffs for swap files
 	{
@@ -151,6 +151,11 @@ return {
 		end,
 		ft = "markdown",
 	},
+	-- {
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	version = "^4", -- Recommended
+	-- 	lazy = false, -- This plugin is already lazy
+	-- }, -- Rust
 
 	---------------------------------------------------
 	-- DEBUG
