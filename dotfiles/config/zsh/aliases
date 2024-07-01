@@ -94,5 +94,6 @@ alias ssh="TERM=xterm-256color ssh"
 
 {%@@ if profile == "fr-wolf" @@%}
 alias run-backend='AWS_PROFILE=frontrow STAGE=dev go run ~/go/src/backend/cmd/api/main.go'
+alias update="brew update; brew upgrade; bob update nightly;"
 {%@@ endif @@%}
 
