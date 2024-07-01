@@ -60,6 +60,9 @@ source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 # DEFAULTS #
 {%@@ if profile == "fr-wolf" @@%}
 export BROWSER='/Applications/Firefox.app/Contents/MacOS/firefox'
+export STAGE=dev
+. "$HOME/.cargo/env"
+export PATH="$HOME/.local/share/bob/nvim-bin/:$PATH"
 {%@@ else @@%}
 export BROWSER='firefox'
 {%@@ endif @@%}
