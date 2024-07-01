@@ -23,6 +23,7 @@ o.commentstring = "# %s"
 o.virtualedit = "block"
 o.scrolloff = 15
 vim.g["center_scroll"] = false
+o.jumpoptions = "" -- Have ctrl-o still open recently closed buffers
 -- o.cmdheight = 0 -- Uneeded due to Noice plugin
 
 -- Buffer --
