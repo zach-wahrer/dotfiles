@@ -31,6 +31,7 @@ function M.config()
 			"markdown_inline",
 			"python",
 			"regex",
+			"rust",
 			"toml",
 			"terraform",
 			"typescript",

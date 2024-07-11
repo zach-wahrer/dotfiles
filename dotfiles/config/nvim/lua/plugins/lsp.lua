@@ -1,7 +1,6 @@
 local M = {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"folke/neodev.nvim",
 		{
 			"ray-x/lsp_signature.nvim",
 			config = function()
@@ -17,7 +16,6 @@ local M = {
 }
 
 function M.config()
-	require("neodev").setup({})
 	local navbuddy = require("nvim-navbuddy")
 
 	-- Mappings.
@@ -87,8 +85,18 @@ function M.config()
 
 	-- Use a loop to conveniently call 'setup' on multiple servers and
 	-- map buffer local keybindings when the language server attaches
-	local servers =
-	{ "bashls", "clangd", "dockerls", "marksman", "terraformls", "tsserver", "eslint", "pyright", "yamlls" }
+	local servers = {
+		"bashls",
+		"clangd",
+		"dockerls",
+		"eslint",
+		"marksman",
+		"pyright",
+		"rust_analyzer", -- Configured with rustaceanvim
+		"terraformls",
+		"tsserver",
+		"yamlls",
+	}
 	for _, lsp in pairs(servers) do
 		lspconfig[lsp].setup({
 			on_attach = on_attach,
@@ -97,9 +105,12 @@ function M.config()
 	end
 
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-		-- Enable underline, use default values
-		underline = true,
-		-- Enable virtual text only on Warning or above, override spacing to 2
+		underline = false,
+		-- virtual_text = false,
+		-- update_in_insert = false,
+		-- -- Enable underline, use default values
+		-- underline = true,
+		-- -- Enable virtual text only on Warning or above, override spacing to 2
 		virtual_text = {
 			spacing = 2,
 			min = vim.diagnostic.severity.WARN,
@@ -129,45 +140,42 @@ function M.config()
 		settings = {
 			gopls = {
 				buildFlags = { "-tags", "integration" },
-				semanticTokens = true,
-				analyses = {
-					unreachable = true,
-					nilness = true,
-					unusedparams = true,
-					useany = true,
-					unusedwrite = true,
-					ST1003 = true,
-					undeclaredname = true,
-					fillreturns = true,
-					nonewvars = true,
-					fieldalignment = false,
-					shadow = true,
-				},
-				codelenses = {
-					generate = true, -- show the `go generate` lens.
-					gc_details = true, -- Show a code lens toggling the display of gc's choices.
-					test = true,
-					tidy = true,
-					vendor = true,
-					regenerate_cgo = true,
-					upgrade_dependency = true,
-				},
+				-- semanticTokens = true,
+				-- analyses = {
+				-- 	unreachable = true,
+				-- 	nilness = true,
+				-- 	unusedparams = true,
+				-- 	useany = true,
+				-- 	unusedwrite = true,
+				-- 	ST1003 = true,
+				-- 	undeclaredname = true,
+				-- 	fillreturns = true,
+				-- 	nonewvars = true,
+				-- 	fieldalignment = false,
+				-- 	shadow = true,
+				-- },
+				-- codelenses = {
+				-- 	generate = true, -- show the `go generate` lens.
+				-- 	gc_details = true, -- Show a code lens toggling the display of gc's choices.
+				-- 	test = true,
+				-- 	tidy = true,
+				-- 	vendor = true,
+				-- 	regenerate_cgo = true,
+				-- 	upgrade_dependency = true,
+				-- },
 				usePlaceholders = true,
-				completeUnimported = true,
-				staticcheck = true,
-				["ui.inlayhint.hints"] = {
-					assignVariableTypes = true,
-					compositeLiteralFields = true,
-					compositeLiteralTypes = true,
-					constantValues = true,
-					functionTypeParameters = true,
-					parameterNames = true,
-					rangeVariableTypes = true,
-				},
-				matcher = "Fuzzy",
-				diagnosticsDelay = "500ms",
-				symbolMatcher = "fuzzy",
-				gofumpt = true,
+				-- staticcheck = true,
+				-- ["ui.inlayhint.hints"] = {
+				-- 	assignVariableTypes = true,
+				-- 	compositeLiteralFields = true,
+				-- 	compositeLiteralTypes = true,
+				-- 	constantValues = true,
+				-- 	functionTypeParameters = true,
+				-- 	parameterNames = true,
+				-- 	rangeVariableTypes = true,
+				-- },
+				-- diagnosticsDelay = "500ms",
+				-- gofumpt = true,
 			},
 		},
 		init_options = {

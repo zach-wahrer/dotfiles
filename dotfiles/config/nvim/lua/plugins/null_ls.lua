@@ -1,6 +1,7 @@
 local M = {
 	"jose-elias-alvarez/null-ls.nvim",
 	event = "VeryLazy",
+	enabled = false,
 }
 
 function M.config()
@@ -9,7 +10,7 @@ function M.config()
 
 	null_ls.setup({
 		sources = {
-			null_ls.builtins.diagnostics.golangci_lint,
+			-- null_ls.builtins.diagnostics.golangci_lint,
 
 			null_ls.builtins.formatting.shfmt,
 			null_ls.builtins.formatting.deno_fmt,

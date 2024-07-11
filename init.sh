@@ -14,7 +14,7 @@ sudo pacman -S alsa-utils arc-gtk-theme bat bpytop brightnessctl cpio eaudio git
 sudo pacman -S kde-desktop kscreen xorg-xinit
 
 ### Terminal / Neovim Packages
-sudo pacman -S alacritty bash-language-server fd fzf go gopls lua-language-server neovim ripgrep stylua tmux \
+sudo pacman -S alacritty bash-language-server codespell fd fzf go gopls luacheck lua-language-server neovim ripgrep ruff tmux \
 	yaml-language-server yamllint zsh
 
 ### Dev tools Packages
