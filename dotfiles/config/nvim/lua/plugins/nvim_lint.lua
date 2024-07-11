@@ -1,6 +1,5 @@
 local M = {
 	"mfussenegger/nvim-lint",
-	event = "VeryLazy",
 }
 
 function M.config()

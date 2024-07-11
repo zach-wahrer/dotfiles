@@ -88,11 +88,12 @@ function M.config()
 	local servers = {
 		"bashls",
 		"clangd",
+		"denols",
 		"dockerls",
 		"eslint",
 		"marksman",
 		"pyright",
-		"rust_analyzer", -- Configured with rustaceanvim
+		"rust_analyzer",
 		"terraformls",
 		"tsserver",
 		"yamlls",
