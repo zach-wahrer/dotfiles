@@ -38,6 +38,7 @@ return {
 		"LintaoAmons/bookmarks.nvim",
 		dependencies = "stevearc/dressing.nvim",
 		event = "VeryLazy",
+		enabled = false,
 	},
 	{
 		"tversteeg/registers.nvim",
