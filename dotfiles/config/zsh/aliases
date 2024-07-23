@@ -93,7 +93,7 @@ alias urlencode="python3 -c 'import urllib.parse; import sys; print(urllib.parse
 alias ssh="TERM=xterm-256color ssh"
 
 {%@@ if profile == "fr-wolf" @@%}
-alias run-backend='AWS_PROFILE=frontrow STAGE=dev DD_TRACE_STARTUP_LOGS=0 go run ~/go/src/backend/cmd/api/main.go'
+alias run-backend='AWS_PROFILE=frontrow STAGE=dev DD_TRACE_STARTUP_LOGS=0 DD_TRACE_ENABLED=false go run ~/go/src/backend/cmd/api/main.go'
 alias update="brew update; brew upgrade; bob update nightly;"
 {%@@ endif @@%}
 
