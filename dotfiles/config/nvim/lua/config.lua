@@ -31,7 +31,7 @@ bo.tabstop = 4 -- Number of cols occupied by tab
 bo.expandtab = true -- Converts tabs to whitespace
 bo.autoindent = true -- Indent new line the same as previous
 bo.shiftwidth = 4 -- Width for autoindents
-bo.matchpairs = "<:>,(:),{:},[:]" -- Hightlight matching brackets
+bo.matchpairs = "<:>,(:),{:},[:]" -- Highlight matching brackets
 bo.undofile = true -- Save undo history in file
 
 -- Window --
