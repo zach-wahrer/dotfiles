@@ -5,7 +5,7 @@ local M = {
 function M.config()
 	local lint = require("lint")
 	lint.linters_by_ft = {
-		go = { "golangcilint" },
+		-- go = { "golangcilint" },
 		sh = { "shellcheck" },
 		zsh = { "zsh" },
 		terraform = { "tflint" },

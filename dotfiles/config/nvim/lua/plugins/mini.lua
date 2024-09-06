@@ -1,6 +1,6 @@
 local M = {
 	"echasnovski/mini.nvim",
-	event = "VeryLazy",
+	-- event = "VeryLazy", -- Cannot lazy load if using "mini.starter"
 }
 
 function M.config()
@@ -62,6 +62,26 @@ function M.config()
 		},
 	})
 	-- map.toggle()
+
+	Colors = require("colors")
+	local starter = require("mini.starter")
+	starter.setup({
+		header = function()
+			local cfgPath = vim.fn.stdpath("config")
+			local f, err = io.open(cfgPath .. "/slides/dashboard.cat")
+			if f == nil then
+				return err
+			end
+			local content = f:read("*all")
+			f:close()
+			return content
+		end,
+		-- items = { starter.sections.telescope() },
+		items = { name = " ", action = "", section = "" },
+		footer = "",
+		silent = true,
+	})
+	vim.api.nvim_set_hl(0, "MiniStarterHeader", { fg = Colors.purple })
 end
 
 return M

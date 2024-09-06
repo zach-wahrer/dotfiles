@@ -46,7 +46,7 @@ function M.config()
 					vim.api.nvim_command(string.format("silent !xdg-open '%s'", path))
 				end,
 			},
-			use_libuv_file_watcher = true,
+			-- use_libuv_file_watcher = true,
 		},
 		default_component_configs = {
 			name = {

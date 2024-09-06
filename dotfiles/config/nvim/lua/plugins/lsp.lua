@@ -40,8 +40,7 @@ function M.config()
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
-			opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(
 			bufnr,
 			"n",
@@ -62,8 +61,7 @@ function M.config()
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>CodeActionMenu<CR>", opts)
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references <CR>", opts)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>",
-			opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opts)
 
 		-- Workaround for gopls semantic token highlighting https://github.com/golang/go/issues/54531#issuecomment-1464982242
 		if not client.server_capabilities.semanticTokensProvider then
@@ -93,9 +91,9 @@ function M.config()
 		"eslint",
 		"marksman",
 		"pyright",
-		"rust_analyzer",
+		-- "rust_analyzer",
 		"terraformls",
-		"tsserver",
+		"ts_ls",
 		"yamlls",
 	}
 	for _, lsp in pairs(servers) do
@@ -141,20 +139,20 @@ function M.config()
 		settings = {
 			gopls = {
 				buildFlags = { "-tags", "integration" },
-				-- semanticTokens = true,
-				-- analyses = {
-				-- 	unreachable = true,
-				-- 	nilness = true,
-				-- 	unusedparams = true,
-				-- 	useany = true,
-				-- 	unusedwrite = true,
-				-- 	ST1003 = true,
-				-- 	undeclaredname = true,
-				-- 	fillreturns = true,
-				-- 	nonewvars = true,
-				-- 	fieldalignment = false,
-				-- 	shadow = true,
-				-- },
+				semanticTokens = true,
+				analyses = {
+					unreachable = true,
+					nilness = true,
+					unusedparams = true,
+					useany = true,
+					unusedwrite = true,
+					ST1003 = true,
+					undeclaredname = true,
+					fillreturns = true,
+					nonewvars = true,
+					fieldalignment = false,
+					shadow = true,
+				},
 				-- codelenses = {
 				-- 	generate = true, -- show the `go generate` lens.
 				-- 	gc_details = true, -- Show a code lens toggling the display of gc's choices.
@@ -165,18 +163,18 @@ function M.config()
 				-- 	upgrade_dependency = true,
 				-- },
 				usePlaceholders = true,
-				-- staticcheck = true,
-				-- ["ui.inlayhint.hints"] = {
-				-- 	assignVariableTypes = true,
-				-- 	compositeLiteralFields = true,
-				-- 	compositeLiteralTypes = true,
-				-- 	constantValues = true,
-				-- 	functionTypeParameters = true,
-				-- 	parameterNames = true,
-				-- 	rangeVariableTypes = true,
-				-- },
-				-- diagnosticsDelay = "500ms",
-				-- gofumpt = true,
+				staticcheck = true,
+				["ui.inlayhint.hints"] = {
+					assignVariableTypes = true,
+					compositeLiteralFields = true,
+					compositeLiteralTypes = true,
+					constantValues = true,
+					functionTypeParameters = true,
+					parameterNames = true,
+					rangeVariableTypes = true,
+				},
+				diagnosticsDelay = "500ms",
+				gofumpt = true,
 			},
 		},
 		init_options = {
