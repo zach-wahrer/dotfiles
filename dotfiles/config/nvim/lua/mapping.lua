@@ -3,7 +3,7 @@ local function set_vim_keymap(modes, lhs, rhs, desc)
 end
 
 -- General Keybinds --
-set_vim_keymap("n", "<leader>n", "<CMD>enew<CR>", "Open new scratch buffer")
+set_vim_keymap("n", "<leader>n", "<CMD>new<CR>", "Open new scratch buffer")
 set_vim_keymap("n", "<leader>w", "<CMD>w<CR>", "Write file")
 set_vim_keymap("n", "<leader>a", "ggVG<CR>", "Select all")
 set_vim_keymap(
@@ -270,12 +270,16 @@ set_vim_keymap("n", "<leader>q", "<CMD>Bdelete<CR>", "Close buffer")
 set_vim_keymap("n", "<leader>wq", "<CMD>w<CR><CMD>Bdelete<CR>", "Write and close buffer")
 set_vim_keymap("n", "<leader>1", "<CMD>Bdelete!<CR>", "Close buffer without saving")
 
--- Vim Go --
-set_vim_keymap("n", "<leader>gt", "<CMD>GoTests<CR>", "Run Go tests")
-set_vim_keymap("n", "<leader>gat", "<CMD>GoAddTags<CR>", "Add tags in Go struct")
-set_vim_keymap("n", "<leader>gc", "<CMD>GoCoverageToggle<CR>", "Toggle Go coverage view")
+-- Go --
+set_vim_keymap("n", "<leader>gt", "<CMD>GoTests<CR>", "Generate Go tests")
+set_vim_keymap("n", "<leader>gat", "<CMD>GoAddTag<CR>", "Add tags in Go struct")
+set_vim_keymap("n", "<leader>grt", "<CMD>GoRmTag<CR>", "Remove tags in Go struct")
+set_vim_keymap("n", "<leader>gct", "<CMD>GoClearTag<CR>", "Clear tags in Go struct")
+set_vim_keymap("n", "<leader>gie", "<CMD>GoIfErr<CR>", "Add if/err")
 set_vim_keymap("n", "<leader>gf", "<CMD>GoFillStruct<CR>", "Fill Go struct")
-set_vim_keymap("n", "<leader>ga", "<CMD>GoAlternate<CR>", "Alternate between Go file and Go test file")
+set_vim_keymap("n", "<leader>gam", "<CMD>GoMockGen<CR>", "Fill Go struct")
+set_vim_keymap("n", "<leader>ga", "<CMD>GoAlt!<CR>", "Alternate between Go file and Go test file")
+set_vim_keymap("n", "<leader>gav", "<CMD>GoAltV!<CR>", "Alternate between Go file and Go test file with vertical split")
 -- set_vim_keymap(
 -- 	"n",
 -- 	"<leader>gl",

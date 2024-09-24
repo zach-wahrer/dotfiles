@@ -2,6 +2,7 @@ local M = {
 	"fatih/vim-go",
 	build = ":GoUpdateBinaries",
 	event = "VeryLazy",
+	enabled = false,
 }
 
 function M.config()
