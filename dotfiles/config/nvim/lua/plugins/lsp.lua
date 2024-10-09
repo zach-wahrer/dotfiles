@@ -163,7 +163,7 @@ function M.config()
 				-- 	upgrade_dependency = true,
 				-- },
 				usePlaceholders = true,
-				staticcheck = true,
+				staticcheck = false,
 				["ui.inlayhint.hints"] = {
 					assignVariableTypes = true,
 					compositeLiteralFields = true,
@@ -173,7 +173,7 @@ function M.config()
 					parameterNames = true,
 					rangeVariableTypes = true,
 				},
-				diagnosticsDelay = "500ms",
+				diagnosticsDelay = "1500ms",
 				gofumpt = true,
 			},
 		},
@@ -181,6 +181,10 @@ function M.config()
 			buildFlags = { "-tags", "integration" },
 		},
 	})
+
+	-- vim.diagnostic.config({
+	-- 	update_in_insert = false, -- Diagnostics won't run while you're typing
+	-- })
 end
 
 return M
