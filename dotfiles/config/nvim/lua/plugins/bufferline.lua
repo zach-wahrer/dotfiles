@@ -29,10 +29,10 @@ function M.config()
 		},
 		highlights = {
 			tab_selected = {
-				fg = Colors.green,
+				fg = Colors.purple,
 			},
 			buffer_selected = {
-				fg = Colors.green,
+				fg = Colors.purple,
 				bold = true,
 				italic = true,
 			},
