@@ -7,16 +7,15 @@ local M = {
 				require("lsp_signature").setup()
 			end,
 		}, -- Show func signature
-		{
-			"SmiteshP/nvim-navbuddy",
-			dependencies = { "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
-		},
+		-- { "SmiteshP/nvim-navbuddy",
+		-- 	dependencies = { "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
+		-- },
 	},
 	event = "VeryLazy",
 }
 
 function M.config()
-	local navbuddy = require("nvim-navbuddy")
+	-- local navbuddy = require("nvim-navbuddy")
 
 	-- Mappings.
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -26,7 +25,7 @@ function M.config()
 	-- after the language server attaches to the current buffer
 
 	local on_attach = function(client, bufnr)
-		navbuddy.attach(client, bufnr)
+		-- navbuddy.attach(client, bufnr)
 		-- Enable completion triggered by <c-x><c-o>
 		vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
