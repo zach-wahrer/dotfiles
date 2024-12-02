@@ -81,10 +81,10 @@ alias kc="kubectl"
 # compdef _kubectl kc
 
 # DOTDROP #
-alias dotdrop='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 {%@@ if profile == "fr-wolf" @@%}
-alias d='/usr/local/Cellar/dotdrop/1.14.2/bin/dotdrop --cfg=~/dotfiles/config.yaml --profile=fr-wolf'
+alias d='dotdrop --cfg=~/dotfiles/config.yaml --profile=fr-wolf'
 {%@@ else @@%}
+alias dotdrop='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 alias d='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 {%@@ endif @@%}
 

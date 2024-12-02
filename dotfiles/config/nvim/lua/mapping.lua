@@ -167,7 +167,7 @@ set_vim_keymap("n", "<leader>hn", "<CMD>Gitsigns next_hunk<CR>", "Next git hunk"
 set_vim_keymap("n", "gx", "<CMD>Browse<CR>", "Open link")
 
 -- Hurl --
-set_vim_keymap("n", "<leader>h", "<CMD>HurlRunnerAt<CR>", "Run Hurl request under cursor")
+set_vim_keymap("n", "<leader>h", "<CMD>w<CR> | <CMD>HurlRunnerAt<CR>", "Run Hurl request under cursor")
 
 -- LSP -- Per client mappings are in lsp config file
 set_vim_keymap(

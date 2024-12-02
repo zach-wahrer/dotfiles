@@ -105,14 +105,14 @@ return {
 			})
 		end,
 	}, -- Tint inactive windows
-	{
-		"LunarVim/bigfile.nvim",
-		config = function()
-			require("bigfile").setup({
-				filesize = 1,
-			})
-		end,
-	}, -- Disable certain features for big files
+	-- {
+	-- 	"LunarVim/bigfile.nvim",
+	-- 	config = function()
+	-- 		require("bigfile").setup({
+	-- 			filesize = 1,
+	-- 		})
+	-- 	end,
+	-- }, -- Disable certain features for big files
 	{
 		"Makaze/watch.nvim",
 		cmd = { "WatchStart", "WatchStop", "WatchFile" },
