@@ -33,6 +33,7 @@ function M.config()
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "gdd", "<cmd>vsplit | Telescope lsp_definitions<CR>", opts)
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "ds", "<cmd>Telescope diagnostics<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
