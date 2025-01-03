@@ -9,6 +9,7 @@ function M.config()
 		ensure_installed = {
 			"bash",
 			"c",
+			"comment",
 			"dockerfile",
 			"diff",
 			"git_config",
@@ -19,6 +20,7 @@ function M.config()
 			"gosum",
 			"gowork",
 			"gomod",
+			"gotmpl",
 			"hcl",
 			"html",
 			"hurl",
@@ -30,6 +32,7 @@ function M.config()
 			"markdown",
 			"markdown_inline",
 			"python",
+			"sql",
 			"regex",
 			"rust",
 			"toml",
