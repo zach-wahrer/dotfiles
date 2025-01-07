@@ -14,7 +14,7 @@ sudo pacman -S alsa-utils arc-gtk-theme bat bpytop brightnessctl cpio eaudio git
 sudo pacman -S kde-desktop kscreen xorg-xinit
 
 ### Terminal / Neovim Packages
-sudo pacman -S alacritty bash-language-server codespell fd fzf go gopls luacheck lua-language-server mypy neovim prettier \
+sudo pacman -S ghostty bash-language-server codespell fd fzf go gopls luacheck lua-language-server mypy neovim prettier \
 	ripgrep ruff stylua tmux yaml-language-server yamllint zsh
 
 ### Dev tools Packages
@@ -24,7 +24,7 @@ sudo pacman -S base-devel deno docker docker-compose fx gcc git hurl jq npm pyth
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ../ && rm -rf yay
 ### AUR System Packages
 yay -S grim pipewire pipewire-media-session nwg-displays nwg-launchers slurp swappy swaync \
-	ttf-sharetech-mono-nerd ttf-sourcecodepro-nerd ttf-sudo usbutils wlogout wmname wlr-randr \
+	ttf-sharetech-mono-nerd ttf-sourcecodepro-nerd ttf-mononoki-nerd ttf-sudo usbutils wlogout wmname wlr-randr \
 	xdg-desktop-portal xdg-desktop-portal-wlr
 ### AUR Dev Packages
 yay -S dbgate-bin marksman-bin python-pynvim python-setuptools shellcheck-bin syncthing
