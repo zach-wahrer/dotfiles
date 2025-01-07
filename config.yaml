@@ -75,68 +75,51 @@ dotfiles:
   d_yabai:
     src: config/yabai
     dst: ~/.config/yabai
+  f_config:
+    src: config/ghostty/config
+    dst: ~/.config/ghostty/config
 profiles:
-  neto-wolf:
-    dotfiles:
-    - f_gitconfig
-    - f_zshrc
-    - f_golangci.yml
-    - d_nvim
-    - d_scripts
-    - d_tridactyl
-    - d_zsh
-    - d_sway
-    - d_swaylock
-    - d_waybar
-    - d_envman
-    - d_swaync
-    - d_gtk-3.0
-    - d_wlogout
-    - d_artty
-    - f_gtk-settings.ini
-    - d_foot
-    - d_hypr
-    - d_alacritty
-    - d_tmux
   fr-wolf:
     dotfiles:
-    - f_zshrc
-    - f_golangci.yml
-    - d_nvim
-    - d_scripts
-    - d_tridactyl
-    - d_zsh
-    - d_artty
-    - d_alacritty
-    - d_tmux
-    - d_skhd
-    - d_yabai
+      - f_zshrc
+      - f_golangci.yml
+      - d_nvim
+      - d_scripts
+      - d_tridactyl
+      - d_zsh
+      - d_artty
+      - d_alacritty
+      - d_tmux
+      - d_skhd
+      - d_yabai
+      - f_config
   red-wolf:
     dotfiles:
-    - f_gitconfig
-    - f_zshrc
-    - f_golangci.yml
-    - d_waybar
-    - d_nvim
-    - d_scripts
-    - d_tridactyl
-    - d_zsh
-    - d_sway
-    - d_swaylock
-    - d_swaync
-    - d_envman
-    - d_gtk-3.0
-    - d_wlogout
-    - d_artty
-    - f_gtk-settings.ini
-    - d_foot
-    - d_hypr
-    - d_alacritty
-    - d_tmux
+      - f_gitconfig
+      - f_zshrc
+      - f_golangci.yml
+      - d_waybar
+      - d_nvim
+      - d_scripts
+      - d_tridactyl
+      - d_zsh
+      - d_sway
+      - d_swaylock
+      - d_swaync
+      - d_envman
+      - d_gtk-3.0
+      - d_wlogout
+      - d_artty
+      - f_gtk-settings.ini
+      - d_foot
+      - d_hypr
+      - d_alacritty
+      - d_tmux
+      - f_config
   vm:
     dotfiles:
-    - f_zshrc
-    - d_nvim-min
-    - d_zsh
-    - d_alacritty
-    - d_tmux
+      - f_zshrc
+      - d_nvim-min
+      - d_zsh
+      - d_tmux
+      - f_config
