@@ -15,9 +15,9 @@ alias n="nvim"
 alias N='nvim $(fzf)'
 
 # LS #
-alias ls="lsd"
-alias l="lsd -al"
-alias lt="lsd --tree"
+alias ls="lsd --hyperlink=always"
+alias l="lsd -al --hyperlink=always"
+alias lt="lsd --tree --hyperlink=always"
 
 # JUMPS #
 alias zd='z ~/dotfiles'

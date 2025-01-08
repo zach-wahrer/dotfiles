@@ -95,16 +95,16 @@ return {
 		end,
 		event = "VeryLazy",
 	},
-	{
-		"levouh/tint.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("tint").setup({
-				tint = -30,
-				saturation = 0.99,
-			})
-		end,
-	}, -- Tint inactive windows
+	-- {
+	-- 	"levouh/tint.nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("tint").setup({
+	-- 			tint = -30,
+	-- 			saturation = 0.99,
+	-- 		})
+	-- 	end,
+	-- }, -- Tint inactive windows
 	-- {
 	-- 	"LunarVim/bigfile.nvim",
 	-- 	config = function()

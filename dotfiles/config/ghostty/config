@@ -13,3 +13,5 @@ mouse-hide-while-typing = true
 font-feature = -liga
 font-thicken = true
 adjust-cursor-thickness = 2
+minimum-contrast = 1.1
+focus-follows-mouse = true
