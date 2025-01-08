@@ -2,11 +2,11 @@ theme = Aura
 font-family = "Mononoki Nerd Font Mono"
 
 {%@@ if profile == "red-wolf" or profile == "vm" @@%}
-font-size = 14
+font-size = 11
 {%@@ elif profile == "fr-wolf" @@%}
 font-size = 16
 {%@@ else @@%}
-font-size = 13
+font-size = 14
 {%@@ endif @@%}
 window-decoration = false
 mouse-hide-while-typing = true
