@@ -15,3 +15,4 @@ font-thicken = true
 adjust-cursor-thickness = 2
 minimum-contrast = 1.1
 focus-follows-mouse = true
+scrollback-limit = 524288000
