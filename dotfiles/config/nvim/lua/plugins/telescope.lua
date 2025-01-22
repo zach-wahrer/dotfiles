@@ -21,6 +21,7 @@ function M.config()
 		vimgrep_arguments = {
 			"rg",
 			-- "--color=never",
+			"--multiline",
 			"--no-heading",
 			"--with-filename",
 			"--line-number",
@@ -57,6 +58,9 @@ function M.config()
 				mappings = multi_open_mappings,
 			},
 			grep_string = {
+				mappings = multi_open_mappings,
+			},
+			lsp_references = {
 				mappings = multi_open_mappings,
 			},
 		},

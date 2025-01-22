@@ -2,6 +2,7 @@ local M = {
 	"lukas-reineke/headlines.nvim",
 	dependencies = "nvim-treesitter/nvim-treesitter",
 	ft = "markdown",
+	enabled = false,
 }
 
 function M.config()

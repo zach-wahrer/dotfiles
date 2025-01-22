@@ -23,10 +23,10 @@ return {
 	---------------------------------------------------
 	-- INTERFACE
 	---------------------------------------------------
-	{ "svban/YankAssassin.vim", event = "VeryLazy" }, -- Keep cursor in same spot after yank
-	{ "famiu/bufdelete.nvim", event = "VeryLazy" }, -- Better buffer delete
+	{ "svban/YankAssassin.vim",   event = "VeryLazy" }, -- Keep cursor in same spot after yank
+	{ "famiu/bufdelete.nvim",     event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
-	{ "chrisbra/Recover.vim", event = "VeryLazy" }, -- Show diffs for swap files
+	{ "chrisbra/Recover.vim",     event = "VeryLazy" }, -- Show diffs for swap files
 	{
 		"gbprod/substitute.nvim",
 		event = "VeryLazy",
@@ -124,7 +124,7 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = { "rafamadriz/friendly-snippets" },
-	config = function()
+		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
 		build = "make install_jsregexp",
@@ -144,7 +144,7 @@ return {
 	---------------------------------------------------
 	-- LANGUAGES
 	---------------------------------------------------
-	{ "ckipp01/stylua-nvim", ft = "lua" }, -- Lua formatting
+	{ "ckipp01/stylua-nvim",     ft = "lua" }, -- Lua formatting
 	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
@@ -184,9 +184,9 @@ return {
 	---------------------------------------------------
 	-- GIT
 	---------------------------------------------------
-	{ "tpope/vim-fugitive", event = "VeryLazy" }, -- Git functions / Only using blame feature
+	{ "tpope/vim-fugitive",      event = "VeryLazy" }, -- Git functions / Only using blame feature
 	{ "rhysd/git-messenger.vim", event = "VeryLazy" }, -- Enhanced gitblame
-	{ "sindrets/diffview.nvim", event = "VeryLazy" }, -- Git diff view
+	{ "sindrets/diffview.nvim",  event = "VeryLazy" }, -- Git diff view
 
 	---------------------------------------------------
 	-- TERMINAL
@@ -208,4 +208,48 @@ return {
 		end,
 		event = "VeryLazy",
 	},
+	{
+		"yetone/avante.nvim",
+		event = "VeryLazy",
+		lazy = false,
+		version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
+		opts = {
+			-- add any opts here
+		},
+		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+		build = "make",
+		-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+		dependencies = {
+			"stevearc/dressing.nvim",
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			--- The below dependencies are optional,
+			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+			{
+				-- support for image pasting
+				"HakonHarnes/img-clip.nvim",
+				event = "VeryLazy",
+				opts = {
+					-- recommended settings
+					default = {
+						embed_image_as_base64 = false,
+						prompt_for_file_name = false,
+						drag_and_drop = {
+							insert_mode = true,
+						},
+						-- required for Windows users
+						use_absolute_path = true,
+					},
+				},
+			},
+			{
+				-- Make sure to set this up properly if you have lazy=true
+				'MeanderingProgrammer/render-markdown.nvim',
+				opts = {
+					file_types = { "markdown", "Avante" },
+				},
+				ft = { "markdown", "Avante" },
+			},
+		},
+	}
 }
