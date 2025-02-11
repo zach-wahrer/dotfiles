@@ -3,7 +3,7 @@ local function set_vim_keymap(modes, lhs, rhs, desc)
 end
 
 -- General Keybinds --
-set_vim_keymap("n", "<leader>n", "<CMD>enew<CR>", "Open new scratch buffer")
+set_vim_keymap("n", "<leader>n", "<CMD>new<CR>", "Open new scratch buffer")
 set_vim_keymap("n", "<leader>w", "<CMD>w<CR>", "Write file")
 set_vim_keymap("n", "<leader>a", "ggVG<CR>", "Select all")
 set_vim_keymap(
@@ -105,6 +105,9 @@ set_vim_keymap(
 	"<CMD>lua require('functions').searchWordUnderCursorBackward()<CR>",
 	"Improved backward search"
 )
+
+-- Avante --
+set_vim_keymap("n", "<leader>ai", "<CMD>AvanteToggle<CR>", "Toggle Avante")
 
 -- Bookmarks --
 set_vim_keymap("n", "<leader>b", "<CMD>BookmarksGoto<CR>", "Goto bookmark")
