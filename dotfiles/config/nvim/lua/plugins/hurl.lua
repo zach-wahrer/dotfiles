@@ -16,6 +16,7 @@ function M.config()
 		show_notification = true,
 		-- Show response in popup or split
 		mode = "split",
+		split_size = "20%",
 		auto_close = false,
 		-- Default formatter
 		formatters = {
