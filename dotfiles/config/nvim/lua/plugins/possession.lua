@@ -5,6 +5,7 @@ local M = {
 }
 
 function M.config()
+
 	require("nvim-possession").setup({
 		sessions = {
 			sessions_icon = "󰍳 ",
@@ -15,6 +16,8 @@ function M.config()
 		save_hook = function()
 			vim.cmd("Neotree close")
 			vim.cmd("lua require('dap-tab').closeDebugWin()")
+			vim.cmd("HurlClose")
+			vim.cmd("AvanteClose")
 		end,
 		-- post_hook = function()
 		-- 	vim.cmd("Neotree reveal right")
