@@ -249,6 +249,7 @@ if subOK then
 end
 
 -- Telescope --
+set_vim_keymap("n", "<leader>sp", "<CMD>Telescope resume<CR>", "Run previous search")
 set_vim_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", "Search recently opened files")
 set_vim_keymap("n", "<leader>s", "<CMD>Telescope live_grep hidden=true<CR>", "Search inside files in cwd")
 set_vim_keymap("n", "<leader>ff", "<CMD>Telescope find_files hidden=true<CR>", "Search for files by name in cwd")
