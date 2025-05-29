@@ -20,6 +20,7 @@ if [ $? != 0 ]; then
 	tmux split-window -v
 	tmux split-window -v
 	tmux select-layout even-vertical
+	tmux send-keys -t 2 "cd ~/go/src/backend" "Enter" "make redis" "Enter"
 	tmux select-pane -t 0
 
 	tmux new-window -n "Brainhole"
