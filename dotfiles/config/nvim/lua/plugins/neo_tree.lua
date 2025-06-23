@@ -38,6 +38,7 @@ function M.config()
 					["o"] = "system_open",
 				},
 				auto_expand_width = true,
+				width = 30
 			},
 			commands = {
 				system_open = function(state)
