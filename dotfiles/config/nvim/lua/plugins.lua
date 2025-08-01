@@ -27,12 +27,15 @@ return {
 	{ "famiu/bufdelete.nvim",     event = "VeryLazy" }, -- Better buffer delete
 	{ "arp242/undofile_warn.vim", event = "VeryLazy" }, -- Warn if undoing past current
 	{ "chrisbra/Recover.vim",     event = "VeryLazy" }, -- Show diffs for swap files
-	{ "karb94/neoscroll.nvim",    opts = {}, config = function ()
-		require('neoscroll').setup({
-			easing = "quadratic"
-		})
-
-	end },
+	{
+		"karb94/neoscroll.nvim",
+		opts = {},
+		config = function()
+			require('neoscroll').setup({
+				easing = "quadratic"
+			})
+		end
+	},
 	{
 		"gbprod/substitute.nvim",
 		event = "VeryLazy",
@@ -113,6 +116,25 @@ return {
 		"Makaze/watch.nvim",
 		cmd = { "WatchStart", "WatchStop", "WatchFile" },
 	}, -- Watch running shell commands or files
+	{
+		"greggh/claude-code.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- Required for git operations
+		},
+		config = function()
+			require("claude-code").setup({
+				window = {
+					position = "rightbelow vsplit"
+				},
+				keymaps = {
+					toggle = {
+						normal = "<leader>ai",
+					}
+				}
+			})
+		end
+	}, -- Claude Code AI
 
 	---------------------------------------------------
 	-- COMPLETIONS / SNIPPETS / TEMPLATES

@@ -38,11 +38,6 @@ function M.debugSetEnvironment()
 	end
 end
 
-function M.resetDAPLayout()
-	vim.cmd("lua require('dapui').close()")
-	vim.cmd("lua require('dapui').open({reset = true})")
-end
-
 function M.fileExists(name)
 	local f = io.open(name, "r")
 	if f ~= nil then
@@ -73,7 +68,7 @@ end
 
 function M.diffOpenFileToggle()
 	if vim.wo.diff then
-		vim.cmd("windo diffoff")
+		vim.cmd("window diffoff")
 	else
 		vim.ui.input({ prompt = "Enter File to Diff: ", completion = "file" }, function(input)
 			if input == nil then
@@ -86,9 +81,9 @@ end
 
 function M.diffToggle()
 	if vim.wo.diff then
-		vim.cmd("windo diffoff")
+		vim.cmd("window diffoff")
 	else
-		vim.cmd("windo diffthis")
+		vim.cmd("window diffthis")
 	end
 end
 

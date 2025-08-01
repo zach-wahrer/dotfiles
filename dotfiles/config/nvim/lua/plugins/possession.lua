@@ -15,9 +15,8 @@ function M.config()
 		},
 		save_hook = function()
 			vim.cmd("Neotree close")
-			vim.cmd("lua require('dap-tab').closeDebugWin()")
 			vim.cmd("HurlClose")
-			vim.cmd("AvanteClose")
+			vim.cmd("DapViewClose")
 		end,
 		-- post_hook = function()
 		-- 	vim.cmd("Neotree reveal right")

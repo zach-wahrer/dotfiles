@@ -1,6 +1,21 @@
 local M = {
 	"mfussenegger/nvim-dap",
 	event = "VeryLazy",
+	dependencies = {
+		{
+			"igorlfs/nvim-dap-view",
+			opts = {
+				winbar = {
+					default_section = "repl"
+				},
+				windows = {
+					terminal = {
+						hide = { "go" }
+					}
+				}
+			},
+		},
+	}
 }
 
 function M.config()
@@ -15,7 +30,7 @@ function M.config()
 	vim.fn.sign_define("DapStopped", { text = "", texthl = "DapBreakpointGreen", linehl = "", numhl = "" })
 	vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRed", linehl = "", numhl = "" })
 
-	dap.defaults.switchbuf = "uselast" -- For dap-tab plugin
+	-- dap.defaults.switchbuf = "uselast" -- For dap-tab plugin
 
 	dap.adapters.node2 = {
 		type = "executable",
@@ -31,7 +46,8 @@ function M.config()
 			cwd = vim.fn.getcwd(),
 			sourceMaps = true,
 			protocol = "inspector",
-			console = "integratedTerminal",
+			console = "internalConsole",
+			-- console = "integratedTerminal", -- Can use this to pop open an integrated terminal when DAP starts.
 			skipFiles = { "<node_internals>/**", "**/node_modules/**" },
 		},
 		{

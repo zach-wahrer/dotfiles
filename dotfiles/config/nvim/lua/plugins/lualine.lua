@@ -86,7 +86,7 @@ function M.config()
 			lualine_y = { "progress" },
 			lualine_z = { "location" },
 		},
-		extensions = { "nvim-dap-ui", "neo-tree", "man" },
+		extensions = { "neo-tree", "man" },
 	})
 
 	vim.api.nvim_create_autocmd("RecordingEnter", {

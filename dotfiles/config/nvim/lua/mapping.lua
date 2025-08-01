@@ -122,8 +122,7 @@ set_vim_keymap("n", "<A-.>", "<CMD>BufferLineMoveNext<CR>", "Bufferline move to 
 
 -- Dap --
 set_vim_keymap("n", "<leader>d", "<CMD>lua require('dap').continue()<CR>", "DAP Continue")
-set_vim_keymap("n", "<leader>dc", "<CMD>lua require('dap-tab').closeDebugWin()<CR>", "Close DAP tab")
-set_vim_keymap("n", "<leader>dr", "<CMD>lua require('functions').resetDAPLayout()<CR>", "Reset DAP layout")
+set_vim_keymap("n", "<leader>dt", "<CMD>lua require('dap-view').toggle()<CR>", "Toggle DAP view")
 set_vim_keymap("n", "<leader>dse", "<CMD>lua require('functions').debugSetEnvironment()<CR>", "DAP Set Environment")
 set_vim_keymap("n", "<leader>ds", "<CMD>lua require('dap').step_over()<CR>", "DAP Step Over")
 set_vim_keymap("n", "<leader>di", "<CMD>lua require('dap').step_into()<CR>", "DAP Step Into")
