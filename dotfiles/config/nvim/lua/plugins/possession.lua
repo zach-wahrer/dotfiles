@@ -5,7 +5,6 @@ local M = {
 }
 
 function M.config()
-
 	require("nvim-possession").setup({
 		sessions = {
 			sessions_icon = "󰍳 ",
