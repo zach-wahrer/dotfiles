@@ -79,7 +79,7 @@ dotfiles:
     src: config/ghostty/config
     dst: ~/.config/ghostty/config
 profiles:
-  fr-wolf:
+  vesal-wolf:
     dotfiles:
       - f_zshrc
       - f_golangci.yml
@@ -88,7 +88,6 @@ profiles:
       - d_tridactyl
       - d_zsh
       - d_artty
-      - d_alacritty
       - d_tmux
       - d_skhd
       - d_yabai
@@ -113,7 +112,6 @@ profiles:
       - f_gtk-settings.ini
       - d_foot
       - d_hypr
-      - d_alacritty
       - d_tmux
       - f_config
   vm:

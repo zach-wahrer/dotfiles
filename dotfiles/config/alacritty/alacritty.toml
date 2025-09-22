@@ -2,14 +2,14 @@
 [window]
 padding = { x = 3, y = 3 }
 resize_increments = true
-{%@@ if profile == "fr-wolf" @@%}
+{%@@ if profile == "vesal-wolf" @@%}
 option_as_alt = "Both"
 {%@@ endif @@%}
 
 [font]
 {%@@ if profile == "red-wolf" or profile == "vm" @@%}
 size = 11
-{%@@ elif profile == "fr-wolf" @@%}
+{%@@ elif profile == "veasal-wolf" @@%}
 size = 16
 {%@@ else @@%}
 size = 13
@@ -66,7 +66,7 @@ white   = '#FEFEF8'
 [keyboard]
 bindings = [
    # { key = '_', mods = "Control|Shift", chars = "\uE001" },
-{%@@ if profile == "fr-wolf" @@%}
+{%@@ if profile == "vesal-wolf" @@%}
    { key = 'Slash', mods = "Control", chars = "\u001F" }
 {%@@ endif @@%}
 ]

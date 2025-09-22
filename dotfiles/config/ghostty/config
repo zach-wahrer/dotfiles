@@ -3,7 +3,7 @@ font-family = "Mononoki Nerd Font Mono"
 
 {%@@ if profile == "red-wolf" or profile == "vm" @@%}
 font-size = 11
-{%@@ elif profile == "fr-wolf" @@%}
+{%@@ elif profile == "vesal-wolf" @@%}
 font-size = 16
 {%@@ else @@%}
 font-size = 14

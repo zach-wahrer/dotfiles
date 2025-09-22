@@ -81,8 +81,8 @@ alias kc="kubectl"
 # compdef _kubectl kc
 
 # DOTDROP #
-{%@@ if profile == "fr-wolf" @@%}
-alias d='dotdrop --cfg=~/dotfiles/config.yaml --profile=fr-wolf'
+{%@@ if profile == "vesal-wolf" @@%}
+alias d='dotdrop --cfg=~/dotfiles/config.yaml --profile=vesal-wolf'
 {%@@ else @@%}
 alias dotdrop='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
 alias d='~/dotfiles/dotdrop.sh --cfg=~/dotfiles/config.yaml'
@@ -93,8 +93,7 @@ alias sway="XDG_CURRENT_DESKTOP=sway SDL_VIDEODRIVER=wayland QT_QPA_PLATFORM=way
 alias urlencode="python3 -c 'import urllib.parse; import sys; print(urllib.parse.quote(sys.argv[1]))'"
 alias ssh="TERM=xterm-256color ssh"
 
-{%@@ if profile == "fr-wolf" @@%}
-alias run-backend='AWS_PROFILE=frontrow STAGE=dev go run ~/go/src/backend/cmd/api/main.go'
+{%@@ if profile == "vesal-wolf" @@%}
 alias update="brew update; brew upgrade; bob update nightly;"
 {%@@ endif @@%}
 

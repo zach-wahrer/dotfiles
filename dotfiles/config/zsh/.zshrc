@@ -28,21 +28,21 @@ zstyle ':completion:*' list-prompt   '' # Remove "Do you want to see X possibili
 zstyle ':completion:*' select-prompt '' # Remove "Do you want to see X possibility"
 
 # USER COMPLETIONS #
-{%@@ if profile == "fr-wolf" @@%}
+{%@@ if profile == "vesal-wolf" @@%}
 source <(kubectl completion zsh)
 {%@@ endif @@%}
 
 # SOURCE KEYS #
 eval "$(ssh-agent -s)"
-{%@@ if profile == "fr-wolf" @@%}
-ssh-add --apple-use-keychain ~/.ssh/id_rsa
-{%@@ endif @@%}
+# {%@@ if profile == "vesal-wolf" @@%}
+# ssh-add --apple-use-keychain ~/.ssh/id_rsa
+# {%@@ endif @@%}
 
 # CONFIGS #
 source $ZSH_CONFIG/keybinds
 source $ZSH_CONFIG/paths
 source $ZSH_CONFIG/aliases
-{%@@ if profile == "fr-wolf" @@%}
+{%@@ if profile == "vesal-wolf" @@%}
 source "$HOME/.zshenv"
 {%@@ endif @@%}
 source $ZSH_CONFIG/functions
@@ -58,11 +58,9 @@ fi
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # DEFAULTS #
-{%@@ if profile == "fr-wolf" @@%}
+{%@@ if profile == "vesal-wolf" @@%}
 export BROWSER='/Applications/Firefox.app/Contents/MacOS/firefox'
-export STAGE=dev
-. "$HOME/.cargo/env"
-export PATH="/opt/homebrew/bin/:$HOME/.local/share/bob/nvim-bin/:$PATH"
+export PATH="/opt/homebrew/bin/:$HOME/.local/share/bob/nvim-bin/:$HOME/.cargo/bin:$PATH"
 {%@@ else @@%}
 export BROWSER='firefox'
 {%@@ endif @@%}
@@ -70,7 +68,7 @@ export MANPAGER='nvim --clean +Man!'
 export MANWIDTH=999
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" ## https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
 export ZVM_CURSOR_STYLE_ENABLED=false
-export TERM=alacritty
+export TERM=xterm-ghostty
 setopt ignoreeof ## Ignore Ctrl-D, ie. eof
 
 if [[ -n $SSH_CONNECTION ]]; then
