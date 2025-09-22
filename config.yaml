@@ -75,7 +75,7 @@ dotfiles:
   d_yabai:
     src: config/yabai
     dst: ~/.config/yabai
-  f_config:
+  f_ghostty:
     src: config/ghostty/config
     dst: ~/.config/ghostty/config
 profiles:
@@ -91,7 +91,7 @@ profiles:
       - d_tmux
       - d_skhd
       - d_yabai
-      - f_config
+      - f_ghostty
   red-wolf:
     dotfiles:
       - f_gitconfig
@@ -113,7 +113,7 @@ profiles:
       - d_foot
       - d_hypr
       - d_tmux
-      - f_config
+      - f_ghostty
   vm:
     dotfiles:
       - f_zshrc
