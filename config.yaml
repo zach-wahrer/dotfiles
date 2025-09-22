@@ -120,4 +120,4 @@ profiles:
       - d_nvim-min
       - d_zsh
       - d_tmux
-      - f_config
+      - f_ghostty
