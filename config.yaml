@@ -27,9 +27,6 @@ dotfiles:
   d_zsh:
     src: config/zsh
     dst: ~/.config/zsh
-  d_tridactyl:
-    src: config/tridactyl
-    dst: ~/.config/tridactyl
   d_sway:
     src: config/sway
     dst: ~/.config/sway
@@ -85,7 +82,6 @@ profiles:
       - f_golangci.yml
       - d_nvim
       - d_scripts
-      - d_tridactyl
       - d_zsh
       - d_artty
       - d_tmux
@@ -100,7 +96,6 @@ profiles:
       - d_waybar
       - d_nvim
       - d_scripts
-      - d_tridactyl
       - d_zsh
       - d_sway
       - d_swaylock
