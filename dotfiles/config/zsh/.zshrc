@@ -20,6 +20,10 @@ setopt SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS
 
 # COMPLETION #
+{%@@ if profile == "vesal-wolf" @@%}
+eval "$(brew shellenv)"
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+{%@@ endif @@%}
 zmodload zsh/complist
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
