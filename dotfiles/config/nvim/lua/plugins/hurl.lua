@@ -1,4 +1,3 @@
-
 local M = {
 	"jellydn/hurl.nvim",
 	dependencies = {
@@ -30,7 +29,7 @@ function M.config()
 		end
 	end
 
-	vim.api.nvim_create_user_command('HurlClose', function()
+	vim.api.nvim_create_user_command("HurlClose", function()
 		close_empty_markdown_windows()
 	end, {})
 

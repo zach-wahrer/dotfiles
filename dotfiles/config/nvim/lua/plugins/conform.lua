@@ -3,7 +3,8 @@ local M = {
 }
 
 function M.config()
-	require("conform").setup({
+	local conform = require("conform")
+	conform.setup({
 		formatters_by_ft = {
 			["*"] = { "codespell" },
 			graphql = { "prettier" },
@@ -27,6 +28,9 @@ function M.config()
 			lsp_format = "fallback",
 		},
 	})
+	conform.formatters.codespell = {
+		append_args = { "-L", "enew" },
+	}
 end
 
 return M
