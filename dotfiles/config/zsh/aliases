@@ -95,5 +95,10 @@ alias ssh="TERM=xterm-256color ssh"
 
 {%@@ if profile == "vesal-wolf" @@%}
 alias update="brew update; brew upgrade; bob update nightly;"
+alias j="just"
+alias jr="just dev-infra-restart-service"
+alias ju="just dev-infra-up"
+alias jd="just dev-infra-down"
+alias js="just dev-dbmgr-seed-apply dev"
 {%@@ endif @@%}
 
