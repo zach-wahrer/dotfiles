@@ -100,5 +100,6 @@ alias jr="just dev-infra-restart-service"
 alias ju="just dev-infra-up"
 alias jd="just dev-infra-down"
 alias js="just dev-dbmgr-seed-apply dev"
+alias jm="just dev-dbmgr-migrate-apply"
 {%@@ endif @@%}
 
