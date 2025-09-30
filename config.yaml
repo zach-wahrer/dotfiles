@@ -75,44 +75,48 @@ dotfiles:
   f_ghostty:
     src: config/ghostty/config
     dst: ~/.config/ghostty/config
+  d_aerospace:
+    src: config/aerospace
+    dst: ~/.config/aerospace
 profiles:
   vesal-wolf:
     dotfiles:
-      - f_zshrc
-      - f_golangci.yml
-      - d_nvim
-      - d_scripts
-      - d_zsh
-      - d_artty
-      - d_tmux
-      - d_skhd
-      - d_yabai
-      - f_ghostty
+    - f_zshrc
+    - f_golangci.yml
+    - d_nvim
+    - d_scripts
+    - d_zsh
+    - d_artty
+    - d_tmux
+    - d_skhd
+    - d_yabai
+    - f_ghostty
+    - d_aerospace
   red-wolf:
     dotfiles:
-      - f_gitconfig
-      - f_zshrc
-      - f_golangci.yml
-      - d_waybar
-      - d_nvim
-      - d_scripts
-      - d_zsh
-      - d_sway
-      - d_swaylock
-      - d_swaync
-      - d_envman
-      - d_gtk-3.0
-      - d_wlogout
-      - d_artty
-      - f_gtk-settings.ini
-      - d_foot
-      - d_hypr
-      - d_tmux
-      - f_ghostty
+    - f_gitconfig
+    - f_zshrc
+    - f_golangci.yml
+    - d_waybar
+    - d_nvim
+    - d_scripts
+    - d_zsh
+    - d_sway
+    - d_swaylock
+    - d_swaync
+    - d_envman
+    - d_gtk-3.0
+    - d_wlogout
+    - d_artty
+    - f_gtk-settings.ini
+    - d_foot
+    - d_hypr
+    - d_tmux
+    - f_ghostty
   vm:
     dotfiles:
-      - f_zshrc
-      - d_nvim-min
-      - d_zsh
-      - d_tmux
-      - f_ghostty
+    - f_zshrc
+    - d_nvim-min
+    - d_zsh
+    - d_tmux
+    - f_ghostty

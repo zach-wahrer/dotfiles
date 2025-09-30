@@ -250,11 +250,17 @@ end
 -- Telescope --
 set_vim_keymap("n", "<leader>sp", "<CMD>Telescope resume<CR>", "Run previous search")
 set_vim_keymap("n", "<leader>r", "<CMD>Telescope oldfiles<CR>", "Search recently opened files")
-set_vim_keymap("n", "<leader>s", "<CMD>Telescope live_grep hidden=true<CR>", "Search inside files in cwd")
+set_vim_keymap(
+	"n",
+	"<leader>s",
+	"<CMD>lua require('functions').search()<CR>",
+	"Start or resume search inside files in cwd"
+)
+set_vim_keymap("n", "<leader>ss", "<CMD>Telescope live_grep hidden=true<CR>", "Start new search inside files in cwd")
 set_vim_keymap("n", "<leader>ff", "<CMD>Telescope find_files hidden=true<CR>", "Search for files by name in cwd")
 set_vim_keymap("n", "<leader>fs", "<CMD>Telescope spell_suggest<CR>", "Fix spelling")
 set_vim_keymap("n", "<leader>hf", "<CMD>Telescope help_tags<CR>", "Search help files")
-set_vim_keymap("n", "<leader>ss", "<CMD>Telescope grep_string<CR>", "Search for word under cursor in cwd")
+set_vim_keymap("n", "<leader>st", "<CMD>Telescope grep_string<CR>", "Search for word under cursor in cwd")
 set_vim_keymap("n", "<leader>k", "<CMD>Telescope keymaps<CR>", "Search keymaps")
 set_vim_keymap("n", "<leader>ls", "<CMD>Telescope luasnip<CR>", "Search luasnip")
 set_vim_keymap("n", "<leader>e", "<CMD>Telescope env<CR>", "Search env vars")

@@ -29,7 +29,7 @@ function M.config()
 		},
 	})
 	conform.formatters.codespell = {
-		append_args = { "-L", "enew" },
+		append_args = { "-L", "enew", "proxies" },
 	}
 end
 
