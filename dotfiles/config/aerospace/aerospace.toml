@@ -94,8 +94,8 @@ automatically-unhide-macos-hidden-apps = false
     cmd-shift-f = 'fullscreen'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-    alt-slash = 'layout tiles horizontal vertical'
-    alt-comma = 'layout accordion horizontal vertical'
+    cmd-shift-r = 'layout tiles horizontal vertical'
+    cmd-shift-a = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
     cmd-h = 'focus left'
@@ -123,7 +123,7 @@ automatically-unhide-macos-hidden-apps = false
     cmd-7 = 'workspace 7'
     cmd-8 = 'workspace 8'
     cmd-9 = 'workspace 9'
-    # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+    cmd-0 = 'workspace 10' # In your config, you can drop workspace bindings that you don't need
     # alt-b = 'workspace B'
     # alt-c = 'workspace C'
     # alt-d = 'workspace D'
@@ -156,7 +156,7 @@ automatically-unhide-macos-hidden-apps = false
     cmd-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
     cmd-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
     cmd-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
-    # alt-shift-a = 'move-node-to-workspace A'
+    cmd-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
     # alt-shift-b = 'move-node-to-workspace B'
     # alt-shift-c = 'move-node-to-workspace C'
     # alt-shift-d = 'move-node-to-workspace D'
