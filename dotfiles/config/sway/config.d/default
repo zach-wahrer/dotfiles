@@ -127,8 +127,8 @@ exec swayidle -w\
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    # bindsym $mod+b splith
+    # bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -222,10 +222,10 @@ bindsym $mod+r mode "resize"
 #
 # App shortcuts
 #
-    bindsym $mod+Shift+f exec thunar
-    bindsym $mod+Shift+b exec env MOZ_ENABLE_WAYLAND=1 firefox
+    bindsym $mod+f exec thunar
+    bindsym $mod+b exec env MOZ_ENABLE_WAYLAND=1 firefox
     bindsym $mod+c exec qalculate-gtk
-    bindsym $mod+Shift+e splith, exec ghostty -e zsh -c "~/scripts/tmux-pde.sh"
+    bindsym $mod+p splith, exec ghostty -e zsh -c "~/scripts/tmux-pde.sh"
 #
 # Screenshots
 #
