@@ -93,6 +93,8 @@ automatically-unhide-macos-hidden-apps = false
 
     cmd-shift-f = 'fullscreen'
 
+
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     cmd-shift-r = 'layout tiles horizontal vertical'
     cmd-shift-a = 'layout accordion horizontal vertical'

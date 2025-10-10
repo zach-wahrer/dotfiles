@@ -65,19 +65,6 @@ function M.config()
 		-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references <CR>", opts)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opts)
-
-		-- Workaround for gopls semantic token highlighting https://github.com/golang/go/issues/54531#issuecomment-1464982242
-		if not client.server_capabilities.semanticTokensProvider then
-			local semantic = client.config.capabilities.textDocument.semanticTokens
-			client.server_capabilities.semanticTokensProvider = {
-				full = true,
-				legend = {
-					tokenTypes = semantic.tokenTypes,
-					tokenModifiers = semantic.tokenModifiers,
-				},
-				range = true,
-			}
-		end
 	end
 
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -90,6 +77,7 @@ function M.config()
 		"clangd",
 		"denols",
 		"dockerls",
+		"elmls",
 		"eslint",
 		-- "marksman",
 		"pyright",

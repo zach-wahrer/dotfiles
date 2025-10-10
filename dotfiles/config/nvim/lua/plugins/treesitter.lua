@@ -12,6 +12,7 @@ function M.config()
 			"comment",
 			"dockerfile",
 			"diff",
+			"elm",
 			"git_config",
 			"git_rebase",
 			"gitcommit",

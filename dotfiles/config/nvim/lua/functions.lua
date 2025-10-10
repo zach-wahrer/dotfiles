@@ -150,10 +150,8 @@ local builtin = require("telescope.builtin")
 function M.search()
 	local cached = require("telescope.state").get_global_key("cached_pickers")
 	if cached and next(cached) then
-		-- something to resume
 		builtin.resume()
 	else
-		-- nothing cached, do a fresh live_grep (including hidden files)
 		builtin.live_grep({ hidden = true })
 	end
 end
