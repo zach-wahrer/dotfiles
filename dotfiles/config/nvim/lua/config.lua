@@ -46,6 +46,29 @@ vim.diagnostic.config({ float = { border = "rounded" } })
 
 -- Autocommands --
 local augroups = {}
+-- Auto-resize hurl.nvim window when Neovim is resized
+augroups.vim_resized = {
+	equalize_split_sizes = {
+		event = { "VimResized" },
+		pattern = "*",
+		callback = function()
+			-- For hurl created windows
+			for _, win in ipairs(vim.api.nvim_list_wins()) do
+				local buf = vim.api.nvim_win_get_buf(win)
+				local ft = vim.api.nvim_buf_get_option(buf, "filetype")
+
+				if ft ~= "neo-tree" then
+					local fixwidth = vim.api.nvim_win_get_option(win, "winfixwidth")
+					if fixwidth or fixheight then
+						vim.api.nvim_win_set_option(win, "winfixwidth", false)
+					end
+				end
+			end
+
+			vim.cmd("horizontal wincmd =")
+		end,
+	},
+}
 augroups.buf_enter = {
 	full_path_in_title = {
 		event = { "BufEnter" },
